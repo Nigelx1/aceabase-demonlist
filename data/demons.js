@@ -1463,7 +1463,7 @@ window.DEMONS = [
     "creators": [
       "ScorchVx"
     ],
-    "verifier": "Dihmaster500",
+    "verifier": "Nigel",
     "videoUrl": "https://www.youtube.com/watch?v=Q_ZwRocfBy4",
     "thumbnailUrl": "https://i.ytimg.com/vi/Q_ZwRocfBy4/maxresdefault.jpg",
     "levelId": 56568010,
@@ -1506,7 +1506,7 @@ window.DEMONS = [
     "creators": [
       "DavJT"
     ],
-    "verifier": "Dihmaster500",
+    "verifier": "owen346",
     "videoUrl": "https://www.youtube.com/watch?v=I12UqR76CPk",
     "thumbnailUrl": "https://i.ytimg.com/vi/I12UqR76CPk/maxresdefault.jpg",
     "levelId": 47620786,

@@ -47,14 +47,14 @@ window.CHANGELOG = [
         "demon": "CraZy II",
         "demonId": 47620786,
         "at": 40,
-        "text": "Dihmaster500's clear"
+        "text": "owen346's clear"
       },
       {
         "kind": "add",
         "demon": "Magma Bound",
         "demonId": 56568010,
         "at": 39,
-        "text": "Dihmaster500's clear"
+        "text": "Nigel's clear"
       },
       {
         "kind": "add",
