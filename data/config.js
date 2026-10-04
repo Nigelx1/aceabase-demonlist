@@ -37,7 +37,7 @@ window.SITE = {
     { name: "Dihmaster500", nationality: "US" },
     { name: "Poatan", nationality: "MX" },
     { name: "owen346", nationality: "US" },
-    { name: "Jaiden", nationality: "US" },
+    { name: "Jaiden", nationality: "CA" },
     { name: "hesoaring", nationality: "US" },
   ],
 
