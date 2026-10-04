@@ -11,4 +11,122 @@
 // is carried across regenerations - edit it here directly.
 // -----------------------------------------------------------------------------
 
-window.GOAL_LEVELS = {};
+window.GOAL_LEVELS = {
+  "42584142": {
+    "name": "Bloodlust",
+    "publisher": "Knobbelboy",
+    "difficulty": "Extreme",
+    "rating": 31.98,
+    "levelId": 42584142,
+    "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=kTToIer9QfY",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "467339",
+        "name": "At the Speed of Light",
+        "artist": "Dimrain47",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/kTToIer9QfY/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    }
+  },
+  "59075347": {
+    "name": "Tartarus",
+    "publisher": "ItzDolphy",
+    "difficulty": "Extreme",
+    "rating": 35.04,
+    "levelId": 59075347,
+    "description": "By Riot and more.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=up3S1xndxbM",
+    "gd": {
+      "length": "Long",
+      "objects": 43364,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon"
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/up3S1xndxbM/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    }
+  },
+  "68668045": {
+    "name": "Congregation",
+    "publisher": "Presta",
+    "difficulty": "Extreme",
+    "rating": 31.52,
+    "levelId": 68668045,
+    "description": "verified by floofle",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=k3ebBTBeUTg",
+    "gd": {
+      "length": "XL",
+      "objects": 17568,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "895761",
+        "name": "Purgatori",
+        "artist": "Koraii",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/895761.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/k3ebBTBeUTg/maxresdefault.jpg",
+    "palette": {
+      "accent": "#ec521f",
+      "deep": "#3e1a0f",
+      "wash": "#fbf4f2",
+      "mist": "#f3e6e2",
+      "onAccent": "#ffffff",
+      "ink": "#47291f"
+    }
+  },
+  "27122654": {
+    "name": "Artificial Ascent",
+    "publisher": "ViPriN",
+    "difficulty": "Extreme",
+    "rating": 27.97,
+    "levelId": 27122654,
+    "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=vhoE1SeLp5w",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "63082",
+        "name": "Surface",
+        "artist": "Dimrain47"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/vhoE1SeLp5w/maxresdefault.jpg",
+    "palette": {
+      "accent": "#9f8415",
+      "deep": "#3e340f",
+      "wash": "#fbf9f2",
+      "mist": "#f3f0e2",
+      "onAccent": "#ffffff",
+      "ink": "#473f1f"
+    }
+  }
+};

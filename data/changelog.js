@@ -24,4 +24,14 @@
 // row's reason verbatim.
 // -----------------------------------------------------------------------------
 
-window.CHANGELOG = [];
+window.CHANGELOG = [
+  {
+    "date": "2026-10-03",
+    "items": [
+      {
+        "kind": "note",
+        "text": "List created - 9 Extreme Demons from 4 players."
+      }
+    ]
+  }
+];

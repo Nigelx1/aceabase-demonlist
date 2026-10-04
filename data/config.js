@@ -23,11 +23,23 @@ window.SITE = {
   extendedListSize: null,
 
   // Discord invite URL -> shows the Discord panel; null hides it.
-  discordInvite: null,
+  discordInvite: "https://discord.gg/aceabase",
 
   // Sidebar "List Editors" / "List Helpers". Real names only, no guesses.
-  editors: [],
+  editors: [{ name: "Nigel" }, { name: "Dihmaster500" }, { name: "Poatan" }],
   helpers: [],
+
+  // The community roster. Members with no clears yet still get a
+  // (0-point) spot in the stats viewer - and so their Grind goals.
+  members: [
+    { name: "ace", nationality: "US" },
+    { name: "Nigel", nationality: "US", subdivision: "IL" },
+    { name: "Dihmaster500", nationality: "US" },
+    { name: "Poatan", nationality: "MX" },
+    { name: "owen346", nationality: "US" },
+    { name: "Jaiden", nationality: "US" },
+    { name: "hesoaring", nationality: "US" },
+  ],
 
   // Home page columns.
   about: [

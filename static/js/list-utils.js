@@ -464,6 +464,15 @@ DL.aggregatePlayers = function () {
     });
   });
 
+  // Members with no clears yet (SITE.members) still get a 0-point entry.
+  ((window.SITE && window.SITE.members) || []).forEach(function (m) {
+    var entry = ensure(m.name);
+    if (!entry.nationality && m.nationality) {
+      entry.nationality = m.nationality;
+      entry.subdivision = m.subdivision || null;
+    }
+  });
+
   // Credit created/published/verified only to players who already have a
   // ranking entry (see comment above) - this never creates new entries.
   window.DEMONS.forEach(function (demon) {

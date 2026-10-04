@@ -16,6 +16,7 @@ spec.json:
     {"player": "ace", "level": 12345, "progress": 100}
   ],
   "tiebreak": ["ace"],                      # who gets `verifier` on a new demon several cleared
+  "verifiers": {"10565740": "ace"},        # or set it per level (wins over tiebreak)
   "notes": ["New member: ..."]              # extra changelog notes
 }
 A player's "gdladder" (user id or profile link) also imports every 100% on
@@ -239,6 +240,9 @@ def main():
     for d in fresh.values():
         clears = [r["player"] for r in d["records"] if r["progress"] >= 100]
         d["verifier"] = sorted(clears, key=order.index)[0] if clears else None
+    for lid, who in (spec.get("verifiers") or {}).items():  # {"levelId": "player"}
+        if int(lid) in fresh:
+            fresh[int(lid)]["verifier"] = who
 
     everything = demons + list(fresh.values())
     everything.sort(key=lambda d: -(d["rating"] if isinstance(d.get("rating"), (int, float)) else FALLBACK.get(d.get("difficulty"), 3)))
