@@ -97,6 +97,11 @@ window.GOAL_LEVELS = {
       "mist": "#f3e6e2",
       "onAccent": "#ffffff",
       "ink": "#47291f"
+    },
+    "writeup": {
+      "text": "A slow-burn descent into timing hell. Presta wraps you in barely-lit blues and near-invisible passages, lulls you with methodical cube and ball work — then the drop detonates into double- and quadruple-speed chaos in searing orange. No ship section the whole way through, an Epic rating earned under the old object cap, and the birthplace of the internet's favourite \"jumpscare\" edit. Peaked around #35 on the Demonlist before sliding to Legacy.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Congregation"
     }
   },
   "27122654": {
