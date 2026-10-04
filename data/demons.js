@@ -38,7 +38,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/m4eQowaesxo"
       }
     ],
     "gd": {
@@ -75,7 +76,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/9TFsWFyMTek"
       }
     ],
     "gd": {
@@ -112,7 +114,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/JkNkx5rTwqY"
       }
     ],
     "gd": {
@@ -186,7 +189,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/etV53-hN0ZQ"
       }
     ],
     "gd": {
@@ -224,7 +228,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/GKit0O3brng"
       }
     ],
     "gd": {
@@ -261,7 +266,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/SKT5YxsFzfA"
       }
     ],
     "gd": {
@@ -298,7 +304,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/J7di-kFpKiA"
       }
     ],
     "gd": {
@@ -335,7 +342,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/dDHlSYov2_U"
       }
     ],
     "gd": {
@@ -372,7 +380,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/kldiw-m3mTE"
       }
     ],
     "gd": {
@@ -403,7 +412,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/wMo8Y569-mk"
       }
     ],
     "gd": {
@@ -440,7 +450,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/6s0oSzgcoME"
       }
     ],
     "gd": {
@@ -477,7 +488,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/CtzxvjTUBP8"
       }
     ],
     "gd": {
@@ -551,7 +563,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/vdXb8IbxZVA"
       }
     ],
     "gd": {
@@ -637,7 +650,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/J-k2wqXo3yo"
       },
       {
         "player": "Nigel",
@@ -681,7 +695,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/fsOicixJGmQ"
       }
     ],
     "gd": {
@@ -792,7 +807,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/lLNZv8vwlUw"
       }
     ],
     "gd": {
@@ -829,7 +845,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/VvGNWsRgc7o"
       }
     ],
     "gd": {
@@ -916,7 +933,8 @@ window.DEMONS = [
         "player": "Poatan",
         "progress": 100,
         "nationality": "MX",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/VF8W5xtEZVQ"
       }
     ],
     "gd": {
