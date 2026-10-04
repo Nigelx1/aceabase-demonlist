@@ -175,9 +175,16 @@ def main():
         prof = curl_json(f"https://gdladder.com/api/user/{uid}") or {}
         if not info.get("nationality") and prof.get("CountryCode"):
             info["nationality"] = prof["CountryCode"]
-        seen, total, page, misses = {}, None, 0, 0
-        while page < 200 and misses < 2 and (total is None or len(seen) < total):
-            res = curl_json(f"https://gdladder.com/api/user/{uid}/submissions?limit=100&page={page}") or {}
+        base = f"https://gdladder.com/api/user/{uid}/submissions"
+        ok = next(((n, p) for n in (100, 50, 25, 10) for p in (0, 1)
+                   if isinstance((curl_json(f"{base}?limit={n}&page={p}") or {}).get("submissions"), list)), None)
+        if not ok:
+            print(f"  WARNING gdladder {uid}: couldn't read submissions")
+            continue
+        limit, page = ok
+        seen, total, misses = {}, None, 0
+        while page < 1000 and misses < 2 and (total is None or len(seen) < total):
+            res = curl_json(f"{base}?limit={limit}&page={page}") or {}
             total = res.get("total", total or 0)
             new = [s for s in res.get("submissions") or [] if s.get("ID") not in seen]
             misses = 0 if new else misses + 1
