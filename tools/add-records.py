@@ -41,6 +41,8 @@ FLAG_SRC = "https://raw.githubusercontent.com/stadust/pointercrate/master/pointe
 AREDL = "https://api.aredl.net/v2/api/aredl/levels"
 FALLBACK = {"Extreme": 24, "Insane": 16.5, "Hard": 11, "Medium": 7, "Easy": 2.5, "Official": 3}
 LENGTHS = {1: "Tiny", 2: "Short", 3: "Medium", 4: "Long", 5: "XL"}
+_OV = os.path.join(SITE, "tools", "showcase-overrides.json")  # Nigel's own videos (apply-showcases.py)
+SHOWCASES = json.load(io.open(_OV, encoding="utf-8")) if os.path.exists(_OV) else {}
 
 
 def curl_json(url):
@@ -127,7 +129,7 @@ def fetch_level(lid, allowed):
         if gb.get("songLink") and gb["songLink"] != "-":
             gd["song"]["link"] = gb["songLink"]
         gd["songOfficial"] = False
-    vid, rating = gl.get("Showcase"), gl.get("Rating")
+    vid, rating = SHOWCASES.get(str(lid)) or gl.get("Showcase"), gl.get("Rating")
     pub = gb.get("author") or (meta.get("Publisher") or {}).get("name") or "Unknown"
     return {
         "id": lid, "position": 0, "name": (gb.get("name") or meta.get("Name") or f"Level {lid}").strip(),

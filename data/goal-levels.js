@@ -20,7 +20,7 @@ window.GOAL_LEVELS = {
     "levelId": 26681070,
     "description": "Mythical Demon by Cyclic! Video on my YouTube.",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=Dfm_LegCN9Q",
+    "videoUrl": "https://www.youtube.com/watch?v=2ZtYignaojk",
     "gd": {
       "length": "XL",
       "objects": 23157,
@@ -32,14 +32,14 @@ window.GOAL_LEVELS = {
         "artist": "F-777"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/Dfm_LegCN9Q/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
     "palette": {
-      "accent": "#068ae3",
-      "deep": "#0f2b3e",
-      "wash": "#f2f7fb",
-      "mist": "#e2ecf3",
+      "accent": "#1e9696",
+      "deep": "#0f3e3e",
+      "wash": "#f2fbfb",
+      "mist": "#e2f3f3",
       "onAccent": "#ffffff",
-      "ink": "#1f3747"
+      "ink": "#1f4747"
     },
     "writeup": {
       "text": "The legend. Cyclic's dark-blue Nine Circles monster, built around wave sections with incredibly tight spaces and sawblades everywhere. After Cyclic admitted his own verification was hacked, Sunix earned the real one in November 2016 - ending a verification race that gave us Mefewe's 98%, still called the worst fail in GD history. It hit #1, then spent a record 2,508 days in the Top 150, and has more rated remakes than any other Extreme.",
@@ -91,14 +91,14 @@ window.GOAL_LEVELS = {
     "levelId": 59075347,
     "description": "By Riot and more.",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=up3S1xndxbM",
+    "videoUrl": "https://www.youtube.com/watch?v=8G-WZauz98M",
     "gd": {
       "length": "Long",
       "objects": 43364,
       "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon"
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/up3S1xndxbM/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8G-WZauz98M/maxresdefault.jpg",
     "palette": {
       "accent": "#f91f1f",
       "deep": "#3e0f0f",
@@ -157,7 +157,7 @@ window.GOAL_LEVELS = {
     "levelId": 27122654,
     "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=vhoE1SeLp5w",
+    "videoUrl": "https://www.youtube.com/watch?v=zmKI2rqyQyU",
     "gd": {
       "length": "XL",
       "objects": 65535,
@@ -169,14 +169,14 @@ window.GOAL_LEVELS = {
         "artist": "Dimrain47"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/vhoE1SeLp5w/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
     "palette": {
-      "accent": "#9f8415",
-      "deep": "#3e340f",
-      "wash": "#fbf9f2",
-      "mist": "#f3f0e2",
+      "accent": "#b11ff9",
+      "deep": "#2e0f3e",
+      "wash": "#f8f2fb",
+      "mist": "#ede2f3",
       "onAccent": "#ffffff",
-      "ink": "#473f1f"
+      "ink": "#3a1f47"
     },
     "writeup": {
       "text": "The machine wakes up. Viprin's futuristic, robotic megacollab, co-hosted by LmAnubis, runs 16 creators' sections through shifting colour schemes to Dimrain47's \"Surface.\" Combined verified it in December 2016 and it debuted at #1, only to be dethroned within ten days - then it stayed on the Demonlist for 2,078 days, the first of the Technology Trilogy to finally fall off.",
@@ -192,7 +192,7 @@ window.GOAL_LEVELS = {
     "levelId": 10565740,
     "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=p8uIkSxCZAU",
+    "videoUrl": "https://www.youtube.com/watch?v=shOO9UfDvfs",
     "gd": {
       "length": "Long",
       "objects": 24746,
@@ -205,7 +205,7 @@ window.GOAL_LEVELS = {
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/p8uIkSxCZAU/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
     "palette": {
       "accent": "#f91f1f",
       "deep": "#3e0f0f",
