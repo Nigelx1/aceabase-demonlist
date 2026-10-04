@@ -27,8 +27,7 @@
 // -----------------------------------------------------------------------------
 
 window.GOALS = [
-  { player: "ace", levelId: 26681070, best: 36 }, // Sonic Wave
-  { player: "ace", levelId: 42584142, best: null },
+  { player: "ace", levelId: 42584142, best: null, segments: [[67, 85], [71, 92], [75, 93], [80, 96], [88, 100]], note: "75–93 twice." }, // Bloodlust
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[5, 26], [63, 75], [79, 100]] }, // Tartarus
   { player: "Poatan", levelId: 68668045, best: 48, segments: [[42, 100]], note: "48% twice." }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent

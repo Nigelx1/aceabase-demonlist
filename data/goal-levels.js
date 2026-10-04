@@ -12,41 +12,6 @@
 // -----------------------------------------------------------------------------
 
 window.GOAL_LEVELS = {
-  "26681070": {
-    "name": "Sonic Wave",
-    "publisher": "lSunix",
-    "difficulty": "Extreme",
-    "rating": 29.84,
-    "levelId": 26681070,
-    "description": "Mythical Demon by Cyclic! Video on my YouTube.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=2ZtYignaojk",
-    "gd": {
-      "length": "XL",
-      "objects": 23157,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "574484",
-        "name": "F-777 - Sonic Blaster",
-        "artist": "F-777"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
-    "palette": {
-      "accent": "#1e9696",
-      "deep": "#0f3e3e",
-      "wash": "#f2fbfb",
-      "mist": "#e2f3f3",
-      "onAccent": "#ffffff",
-      "ink": "#1f4747"
-    },
-    "writeup": {
-      "text": "The legend. Cyclic's dark-blue Nine Circles monster, built around wave sections with incredibly tight spaces and sawblades everywhere. After Cyclic admitted his own verification was hacked, Sunix earned the real one in November 2016 - ending a verification race that gave us Mefewe's 98%, still called the worst fail in GD history. It hit #1, then spent a record 2,508 days in the Top 150, and has more rated remakes than any other Extreme.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
-    }
-  },
   "42584142": {
     "name": "Bloodlust",
     "publisher": "Knobbelboy",
