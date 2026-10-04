@@ -30,7 +30,7 @@ window.GOALS = [
   { player: "ace", levelId: 26681070, best: null },
   { player: "ace", levelId: 42584142, best: null },
   { player: "Dihmaster500", levelId: 59075347, best: null },
-  { player: "Poatan", levelId: 68668045, best: null }, // Congregation
+  { player: "Poatan", levelId: 68668045, best: 48, segments: [[42, 100]], note: "48% twice." }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: null },
   { player: "hesoaring", levelId: 10565740, best: null }, // Bloodbath (on the list)
 ];

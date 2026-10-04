@@ -12,6 +12,41 @@
 // -----------------------------------------------------------------------------
 
 window.GOAL_LEVELS = {
+  "26681070": {
+    "name": "Sonic Wave",
+    "publisher": "lSunix",
+    "difficulty": "Extreme",
+    "rating": 29.84,
+    "levelId": 26681070,
+    "description": "Mythical Demon by Cyclic! Video on my YouTube.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=Dfm_LegCN9Q",
+    "gd": {
+      "length": "XL",
+      "objects": 23157,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "574484",
+        "name": "F-777 - Sonic Blaster",
+        "artist": "F-777"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/Dfm_LegCN9Q/maxresdefault.jpg",
+    "palette": {
+      "accent": "#068ae3",
+      "deep": "#0f2b3e",
+      "wash": "#f2f7fb",
+      "mist": "#e2ecf3",
+      "onAccent": "#ffffff",
+      "ink": "#1f3747"
+    },
+    "writeup": {
+      "text": "The legend. Cyclic's dark-blue Nine Circles monster, built around wave sections with incredibly tight spaces and sawblades everywhere. After Cyclic admitted his own verification was hacked, Sunix earned the real one in November 2016 - ending a verification race that gave us Mefewe's 98%, still called the worst fail in GD history. It hit #1, then spent a record 2,508 days in the Top 150, and has more rated remakes than any other Extreme.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
+    }
+  },
   "42584142": {
     "name": "Bloodlust",
     "publisher": "Knobbelboy",
@@ -41,6 +76,11 @@ window.GOAL_LEVELS = {
       "mist": "#f3e2e2",
       "onAccent": "#ffffff",
       "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
   "59075347": {
@@ -66,6 +106,11 @@ window.GOAL_LEVELS = {
       "mist": "#f3e2e2",
       "onAccent": "#ffffff",
       "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "A descent into the underworld. Riot's hellish 1.9-style megacollab, co-hosted by Aurorus, is wall-to-wall extremely tight orb spam, ship and swing-copter sections. Dolphy verified it in January 2020 after 61,742 attempts and it reigned at #1 for 527 days - though the verification drama means plenty of players credit Mullsy, its second victor, as the real one.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
     }
   },
   "68668045": {
@@ -132,6 +177,47 @@ window.GOAL_LEVELS = {
       "mist": "#f3f0e2",
       "onAccent": "#ffffff",
       "ink": "#473f1f"
+    },
+    "writeup": {
+      "text": "The machine wakes up. Viprin's futuristic, robotic megacollab, co-hosted by LmAnubis, runs 16 creators' sections through shifting colour schemes to Dimrain47's \"Surface.\" Combined verified it in December 2016 and it debuted at #1, only to be dethroned within ten days - then it stayed on the Demonlist for 2,078 days, the first of the Technology Trilogy to finally fall off.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
+    }
+  },
+  "10565740": {
+    "name": "Bloodbath",
+    "publisher": "Riot",
+    "difficulty": "Extreme",
+    "rating": 23.98,
+    "levelId": 10565740,
+    "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=p8uIkSxCZAU",
+    "gd": {
+      "length": "Long",
+      "objects": 24746,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "467339",
+        "name": "At the Speed of Light",
+        "artist": "Dimrain47",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/p8uIkSxCZAU/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   }
 };

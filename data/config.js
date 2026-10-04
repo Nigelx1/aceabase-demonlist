@@ -19,7 +19,7 @@ window.SITE = {
   // Tiers: the top mainListSize demons are the Main List, everything after is
   // the Extended List (extendedListSize null = no Legacy tier). Display split
   // only - scoring is by difficulty rating, see SCORING below.
-  mainListSize: 20,
+  mainListSize: 10,
   extendedListSize: null,
 
   // Discord invite URL -> shows the Discord panel; null hides it.
@@ -45,7 +45,7 @@ window.SITE = {
   about: [
     {
       title: "The list",
-      text: "Extreme Demons only. Every one beaten by ace or the active members of her server, ranked hardest-first by GD Demon Ladder's difficulty rating. The top 20 are the Main List and everything after that is the Extended List.",
+      text: "Extreme Demons only. Every one beaten by ace or the active members of her server, ranked hardest-first by GD Demon Ladder's difficulty rating. The top 10 are the Main List and everything after that is the Extended List.",
     },
     {
       title: "Scoring",

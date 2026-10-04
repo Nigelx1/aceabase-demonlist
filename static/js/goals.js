@@ -27,8 +27,11 @@
     var listed = (window.DEMONS || []).find(function (d) {
       return d.levelId === levelId || d.id === levelId;
     });
-    if (listed) return listed;
     var g = (window.GOAL_LEVELS || {})[String(levelId)];
+    if (listed) {
+      // list data wins; goal-levels.js only adds the page theme + writeup
+      return g ? Object.assign({}, listed, { palette: g.palette, writeup: g.writeup }) : listed;
+    }
     return g || null;
   };
 

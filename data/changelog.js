@@ -30,7 +30,7 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
-        "text": "List created - 9 Extreme Demons from 4 players."
+        "text": "List created - 25 Extreme Demons from 4 players."
       }
     ]
   }
