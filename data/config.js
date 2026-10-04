@@ -24,6 +24,13 @@ window.SITE = {
   mainListSize: "extremes",
   extendedListSize: null,
 
+  // The Grind -> stats viewer "In Progress" (Poatan's compromise, since The
+  // Grind allows tiny runs): a goal in data/goals.js where the player has a run
+  // LONGER than this % - from 0, or a practice run like 42-100 - also shows in
+  // their In Progress row (and their nation's). Display only, no points.
+  // null = off.
+  grindInProgress: 50,
+
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 

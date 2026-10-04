@@ -5,7 +5,8 @@
 // This is NOT the same as a player's "In Progress" row in the stats viewer:
 // that row is real sub-100% records on demons already ON the list. A grind
 // goal can be any Geometry Dash level, listed or not, and its progress is
-// tracked here by hand.
+// tracked here by hand. The one overlap: a goal with a run longer than
+// SITE.grindInProgress (50%) is ALSO listed in In Progress - display only.
 //
 // One row per (player, level). Fields:
 //   player    - exact player name, as it appears in data/demons.js records
@@ -13,6 +14,8 @@
 //               unless the level is on the Demonlist, in which case demons.js wins)
 //   best      - best run % from the start (number). null = unknown / not tracked
 //   segments  - [[from, to], ...] practice-mode runs the player can do. optional
+//               Only add a run that isn't completely inside another one (5-25
+//               is left out when there's a 5-26). Repeats go in `note`.
 //   note      - freeform status line shown under the progress bar. optional
 //   blurb     - "why this one" - a sentence from the player. optional
 //   attempts  - attempt count. optional
@@ -28,7 +31,7 @@
 
 window.GOALS = [
   { player: "ace", levelId: 42584142, best: null, segments: [[67, 85], [71, 92], [75, 93], [80, 96], [88, 100]], note: "75–93 twice." }, // Bloodlust
-  { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[5, 26], [63, 75], [79, 100]] }, // Tartarus
+  { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
   { player: "Poatan", levelId: 68668045, best: 48, segments: [[42, 100]], note: "48% twice." }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent
   { player: "hesoaring", levelId: 10565740, best: 49, segments: [[33, 92], [70, 100]] }, // Bloodbath (on the list)
