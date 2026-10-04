@@ -1,0 +1,405 @@
+/* "The Grind" - goal.html, themed per level off data/goal-levels.js `palette`
+   (CSS vars --accent / --deep / --wash / --mist / --on-accent / --ink set on
+   #goal-page by DL.renderGoalPage). Also the .grind-chip row in the stats
+   viewer. */
+
+#goal-page {
+  --accent: #0881c6;
+  --deep: #0c2c3d;
+  --wash: #f2f8fb;
+  --mist: #e4eef4;
+  --on-accent: #fff;
+  --ink: #123243;
+
+  display: block;
+  background: var(--wash);
+  min-height: 70vh;
+  padding-bottom: 40px;
+}
+
+/* --- hero ----------------------------------------------------------------- */
+
+.goal-hero {
+  position: relative;
+  padding: 0;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--deep) center / cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+  border-bottom: 4px solid var(--accent);
+}
+
+.goal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--deep) 25%, transparent) 0%,
+    color-mix(in srgb, var(--deep) 45%, transparent) 45%,
+    var(--deep) 100%
+  );
+}
+
+/* color-mix fallback for older engines: a flat scrim */
+@supports not (background: color-mix(in srgb, red, blue)) {
+  .goal-hero::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75));
+  }
+}
+
+.goal-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 90px 22px 26px;
+}
+
+.goal-kicker {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.goal-hero h1 {
+  margin: 0;
+  text-align: left;
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  line-height: 1.04;
+  font-weight: 800;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.55);
+}
+
+.goal-sub {
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.goal-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.goal-sub > span:not(.goal-badge) {
+  opacity: 0.9;
+}
+
+.goal-listed {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- body --------------------------------------------------------------- */
+
+.goal-body {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+.goal-body .panel {
+  margin: 22px 0;
+  border-color: color-mix(in srgb, var(--accent) 30%, lightgray);
+}
+
+.goal-body .panel h2 {
+  color: var(--ink);
+}
+
+.goal-about .goal-video,
+.goal-about iframe.goal-video {
+  display: block;
+  width: 100%;
+  margin: 0 0 4px;
+  border: 0;
+  aspect-ratio: 16 / 9;
+  background: #000 center / cover no-repeat;
+  position: relative;
+  border-radius: 4px;
+}
+
+.goal-about .js-demon-video {
+  cursor: pointer;
+}
+
+.goal-about #level-info b {
+  color: var(--ink);
+}
+
+.goal-writeup {
+  margin: 14px 2px 6px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  background: var(--mist);
+  border-radius: 0 4px 4px 0;
+  text-align: left;
+}
+
+.goal-writeup p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.goal-writeup-cite {
+  margin-top: 8px !important;
+  font-size: 0.78rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.goal-ingame {
+  margin: 8px 2px 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--mist);
+  text-align: left;
+  font-size: 0.82rem;
+  opacity: 0.7;
+}
+
+.goal-ingame span {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+/* --- who's grinding it -------------------------------------------------- */
+
+.goal-grind h3 {
+  font-weight: normal;
+  opacity: 0.75;
+}
+
+.grind-cards {
+  display: grid;
+  gap: 16px;
+  padding: 4px 2px 2px;
+}
+
+@media (min-width: 720px) {
+  .grind-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.grind-card {
+  text-align: left;
+  padding: 16px 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, lightgray);
+  border-top: 3px solid var(--accent);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.grind-card-focus {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.grind-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.grind-card-head h3 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.grind-card-head h3 .flag-icon {
+  margin-right: 6px;
+}
+
+.grind-card-head h3 a {
+  color: var(--ink);
+}
+
+.grind-big {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.grind-big i {
+  font-size: 0.95rem;
+  font-style: normal;
+  opacity: 0.7;
+  margin-left: 1px;
+}
+
+.grind-big-sm {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* progress track: 0-100, solid fill to `best` + translucent segment bands */
+.grind-track {
+  position: relative;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--mist);
+  overflow: hidden;
+  margin: 6px 0 10px;
+}
+
+.grind-band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: color-mix(in srgb, var(--accent) 32%, transparent);
+  border-left: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.grind-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--accent);
+}
+
+.grind-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.grind-tick b {
+  color: var(--on-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.grind-note {
+  margin: 2px 0 0;
+  font-size: 0.86rem;
+  opacity: 0.85;
+}
+
+.grind-blurb {
+  margin: 8px 0 0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.grind-facts {
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.grind-facts b {
+  color: var(--ink);
+}
+
+.grind-log {
+  margin: 12px 0 0;
+  padding: 0 0 0 2px;
+  list-style: none;
+  font-size: 0.82rem;
+}
+
+.grind-log li {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--mist);
+}
+
+.grind-log li:last-child {
+  border-bottom: 0;
+}
+
+.grind-log li b {
+  color: var(--accent);
+  min-width: 42px;
+}
+
+.grind-log li i {
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.goal-back {
+  max-width: 940px;
+  margin: 18px auto 0;
+  padding: 0 14px;
+}
+
+/* --- stats-viewer "The Grind" row ------------------------------------- */
+
+#grind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.grind-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-pc-button-bg);
+  border-radius: 3px;
+  background: var(--color-bg);
+  font-size: 0.82em;
+  line-height: 1.3;
+}
+
+.grind-chip:hover {
+  background: #eef4f8;
+}
+
+.grind-chip-name {
+  font-weight: 600;
+}
+
+.grind-chip-pct {
+  color: #666;
+  font-variant: small-caps;
+}

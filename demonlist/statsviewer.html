@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Stats Viewer · Aceabase Demonlist</title>
+<meta name="description" content="Player rankings for Aceabase Demonlist.">
+
+<script src="../static/core/js/vendor/jquery.min.js"></script>
+<script src="../static/core/js/vendor/jquery-ui.min.js"></script>
+<script src="../data/config.js"></script>
+<script src="../data/demons.js"></script>
+<script src="../data/goal-levels.js"></script>
+<script src="../data/goals.js"></script>
+<script src="../static/js/list-utils.js"></script>
+<script src="../static/js/demonlist.js"></script>
+<script src="../static/js/goals.js"></script>
+<script src="../static/js/worldmap.data.js"></script>
+<script src="../static/js/worldmap.js"></script>
+<script src="../static/js/statsviewer.js"></script>
+
+<link rel="stylesheet" href="../static/core/css/icon.css">
+<link rel="stylesheet" href="../static/core/css/nav.css">
+<link rel="stylesheet" href="../static/core/css/main.css">
+<link rel="stylesheet" href="../static/core/css/ui.css">
+<link rel="stylesheet" href="../static/core/css/core.css">
+<link rel="stylesheet" href="../static/core/css/fa.all.min.css">
+<link rel="stylesheet" href="../static/css/demonlist.css">
+<link rel="stylesheet" href="../static/css/statsviewer.css">
+<link rel="stylesheet" href="../static/css/goals.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:light,bold">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<div class="content">
+<header>
+<nav class="center collapse underlined see-through">
+  <div class="nav-icon nav-nohide" style="margin-right:auto">
+    <a href="../index.html" aria-label="Go to homepage" style="font-weight:800;letter-spacing:.02em;font-size:1.1rem">Aceabase Demonlist</a>
+  </div>
+  <div class="nav-group">
+    <a class="nav-item hover white" href="index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+      <i class="fas fa-sort-down" style="height:50%; padding-left:5px"></i>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
+      <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+  <div class="nav-item collapse-button nav-nohide">
+    <div class="hamburger hover"><input type="checkbox"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav-drop-down">
+    <a class="nav-item hover white" href="../index.html">Home</a>
+    <a class="nav-item hover white" href="index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
+      <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+</nav>
+<div></div>
+</header>
+
+<div class="m-center container" style="margin-top:30px" id="statsviewer-page">
+  <nav class="flex wrap m-center fade" id="sv-modes">
+    <div class="button white hover no-shadow active" data-mode="individual">Players</div>
+    <div class="button white hover no-shadow" data-mode="nations">Nations</div>
+  </nav>
+
+  <section class="panel fade" id="world-map-wrapper">
+    <div id="world-map"></div>
+    <div class="map-controls">
+      <button type="button" data-map="in" aria-label="Zoom in">+</button>
+      <button type="button" data-map="out" aria-label="Zoom out">&minus;</button>
+      <button type="button" data-map="reset" aria-label="Reset view">&#8635;</button>
+    </div>
+    <p class="map-hint">Use +/&minus; or shift&#8209;scroll to zoom &middot; drag to pan &middot; click a country</p>
+  </section>
+
+  <div class="flex m-center">
+  <main class="left">
+    <section class="panel fade" id="statsviewer" style="overflow:initial">
+      <h2 class="underlined pad">Stats Viewer<span id="sv-scope"></span></h2>
+      <div class="flex viewer">
+        <div class="flex col paginator" style="max-width:35%">
+          <div class="search js-search seperated no-stretch" style="margin-bottom:5px">
+            <input placeholder="Filter..." type="text" style="height:1em">
+          </div>
+          <div style="min-height:210px; max-height:440px; position:relative; flex-grow:1">
+            <ul class="selection-list" style="position:absolute; top:0; bottom:0; left:0; right:0; margin:0"></ul>
+          </div>
+        </div>
+        <p class="viewer-welcome">Click on a player's name on the left to get started!</p>
+        <div class="viewer-content">
+          <div class="flex col">
+            <h3 id="player-name" style="font-size:1.4em; overflow:hidden"></h3>
+            <div class="stats-container flex space">
+              <span><b>Demonlist rank</b><br><span id="rank"></span></span>
+              <span><b>Demonlist score</b><br><span id="score"></span></span>
+            </div>
+            <div class="stats-container flex space" id="players-row">
+              <span><b>Players</b><br><span id="players"></span></span>
+            </div>
+            <div class="stats-container flex space">
+              <span><b>Demons beaten</b><br><span id="stats"></span></span>
+              <span><b>Hardest demon</b><br><span id="hardest"></span></span>
+            </div>
+            <div class="stats-container flex space" id="subdivisions-row">
+              <span style="flex-grow:2"><b>Subdivisions</b><br><span id="subdivisions"></span></span>
+            </div>
+            <div class="stats-container flex space" id="beaten-row">
+              <span style="flex-grow:2"><b>Beaten</b><br><span id="beaten"></span></span>
+            </div>
+            <div id="tiered-beaten-row">
+              <div class="stats-container flex space"><span style="flex-grow:2"><b>Main List</b><br><span id="main-beaten"></span></span></div>
+              <div class="stats-container flex space"><span style="flex-grow:2"><b>Extended List</b><br><span id="extended-beaten"></span></span></div>
+              <div class="stats-container flex space" id="legacy-beaten-row"><span style="flex-grow:2"><b>Legacy List</b><br><span id="legacy-beaten"></span></span></div>
+            </div>
+            <div class="stats-container flex space">
+              <span><b>Created</b><br><span id="created"></span></span>
+              <span><b>Published</b><br><span id="published"></span></span>
+              <span><b>Verified</b><br><span id="verified"></span></span>
+            </div>
+            <div class="stats-container flex space"><span style="flex-grow:2"><b>In Progress</b><br><span id="progress"></span></span></div>
+            <div class="stats-container flex space" id="grind-row"><span style="flex-grow:2"><b>The Grind</b><br><span id="grind"></span></span></div>
+            <div class="stats-container flex space" id="unbeaten-row"><span style="flex-grow:2"><b>Unbeaten</b><br><span id="unbeaten"></span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <aside class="right">
+    <section class="panel fade">
+      <h3 class="underlined">Demon Sorting</h3>
+      <p>The order in which the completed-demon lists below are shown.</p>
+      <div class="flex" style="gap:5px">
+        <div class="button white hover no-shadow active" data-sort="Alphabetical" style="flex-grow:1">Alphabetical</div>
+        <div class="button white hover no-shadow" data-sort="Position" style="flex-grow:1">Position</div>
+      </div>
+    </section>
+    <section class="panel fade" id="continent-panel">
+      <h3 class="underlined">Continent</h3>
+      <p>Focus the ranking and the map on a single continent. Pick "All continents" to reset.</p>
+      <select id="continent-select" class="sv-select"></select>
+    </section>
+    <section class="panel fade" id="subdivision-toggle-panel">
+      <h3 class="underlined">Show Subdivisions</h3>
+      <p>Whether the map shows state / province borders so you can rank a subdivision on its own.</p>
+      <label class="cb-container flex no-stretch" style="margin-bottom:10px">
+        <i>Show political subdivisions</i>
+        <input id="show-subdivisions-checkbox" type="checkbox" checked>
+        <span class="checkmark"></span>
+      </label>
+    </section>
+    <section class="panel fade" id="subdivision-panel">
+      <h3 class="underlined">Political Subdivision</h3>
+      <p>Once a country is selected, pick one of its states / provinces (only ones with players are listed).</p>
+      <select id="subdivision-select" class="sv-select"><option value="">None</option></select>
+    </section>
+  </aside>
+  </div>
+</div>
+
+<script>
+  var params = new URLSearchParams(location.search);
+  DL.initStatsViewer(
+    document.getElementById("statsviewer-page"),
+    params.get("player"),
+    params.get("nation")
+  );
+</script>
+</div>
+
+<footer class="center">
+  <span class="overline pad" style="text-align:center">
+    <span id="footer-name"></span><br>
+    A private Geometry Dash Demonlist. Not affiliated with RobTopGamesAB or pointercrate.
+  </span>
+  <div class="flex no-stretch">
+    <nav>
+      <h2>Aceabase Demonlist</h2>
+      <a class="link" href="../index.html">Home</a><br>
+      <a class="link" href="index.html">Demonlist</a><br>
+      <a class="link" href="../guidelines/index.html">Guidelines</a><br>
+      <a class="link" href="../changelog/index.html">Changelog</a><br>
+    </nav>
+  </div>
+  <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>
+</footer>
+
+<script src="../static/core/js/ui.js"></script>
+<script src="../static/core/js/misc.js"></script>
+<script src="../static/core/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+.information-stripe {
+  background: #0881c6;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+.information-stripe span {
+  line-height: 50px;
+  height: 50px;
+  margin: 0px 5px;
+}
+
+.information-banner {
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  font-size: 110%;
+}
+
+.information-banner > * {
+  background: white;
+  padding: 50px 20px;
+  max-width: 1072px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 7px 5px white;
+}
+
+.information-banner .information {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* breathing room: the intro block, then a clear gap, then the button */
+.information-banner.left > * {
+  row-gap: 28px;
+}
+
+.information-banner .information h1 {
+  margin-bottom: 12px;
+}
+
+.information-banner .information h2 {
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+.information-banner #site-description {
+  line-height: 1.55;
+}
+
+.information-banner .button {
+  height: 50px;
+}
+
+.information-banner ul {
+  list-style: square inside
+    url("data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==");
+}
+
+.tab-active {
+  color: #0881c6;
+}
+
+#about-inner p {
+  text-align: center;
+}
+
+#about-inner > div {
+  flex-basis: 0;
+  padding: 10px 16px;
+}
+
+#about-inner > div + div {
+  border-left: 1px solid var(--color-border);
+}
+
+#about-inner h3 {
+  margin: 0 0 8px;
+  color: var(--color-text-accent);
+}
+
+/* --- "At the top right now" strip ------------------------------------- */
+
+#home-top {
+  padding-top: 36px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+#home-top h2 {
+  margin: 0 0 24px;
+}
+
+#home-top3 {
+  gap: 26px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+#home-top .button {
+  display: inline-flex;
+  align-items: center;
+}
+
+.home-demon-card {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  background: var(--color-bg);
+  border: 1px dashed lightgray;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
+  transition: transform 0.15s ease;
+}
+
+.home-demon-card:hover {
+  transform: translateY(-4px);
+}
+
+.home-demon-card .thumb {
+  width: 100%;
+}
+
+.home-demon-card .demon-card-name {
+  font-size: 1.3rem;
+}
+
+.home-demon-card .demon-card-diff {
+  font-size: 0.75rem;
+}
+
+.home-demon-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.home-demon-card-body b {
+  font-size: 1.05em;
+}
+
+.home-demon-card-body span {
+  color: #666;
+  font-size: 0.88em;
+}
+
+@media (max-width: 1199px) {
+  .information-banner > * {
+    width: 100%;
+  }
+
+  .information-banner.right > * {
+    flex-flow: column-reverse;
+  }
+
+  .information-banner.left > * {
+    flex-flow: column;
+  }
+
+  .information-banner .information,
+  .information-banner .information * {
+    text-align: center !important;
+  }
+
+  #changelog h3 {
+    display: inline;
+  }
+
+  #about-inner {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1072px) {
+  .information-banner {
+    padding-left: calc(50% - 1072px / 2);
+    padding-right: calc(50% - 1072px / 2);
+  }
+}
+
+@media (min-width: 1359px) {
+  .information-banner {
+    padding-left: calc(50% - 1072px / 2);
+    padding-right: calc(50% - 1072px / 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .information-banner > * {
+    flex-flow: row;
+    /* This makes it work, don't question it */
+    flex-shrink: 0;
+  }
+
+  .information-banner.right .information,
+  .information-banner.right .information * {
+    text-align: right !important;
+  }
+
+  .information-banner .information {
+    width: 70%;
+  }
+}

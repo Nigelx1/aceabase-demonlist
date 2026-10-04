@@ -1,0 +1,261 @@
+/* Stats Viewer: layout for the mode toggle, the interactive world map, and the
+   player / nation ranking panels. The map SVG (static/js/worldmap.data.js) is
+   injected inline by static/js/worldmap.js; the rules under `#world ...` below
+   are this site's light-theme restyle of pointercrate's original embedded map
+   stylesheet (which worldmap.data.js strips out). */
+
+/* --- mode toggle --------------------------------------------------------- */
+
+#sv-modes {
+  gap: 6px;
+  margin: 0 10px 14px;
+  justify-content: center;
+}
+
+#sv-modes .button {
+  flex: 0 0 auto;
+  min-width: 150px;
+}
+
+/* --- world map --------------------------------------------------------- */
+
+#world-map-wrapper {
+  --dl-ocean: #e9eef3;
+  --dl-land: #c9d2dc;
+  --dl-accent: #0881c6;
+  --dl-accent-strong: #f77e39;
+
+  padding: 0;
+  margin: 0 10px 10px;
+  height: min(44vh, 380px);
+  background: var(--dl-ocean);
+}
+
+/* --- two-column split (pointercrate's sidebar.css: main 70% / aside 30%) --- */
+
+@media (min-width: 1072px) {
+  #statsviewer-page > .flex.m-center > .left {
+    max-width: 70%;
+    flex: 1 1 auto;
+  }
+
+  #statsviewer-page > .flex.m-center > .right {
+    max-width: 30%;
+    flex: 0 0 auto;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1071px) {
+  #statsviewer-page > .flex.m-center {
+    flex-wrap: wrap;
+  }
+
+  #statsviewer-page > .flex.m-center > .left,
+  #statsviewer-page > .flex.m-center > .right {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+/* pull the first panel of each column up against the map instead of adding
+   the default 30px panel gap on top of the map's own margin */
+#statsviewer-page > .flex.m-center > .left > .panel,
+#statsviewer-page > .flex.m-center > .right > .panel:first-child {
+  margin-top: 0;
+}
+
+/* side-panel headings: h3 like pointercrate, not a boxed h2 */
+#statsviewer-page .right h3.underlined {
+  margin-top: 0;
+  padding-bottom: 6px;
+}
+
+#world-map {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#world-map svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  cursor: grab;
+  touch-action: none;
+}
+
+#world-map svg:active {
+  cursor: grabbing;
+}
+
+#world-map-wrapper .map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#world-map-wrapper .map-controls button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#world-map-wrapper .map-controls button:hover {
+  background: #ddd;
+}
+
+#world-map-wrapper .map-hint {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  z-index: 2;
+  margin: 0;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-text);
+  font-size: 11px;
+}
+
+/* map SVG paint --------------------------------------------------------- */
+
+#world .land path,
+#world .island path,
+#world .land-with-states .state,
+#world .land-with-states path {
+  stroke: var(--dl-ocean);
+  stroke-width: 1.1;
+  fill: var(--dl-land);
+  transition: fill 0.2s, fill-opacity 0.2s;
+}
+
+#world .land-with-states:not(.subdivided) .state:not(.selected) {
+  fill: none !important;
+  stroke: none !important;
+}
+
+#world .land-with-states.subdivided,
+#world .land-with-states.subdivided path:not(.state) {
+  fill: none;
+  stroke: none;
+}
+
+#world .island path {
+  stroke: none;
+}
+
+#world .continent {
+  opacity: 0.5;
+}
+
+#world .continent.selectable {
+  opacity: 1;
+}
+
+/* places with players */
+#world .dl-present.land path,
+#world .dl-present.island path,
+#world .land-with-states.dl-present:not(.subdivided) path:not(.state),
+#world .land-with-states.subdivided .state.dl-present {
+  fill: var(--dl-accent);
+  fill-opacity: var(--dl-heat, 0.85);
+}
+
+/* hover (only within a selectable continent) */
+#world .selectable .land:hover path,
+#world .selectable .island:hover path,
+#world .selectable .land-with-states:not(.subdivided):hover path:not(.state),
+#world .selectable .land-with-states.subdivided .state:hover {
+  fill: var(--dl-accent) !important;
+  fill-opacity: 1 !important;
+  cursor: pointer;
+}
+
+/* current selection */
+#world .land.selected path,
+#world .island.selected path,
+#world .land-with-states.selected:not(.subdivided) path:not(.state),
+#world .state.selected {
+  fill: var(--dl-accent-strong) !important;
+  fill-opacity: 1 !important;
+}
+
+/* --- ranking list ----------------------------------------------------- */
+
+.selection-list li i {
+  float: right;
+  color: #666;
+  font-size: 92%;
+  font-variant: small-caps;
+}
+
+.selection-list li .flag-icon {
+  margin-right: 5px;
+}
+
+.selection-list li.active {
+  background: var(--color-pc-button-bg);
+  color: #fff;
+}
+
+.selection-list li.active i {
+  color: #e6f2fa;
+}
+
+.selection-list li:hover:not(.active) {
+  background: #e6eef5;
+}
+
+/* --- viewer content --------------------------------------------------- */
+
+#sv-scope {
+  font-weight: normal;
+  font-size: 80%;
+  opacity: 0.75;
+}
+
+#player-name {
+  display: flex;
+  justify-content: center;
+}
+
+#player-name span:first-child {
+  background-position: 100%;
+  flex-grow: 2;
+}
+
+#player-name span:last-child {
+  background-position: 0%;
+  flex-grow: 2;
+}
+
+.sv-select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.sv-select:disabled {
+  opacity: 0.5;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1 !important;
+}

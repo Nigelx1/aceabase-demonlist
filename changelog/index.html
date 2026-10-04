@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Changelog · Aceabase Demonlist</title>
+<meta name="description" content="Every change to Aceabase Demonlist - demons added, moved and removed.">
+
+<script src="../static/core/js/vendor/jquery.min.js"></script>
+<script src="../static/core/js/vendor/jquery-ui.min.js"></script>
+<script src="../data/config.js"></script>
+<script src="../data/demons.js"></script>
+<script src="../data/changelog.js"></script>
+<script src="../static/js/list-utils.js"></script>
+<script src="../static/js/demonlist.js"></script>
+
+<link rel="stylesheet" href="../static/core/css/icon.css">
+<link rel="stylesheet" href="../static/core/css/nav.css">
+<link rel="stylesheet" href="../static/core/css/main.css">
+<link rel="stylesheet" href="../static/core/css/ui.css">
+<link rel="stylesheet" href="../static/core/css/core.css">
+<link rel="stylesheet" href="../static/core/css/fa.all.min.css">
+<link rel="stylesheet" href="../static/css/demonlist.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:light,bold">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<div class="content">
+<header>
+<nav class="center collapse underlined see-through">
+  <div class="nav-icon nav-nohide" style="margin-right:auto">
+    <a href="../index.html" aria-label="Go to homepage" style="font-weight:800;letter-spacing:.02em;font-size:1.1rem">Aceabase Demonlist</a>
+  </div>
+  <div class="nav-group">
+    <a class="nav-item hover white" href="../demonlist/index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+      <i class="fas fa-sort-down" style="height:50%; padding-left:5px"></i>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="index.html">Changelog</a></li>
+      <li><a class="white hover" href="../demonlist/statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+  <div class="nav-item collapse-button nav-nohide">
+    <div class="hamburger hover"><input type="checkbox"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav-drop-down">
+    <a class="nav-item hover white" href="../index.html">Home</a>
+    <a class="nav-item hover white" href="../demonlist/index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="index.html">Changelog</a></li>
+      <li><a class="white hover" href="../demonlist/statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+</nav>
+<div></div>
+</header>
+
+<div class="center" style="max-width:820px; margin:0 auto; padding:20px 0">
+  <section class="panel fade">
+    <div class="underlined"><h1>Changelog</h1></div>
+    <p>Every change to the list - demons added, moved and removed, plus scoring and tier tweaks. Newest first.</p>
+  </section>
+  <div id="changelog"></div>
+</div>
+
+<script>
+  DL.renderChangelog(document.getElementById("changelog"), "../demonlist/");
+</script>
+</div>
+
+<footer class="center">
+  <span class="overline pad" style="text-align:center">
+    <span id="footer-name"></span><br>
+    A private Geometry Dash Demonlist. Not affiliated with RobTopGamesAB or pointercrate.
+  </span>
+  <div class="flex no-stretch">
+    <nav>
+      <h2>Aceabase Demonlist</h2>
+      <a class="link" href="../index.html">Home</a><br>
+      <a class="link" href="../demonlist/index.html">Demonlist</a><br>
+      <a class="link" href="../guidelines/index.html">Guidelines</a><br>
+      <a class="link" href="../changelog/index.html">Changelog</a><br>
+      <a class="link" href="../demonlist/statsviewer.html">Stats Viewer</a><br>
+    </nav>
+  </div>
+  <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>
+</footer>
+
+<script src="../static/core/js/ui.js"></script>
+<script src="../static/core/js/misc.js"></script>
+<script src="../static/core/js/nav.js"></script>
+</body>
+</html>

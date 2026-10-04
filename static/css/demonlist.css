@@ -1,0 +1,391 @@
+/* Adapted from pointercrate's demonlist.css (stadust/pointercrate, MIT-licensed
+   frontend). Trimmed of pieces tied to features this static rebuild doesn't
+   reproduce (position-history chart, live submission form validation). */
+
+table {
+  width: 90%;
+  margin: 0 5%;
+}
+
+th {
+  height: 3em;
+  padding: 6px;
+  color: #fff;
+}
+
+td {
+  line-height: 2em;
+  text-indent: 5px;
+}
+
+tr {
+  background: #fefeff;
+}
+
+tr:nth-child(even) {
+  background: #e6eeff;
+}
+
+#editors li {
+  display: inline-block;
+  margin: 2px;
+  overflow: hidden;
+}
+
+#editors ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+
+  margin: 0% 5%;
+
+  font-variant: small-caps;
+}
+
+.right p,
+.right span,
+#rules span {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+/* Overview / demon page: fix the two-column split so the sidebar's content
+   can't squeeze the demon panels (neither column has an intrinsic width). */
+@media (min-width: 1072px) {
+  .flex.container > main {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .flex.container > aside {
+    flex: 0 0 330px;
+    max-width: 330px;
+    margin-left: 22px;
+  }
+}
+
+@media (max-width: 1071px) {
+  /* stack: list, then the sidebar and its panels, all full-width */
+  .flex.container {
+    flex-wrap: wrap;
+  }
+
+  .flex.container > main,
+  .flex.container > aside {
+    flex-basis: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+.dropdown {
+  background: var(--color-bg);
+  text-align: center;
+}
+
+.dropdown li {
+  padding: 10px calc(10px + 0.52434444444444%);
+  min-width: 200px;
+  width: 200px;
+  flex-grow: 1;
+}
+
+.dropdown i {
+  font-variant: small-caps;
+  font-size: 0.8em;
+}
+
+#lists .button {
+  font-weight: 600;
+}
+
+#level-info span {
+  margin: 5px 10px;
+}
+
+#stats-viewer-pagination li i {
+  padding-left: 5px;
+  color: #444;
+  font-size: 70%;
+  font-variant: small-caps;
+}
+
+/* base .thumb / .demon-card styling lives in core/css/ui.css (shared with the
+   home page); this file only sets its size within a demon panel. */
+
+.demon-panel-thumb .demon-card-name {
+  font-size: 0.92rem;
+}
+
+.demon-panel-thumb .demon-card-diff {
+  font-size: 0.62rem;
+}
+
+.demon-video.demon-card .demon-card-name {
+  font-size: 1.9rem;
+}
+
+.demon-video.demon-card .demon-card-diff {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 767px) {
+  .thumb {
+    width: 100%;
+    box-shadow: 1px -53px 26px -20px var(--color-bg) inset;
+  }
+
+  .demon-byline {
+    font-size: 80%;
+  }
+
+  .demon-info {
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .thumb {
+    max-width: 30%;
+    min-width: 30%;
+  }
+
+  .demon-byline {
+    padding-left: 15px;
+  }
+}
+
+.demon-panel-records {
+  text-align: left;
+  font-size: 0.75em;
+  margin-top: 4px;
+  color: var(--color-pc-button-bg);
+}
+
+/* --- overview / demon-page sidebar --------------------------------------- */
+
+#sidebar .panel p {
+  font-size: 0.92em;
+}
+
+.staff-names {
+  font-weight: bold;
+  line-height: 1.9;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 2px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat-row:last-child {
+  border-bottom: 0;
+}
+
+.stat-row span,
+.stat-row b {
+  font-size: 0.86em;
+}
+
+.stat-row b {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.mini-ranking {
+  margin: 8px 0 14px;
+  padding: 0;
+  list-style: none;
+  counter-reset: rank;
+  text-align: left;
+}
+
+.mini-ranking li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mini-ranking li:last-child {
+  border-bottom: 0;
+}
+
+.mini-ranking li::before {
+  counter-increment: rank;
+  content: "#" counter(rank);
+  min-width: 26px;
+  font-weight: bold;
+  color: var(--color-pc-button-bg);
+}
+
+.mini-ranking li a {
+  flex: 1;
+}
+
+.mini-ranking li > span {
+  color: #666;
+  font-variant: small-caps;
+}
+
+/* --- demon page: position history (pointercrate's #history-table) ---- */
+
+#history-table {
+  font-weight: bold;
+}
+
+#history-table tr {
+  background: var(--color-warn-bg);
+  color: var(--color-warn-text);
+}
+
+/* same colours as the info boxes */
+#history-table tr.moved-up {
+  background: var(--color-ok-bg);
+  color: var(--color-ok-text);
+}
+
+#history-table tr.moved-down {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+/* --- changelog ------------------------------------------------------- */
+
+.changelog-list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.changelog-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92em;
+}
+
+.changelog-item:last-child {
+  border-bottom: 0;
+}
+
+.changelog-badge {
+  flex: 0 0 auto;
+  min-width: 62px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: #888;
+  color: #fff;
+  font-size: 0.72em;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.changelog-add .changelog-badge {
+  background: #4a9e2f;
+}
+
+.changelog-move .changelog-badge {
+  background: var(--color-pc-button-bg);
+}
+
+.changelog-remove .changelog-badge {
+  background: #c0392b;
+}
+
+.changelog-teaser-date {
+  margin: 4px 0 0;
+  font-weight: bold;
+}
+
+#changelog-teaser .changelog-list {
+  font-size: 0.82em;
+}
+
+#changelog-teaser .changelog-badge {
+  min-width: 48px;
+}
+
+.changelog-teaser-more {
+  margin: 6px 0 10px;
+  font-size: 0.8em;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Demon page showcase video: click-to-play poster, swapped for the real
+   YouTube iframe once clicked (see DL.renderDemonDetail). */
+.demon-video {
+  display: block;
+  width: 90%;
+  margin: 15px auto 0;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  position: relative;
+  background: #000 center / cover no-repeat;
+}
+
+/* when the poster is a difficulty card: name/label at the top, play button
+   stays centred (it's absolutely positioned) */
+.demon-video.demon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px;
+  padding: 26px 16px 16px;
+}
+
+.js-demon-video {
+  cursor: pointer;
+}
+
+.demon-video-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.7);
+  transition: background 0.15s;
+}
+
+.demon-video-play::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.js-demon-video:hover .demon-video-play,
+.js-demon-video:focus .demon-video-play {
+  background: #f00;
+}
+
+.js-demon-video:focus {
+  outline: 2px solid var(--color-pc-button-bg);
+  outline-offset: 2px;
+}
+
+.demon-video-link {
+  margin: 6px 0 4px;
+  font-size: 85%;
+}

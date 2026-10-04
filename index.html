@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Aceabase Demonlist</title>
+<meta name="description" content="Aceabase Demonlist ranks every Extreme Demon beaten by ace and the active members of her server.">
+
+<script src="static/core/js/vendor/jquery.min.js"></script>
+<script src="static/core/js/vendor/jquery-ui.min.js"></script>
+<script src="data/config.js"></script>
+<script src="data/demons.js"></script>
+<script src="static/js/list-utils.js"></script>
+
+<link rel="stylesheet" href="static/core/css/icon.css">
+<link rel="stylesheet" href="static/core/css/nav.css">
+<link rel="stylesheet" href="static/core/css/main.css">
+<link rel="stylesheet" href="static/core/css/ui.css">
+<link rel="stylesheet" href="static/core/css/core.css">
+<link rel="stylesheet" href="static/core/css/fa.all.min.css">
+<link rel="stylesheet" href="static/css/home.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:light,bold">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<div class="content">
+<header>
+<nav class="center collapse underlined see-through">
+  <div class="nav-icon nav-nohide" style="margin-right:auto">
+    <a href="index.html" aria-label="Go to homepage" style="font-weight:800;letter-spacing:.02em;font-size:1.1rem">Aceabase Demonlist</a>
+  </div>
+  <div class="nav-group">
+    <a class="nav-item hover white" href="demonlist/index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+      <i class="fas fa-sort-down" style="height:50%; padding-left:5px"></i>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="changelog/index.html">Changelog</a></li>
+      <li><a class="white hover" href="demonlist/statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+  <div class="nav-item collapse-button nav-nohide">
+    <div class="hamburger hover"><input type="checkbox"><span></span><span></span><span></span></div>
+  </div>
+  <div class="nav-drop-down">
+    <a class="nav-item hover white" href="index.html">Home</a>
+    <a class="nav-item hover white" href="demonlist/index.html">
+      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
+    </a>
+    <ul class="nav-hover-dropdown">
+      <li><a class="white hover" href="guidelines/index.html">Guidelines</a></li>
+      <li><a class="white hover" href="changelog/index.html">Changelog</a></li>
+      <li><a class="white hover" href="demonlist/statsviewer.html">Stats Viewer</a></li>
+    </ul>
+  </div>
+</nav>
+<div></div>
+</header>
+
+<div class="information-banner left">
+  <div style="display:flex; flex-flow:column">
+    <div class="information">
+      <h1 style="text-align:left; margin-top:0px" id="site-title"></h1>
+      <h2 style="text-align:left" id="site-tagline"></h2>
+      <div id="site-description"></div>
+    </div>
+    <a class="big blue hover button" href="demonlist/index.html">Check it out&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+<aside class="center information-stripe">
+  <div class="flex" style="flex-wrap:wrap; align-items:center" id="site-stats"></div>
+</aside>
+
+<section class="center" id="home-top">
+  <h2 class="underlined pad">At the top right now</h2>
+  <div class="flex wrap" id="home-top3"></div>
+  <a class="blue hover button" href="demonlist/index.html">See the whole list&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+</section>
+
+<div class="information-banner">
+  <div id="about-inner" class="flex"></div>
+</div>
+
+<script>
+  document.getElementById("site-title").textContent = window.SITE.name;
+  document.getElementById("site-tagline").textContent = window.SITE.tagline;
+  document.getElementById("site-description").textContent = window.SITE.description;
+
+  var demons = DL.sortedDemons();
+  var mainCount = demons.filter(function (d) { return DL.tierOf(d.position) === "main"; }).length;
+  var extendedCount = demons.filter(function (d) { return DL.tierOf(d.position) === "extended"; }).length;
+  var recordCount = demons.reduce(function (n, d) { return n + (d.records || []).length; }, 0);
+  var playerCount = DL.aggregatePlayers().length;
+
+  document.getElementById("site-stats").innerHTML =
+    "<span>" + mainCount + " Main List demons</span>" +
+    "<span>" + extendedCount + " Extended List demons</span>" +
+    "<span>" + recordCount + " completions logged</span>" +
+    "<span>" + playerCount + " players ranked</span>";
+
+  document.getElementById("home-top3").innerHTML = demons.slice(0, 3).map(function (d) {
+    return (
+      '<a class="home-demon-card" href="demonlist/demon.html?id=' + encodeURIComponent(d.id) + '">' +
+        DL.demonThumbHtml(d) +
+        '<div class="home-demon-card-body">' +
+          "<b>#" + d.position + " – " + DL.escapeHtml(d.name) + "</b>" +
+          "<span>published by " + DL.escapeHtml(d.publisher) + "</span>" +
+        "</div>" +
+      "</a>"
+    );
+  }).join("");
+
+  document.getElementById("about-inner").innerHTML = (window.SITE.about || []).map(function (a) {
+    return "<div><h3>" + DL.escapeHtml(a.title) + "</h3><p>" + DL.escapeHtml(a.text) + "</p></div>";
+  }).join("");
+</script>
+
+</div>
+
+<footer class="center">
+  <span class="overline pad" style="text-align:center">
+    <span id="footer-name"></span><br>
+    A private Geometry Dash Demonlist. Not affiliated with RobTopGamesAB or pointercrate.
+  </span>
+  <div class="flex no-stretch">
+    <nav>
+      <h2>Aceabase Demonlist</h2>
+      <a class="link" href="demonlist/index.html">Demonlist</a><br>
+      <a class="link" href="guidelines/index.html">Guidelines</a><br>
+      <a class="link" href="changelog/index.html">Changelog</a><br>
+      <a class="link" href="demonlist/statsviewer.html">Stats Viewer</a><br>
+    </nav>
+  </div>
+  <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>
+</footer>
+
+<script src="static/core/js/ui.js"></script>
+<script src="static/core/js/misc.js"></script>
+<script src="static/core/js/nav.js"></script>
+</body>
+</html>
