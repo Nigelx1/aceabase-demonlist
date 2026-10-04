@@ -32,7 +32,15 @@ DL.demonById = function (id) {
 
 DL.tierOf = function (position) {
   var cfg = window.SITE;
-  if (position <= cfg.mainListSize) return "main";
+  var mainSize = cfg.mainListSize;
+  // "extremes": the Main List is exactly the Extreme Demons (always sorted first)
+  if (mainSize === "extremes") {
+    if (DL._extremeCount == null) {
+      DL._extremeCount = (window.DEMONS || []).filter(function (d) { return d.difficulty === "Extreme"; }).length;
+    }
+    mainSize = DL._extremeCount;
+  }
+  if (position <= mainSize) return "main";
   if (cfg.extendedListSize == null || position <= cfg.extendedListSize) return "extended";
   return "legacy";
 };

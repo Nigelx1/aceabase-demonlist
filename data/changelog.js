@@ -26,6 +26,146 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-04",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "Game Time",
+        "demonId": 43945511,
+        "at": 42,
+        "text": "Nigel's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Stalemate",
+        "demonId": 4545425,
+        "at": 41,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "CraZy II",
+        "demonId": 47620786,
+        "at": 40,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Magma Bound",
+        "demonId": 56568010,
+        "at": 39,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Windy Landscape",
+        "demonId": 4957691,
+        "at": 38,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Poltergeist",
+        "demonId": 7054561,
+        "at": 37,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Heritage",
+        "demonId": 75078198,
+        "at": 36,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Dream Travel",
+        "demonId": 59858021,
+        "at": 35,
+        "text": "Nigel's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Supersonic",
+        "demonId": 4706930,
+        "at": 34,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "8o",
+        "demonId": 9145341,
+        "at": 33,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Dark Travel",
+        "demonId": 32885972,
+        "at": 32,
+        "text": "Nigel's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "MikuMikuMikuMiku",
+        "demonId": 82824219,
+        "at": 31,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Acropolis",
+        "demonId": 5155022,
+        "at": 30,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "BuTiTi II",
+        "demonId": 37259527,
+        "at": 29,
+        "text": "Nigel's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Invisible Deadlocked",
+        "demonId": 14145098,
+        "at": 28,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "CraZy III",
+        "demonId": 73725400,
+        "at": 27,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
+        "demon": "Dragonlocked",
+        "demonId": 72211008,
+        "at": 26,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "note",
+        "text": "Insane Demons join the list: the extremes are the Main List and the insanes are the Extended List."
+      },
+      {
+        "kind": "note",
+        "text": "Rating ties now go to whichever level the AREDL places higher."
+      },
+      {
+        "kind": "move",
+        "demon": "Sonic Wave Rebirth",
+        "demonId": 68688849,
+        "from": 8,
+        "to": 7,
+        "text": "Tied with Sonic Wave on GD Demon Ladder - the AREDL places it higher"
+      }
+    ]
+  },
+  {
     "date": "2026-10-03",
     "items": [
       {

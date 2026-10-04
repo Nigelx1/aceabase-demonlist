@@ -27,10 +27,13 @@
 // -----------------------------------------------------------------------------
 
 window.GOALS = [
-  { player: "ace", levelId: 26681070, best: null },
+  { player: "ace", levelId: 26681070, best: 36 }, // Sonic Wave
   { player: "ace", levelId: 42584142, best: null },
-  { player: "Dihmaster500", levelId: 59075347, best: null },
+  { player: "Dihmaster500", levelId: 59075347, best: 9, segments: [[5, 26], [63, 75], [79, 100]] }, // Tartarus
   { player: "Poatan", levelId: 68668045, best: 48, segments: [[42, 100]], note: "48% twice." }, // Congregation
-  { player: "Jaiden", levelId: 27122654, best: null },
+  { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent
   { player: "hesoaring", levelId: 10565740, best: null }, // Bloodbath (on the list)
+  // Nigel's, ported from his own list (his own recordings as the showcases)
+  { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation
+  { player: "Nigel", levelId: 92466083, best: 0, note: "Haven't started ✌️", video: "https://youtu.be/wxyYAuMYq5o" }, // Jupiter My Favourite
 ];

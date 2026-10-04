@@ -121,7 +121,7 @@ window.GOAL_LEVELS = {
     "levelId": 68668045,
     "description": "verified by floofle",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=k3ebBTBeUTg",
+    "videoUrl": "https://www.youtube.com/watch?v=Fuxe0O10s-E",
     "gd": {
       "length": "XL",
       "objects": 17568,
@@ -134,14 +134,14 @@ window.GOAL_LEVELS = {
         "link": "https://geometrydashcontent.b-cdn.net/songs/895761.mp3"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/k3ebBTBeUTg/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Fuxe0O10s-E/maxresdefault.jpg",
     "palette": {
-      "accent": "#ec521f",
-      "deep": "#3e1a0f",
-      "wash": "#fbf4f2",
-      "mist": "#f3e6e2",
+      "accent": "#3a3adf",
+      "deep": "#0f0f3e",
+      "wash": "#f2f2fb",
+      "mist": "#e2e2f3",
       "onAccent": "#ffffff",
-      "ink": "#47291f"
+      "ink": "#1f1f47"
     },
     "writeup": {
       "text": "A slow-burn descent into timing hell. Presta wraps you in barely-lit blues and near-invisible passages, lulls you with methodical cube and ball work — then the drop detonates into double- and quadruple-speed chaos in searing orange. No ship section the whole way through, an Epic rating earned under the old object cap, and the birthplace of the internet's favourite \"jumpscare\" edit. Peaked around #35 on the Demonlist before sliding to Legacy.",
@@ -188,7 +188,7 @@ window.GOAL_LEVELS = {
     "name": "Bloodbath",
     "publisher": "Riot",
     "difficulty": "Extreme",
-    "rating": 23.98,
+    "rating": 23.97,
     "levelId": 10565740,
     "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
     "requirementPercent": 100,
@@ -218,6 +218,41 @@ window.GOAL_LEVELS = {
       "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
+    }
+  },
+  "92466083": {
+    "name": "Jupiter My Favourite",
+    "publisher": "Akunakunn",
+    "difficulty": "Extreme",
+    "rating": 31.75,
+    "levelId": 92466083,
+    "description": "thank god",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=wxyYAuMYq5o",
+    "gd": {
+      "length": "Long",
+      "objects": 51608,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "363217",
+        "name": "Tokyo Nights",
+        "artist": "jeffusan"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/wxyYAuMYq5o/maxresdefault.jpg",
+    "palette": {
+      "accent": "#4d33e6",
+      "deep": "#150f3e",
+      "wash": "#f3f2fb",
+      "mist": "#e4e2f3",
+      "onAccent": "#ffffff",
+      "ink": "#241f47"
+    },
+    "writeup": {
+      "text": "Akunakunn's neon-blue-and-gold odyssey, run to jeffusan's \"Tokyo Nights.\" A dense 2.1 Extreme built on tight straight-fly, sharp waves and unforgiving transitions crammed into 1:41. Leslie put it down in 2023 and called it the hardest thing she'd ever verified — the in-game description still roasts a player named luigidb about it. Sits around #234 on the Demonlist.",
+      "source": "Pointercrate Demonlist",
+      "url": "https://pointercrate.com/demonlist/234/"
     }
   }
 };

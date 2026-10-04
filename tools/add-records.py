@@ -16,12 +16,18 @@ spec.json:
     {"player": "ace", "level": 12345, "progress": 100}
   ],
   "tiebreak": ["ace"],                      # who gets `verifier` on a new demon several cleared
-  "verifiers": {"10565740": "ace"},        # or set it per level (wins over tiebreak)
+  "verifiers": {"10565740": "ace"},         # or set it per level (wins over tiebreak)
   "notes": ["New member: ..."]              # extra changelog notes
 }
 A player's "gdladder" (user id or profile link) also imports every 100% on
-their gdladder profile. config.js `extremesOnly: true` -> anything that isn't
-an Extreme Demon is refused; platformers are always refused.
+their gdladder profile.
+
+Order (the whole list, every run): difficulty tier first, in config.js
+`allowedDifficulties` order (e.g. every Extreme above every Insane), then
+gdladder rating (2 dp), and a rating tie goes to whichever level the AREDL
+places higher. If that re-sorts demons already on the list, the moves are
+logged too so every demon's position history stays exact. Anything outside
+`allowedDifficulties` is refused; platformers are always refused.
 Needs python3, curl and node on PATH.
 """
 import io, json, os, re, subprocess, sys, urllib.request
@@ -32,14 +38,15 @@ SITE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 DATA = os.path.join(SITE, "data")
 FLAGS = os.path.join(SITE, "static", "images", "flags")
 FLAG_SRC = "https://raw.githubusercontent.com/stadust/pointercrate/master/pointercrate-demonlist-pages/static/images/flags/"
+AREDL = "https://api.aredl.net/v2/api/aredl/levels"
 FALLBACK = {"Extreme": 24, "Insane": 16.5, "Hard": 11, "Medium": 7, "Easy": 2.5, "Official": 3}
 LENGTHS = {1: "Tiny", 2: "Short", 3: "Medium", 4: "Long", 5: "XL"}
 
 
 def curl_json(url):
     try:
-        out = subprocess.run(["curl", "-sS", "--max-time", "30", url], capture_output=True,
-                             text=True, encoding="utf-8", timeout=60).stdout
+        out = subprocess.run(["curl", "-sS", "--max-time", "60", url], capture_output=True,
+                             text=True, encoding="utf-8", timeout=90).stdout
         return json.loads(out)
     except Exception:
         return None
@@ -74,7 +81,7 @@ def trailing_id(x):
 
 
 def thumb(vid):
-    # YouTube only makes /maxresdefault for HD uploads (see Bad Trip on Nigel's list)
+    # YouTube only makes /maxresdefault for HD uploads (Bad Trip taught us that)
     for q in ("maxresdefault", "sddefault", "hqdefault"):
         url = f"https://i.ytimg.com/vi/{vid}/{q}.jpg"
         try:
@@ -87,7 +94,7 @@ def thumb(vid):
     return f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
 
 
-def fetch_level(lid, extremes_only):
+def fetch_level(lid, allowed):
     gl = curl_json(f"https://gdladder.com/api/levels/{lid}")
     gl = gl if isinstance(gl, dict) and gl.get("ID") else {}
     gb = curl_json(f"https://gdbrowser.com/api/level/{lid}")
@@ -96,11 +103,13 @@ def fetch_level(lid, extremes_only):
         return None, "not found on gdladder or gdbrowser"
     meta = gl.get("Meta") or {}
     ingame = gb.get("difficulty") or ((meta.get("Difficulty") or "?") + " Demon")
-    tier = meta.get("Difficulty") or ingame.replace(" Demon", "")
+    if not ingame.endswith(" Demon"):
+        return None, f"not a demon ({ingame})"
+    tier = ingame[: -len(" Demon")]
     if meta.get("Length") == 6 or str(gb.get("length", "")).lower().startswith("plat"):
         return None, "platformer"
-    if extremes_only and not (tier == "Extreme" or ingame == "Extreme Demon"):
-        return None, f"not an Extreme Demon ({ingame})"
+    if allowed and tier not in allowed:
+        return None, f"{ingame} - only {'/'.join(allowed)} demons allowed"
     gd = {}
     ln = gb.get("length") or LENGTHS.get(meta.get("Length"))
     if ln:
@@ -121,8 +130,8 @@ def fetch_level(lid, extremes_only):
     vid, rating = gl.get("Showcase"), gl.get("Rating")
     pub = gb.get("author") or (meta.get("Publisher") or {}).get("name") or "Unknown"
     return {
-        "id": lid, "position": 0, "name": gb.get("name") or meta.get("Name") or f"Level {lid}",
-        "difficulty": "Extreme" if ingame == "Extreme Demon" else tier,
+        "id": lid, "position": 0, "name": (gb.get("name") or meta.get("Name") or f"Level {lid}").strip(),
+        "difficulty": tier,
         "rating": round(rating, 2) if isinstance(rating, (int, float)) else None,
         "publisher": pub, "creators": [pub], "verifier": None,
         "videoUrl": f"https://www.youtube.com/watch?v={vid}" if vid else None,
@@ -136,11 +145,18 @@ VERIFY = r"""
 global.window = {};
 const P = require('path'), site = process.argv[1], p = (f) => require(P.join(site, f));
 p('data/config.js'); p('data/demons.js'); p('data/changelog.js'); p('static/js/list-utils.js');
-const DL = window.DL, D = window.DEMONS, bad = [];
+const DL = window.DL, D = window.DEMONS, S = window.SITE, bad = [];
+const allowed = S.allowedDifficulties || (S.extremesOnly ? ['Extreme'] : null);
+const rank = (d) => (allowed ? allowed.indexOf(d.difficulty) : 0);
+const r2 = (d) => Math.round(DL.demonRating(d) * 100);
 D.forEach((d, i) => { if (d.position !== i + 1 || d.id !== d.levelId) bad.push('position/id ' + d.name); });
-for (let i = 1; i < D.length; i++) if (DL.demonRating(D[i - 1]) < DL.demonRating(D[i])) bad.push('order ' + D[i].name);
+for (let i = 1; i < D.length; i++) {
+  if (rank(D[i - 1]) > rank(D[i])) bad.push('tier order ' + D[i].name);
+  else if (rank(D[i - 1]) === rank(D[i]) && r2(D[i - 1]) < r2(D[i])) bad.push('rating order ' + D[i].name);
+}
 D.forEach((d) => { const h = DL.positionHistoryFor(d); if (!h.length || h[h.length - 1].position !== d.position) bad.push('history ' + d.name); });
-if (window.SITE.extremesOnly) D.forEach((d) => { if (d.difficulty !== 'Extreme') bad.push('not extreme ' + d.name); });
+if (allowed) D.forEach((d) => { if (allowed.indexOf(d.difficulty) < 0) bad.push('not allowed ' + d.name); });
+if (S.mainListSize === 'extremes') D.forEach((d) => { if ((DL.tierOf(d.position) === 'main') !== (d.difficulty === 'Extreme')) bad.push('tier ' + d.name); });
 console.log(bad.length ? 'VERIFY FAILED: ' + bad.join('; ') : 'verify ok: ' + D.length + ' demons, ' + DL.aggregatePlayers().length + ' players');
 process.exit(bad.length ? 1 : 0);
 """
@@ -156,8 +172,11 @@ def main():
     day = spec.get("date") or _date.today().isoformat()
     cfg_path = os.path.join(DATA, "config.js")
     cfg = io.open(cfg_path, encoding="utf-8").read()
-    extremes_only = bool(re.search(r"extremesOnly:\s*true", cfg))
-    demons = load_js("demons.js", "DEMONS")
+    m = re.search(r"allowedDifficulties:\s*\[([^\]]*)\]", cfg)
+    allowed = re.findall(r'"([A-Za-z]+)"', m.group(1)) if m else (
+        ["Extreme"] if re.search(r"extremesOnly:\s*true", cfg) else [])
+    rank = {t: i for i, t in enumerate(allowed or ["Extreme", "Insane", "Hard", "Medium", "Easy"])}
+    demons = sorted(load_js("demons.js", "DEMONS"), key=lambda d: d["position"])
     log = load_js("changelog.js", "CHANGELOG")
     if initial and demons:
         sys.exit("--initial is only for the first import (the list already has demons)")
@@ -167,6 +186,29 @@ def main():
     for d in demons:
         for r in d.get("records", []):
             known.setdefault(r["player"], (r.get("nationality"), r.get("subdivision")))
+
+    aredl_raw = curl_json(AREDL)
+    aredl = {x["level_id"]: x["position"] for x in aredl_raw if x.get("level_id")} if isinstance(aredl_raw, list) else {}
+    if not aredl:
+        print("  WARNING couldn't load the AREDL - rating ties keep their current order")
+
+    def rating_of(d):
+        return d["rating"] if isinstance(d.get("rating"), (int, float)) else FALLBACK.get(d.get("difficulty"), 3)
+
+    def key(d):  # tier, then rating (2 dp), then AREDL placement; sort is stable for full ties
+        return (rank.get(d.get("difficulty"), 99), -round(rating_of(d), 2), aredl.get(d["levelId"], 10 ** 9))
+
+    # re-sorting what's already on the list (new rules / tie-breaks) gets logged as moves
+    moves, cur = [], [d["levelId"] for d in demons]
+    for i, d in enumerate(sorted(demons, key=key)):
+        if cur[i] != d["levelId"]:
+            j, passed = cur.index(d["levelId"]), by_lid[cur[i]]
+            why = (f"Tied with {passed['name']} on GD Demon Ladder - the AREDL places it higher"
+                   if round(rating_of(d), 2) == round(rating_of(passed), 2) else "Re-sorted")
+            cur.insert(i, cur.pop(j))
+            moves.append({"kind": "move", "demon": d["name"], "demonId": d["levelId"],
+                          "from": j + 1, "to": i + 1, "text": why})
+            print(f"  MOVE {d['name']}: #{j + 1} -> #{i + 1} ({why})")
 
     wanted = [(r["player"], trailing_id(r["level"]), int(r.get("progress", 100))) for r in spec.get("records", [])]
     for name, info in players.items():
@@ -193,10 +235,10 @@ def main():
             page += 1
         took = 0
         for s in seen.values():
-            m = (s.get("Level") or {}).get("Meta") or {}
-            if (s.get("Progress") or 0) < 100 or m.get("Length") == 6:
+            sm = (s.get("Level") or {}).get("Meta") or {}
+            if (s.get("Progress") or 0) < 100 or sm.get("Length") == 6:
                 continue
-            if extremes_only and m.get("Difficulty") != "Extreme":
+            if allowed and sm.get("Difficulty") not in allowed:
                 continue
             wanted.append((name, int(s["Level"]["ID"]), 100))
             took += 1
@@ -213,7 +255,7 @@ def main():
     for _, lid, _ in wanted:
         if lid in by_lid or lid in fresh or lid in rejected:
             continue
-        d, why = fetch_level(lid, extremes_only)
+        d, why = fetch_level(lid, allowed)
         if why:
             rejected[lid] = why
             print(f"  REFUSED {lid}: {why}")
@@ -244,16 +286,14 @@ def main():
         if int(lid) in fresh:
             fresh[int(lid)]["verifier"] = who
 
-    everything = demons + list(fresh.values())
-    everything.sort(key=lambda d: -(d["rating"] if isinstance(d.get("rating"), (int, float)) else FALLBACK.get(d.get("difficulty"), 3)))
+    everything = sorted(demons + list(fresh.values()), key=key)
     for i, d in enumerate(everything, 1):
         d["position"], d["id"] = i, d["levelId"]
 
     items = []
     if initial:
         n = len({r["player"] for d in everything for r in d["records"]})
-        kind = "Extreme Demons" if extremes_only else "demons"
-        items.append({"kind": "note", "text": f"List created - {len(everything)} {kind} from {n} players."})
+        items.append({"kind": "note", "text": f"List created - {len(everything)} demons from {n} players."})
     else:
         for d in sorted(fresh.values(), key=lambda d: -d["position"]):  # high -> low: the replay reverses items
             it = {"kind": "add", "demon": d["name"], "demonId": d["levelId"], "at": d["position"]}
@@ -263,6 +303,7 @@ def main():
         for p, names in also.items():
             items.append({"kind": "note", "text": f"{p} also cleared {', '.join(names)}."})
     items += [{"kind": "note", "text": t} for t in spec.get("notes", [])]
+    items += list(reversed(moves))  # replayed first: re-sort what was there, then insert the new ones
     if items:
         if log and log[0].get("date") == day:
             log[0]["items"] = items + log[0]["items"]
@@ -270,13 +311,22 @@ def main():
             log.insert(0, {"date": day, "items": items})
 
     for d in sorted(fresh.values(), key=lambda d: d["position"]):
-        print(f"  + #{d['position']} {d['name']} ({d['levelId']}) r{d['rating']} - {d['verifier']}")
-    print(f"{len(fresh)} new demons, {added} records added, {len(rejected)} refused, list -> {len(everything)} demons")
+        print(f"  + #{d['position']} {d['name']} ({d['levelId']}) {d['difficulty']} r{d['rating']} - {d['verifier']}")
+    print(f"{len(fresh)} new demons, {added} records added, {len(moves)} moves, {len(rejected)} refused, list -> {len(everything)} demons")
     if no_nat:
         print("  WARNING no nationality for:", ", ".join(sorted(no_nat)))
     for d in everything:
         if d.get("rating") is None:
             print(f"  WARNING {d['name']} has no gdladder rating - sorted as a typical {d['difficulty']}")
+    lowest = {}
+    for d in everything:
+        t = d["difficulty"]
+        lowest[t] = min(lowest.get(t, 1e9), rating_of(d))
+    for d in everything:  # a lower tier rated above some higher-tier demon
+        for t, lo in lowest.items():
+            if rank.get(t, 99) < rank.get(d["difficulty"], 99) and rating_of(d) > lo:
+                print(f"  NOTE {d['name']} ({d['difficulty']}, r{rating_of(d)}) is rated above the easiest {t} (r{lo})")
+                break
 
     need = {(r["nationality"], r.get("subdivision")) for d in everything for r in d["records"] if r.get("nationality")}
     for cc, sub in sorted(need, key=str):
