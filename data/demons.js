@@ -638,7 +638,8 @@ window.DEMONS = [
         "player": "ace",
         "progress": 100,
         "nationality": "US",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtube.com/shorts/VxY0HeH2F7c?feature=share"
       },
       {
         "player": "Dihmaster500",
@@ -657,7 +658,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/_kCR7M6Fr8c"
       }
     ],
     "gd": {
@@ -883,7 +885,8 @@ window.DEMONS = [
         "player": "ace",
         "progress": 100,
         "nationality": "US",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtube.com/shorts/VNRp9biiqDs?feature=share"
       },
       {
         "player": "Dihmaster500",
@@ -1114,7 +1117,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/pKfilX2PyyY"
       }
     ],
     "gd": {
@@ -1226,7 +1230,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/4RZtxK-aUEE"
       }
     ],
     "gd": {
@@ -1306,7 +1311,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/k3J1FgsJ6hg"
       }
     ],
     "gd": {
@@ -1498,7 +1504,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/fU-bDInjAhM"
       }
     ],
     "gd": {
@@ -1585,7 +1592,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/VQgKfiaoA2M"
       }
     ],
     "gd": {

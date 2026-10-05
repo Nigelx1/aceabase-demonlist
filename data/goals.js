@@ -32,7 +32,7 @@
 window.GOALS = [
   { player: "ace", levelId: 42584142, best: null, segments: [[67, 85], [71, 92], [75, 93], [80, 96], [88, 100]], note: "75–93 twice." }, // Bloodlust
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
-  { player: "Poatan", levelId: 68668045, best: 48, segments: [[42, 100]], note: "48% twice." }, // Congregation
+  { player: "Poatan", levelId: 68668045, best: 63, segments: [[42, 100]] }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent
   { player: "hesoaring", levelId: 10565740, best: 49, segments: [[33, 92], [70, 100]] }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
