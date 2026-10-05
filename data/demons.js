@@ -152,7 +152,8 @@ window.DEMONS = [
         "player": "Dihmaster500",
         "progress": 100,
         "nationality": "US",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://youtu.be/yBZJFv_BcXE"
       }
     ],
     "gd": {
@@ -1630,7 +1631,8 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": "IL",
+        "video": "https://youtu.be/zPoPvhbq-YA"
       }
     ],
     "gd": {
