@@ -20,7 +20,7 @@ window.GOAL_LEVELS = {
     "levelId": 42584142,
     "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=kTToIer9QfY",
+    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
     "gd": {
       "length": "XL",
       "objects": 65535,
@@ -33,7 +33,7 @@ window.GOAL_LEVELS = {
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/kTToIer9QfY/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
     "palette": {
       "accent": "#f91f1f",
       "deep": "#3e0f0f",
@@ -82,7 +82,7 @@ window.GOAL_LEVELS = {
     "name": "Congregation",
     "publisher": "Presta",
     "difficulty": "Extreme",
-    "rating": 31.52,
+    "rating": 31.55,
     "levelId": 68668045,
     "description": "verified by floofle",
     "requirementPercent": 100,
@@ -189,7 +189,7 @@ window.GOAL_LEVELS = {
     "name": "Jupiter My Favourite",
     "publisher": "Akunakunn",
     "difficulty": "Extreme",
-    "rating": 31.75,
+    "rating": 31.8,
     "levelId": 92466083,
     "description": "thank god",
     "requirementPercent": 100,
