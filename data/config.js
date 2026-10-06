@@ -55,11 +55,11 @@ window.SITE = {
   about: [
     {
       title: "The list",
-      text: "Extreme and Insane Demons beaten by ace or the active members of her server, ranked hardest-first by GD Demon Ladder's difficulty rating (ties go to whichever the AREDL places higher). The extremes are the Main List and the insanes are the Extended List.",
+      text: "Extreme and Insane Demons beaten by ace or the active members of her server, ranked hardest-first: the extremes in AREDL order, the insanes by GD Demon Ladder's difficulty rating. The extremes are the Main List and the insanes are the Extended List.",
     },
     {
       title: "Scoring",
-      text: "Each demon is worth points based on its GD Demon Ladder difficulty rating, on a steep curve fit to the AREDL's extremes and carried straight down through the insanes - the hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed.",
+      text: "Each demon is worth points based on how hard it is - for an extreme, its AREDL placement, turned into a GD Demon Ladder-style rating by a curve fit to the whole AREDL; for an insane, its GD Demon Ladder rating - on a steep curve fit to the AREDL's extremes and carried straight down through the insanes. The hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed.",
     },
     {
       title: "The community",
@@ -75,8 +75,14 @@ window.SITE = {
     "Mods/hacks that trivialize gameplay are not allowed unless explicitly permitted for that level.",
   ],
 
+  // AREDL FIT - tools/refresh-order.py fits a GD Demon Ladder-style rating to
+  // an AREDL placement over the whole AREDL: rating = a + b * position^exponent.
+  // Extremes on the AREDL are ordered and scored by it (DL.demonRating), so the
+  // list follows AREDL placement; everything else uses its own GDDL rating.
+  aredlFit: { a: 43.8741, b: -1.473263, exponent: 0.38, points: 1575, r2: 0.9724, fitted: "2026-10-06" },
   // SCORING - a 100% is worth topScore * base ^ (rating - topRating), where
-  // rating is the demon's gdladder difficulty rating and topRating the highest
+  // rating is DL.demonRating (an extreme's AREDL placement through aredlFit,
+  // otherwise the gdladder difficulty rating) and topRating the highest
   // on the list. Curve shape fit to the AREDL: each -1.0 of rating divides
   // points by ~1.18. No floor. Function: DL.scoreAt100 in static/js/list-utils.js.
   scoring: {

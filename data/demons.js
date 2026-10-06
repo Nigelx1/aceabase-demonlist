@@ -53,7 +53,8 @@ window.DEMONS = [
         "artist": "NightHawk22"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 77
   },
   {
     "id": 58161496,
@@ -91,49 +92,12 @@ window.DEMONS = [
         "artist": "TheLivingTombstone"
       },
       "songOfficial": false
-    }
-  },
-  {
-    "id": 79997992,
-    "position": 3,
-    "name": "Shardscapes",
-    "difficulty": "Extreme",
-    "rating": 32.71,
-    "publisher": "ItzKiba",
-    "creators": [
-      "ItzKiba"
-    ],
-    "verifier": "Poatan",
-    "videoUrl": "https://www.youtube.com/watch?v=Sh2bK8v7amA",
-    "thumbnailUrl": "https://i.ytimg.com/vi/Sh2bK8v7amA/maxresdefault.jpg",
-    "levelId": 79997992,
-    "description": "he's not here anymore.",
-    "requirementPercent": 100,
-    "records": [
-      {
-        "player": "Poatan",
-        "progress": 100,
-        "nationality": "MX",
-        "subdivision": null,
-        "video": "https://youtu.be/JkNkx5rTwqY"
-      }
-    ],
-    "gd": {
-      "length": "Long",
-      "objects": 65535,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "800646",
-        "name": "Creo - Slow Down",
-        "artist": "CreoMusic"
-      },
-      "songOfficial": false
-    }
+    },
+    "aredlPosition": 187
   },
   {
     "id": 55624478,
-    "position": 4,
+    "position": 3,
     "name": "Ragnarok",
     "difficulty": "Extreme",
     "rating": 32.5,
@@ -167,11 +131,12 @@ window.DEMONS = [
         "artist": "SOcollab"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 231
   },
   {
     "id": 42584142,
-    "position": 5,
+    "position": 4,
     "name": "Bloodlust",
     "difficulty": "Extreme",
     "rating": 31.98,
@@ -206,23 +171,24 @@ window.DEMONS = [
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 256
   },
   {
-    "id": 28220417,
-    "position": 6,
-    "name": "Yatagarasu ",
+    "id": 79997992,
+    "position": 5,
+    "name": "Shardscapes",
     "difficulty": "Extreme",
-    "rating": 29.94,
-    "publisher": "TrusTa",
+    "rating": 32.77,
+    "publisher": "ItzKiba",
     "creators": [
-      "TrusTa"
+      "ItzKiba"
     ],
     "verifier": "Poatan",
-    "videoUrl": "https://www.youtube.com/watch?v=6eiLMjCvKdQ",
-    "thumbnailUrl": "https://i.ytimg.com/vi/6eiLMjCvKdQ/maxresdefault.jpg",
-    "levelId": 28220417,
-    "description": "Update made by Mark Napkin and DragoonGD",
+    "videoUrl": "https://www.youtube.com/watch?v=Sh2bK8v7amA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Sh2bK8v7amA/maxresdefault.jpg",
+    "levelId": 79997992,
+    "description": "he's not here anymore.",
     "requirementPercent": 100,
     "records": [
       {
@@ -230,28 +196,29 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "MX",
         "subdivision": null,
-        "video": "https://youtu.be/GKit0O3brng"
+        "video": "https://youtu.be/JkNkx5rTwqY"
       }
     ],
     "gd": {
-      "length": "XL",
+      "length": "Long",
       "objects": 65535,
-      "gameVersion": "2.2",
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
-        "id": "490479",
-        "name": "Flawless Wings of Yatagarasu",
-        "artist": "Gls"
+        "id": "800646",
+        "name": "Creo - Slow Down",
+        "artist": "CreoMusic"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 259
   },
   {
     "id": 68688849,
-    "position": 7,
+    "position": 6,
     "name": "Sonic Wave Rebirth",
     "difficulty": "Extreme",
-    "rating": 29.84,
+    "rating": 29.85,
     "publisher": "Serponge",
     "creators": [
       "Serponge"
@@ -282,11 +249,12 @@ window.DEMONS = [
         "artist": "F-777"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 381
   },
   {
     "id": 26681070,
-    "position": 8,
+    "position": 7,
     "name": "Sonic Wave",
     "difficulty": "Extreme",
     "rating": 29.84,
@@ -320,7 +288,47 @@ window.DEMONS = [
         "artist": "F-777"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 382
+  },
+  {
+    "id": 28220417,
+    "position": 8,
+    "name": "Yatagarasu ",
+    "difficulty": "Extreme",
+    "rating": 29.94,
+    "publisher": "TrusTa",
+    "creators": [
+      "TrusTa"
+    ],
+    "verifier": "Poatan",
+    "videoUrl": "https://www.youtube.com/watch?v=6eiLMjCvKdQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6eiLMjCvKdQ/maxresdefault.jpg",
+    "levelId": 28220417,
+    "description": "Update made by Mark Napkin and DragoonGD",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Poatan",
+        "progress": 100,
+        "nationality": "MX",
+        "subdivision": null,
+        "video": "https://youtu.be/GKit0O3brng"
+      }
+    ],
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "490479",
+        "name": "Flawless Wings of Yatagarasu",
+        "artist": "Gls"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": 391
   },
   {
     "id": 27122654,
@@ -358,43 +366,12 @@ window.DEMONS = [
         "artist": "Dimrain47"
       },
       "songOfficial": false
-    }
-  },
-  {
-    "id": 38235367,
-    "position": 10,
-    "name": "Quantum Processing",
-    "difficulty": "Extreme",
-    "rating": 27.04,
-    "publisher": "Riot",
-    "creators": [
-      "Riot"
-    ],
-    "verifier": "Poatan",
-    "videoUrl": "https://www.youtube.com/watch?v=7Kxm2eOPg5I",
-    "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
-    "levelId": 38235367,
-    "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
-    "requirementPercent": 100,
-    "records": [
-      {
-        "player": "Poatan",
-        "progress": 100,
-        "nationality": "MX",
-        "subdivision": null,
-        "video": "https://youtu.be/kldiw-m3mTE"
-      }
-    ],
-    "gd": {
-      "length": "Long",
-      "objects": 21269,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon"
-    }
+    },
+    "aredlPosition": 525
   },
   {
     "id": 72082021,
-    "position": 11,
+    "position": 10,
     "name": "Pandemonium",
     "difficulty": "Extreme",
     "rating": 27,
@@ -428,7 +405,41 @@ window.DEMONS = [
         "artist": "SoundHolicK"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 552
+  },
+  {
+    "id": 38235367,
+    "position": 11,
+    "name": "Quantum Processing",
+    "difficulty": "Extreme",
+    "rating": 27.04,
+    "publisher": "Riot",
+    "creators": [
+      "Riot"
+    ],
+    "verifier": "Poatan",
+    "videoUrl": "https://www.youtube.com/watch?v=7Kxm2eOPg5I",
+    "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
+    "levelId": 38235367,
+    "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Poatan",
+        "progress": 100,
+        "nationality": "MX",
+        "subdivision": null,
+        "video": "https://youtu.be/kldiw-m3mTE"
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 21269,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon"
+    },
+    "aredlPosition": 560
   },
   {
     "id": 27580467,
@@ -466,14 +477,15 @@ window.DEMONS = [
         "artist": "Xtrullor"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 623
   },
   {
     "id": 33387622,
     "position": 13,
     "name": "SubSonic",
     "difficulty": "Extreme",
-    "rating": 26.08,
+    "rating": 26.07,
     "publisher": "ViPriN",
     "creators": [
       "ViPriN"
@@ -504,7 +516,8 @@ window.DEMONS = [
         "artist": "Djjaner"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 653
   },
   {
     "id": 26133601,
@@ -541,7 +554,8 @@ window.DEMONS = [
         "artist": "Dimrain47"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 695
   },
   {
     "id": 35448603,
@@ -579,7 +593,8 @@ window.DEMONS = [
         "artist": "Goukisan"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 751
   },
   {
     "id": 59933468,
@@ -616,7 +631,8 @@ window.DEMONS = [
         "artist": "Xtrullor"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 795
   },
   {
     "id": 10565740,
@@ -681,7 +697,8 @@ window.DEMONS = [
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 845
   },
   {
     "id": 48175126,
@@ -719,7 +736,8 @@ window.DEMONS = [
         "artist": "ItzSparkler"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 851
   },
   {
     "id": 89976481,
@@ -756,7 +774,8 @@ window.DEMONS = [
         "artist": "Cacola"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 1122
   },
   {
     "id": 24301797,
@@ -793,49 +812,12 @@ window.DEMONS = [
         "artist": "hinkik"
       },
       "songOfficial": false
-    }
-  },
-  {
-    "id": 69010770,
-    "position": 21,
-    "name": "Dark Odyssey",
-    "difficulty": "Extreme",
-    "rating": 21.02,
-    "publisher": "JonathanGD",
-    "creators": [
-      "JonathanGD"
-    ],
-    "verifier": "Poatan",
-    "videoUrl": "https://www.youtube.com/watch?v=9OSzz-hVIdE",
-    "thumbnailUrl": "https://i.ytimg.com/vi/9OSzz-hVIdE/maxresdefault.jpg",
-    "levelId": 69010770,
-    "description": "After about 4 years, the darkness lingers again. Everything is even darker... Can you find another light at the end of <cr>Dark Odyssey</c>?",
-    "requirementPercent": 100,
-    "records": [
-      {
-        "player": "Poatan",
-        "progress": 100,
-        "nationality": "MX",
-        "subdivision": null,
-        "video": "https://youtu.be/lLNZv8vwlUw"
-      }
-    ],
-    "gd": {
-      "length": "XL",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "693041",
-        "name": "Dark Matter Suite (1f1n1ty + LOrbSheddy Remix)",
-        "artist": "1f1n1ty"
-      },
-      "songOfficial": false
-    }
+    },
+    "aredlPosition": 1274
   },
   {
     "id": 30219145,
-    "position": 22,
+    "position": 21,
     "name": "HyperSonic",
     "difficulty": "Extreme",
     "rating": 21,
@@ -869,7 +851,47 @@ window.DEMONS = [
         "artist": "ColBreakz"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 1380
+  },
+  {
+    "id": 69010770,
+    "position": 22,
+    "name": "Dark Odyssey",
+    "difficulty": "Extreme",
+    "rating": 21.01,
+    "publisher": "JonathanGD",
+    "creators": [
+      "JonathanGD"
+    ],
+    "verifier": "Poatan",
+    "videoUrl": "https://www.youtube.com/watch?v=9OSzz-hVIdE",
+    "thumbnailUrl": "https://i.ytimg.com/vi/9OSzz-hVIdE/maxresdefault.jpg",
+    "levelId": 69010770,
+    "description": "After about 4 years, the darkness lingers again. Everything is even darker... Can you find another light at the end of <cr>Dark Odyssey</c>?",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Poatan",
+        "progress": 100,
+        "nationality": "MX",
+        "subdivision": null,
+        "video": "https://youtu.be/lLNZv8vwlUw"
+      }
+    ],
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "693041",
+        "name": "Dark Matter Suite (1f1n1ty + LOrbSheddy Remix)",
+        "artist": "1f1n1ty"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": 1456
   },
   {
     "id": 3979721,
@@ -920,7 +942,8 @@ window.DEMONS = [
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 1496
   },
   {
     "id": 61079355,
@@ -964,7 +987,8 @@ window.DEMONS = [
         "artist": "hyperdemented"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 1590
   },
   {
     "id": 114933189,
@@ -1007,7 +1031,8 @@ window.DEMONS = [
         "artist": "Llaappssee"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": 1592
   },
   {
     "id": 72211008,
@@ -1038,7 +1063,8 @@ window.DEMONS = [
       "objects": 65535,
       "gameVersion": "2.1",
       "inGameDifficulty": "Insane Demon"
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 73725400,
@@ -1076,7 +1102,8 @@ window.DEMONS = [
         "link": "https://audio.ngfiles.com/847000/847287_Circus-Contraption---Wicke.mp3?f1549666114"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 14145098,
@@ -1107,7 +1134,8 @@ window.DEMONS = [
       "objects": 19496,
       "gameVersion": "2.0",
       "inGameDifficulty": "Insane Demon"
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 37259527,
@@ -1145,7 +1173,8 @@ window.DEMONS = [
         "artist": "meganeko"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 5155022,
@@ -1183,7 +1212,8 @@ window.DEMONS = [
         "link": "http://audio.ngfiles.com/598000/598349_-Final-Battle-.mp3"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 82824219,
@@ -1220,7 +1250,8 @@ window.DEMONS = [
         "artist": "FractureClutter"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 32885972,
@@ -1258,7 +1289,8 @@ window.DEMONS = [
         "artist": "1f1n1ty"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 9145341,
@@ -1295,7 +1327,8 @@ window.DEMONS = [
         "artist": "jomekka"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 4706930,
@@ -1339,7 +1372,8 @@ window.DEMONS = [
         "artist": "F-777"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 59858021,
@@ -1376,7 +1410,8 @@ window.DEMONS = [
         "artist": "1f1n1ty"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 75078198,
@@ -1413,7 +1448,8 @@ window.DEMONS = [
         "artist": "TheBiocide"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 7054561,
@@ -1456,7 +1492,8 @@ window.DEMONS = [
         "artist": "Rukkus"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 4957691,
@@ -1494,7 +1531,8 @@ window.DEMONS = [
         "link": "http://audio.ngfiles.com/621000/621135_TheFatRat---Windfall.mp3"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 56568010,
@@ -1538,7 +1576,8 @@ window.DEMONS = [
         "artist": "cysmix"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 47620786,
@@ -1582,7 +1621,8 @@ window.DEMONS = [
         "link": "https://audio.ngfiles.com/806000/806733_Circus-Contraption---Come-.mp3?f1526820551"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 4545425,
@@ -1626,7 +1666,8 @@ window.DEMONS = [
         "artist": "Kayoszx"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   },
   {
     "id": 43945511,
@@ -1664,6 +1705,7 @@ window.DEMONS = [
         "artist": "Bunnymajs"
       },
       "songOfficial": false
-    }
+    },
+    "aredlPosition": null
   }
 ];

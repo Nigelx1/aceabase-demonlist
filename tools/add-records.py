@@ -233,8 +233,19 @@ def main():
     def rating_of(d):
         return d["rating"] if isinstance(d.get("rating"), (int, float)) else FALLBACK.get(d.get("difficulty"), 3)
 
-    def key(d):  # tier, then rating (2 dp), then AREDL placement; sort is stable for full ties
-        return (rank.get(d.get("difficulty"), 99), -round(rating_of(d), 2), aredl.get(d["levelId"], 10 ** 9))
+    # The list follows the AREDL (Nigel, 2026-10-06): an extreme on the AREDL sorts and
+    # scores by its placement, turned into a GDDL-style rating by the curve
+    # tools/refresh-order.py fits to the whole AREDL (config.js aredlFit, read by
+    # DL.demonRating too); everything else by its gdladder rating.
+    fm = re.search(r"aredlFit:\s*\{\s*a:\s*([-\d.]+),\s*b:\s*([-\d.]+),\s*exponent:\s*([-\d.]+)", cfg)
+    fit = tuple(float(x) for x in fm.groups()) if fm else None
+
+    def value(d):
+        pos = aredl.get(d["levelId"])
+        return fit[0] + fit[1] * pos ** fit[2] if fit and pos else rating_of(d)
+
+    def key(d):  # tier, then value (2 dp), then AREDL placement; sort is stable for full ties
+        return (rank.get(d.get("difficulty"), 99), -round(value(d), 2), aredl.get(d["levelId"], 10 ** 9))
 
     # --refresh-ratings: re-pull every listed demon's gdladder rating, one request at a time
     old_rating, drifted = {}, []
@@ -271,7 +282,9 @@ def main():
     for i, d in enumerate(sorted(demons, key=key)):
         if cur[i] != d["levelId"]:
             j, passed = cur.index(d["levelId"]), by_lid[cur[i]]
-            if round(rating_of(d), 2) == round(rating_of(passed), 2):
+            if fit and aredl.get(d["levelId"]):
+                why = f"AREDL placement - #{aredl[d['levelId']]}"
+            elif round(rating_of(d), 2) == round(rating_of(passed), 2):
                 why = f"Tied with {passed['name']} on GD Demon Ladder - the AREDL places it higher"
             elif d["levelId"] in old_rating or passed["levelId"] in old_rating:
                 why = f"GD Demon Ladder rating refresh - {rated(d)}, {rated(passed)}"
@@ -432,6 +445,8 @@ def main():
     if dry:
         print("dry run - nothing written")
         return
+    for d in everything:  # DL.demonRating reads it (see value() above)
+        d["aredlPosition"] = aredl.get(d["levelId"])
     write_js("demons.js", "DEMONS", everything)
     write_js("changelog.js", "CHANGELOG", log)
     if initial or joined:

@@ -26,6 +26,67 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-06",
+    "items": [
+      {
+        "kind": "note",
+        "text": "The list follows the AREDL now: extremes are ordered and scored by their AREDL placement, and everything else by its GD Demon Ladder rating on the same scale (a curve fit to the whole AREDL turns a placement into a rating). Points shift for everyone."
+      },
+      {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 4 levels drifted (Shardscapes 32.71 → 32.77, Sonic Wave Rebirth 29.84 → 29.85, SubSonic 26.08 → 26.07, Dark Odyssey 21.02 → 21.01)."
+      },
+      {
+        "kind": "move",
+        "demon": "HyperSonic",
+        "demonId": 30219145,
+        "from": 22,
+        "to": 21,
+        "text": "The list follows the AREDL now - AREDL #1380"
+      },
+      {
+        "kind": "move",
+        "demon": "Pandemonium",
+        "demonId": 72082021,
+        "from": 11,
+        "to": 10,
+        "text": "The list follows the AREDL now - AREDL #552"
+      },
+      {
+        "kind": "move",
+        "demon": "Sonic Wave",
+        "demonId": 26681070,
+        "from": 8,
+        "to": 7,
+        "text": "The list follows the AREDL now - AREDL #382"
+      },
+      {
+        "kind": "move",
+        "demon": "Sonic Wave Rebirth",
+        "demonId": 68688849,
+        "from": 7,
+        "to": 6,
+        "text": "The list follows the AREDL now - AREDL #381"
+      },
+      {
+        "kind": "move",
+        "demon": "Bloodlust",
+        "demonId": 42584142,
+        "from": 5,
+        "to": 4,
+        "text": "The list follows the AREDL now - AREDL #256"
+      },
+      {
+        "kind": "move",
+        "demon": "Ragnarok",
+        "demonId": 55624478,
+        "from": 4,
+        "to": 3,
+        "text": "The list follows the AREDL now - AREDL #231"
+      }
+    ]
+  },
+  {
     "date": "2026-10-05",
     "items": [
       {
