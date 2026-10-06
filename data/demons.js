@@ -180,8 +180,8 @@ window.DEMONS = [
       "Knobbelboy"
     ],
     "verifier": "Poatan",
-    "videoUrl": "https://www.youtube.com/watch?v=kTToIer9QfY",
-    "thumbnailUrl": "https://i.ytimg.com/vi/kTToIer9QfY/maxresdefault.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
+    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
     "levelId": 42584142,
     "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
     "requirementPercent": 100,
@@ -623,7 +623,7 @@ window.DEMONS = [
     "position": 17,
     "name": "Bloodbath",
     "difficulty": "Extreme",
-    "rating": 23.98,
+    "rating": 23.97,
     "publisher": "Riot",
     "creators": [
       "Riot"
@@ -661,6 +661,12 @@ window.DEMONS = [
         "nationality": "US",
         "subdivision": "IL",
         "video": "https://youtu.be/_kCR7M6Fr8c"
+      },
+      {
+        "player": "dot",
+        "progress": 100,
+        "nationality": "CA",
+        "subdivision": null
       }
     ],
     "gd": {
@@ -893,6 +899,12 @@ window.DEMONS = [
         "player": "Dihmaster500",
         "progress": 100,
         "nationality": "US",
+        "subdivision": null
+      },
+      {
+        "player": "dot",
+        "progress": 100,
+        "nationality": "CA",
         "subdivision": null
       }
     ],
@@ -1425,6 +1437,12 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
+      },
+      {
+        "player": "dot",
+        "progress": 100,
+        "nationality": "CA",
+        "subdivision": null
       }
     ],
     "gd": {
@@ -1615,7 +1633,7 @@ window.DEMONS = [
     "position": 42,
     "name": "Game Time",
     "difficulty": "Insane",
-    "rating": 15.05,
+    "rating": 15.06,
     "publisher": "SimilarAMZ",
     "creators": [
       "SimilarAMZ"

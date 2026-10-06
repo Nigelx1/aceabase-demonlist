@@ -5,6 +5,12 @@
     python tools/add-records.py spec.json --dry-run   # show the plan, write nothing
     python tools/add-records.py spec.json --initial   # FIRST import only: becomes the
                                                       # baseline (no "add" log items)
+    python tools/add-records.py [spec.json] --refresh-ratings
+                         # also re-pull every listed demon's gdladder rating first
+                         # (one request at a time - gdladder rate-limits); drifts
+                         # get a changelog note and any move they cause is logged
+                         # with the old -> new ratings as its reason. The spec is
+                         # optional with this flag.
 spec.json:
 {
   "date": "2026-10-03",                     # changelog date (default: today)
@@ -20,7 +26,8 @@ spec.json:
   "notes": ["New member: ..."]              # extra changelog notes
 }
 A player's "gdladder" (user id or profile link) also imports every 100% on
-their gdladder profile.
+their gdladder profile. Every player in "players" or with a new record who
+isn't in config.js `members` yet joins that roster (name + nationality).
 
 Order (the whole list, every run): difficulty tier first, in config.js
 `allowedDifficulties` order (e.g. every Extreme above every Insane), then
@@ -30,7 +37,7 @@ logged too so every demon's position history stays exact. Anything outside
 `allowedDifficulties` is refused; platformers are always refused.
 Needs python3, curl and node on PATH.
 """
-import io, json, os, re, subprocess, sys, urllib.request
+import io, json, os, re, subprocess, sys, time, urllib.request
 from datetime import date as _date
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -164,13 +171,42 @@ process.exit(bad.length ? 1 : 0);
 """
 
 
+def fmt_rating(x):
+    return f"{x:.2f}" if isinstance(x, (int, float)) else "?"
+
+
+def roster_add(cfg_text, people):
+    """Append [(name, nationality, subdivision)] to config.js `members` (skips names
+    already there). Returns (new text, names added)."""
+    m = re.search(r"members:\s*\[([^\[\]]*?)(\s*)\]", cfg_text)
+    if not m:
+        return cfg_text, []
+    have = set(re.findall(r'name:\s*"([^"]*)"', m.group(1)))
+    ind = re.search(r"\n([ \t]*)\{", m.group(1))
+    ind = ind.group(1) if ind else "    "
+    lines, added = "", []
+    for name, cc, sub in people:
+        if name in have:
+            continue
+        have.add(name)
+        added.append(name)
+        fields = [f"name: {json.dumps(name, ensure_ascii=False)}"]
+        if cc:
+            fields.append(f'nationality: "{cc}"')
+        if sub:
+            fields.append(f'subdivision: "{sub}"')
+        lines += f"\n{ind}{{ {', '.join(fields)} }},"
+    return cfg_text[:m.end(1)] + lines + cfg_text[m.end(1):], added
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     opts = {a for a in sys.argv[1:] if a.startswith("--")}
-    if not args:
+    refresh = "--refresh-ratings" in opts
+    if not args and not refresh:
         sys.exit(__doc__)
     dry, initial = "--dry-run" in opts, "--initial" in opts
-    spec = json.load(io.open(args[0], encoding="utf-8"))
+    spec = json.load(io.open(args[0], encoding="utf-8")) if args else {}
     day = spec.get("date") or _date.today().isoformat()
     cfg_path = os.path.join(DATA, "config.js")
     cfg = io.open(cfg_path, encoding="utf-8").read()
@@ -200,13 +236,47 @@ def main():
     def key(d):  # tier, then rating (2 dp), then AREDL placement; sort is stable for full ties
         return (rank.get(d.get("difficulty"), 99), -round(rating_of(d), 2), aredl.get(d["levelId"], 10 ** 9))
 
-    # re-sorting what's already on the list (new rules / tie-breaks) gets logged as moves
+    # --refresh-ratings: re-pull every listed demon's gdladder rating, one request at a time
+    old_rating, drifted = {}, []
+    if refresh:
+        for d in demons:
+            gl = None
+            for attempt in range(3):
+                gl = curl_json(f"https://gdladder.com/api/levels/{d['levelId']}")
+                if isinstance(gl, dict) and gl.get("ID"):
+                    break
+                time.sleep(5)
+            r = gl.get("Rating") if isinstance(gl, dict) else None
+            if not isinstance(r, (int, float)):
+                print(f"  WARNING no gdladder rating for {d['name']} - kept r{d.get('rating')}")
+                continue
+            tier = (gl.get("Meta") or {}).get("Difficulty")
+            if tier and tier != d.get("difficulty"):
+                print(f"  NOTE gdladder now has {d['name']} as {tier} (the list says {d.get('difficulty')}) - not changed")
+            if round(r, 2) != d.get("rating"):
+                old_rating[d["levelId"]] = d.get("rating")
+                drifted.append(d)
+                print(f"  RATING {d['name']}: {d.get('rating')} -> {round(r, 2)}")
+                d["rating"] = round(r, 2)
+            time.sleep(0.5)
+        print(f"ratings refreshed: {len(drifted)} of {len(demons)} drifted")
+
+    def rated(x):  # "Sonic Wave 29.84 → 29.85" if it drifted this run, else "Sonic Wave Rebirth 29.84"
+        if x["levelId"] in old_rating:
+            return f"{x['name']} {fmt_rating(old_rating[x['levelId']])} → {fmt_rating(rating_of(x))}"
+        return f"{x['name']} {fmt_rating(rating_of(x))}"
+
+    # re-sorting what's already on the list (new rules / tie-breaks / rating drift) gets logged as moves
     moves, cur = [], [d["levelId"] for d in demons]
     for i, d in enumerate(sorted(demons, key=key)):
         if cur[i] != d["levelId"]:
             j, passed = cur.index(d["levelId"]), by_lid[cur[i]]
-            why = (f"Tied with {passed['name']} on GD Demon Ladder - the AREDL places it higher"
-                   if round(rating_of(d), 2) == round(rating_of(passed), 2) else "Re-sorted")
+            if round(rating_of(d), 2) == round(rating_of(passed), 2):
+                why = f"Tied with {passed['name']} on GD Demon Ladder - the AREDL places it higher"
+            elif d["levelId"] in old_rating or passed["levelId"] in old_rating:
+                why = f"GD Demon Ladder rating refresh - {rated(d)}, {rated(passed)}"
+            else:
+                why = "Re-sorted"
             cur.insert(i, cur.pop(j))
             moves.append({"kind": "move", "demon": d["name"], "demonId": d["levelId"],
                           "from": j + 1, "to": i + 1, "text": why})
@@ -265,7 +335,7 @@ def main():
             fresh[lid] = d
 
     order = list(dict.fromkeys(list(spec.get("tiebreak", [])) + [p for p, _, _ in wanted]))
-    also, added, no_nat = {}, 0, set()
+    also, added, no_nat, got = {}, 0, set(), list(players)
     for player, lid, prog in wanted:
         d = by_lid.get(lid) or fresh.get(lid)
         if not d:
@@ -278,6 +348,7 @@ def main():
         if not cc:
             no_nat.add(player)
         d["records"].append({"player": player, "progress": prog, "nationality": cc, "subdivision": sub})
+        got.append(player)
         added += 1
         if lid in by_lid:
             also.setdefault(player, []).append(d["name"])
@@ -305,6 +376,11 @@ def main():
         for p, names in also.items():
             items.append({"kind": "note", "text": f"{p} also cleared {', '.join(names)}."})
     items += [{"kind": "note", "text": t} for t in spec.get("notes", [])]
+    if drifted:
+        n = len(drifted)
+        what = ", ".join(rated(x) for x in drifted)
+        items.append({"kind": "note", "text": f"GD Demon Ladder ratings refreshed - {n} level{'s' if n != 1 else ''} had drifted"
+                      + (f" ({what}), so points shift a little." if n <= 6 else " since they were added, so points shift a little.")})
     items += list(reversed(moves))  # replayed first: re-sort what was there, then insert the new ones
     if items:
         if log and log[0].get("date") == day:
@@ -330,7 +406,17 @@ def main():
                 print(f"  NOTE {d['name']} ({d['difficulty']}, r{rating_of(d)}) is rated above the easiest {t} (r{lo})")
                 break
 
+    # new players join the config.js `members` roster (the stats viewer lists members even at 0 points)
+    people = [(p, *nat(p)) for p in dict.fromkeys(got)]
+    if initial:
+        cfg = re.sub(r'listCreated:\s*"[^"]*"', f'listCreated: "{day}"', cfg)
+    cfg, joined = roster_add(cfg, people)
+    for p, cc, sub in people:
+        if p in joined:
+            print(f"  roster {'would get' if dry else '+'} {p} ({cc or 'no nationality'}{'/' + sub if sub else ''})")
+
     need = {(r["nationality"], r.get("subdivision")) for d in everything for r in d["records"] if r.get("nationality")}
+    need |= {(cc, sub) for p, cc, sub in people if p in joined and cc}
     for cc, sub in sorted(need, key=str):
         for rel in [f"{cc.lower()}.svg"] + ([f"{cc.lower()}/{sub.lower()}.svg"] if sub else []):
             dest = os.path.join(FLAGS, *rel.split("/"))
@@ -348,9 +434,8 @@ def main():
         return
     write_js("demons.js", "DEMONS", everything)
     write_js("changelog.js", "CHANGELOG", log)
-    if initial:
-        io.open(cfg_path, "w", encoding="utf-8", newline="\n").write(
-            re.sub(r'listCreated:\s*"[^"]*"', f'listCreated: "{day}"', cfg))
+    if initial or joined:
+        io.open(cfg_path, "w", encoding="utf-8", newline="\n").write(cfg)
     v = subprocess.run(["node", "-e", VERIFY, SITE], capture_output=True, text=True, encoding="utf-8")
     print((v.stdout or v.stderr).strip())
 

@@ -26,6 +26,23 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-05",
+    "items": [
+      {
+        "kind": "note",
+        "text": "dot also cleared Bloodbath, Cataclysm, Poltergeist."
+      },
+      {
+        "kind": "note",
+        "text": "New member: dot, from Canada."
+      },
+      {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 2 levels had drifted (Bloodbath 23.98 → 23.97, Game Time 15.05 → 15.06), so points shift a little."
+      }
+    ]
+  },
+  {
     "date": "2026-10-04",
     "items": [
       {
