@@ -48,6 +48,41 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   },
+  "23262780": {
+    "name": "Sakupen Hell",
+    "publisher": "TrusTa",
+    "difficulty": "Extreme",
+    "rating": 24.86,
+    "levelId": 23262780,
+    "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=sKKXlA3q9tI",
+    "gd": {
+      "length": "Medium",
+      "objects": 20250,
+      "gameVersion": "2.0",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "360804",
+        "name": "Iron God: Sakupen Hell Yes RMX",
+        "artist": "mr-jazzman"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/sKKXlA3q9tI/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "Sakupen Hell is a 1.9/2.0 Extreme Demon level by Noobas, which he hack-verified. It was created to challenge both Riot and Cyclic, who, at the time, were considered the best players in the game. Another player, TrusTa, later verified Sakupen Hell legitimately and published it on 14 August 2016.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Hell"
+    }
+  },
   "26681070": {
     "name": "Sonic Wave",
     "publisher": "lSunix",

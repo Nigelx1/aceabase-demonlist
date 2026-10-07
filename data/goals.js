@@ -44,4 +44,5 @@ window.GOALS = [
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation
   { player: "Nigel", levelId: 92466083, best: 0, note: "Haven't started ✌️", video: "https://youtu.be/wxyYAuMYq5o" }, // Jupiter My Favourite
   { player: "zinglebob238", levelId: 38235367, best: 58, segments: [[48, 100]] }, // Quantum Processing (on the list)
+  { player: "zinglebob238", levelId: 23262780, best: 39, segments: [[14, 45], [32, 73], [80, 100]] }, // Sakupen Hell
 ];
