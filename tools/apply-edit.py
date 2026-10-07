@@ -880,7 +880,14 @@ class Engine:
     # credit, hosted video files named after them); their Grind rows name them too
     # (goals.js). The changelog is history and keeps what it said.
     def roster_line(self, cfg, who):
-        m = re.search(r'\{\s*name:\s*"' + re.escape(who) + r'"[^}\n]*\}', cfg)
+        # Only inside config.js's members array: the same name can also be in the
+        # editors array (the List Mods sidebar), which isn't the roster. Searching the
+        # whole file once took three mods off that panel instead (2026-10-07).
+        a = re.search(r"\bmembers:\s*\[", cfg)
+        if not a:
+            raise Refuse("data/config.js has no members list")
+        end = cfg.find("]", a.end())  # member entries hold no brackets
+        m = re.compile(r'\{\s*name:\s*"' + re.escape(who) + r'"[^}\n]*\}').search(cfg, a.end(), end)
         if not m:
             raise Refuse(f"{who} isn't in the roster (data/config.js members)")
         return m
