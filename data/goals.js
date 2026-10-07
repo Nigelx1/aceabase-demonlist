@@ -37,7 +37,6 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 27690100, best: 55, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
   { player: "Poatan", levelId: 68668045, best: 63, segments: [[42, 100]] }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent
-  { player: "hesoaring", levelId: 10565740, best: 49, segments: [[33, 92], [70, 100]] }, // Bloodbath (on the list)
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation
