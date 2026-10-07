@@ -34,8 +34,18 @@ window.SITE = {
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 
-  // Sidebar "List Editors" / "List Helpers". Real names only, no guesses.
-  editors: [{ name: "Nigel" }, { name: "Dihmaster500" }, { name: "Poatan" }],
+  // Sidebar "List Mods" (pointercrate's List Editors panel): head: true = head mod,
+  // shown first and in bold. Keep it in step with functions/editors.json, which
+  // is what the mod page logs people in with (Discord id -> name + role).
+  editors: [
+    { name: "Nigel", head: true },
+    { name: "Dihmaster500", head: true },
+    { name: "Poatan", head: true },
+    { name: "aura", head: true },
+    { name: "ace" },
+    { name: "hesoaring" },
+    { name: "Jaiden" },
+  ],
   helpers: [],
 
   // The community roster. Members with no clears yet still get a

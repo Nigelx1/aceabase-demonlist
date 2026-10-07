@@ -163,19 +163,25 @@
     var players = DL.aggregatePlayers();
     var html = "";
 
-    // --- List Editors / Helpers ---
+    // --- List Mods / Helpers --- (pointercrate's List Editors panel: one centred,
+    // wrapping small-caps list, head mods first and in bold; #editors ul in
+    // demonlist.css). The sort is stable, so each tier keeps config.js's order.
+    var mods = (cfg.editors || []).slice().sort(function (a, b) {
+      return (b.head ? 1 : 0) - (a.head ? 1 : 0);
+    });
     html += sidebarPanel(
       "editors",
-      "List Editors",
-      "<p>The people who keep the list in order. Poke one of them if a placement looks off or a record needs fixing.</p>" +
-        (cfg.editors.length
-          ? '<p class="staff-names">' +
-              cfg.editors
+      "List Mods",
+      "<p>Contact any of these people to get your clears or grind progress added, or if something on the list looks wrong.</p>" +
+        (mods.length
+          ? '<ul style="line-height: 30px">' +
+              mods
                 .map(function (e) {
-                  return DL.escapeHtml(e.name) + (e.role ? " <i>(" + DL.escapeHtml(e.role) + ")</i>" : "");
+                  var name = DL.escapeHtml(e.name);
+                  return "<li>" + (e.head ? "<b>" + name + "</b>" : name) + "</li>";
                 })
-                .join(" &middot; ") +
-              "</p>"
+                .join("") +
+              "</ul>"
           : "<p><i>Not listed.</i></p>") +
         (cfg.helpers.length
           ? '<div class="underlined"><h2>List Helpers</h2></div>' +
