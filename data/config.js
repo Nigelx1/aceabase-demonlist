@@ -40,9 +40,13 @@ window.SITE = {
 
   // The community roster. Members with no clears yet still get a
   // (0-point) spot in the stats viewer - and so their Grind goals.
+  // Country-based: players are ranked by country only, no states or provinces
+  // (Nigel, 2026-10-06). The stats viewer hides its subdivision controls.
+  subdivisions: false,
+
   members: [
     { name: "ace", nationality: "US" },
-    { name: "Nigel", nationality: "US", subdivision: "IL" },
+    { name: "Nigel", nationality: "US" },
     { name: "Dihmaster500", nationality: "US" },
     { name: "Poatan", nationality: "MX" },
     { name: "owen346", nationality: "US" },

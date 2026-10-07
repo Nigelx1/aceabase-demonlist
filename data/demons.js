@@ -675,7 +675,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/_kCR7M6Fr8c"
       },
       {
@@ -760,7 +760,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": null
       }
     ],
     "gd": {
@@ -1017,7 +1017,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": null
       }
     ],
     "gd": {
@@ -1158,7 +1158,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/pKfilX2PyyY"
       }
     ],
@@ -1274,7 +1274,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/4RZtxK-aUEE"
       }
     ],
@@ -1357,7 +1357,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/k3J1FgsJ6hg"
       }
     ],
@@ -1396,7 +1396,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL"
+        "subdivision": null
       }
     ],
     "gd": {
@@ -1567,7 +1567,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/fU-bDInjAhM"
       }
     ],
@@ -1657,7 +1657,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/VQgKfiaoA2M"
       }
     ],
@@ -1696,7 +1696,7 @@ window.DEMONS = [
         "player": "Nigel",
         "progress": 100,
         "nationality": "US",
-        "subdivision": "IL",
+        "subdivision": null,
         "video": "https://youtu.be/zPoPvhbq-YA"
       }
     ],
