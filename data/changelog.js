@@ -30,6 +30,10 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "zinglebob238 also cleared Bloodbath."
+      },
+      {
+        "kind": "note",
         "text": "New member: zinglebob238, from the UK."
       }
     ]
