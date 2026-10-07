@@ -73,10 +73,14 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "set_record_video": ({"player", "level", "url"}, set()),
     "remove_record_video": ({"player", "level"}, set()),
     "refresh_order": (set(), set()),
+    "refresh_showcases": (set(), set()),  # the scheduled upkeep only; not on the page
 }
 # What only head mods may do; functions/_lib/contract.js HEAD_ONLY is the same list.
 # A mod also can't bring in a new player through add_record (Engine.adds).
-HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "refresh_order": "re-sort the list"}
+HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "refresh_order": "re-sort the list",
+             "refresh_showcases": "check Nigel's channel for showcases"}
+# Nigel's YouTube: tools/apply-showcases.py uses its "<level> by <creator>" uploads.
+CHANNEL = "@nigelx1"
 VIDEO_HOSTS = {"youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"}
 # add-video.py's own patterns: a link has to point at ONE video (not a channel,
 # a playlist or a Drive folder), or add-video refuses it at run time.
@@ -160,7 +164,7 @@ def validate(p):
     """The payload, checked against the contract and normalised (level -> int id)."""
     if not isinstance(p, dict):
         raise Refuse("the payload isn't a JSON object")
-    extra = set(p) - {"requestId", "editor", "role", "ops", "dryRun"}
+    extra = set(p) - {"requestId", "editor", "role", "ops", "dryRun", "upkeep"}
     if extra:
         raise Refuse(f"unknown payload field(s): {', '.join(sorted(map(show, extra)))}")
     if not isinstance(p.get("requestId"), str) or not re.fullmatch(r"[0-9a-f]{16}", p["requestId"]):
@@ -171,6 +175,10 @@ def validate(p):
     role = p.get("role", "mod")
     if role not in ("head", "mod"):
         raise Refuse(f"role must be \"head\" or \"mod\", got {show(role)}")
+    # The scheduled upkeep (.github/workflows/upkeep.yml): the AREDL or YouTube not
+    # answering skips that part instead of failing the run.
+    if "upkeep" in p and not isinstance(p["upkeep"], bool):
+        raise Refuse("upkeep must be true or false")
     if "dryRun" in p and not isinstance(p["dryRun"], bool):
         raise Refuse("dryRun must be true or false")
     ops = p.get("ops")
@@ -223,7 +231,8 @@ def validate(p):
         for i, o in enumerate(out, 1):
             if o["op"] in HEAD_ONLY:
                 raise Refuse(f"edit {i} ({o['op']}): only head mods can {HEAD_ONLY[o['op']]}")
-    return {"requestId": p["requestId"], "editor": editor, "role": role, "ops": out, "dryRun": bool(p.get("dryRun"))}
+    return {"requestId": p["requestId"], "editor": editor, "role": role, "ops": out, "dryRun": bool(p.get("dryRun")),
+            "upkeep": bool(p.get("upkeep"))}
 
 
 # --- reading and writing the data files ---------------------------------------
@@ -425,8 +434,9 @@ def wiki_writeup(name, lid):
 # --- applying the edits -------------------------------------------------------
 
 class Engine:
-    def __init__(self, root, role="mod"):
+    def __init__(self, root, role="mod", upkeep=False):
         self.root = root
+        self.upkeep = upkeep     # the scheduled upkeep: network trouble skips, never fails
         self.role = role         # "head" or "mod"
         self.lines = []          # plain-English summary, one line per change
         self.subjects = []       # short phrases for the commit subject
@@ -472,7 +482,9 @@ class Engine:
         return d, next(r for r in d["records"] if r["player"] == who)
 
     def apply(self, ops):
-        listed_before = {d["levelId"] for d in load_state(self.root)["DEMONS"]}
+        start = load_state(self.root)
+        listed_before = {d["levelId"] for d in start["DEMONS"]}
+        levels_before = listed_before | {int(k) for k in start["GOAL_LEVELS"]}
         i = 0
         while i < len(ops):
             if ops[i]["op"] in ("add_member", "add_record"):  # consecutive adds share one add-records.py run
@@ -487,6 +499,12 @@ class Engine:
         self.sync_goal_comments(listed_before)
         if self.goals_touched:
             self.rebuild_goal_levels()
+        # A level new to the site gets Nigel's showcase right away when his channel
+        # has one (the scheduled upkeep would only catch it a few days later).
+        if not any(o["op"] == "refresh_showcases" for o in ops):
+            end = load_state(self.root)
+            if ({d["levelId"] for d in end["DEMONS"]} | {int(k) for k in end["GOAL_LEVELS"]}) - levels_before:
+                self.refresh_showcases(None)
 
     # add_member / add_record -> tools/add-records.py
     def adds(self, ops):
@@ -744,7 +762,10 @@ class Engine:
     def refresh_order(self, o):
         before = load_state(self.root)
         print("  refresh-order.py (one gdladder request per demon - takes a minute)")
-        r = run_tool(self.root, ["refresh-order.py"])
+        r = run_tool(self.root, ["refresh-order.py"] + (["--no-drift-note"] if self.upkeep else []))
+        if r.returncode and self.upkeep and "AREDL" in (r.stdout or "") + (r.stderr or ""):
+            self.say("The AREDL didn't answer, so the order wasn't refreshed this time.")
+            return
         if r.returncode:
             raise Refuse("refreshing the order failed: " + ((r.stderr or r.stdout).strip().splitlines() or ["?"])[-1].strip())
         if "replay check: OK" not in r.stdout:
@@ -758,6 +779,34 @@ class Engine:
                  + (" (" + ", ".join(f"{x['demon']} #{x['from']} -> #{x['to']}" for x in moves[:6])
                     + (" ..." if len(moves) > 6 else "") + ")" if moves else "") + ".")
         self.subjects.append("Refresh the list order")
+
+    # refresh_showcases -> tools/apply-showcases.py: Nigel's own showcase on every
+    # level his channel has one for. The scheduled upkeep sends it, and apply()
+    # runs it after an edit that brings a new level onto the site. YouTube not
+    # answering is never a failure: the next upkeep catches up.
+    def refresh_showcases(self, o):
+        def videos():  # level name -> its video, on demon pages and Grind pages
+            st = load_state(self.root)
+            v = {g.get("name"): g.get("videoUrl") for g in st["GOAL_LEVELS"].values()}
+            v.update({d["name"]: d.get("videoUrl") for d in st["DEMONS"]})
+            return v
+        before = videos()
+        print("  apply-showcases.py " + CHANNEL)
+        r = run_tool(self.root, ["apply-showcases.py", CHANNEL])
+        out = (r.stdout or "") + (r.stderr or "")
+        if r.returncode or " uploads" not in out:
+            self.say("Couldn't read Nigel's YouTube channel this time, so showcases weren't checked.")
+            return
+        after = videos()
+        titles = dict(re.findall(r"^\s+(.+?) \([^)]*\): -> [\w-]{11}\s+\[(.+)\]\s*$", out, re.M))
+        changed = sorted(n for n, v in after.items() if n and v and before.get(n) != v)
+        if not changed:
+            if o is not None:
+                self.say("No new showcases on Nigel's channel.")
+            return
+        for n in changed:
+            self.say(f"{n} now uses Nigel's showcase" + (f' "{titles[n]}".' if n in titles else "."))
+        self.subjects.append("Nigel's showcase on " + ", ".join(changed))
 
     def sync_goal_comments(self, listed_before):
         """A goal row's comment says "(on the list)" when its level is on the list;
@@ -881,6 +930,8 @@ def restore():
 
 def subject(phrases, editor):
     s = "; ".join(phrases) if len("; ".join(phrases)) <= 90 else f"{phrases[0]} and {len(phrases) - 1} more edits"
+    if editor == "Upkeep":
+        return f"{s} (scheduled upkeep)"
     return f"{s} (by {editor} via the mod page)"
 
 
@@ -921,7 +972,7 @@ def main():
         root = os.path.join(tmp, "site")
         shutil.copytree(REPO, root, ignore=shutil.ignore_patterns(".git", "videos"))
         try:
-            e = Engine(root, p["role"])
+            e = Engine(root, p["role"], p["upkeep"])
             e.apply(p["ops"])
             check(root)
             for rel in changed_files(REPO, root):
@@ -948,7 +999,7 @@ def main():
             except Refuse as err:
                 report("Edit failed", [str(err)], False)
                 sys.exit(1)
-        e = Engine(REPO, p["role"])
+        e = Engine(REPO, p["role"], p["upkeep"])
         try:
             e.apply(p["ops"])
             check(REPO)
