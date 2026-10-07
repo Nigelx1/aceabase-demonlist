@@ -812,6 +812,9 @@ class Engine:
                 continue
             w, why = wiki_writeup(e["name"], lid)
             if w:
+                # Marked as the automatic copy (never shown on the site) so
+                # tools/writeup-todo.py lists it until a real one is written.
+                w["auto"] = True
                 e["writeup"] = w
                 self.say(f"  {e['name']}'s Grind page gets a writeup from the GD Wiki ({w['url']}).")
             else:
