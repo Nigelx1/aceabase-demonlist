@@ -18,7 +18,7 @@
 
 import { json, jsonError, missingEnv, notSetUp, randomHex, sameOrigin } from "../_lib/http.js";
 import { currentEditor } from "../_lib/session.js";
-import { Refuse, validateEditBody } from "../_lib/contract.js";
+import { checkRole, Refuse, validateEditBody } from "../_lib/contract.js";
 import { dispatchEdit, GitHubError } from "../_lib/github.js";
 
 const MAX_BODY = 64 * 1024; // ten ops are a couple of KB
@@ -47,10 +47,18 @@ export async function onRequestPost({ request, env }) {
     if (e instanceof Refuse) return jsonError(400, e.message);
     throw e;
   }
+  // Head-only edits (contract.js HEAD_ONLY). The role comes from editors.json as
+  // it is now, so a change there counts at once.
+  try {
+    checkRole(ops, editor.role);
+  } catch (e) {
+    if (e instanceof Refuse) return jsonError(403, e.message);
+    throw e;
+  }
 
   const requestId = randomHex(8);
   try {
-    await dispatchEdit(env, { requestId, editor: editor.name, ops });
+    await dispatchEdit(env, { requestId, editor: editor.name, role: editor.role, ops });
   } catch (e) {
     if (e instanceof GitHubError) return jsonError(502, e.message);
     throw e;

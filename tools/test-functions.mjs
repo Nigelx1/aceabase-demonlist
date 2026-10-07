@@ -98,6 +98,9 @@ const cookieValue = (r, name) => {
 EDITORS["111111111111111111"] = "Nigel";
 EDITORS["222222222222222222"] = "Dihmaster500";
 EDITORS["333333333333333333"] = "bad<name>";
+EDITORS["444444444444444444"] = { name: "ace", role: "mod" };
+EDITORS["666666666666666666"] = { name: "Odd", role: "admin" };
+const aceCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRET, "444444444444444444", "ace")}`;
 const nigelCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRET, "111111111111111111", "Nigel")}`;
 
 // --- sessions -------------------------------------------------------------------
@@ -121,7 +124,9 @@ const nigelCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRE
   check("state can't pass as a session", (await session.readSession(SECRET, st)) === null);
   check("session can't pass as a state", (await session.readState(SECRET, v)) === null);
   check("state: expired", (await session.readState(SECRET, await session.makeState(SECRET, "a".repeat(32), -1))) === null);
-  check("editorFor: ok", eq(session.editorFor("111111111111111111"), { name: "Nigel" }));
+  check("editorFor: ok (a bare name is a head mod)", eq(session.editorFor("111111111111111111"), { name: "Nigel", role: "head" }));
+  check("editorFor: {name, role} mod", eq(session.editorFor("444444444444444444"), { name: "ace", role: "mod" }));
+  check("editorFor: unknown role is broken", !!(session.editorFor("666666666666666666") || {}).bad);
   check("editorFor: absent", session.editorFor("444") === null && session.editorFor("constructor") === null && session.editorFor("__proto__") === null);
   check("editorFor: broken entry", !!(session.editorFor("333333333333333333") || {}).bad);
 }
@@ -222,7 +227,7 @@ m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
 out = []
 for ops in json.load(sys.stdin):
     try:
-        out.append({"ok": m.validate({"requestId": "0" * 16, "editor": "Nigel", "ops": ops})["ops"]})
+        out.append({"ok": m.validate({"requestId": "0" * 16, "editor": "Nigel", "role": "head", "ops": ops})["ops"]})
     except m.Refuse as e:
         out.append({"err": str(e)})
 print(json.dumps(out))
@@ -335,7 +340,7 @@ async function callback(query, { cookie = `${session.STATE_COOKIE}=${stateCookie
   let r = await api.me.onRequestGet(ctx(req("/api/me")));
   check("me: 401 without a session", r.status === 401 && (await r.json()).error === "not logged in");
   r = await api.me.onRequestGet(ctx(req("/api/me", { headers: { Cookie: `theme=dark; ${nigelCookie}` } })));
-  check("me: {id, name}", r.status === 200 && eq(await r.json(), { id: "111111111111111111", name: "Nigel" }) && r.headers.get("Cache-Control") === "no-store");
+  check("me: {id, name, role}", r.status === 200 && eq(await r.json(), { id: "111111111111111111", name: "Nigel", role: "head" }) && r.headers.get("Cache-Control") === "no-store");
   const mid = nigelCookie.length - 10, swap = nigelCookie[mid] === "A" ? "B" : "A";
   r = await api.me.onRequestGet(ctx(req("/api/me", { headers: { Cookie: nigelCookie.slice(0, mid) + swap + nigelCookie.slice(mid + 1) } })));
   check("me: tampered cookie", r.status === 401);
@@ -365,6 +370,45 @@ function editReq(body, { cookie = nigelCookie, origin = ORIGIN, type = "applicat
   return req("/api/edit", { method: "POST", headers, body: typeof body === "string" ? body : JSON.stringify(body) });
 }
 const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dispatches";
+
+// --- head mods and mods ---------------------------------------------------------------------
+{
+  for (const op of [{ op: "add_member", name: "New", nationality: "US" }, { op: "remove_record", player: "ace", level: 1 }, { op: "refresh_order" }]) {
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const r = await api.edit.onRequestPost(ctx(editReq({ ops: [op] }, { cookie: aceCookie })));
+    const out = await r.json();
+    check(`roles: a mod can't ${op.op}`, r.status === 403 && /only head mods can/.test(out.error) && calls.length === 0, JSON.stringify(out));
+  }
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  const r = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "set_grind", player: "ace", level: 1, best: 5, segments: [] }] }, { cookie: aceCookie })));
+  const sent = calls[0] && JSON.parse(calls[0].init.body);
+  check("roles: a mod can update the Grind, sent as role mod", r.status === 200 && sent && sent.client_payload.role === "mod" && sent.client_payload.editor === "ace");
+  let threw = "";
+  try { contract.checkRole([{ op: "refresh_order" }], "head"); } catch (e) { threw = e.message; }
+  check("roles: a head mod can do anything", threw === "");
+
+  // apply-edit.py: the same rule, and a missing or unknown role counts as a mod / is refused
+  const PYROLE = `
+import importlib.util, json, sys
+sys.dont_write_bytecode = True
+spec = importlib.util.spec_from_file_location("apply_edit", sys.argv[1])
+m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+out = []
+for extra in ({"role": "mod"}, {}, {"role": "head"}, {"role": "admin"}):
+    try:
+        m.validate(dict({"requestId": "0" * 16, "editor": "ace", "ops": [{"op": "refresh_order"}]}, **extra))
+        out.append("ok")
+    except m.Refuse as e:
+        out.append(str(e))
+print(json.dumps(out))
+`;
+  const res = spawnSync("python", ["-c", PYROLE, path.join(ROOT, "tools", "apply-edit.py")], { encoding: "utf8" });
+  let got = [];
+  try { got = JSON.parse(res.stdout); } catch { /* reported below */ }
+  check("roles (py): mod refused, no role = mod, head ok, unknown role refused",
+    got.length === 4 && /only head mods/.test(got[0]) && /only head mods/.test(got[1]) && got[2] === "ok" && /role must be/.test(got[3]),
+    res.stdout + res.stderr);
+}
 {
   const good = { ops: [{ op: "add_record", player: "ace", level: "https://gdladder.com/level/86084399", progress: 100 }, { op: "refresh_order" }] };
   stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
@@ -375,8 +419,9 @@ const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dis
   check("edit: 200 {requestId}", r.status === 200 && /^[0-9a-f]{16}$/.test(out.requestId), JSON.stringify(out));
   check("edit: dispatch request", d && d.url === GH_DISPATCH && d.method === "POST" && d.init.headers.Authorization === "Bearer github_pat_test"
     && d.init.headers.Accept === "application/vnd.github+json" && d.init.headers["X-GitHub-Api-Version"] === "2022-11-28" && !!d.init.headers["User-Agent"]);
-  check("edit: dispatch payload", sent && sent.event_type === "edit" && eq(Object.keys(sent.client_payload), ["requestId", "editor", "ops"])
+  check("edit: dispatch payload", sent && sent.event_type === "edit" && eq(Object.keys(sent.client_payload), ["requestId", "editor", "role", "ops"])
     && sent.client_payload.requestId === out.requestId && sent.client_payload.editor === "Nigel"
+    && sent.client_payload.role === "head"
     && eq(sent.client_payload.ops, [{ op: "add_record", player: "ace", level: 86084399, progress: 100 }, { op: "refresh_order" }]), d && d.init.body);
 
   stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);

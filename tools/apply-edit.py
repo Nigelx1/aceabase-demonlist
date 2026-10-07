@@ -74,6 +74,9 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "remove_record_video": ({"player", "level"}, set()),
     "refresh_order": (set(), set()),
 }
+# What only head mods may do; functions/_lib/contract.js HEAD_ONLY is the same list.
+# A mod also can't bring in a new player through add_record (Engine.adds).
+HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "refresh_order": "re-sort the list"}
 VIDEO_HOSTS = {"youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"}
 # add-video.py's own patterns: a link has to point at ONE video (not a channel,
 # a playlist or a Drive folder), or add-video refuses it at run time.
@@ -157,12 +160,17 @@ def validate(p):
     """The payload, checked against the contract and normalised (level -> int id)."""
     if not isinstance(p, dict):
         raise Refuse("the payload isn't a JSON object")
-    extra = set(p) - {"requestId", "editor", "ops", "dryRun"}
+    extra = set(p) - {"requestId", "editor", "role", "ops", "dryRun"}
     if extra:
         raise Refuse(f"unknown payload field(s): {', '.join(sorted(map(show, extra)))}")
     if not isinstance(p.get("requestId"), str) or not re.fullmatch(r"[0-9a-f]{16}", p["requestId"]):
         raise Refuse(f"requestId must be 16 lowercase hex characters, got {show(p.get('requestId'))}")
     editor = check_name(p.get("editor"), "editor")
+    # "head" = head mod, "mod" = mod; set by the Function from functions/editors.json.
+    # Missing = mod: the smaller set of rights.
+    role = p.get("role", "mod")
+    if role not in ("head", "mod"):
+        raise Refuse(f"role must be \"head\" or \"mod\", got {show(role)}")
     if "dryRun" in p and not isinstance(p["dryRun"], bool):
         raise Refuse("dryRun must be true or false")
     ops = p.get("ops")
@@ -211,7 +219,11 @@ def validate(p):
         except Refuse as e:
             raise Refuse(f"{where} ({op['op']}): {e}")
         out.append(o)
-    return {"requestId": p["requestId"], "editor": editor, "ops": out, "dryRun": bool(p.get("dryRun"))}
+    if role != "head":
+        for i, o in enumerate(out, 1):
+            if o["op"] in HEAD_ONLY:
+                raise Refuse(f"edit {i} ({o['op']}): only head mods can {HEAD_ONLY[o['op']]}")
+    return {"requestId": p["requestId"], "editor": editor, "role": role, "ops": out, "dryRun": bool(p.get("dryRun"))}
 
 
 # --- reading and writing the data files ---------------------------------------
@@ -413,8 +425,9 @@ def wiki_writeup(name, lid):
 # --- applying the edits -------------------------------------------------------
 
 class Engine:
-    def __init__(self, root):
+    def __init__(self, root, role="mod"):
         self.root = root
+        self.role = role         # "head" or "mod"
         self.lines = []          # plain-English summary, one line per change
         self.subjects = []       # short phrases for the commit subject
         self.goals_touched = False
@@ -494,6 +507,9 @@ class Engine:
                 continue
             who, joined = self.resolve(o["player"], names), False
             if not who:
+                if self.role != "head":
+                    raise Refuse(f"{o['player']} isn't on the list yet - only head mods can add new players "
+                                 "(ask one to add them in Members first)")
                 if not o.get("nationality"):
                     raise Refuse(f"{o['player']} isn't a member yet - give their country, or add them as a member first")
                 who, joined = o["player"], True
@@ -902,7 +918,7 @@ def main():
         root = os.path.join(tmp, "site")
         shutil.copytree(REPO, root, ignore=shutil.ignore_patterns(".git", "videos"))
         try:
-            e = Engine(root)
+            e = Engine(root, p["role"])
             e.apply(p["ops"])
             check(root)
             for rel in changed_files(REPO, root):
@@ -929,7 +945,7 @@ def main():
             except Refuse as err:
                 report("Edit failed", [str(err)], False)
                 sys.exit(1)
-        e = Engine(REPO)
+        e = Engine(REPO, p["role"])
         try:
             e.apply(p["ops"])
             check(REPO)

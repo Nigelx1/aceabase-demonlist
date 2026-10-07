@@ -400,7 +400,12 @@
       var v = player.value.normalize("NFC");
       var isNew = v.trim() !== "" && resolvePlayer(v) === null;
       $("clear-new").hidden = !isNew;
-      if (isNew) $("clear-new-text").textContent = "New player - " + v + " will be added to the list too. Pick their country:";
+      $("clear-country").hidden = !isHead();
+      if (isNew) {
+        $("clear-new-text").textContent = isHead()
+          ? "New player - " + v + " will be added to the list too. Pick their country:"
+          : v + " isn't on the list yet. Only head mods can add new players - ask one to add them first.";
+      }
     }
     player.addEventListener("input", onPlayer);
     level.addEventListener("input", function () { localLevelHint(level, info); });
@@ -417,6 +422,7 @@
         var progress = parseWhole($("clear-progress").value, "Progress", 1, 100);
         var op = { op: "add_record", player: who || name, level: id, progress: progress };
         if (!who) {
+          if (!isHead()) throw new Problem(name + " isn't on the list yet. Only head mods can add new players - ask one to add them first.");
           var cc = $("clear-country").value;
           if (!COUNTRIES[cc]) throw new Problem(name + " is new to the list - pick their country.");
           op.nationality = cc;
@@ -945,10 +951,27 @@
     $("down-panel").hidden = false;
   }
 
+  // Head mod or mod (functions/editors.json). Head mods add members, remove clears
+  // and re-sort the list; mods do the rest. The server and the GitHub job refuse
+  // those edits from a mod anyway: hiding them here just keeps the page honest.
+  function isHead() {
+    return !!(me && me.role === "head");
+  }
+
   function showTools() {
     var who = clear($("who"));
     who.appendChild(document.createTextNode("Logged in as "));
     who.appendChild(el("b", null, me.name));
+    who.appendChild(document.createTextNode(isHead() ? " (head mod)" : " (mod)"));
+    if (!isHead()) {
+      ["panel-members", "panel-order"].forEach(function (id) {
+        $(id).hidden = true;
+        var link = document.querySelector('a[href="#' + id + '"]');
+        if (link) link.hidden = true;
+      });
+      var danger = $("record-remove").closest(".danger");
+      if (danger) danger.hidden = true;
+    }
     who.appendChild(document.createTextNode(" · "));
     who.appendChild(el("a", { href: "/api/logout", className: "logout" }, "Log out"));
 

@@ -109,12 +109,18 @@ export function clearModHintCookie() {
 
 // --- the editors list ---------------------------------------------------------
 
-// The list name editors.json gives a Discord id: {name} when it's there and a
-// valid list name, {bad: "<why>"} when the entry is broken, null when absent.
+// What editors.json gives a Discord id: {name, role} when it's there and valid
+// (role "head" = head mod, "mod" = mod), {bad: "<why>"} when the entry is broken,
+// null when absent. An entry is {"name": ..., "role": ...}; a bare name (the
+// first format) counts as a head mod.
 export function editorFor(id) {
   if (typeof id !== "string" || !/^\d{1,25}$/.test(id) || !Object.hasOwn(EDITORS, id)) return null;
+  const entry = EDITORS[id];
   try {
-    return { name: checkName(EDITORS[id], "list name") };
+    if (typeof entry === "string") return { name: checkName(entry, "list name"), role: "head" };
+    const role = entry && entry.role;
+    if (role !== "head" && role !== "mod") throw new Error(`role for ${id} must be "head" or "mod"`);
+    return { name: checkName(entry.name, "list name"), role };
   } catch (e) {
     return { bad: `functions/editors.json: ${e.message}` };
   }
@@ -126,7 +132,7 @@ export async function currentEditor(request, env) {
   const s = await readSession(env.SESSION_SECRET, readCookie(request, SESSION_COOKIE));
   if (!s) return null;
   const ed = editorFor(s.id);
-  return ed && ed.name ? { id: s.id, name: ed.name } : null;
+  return ed && ed.name ? { id: s.id, name: ed.name, role: ed.role } : null;
 }
 
 // --- the OAuth state ------------------------------------------------------------

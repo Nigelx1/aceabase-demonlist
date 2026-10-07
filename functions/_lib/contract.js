@@ -173,3 +173,21 @@ export function validateEditBody(body) {
   if (extra.length) throw new Refuse(`unknown field(s): ${extra.map(show).sort().join(", ")}`);
   return validateOps(body.ops);
 }
+
+// What only head mods may do (Nigel, 2026-10-07): anything that changes who's on
+// the list, rewrites its order or deletes a clear. Mods do the day-to-day: clears
+// for players already on the list, Grind, videos. tools/apply-edit.py keeps the
+// same list, and also refuses a mod's add_record for a player not on the list.
+export const HEAD_ONLY = new Map([
+  ["add_member", "add members"],
+  ["remove_record", "remove clears"],
+  ["refresh_order", "re-sort the list"],
+]);
+
+// Throws Refuse when a mod (role "mod") sends a head-only edit.
+export function checkRole(ops, role) {
+  if (role === "head") return;
+  ops.forEach((op, i) => {
+    if (HEAD_ONLY.has(op.op)) throw new Refuse(`edit ${i + 1} (${op.op}): only head mods can ${HEAD_ONLY.get(op.op)}`);
+  });
+}
