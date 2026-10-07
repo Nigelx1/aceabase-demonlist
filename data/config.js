@@ -63,7 +63,6 @@ window.SITE = {
     { name: "hesoaring", nationality: "US" },
     { name: "dot", nationality: "CA" },
     { name: "Joancio", nationality: "US" },
-    { name: "Jesus", nationality: "US" },
     { name: "zinglebob238", nationality: "GB" },
     { name: "aura", nationality: "US" },
   ],
