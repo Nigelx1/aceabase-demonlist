@@ -55,6 +55,7 @@ window.SITE = {
     { name: "dot", nationality: "CA" },
     { name: "Joancio", nationality: "US" },
     { name: "Jesus", nationality: "US" },
+    { name: "zinglebob238", nationality: "GB" },
   ],
 
   // Home page columns.

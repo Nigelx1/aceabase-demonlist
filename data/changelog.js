@@ -26,6 +26,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-07",
+    "items": [
+      {
+        "kind": "note",
+        "text": "New member: zinglebob238, from the UK."
+      }
+    ]
+  },
+  {
     "date": "2026-10-06",
     "items": [
       {
