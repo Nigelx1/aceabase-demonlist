@@ -224,6 +224,10 @@ def main():
     for d in demons:
         for r in d.get("records", []):
             known.setdefault(r["player"], (r.get("nationality"), r.get("subdivision")))
+    # A roster member with no records yet (added in Members first, clear later)
+    # gets their country from the roster, not null.
+    for m in re.finditer(r'name:\s*"([^"]+)"\s*,\s*nationality:\s*"([A-Z]{2})"(?:\s*,\s*subdivision:\s*"([A-Z0-9]+)")?', cfg):
+        known.setdefault(m.group(1), (m.group(2), m.group(3)))
 
     aredl_raw = curl_json(AREDL)
     aredl = {x["level_id"]: x["position"] for x in aredl_raw if x.get("level_id")} if isinstance(aredl_raw, list) else {}
