@@ -30,6 +30,10 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 1 level drifted (Shardscapes 32.77 → 32.75)."
+      },
+      {
+        "kind": "note",
         "text": "zinglebob238 also cleared Bloodbath."
       },
       {

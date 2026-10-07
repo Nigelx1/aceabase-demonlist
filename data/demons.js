@@ -179,7 +179,7 @@ window.DEMONS = [
     "position": 5,
     "name": "Shardscapes",
     "difficulty": "Extreme",
-    "rating": 32.77,
+    "rating": 32.75,
     "publisher": "ItzKiba",
     "creators": [
       "ItzKiba"
