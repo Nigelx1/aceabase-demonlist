@@ -41,7 +41,6 @@ window.SITE = {
     { name: "Nigel", head: true },
     { name: "Dihmaster500", head: true },
     { name: "Poatan", head: true },
-    { name: "aura", head: true },
     { name: "ace" },
     { name: "hesoaring" },
     { name: "Jaiden" },
