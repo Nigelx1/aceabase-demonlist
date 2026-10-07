@@ -387,6 +387,18 @@ const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dis
   try { contract.checkRole([{ op: "refresh_order" }], "head"); } catch (e) { threw = e.message; }
   check("roles: a head mod can do anything", threw === "");
 
+  // undo: head mods only, with a 16-hex request id
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  let ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "undo", requestId: "0123456789abcdef" }] })));
+  const su = calls[0] && JSON.parse(calls[0].init.body);
+  check("undo: a head mod can undo", ru.status === 200 && su && su.client_payload.ops[0].requestId === "0123456789abcdef");
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "undo", requestId: "0123456789abcdef" }] }, { cookie: aceCookie })));
+  check("undo: a mod can't", ru.status === 403);
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "undo", requestId: "XYZ" }] })));
+  check("undo: a bad request id is refused", ru.status === 400);
+
   // apply-edit.py: the same rule, and a missing or unknown role counts as a mod / is refused
   const PYROLE = `
 import importlib.util, json, sys

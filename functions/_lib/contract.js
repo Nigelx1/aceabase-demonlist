@@ -25,6 +25,7 @@ export const OPS = {
   set_record_video: [["player", "level", "url"], []],
   remove_record_video: [["player", "level"], []],
   refresh_order: [[], []],
+  undo: [["requestId"], []], // head mods: reverse one earlier edit
 };
 
 // ISO 3166-1 alpha-2, the officially assigned codes (the same 249 as apply-edit.py)
@@ -158,6 +159,12 @@ export function validateOps(ops) {
       if (Object.hasOwn(op, "segments")) o.segments = checkSegments(op.segments);
       if (Object.hasOwn(op, "note")) o.note = checkNote(op.note);
       if (Object.hasOwn(op, "url")) o.url = checkUrl(op.url);
+      if (Object.hasOwn(op, "requestId")) {
+        if (typeof op.requestId !== "string" || !/^[0-9a-f]{16}$/.test(op.requestId)) {
+          throw new Refuse(`requestId must be 16 lowercase hex characters, got ${show(op.requestId)}`);
+        }
+        o.requestId = op.requestId;
+      }
     } catch (e) {
       if (e instanceof Refuse) throw new Refuse(`${where} (${op.op}): ${e.message}`);
       throw e;
@@ -182,6 +189,7 @@ export const HEAD_ONLY = new Map([
   ["add_member", "add members"],
   ["remove_record", "remove clears"],
   ["refresh_order", "re-sort the list"],
+  ["undo", "undo edits"],
 ]);
 
 // Throws Refuse when a mod (role "mod") sends a head-only edit.

@@ -860,6 +860,19 @@
         }
         if (why === undefined) fetchReason(run.requestId);
       }
+      // Head mods can undo a finished edit (an "undo" edit of its own; the GitHub
+      // job refuses if a newer edit changed the same part of the list).
+      if (st[1] === "done" && isHead() && /^[0-9a-f]{16}$/.test(run.requestId || "")) {
+        var undoBox = el("div", { className: "msg" });
+        undoBox.hidden = true;
+        var undoBtn = el("button", { type: "button", className: "button white hover small" }, "Undo");
+        undoBtn.addEventListener("click", function () {
+          if (!window.confirm("Undo this edit? The list goes back to how it was before it.")) return;
+          save([{ op: "undo", requestId: run.requestId }], "Undo: " + (t ? t.what : "an edit"), undoBtn, undoBox);
+        });
+        li.appendChild(undoBtn);
+        li.appendChild(undoBox);
+      }
       list.appendChild(li);
     });
     return busy;

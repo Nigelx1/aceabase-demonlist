@@ -74,11 +74,12 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "remove_record_video": ({"player", "level"}, set()),
     "refresh_order": (set(), set()),
     "refresh_showcases": (set(), set()),  # the scheduled upkeep only; not on the page
+    "undo": ({"requestId"}, set()),  # head mods: reverse one earlier edit
 }
 # What only head mods may do; functions/_lib/contract.js HEAD_ONLY is the same list.
 # A mod also can't bring in a new player through add_record (Engine.adds).
 HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "refresh_order": "re-sort the list",
-             "refresh_showcases": "check Nigel's channel for showcases"}
+             "refresh_showcases": "check Nigel's channel for showcases", "undo": "undo edits"}
 # Nigel's YouTube: tools/apply-showcases.py uses its "<level> by <creator>" uploads.
 CHANNEL = "@nigelx1"
 VIDEO_HOSTS = {"youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"}
@@ -224,6 +225,10 @@ def validate(p):
                 o["note"] = check_note(op["note"])
             if "url" in op:
                 o["url"] = check_url(op["url"])
+            if "requestId" in op:
+                if not isinstance(op["requestId"], str) or not re.fullmatch(r"[0-9a-f]{16}", op["requestId"]):
+                    raise Refuse(f"requestId must be 16 lowercase hex characters, got {show(op['requestId'])}")
+                o["requestId"] = op["requestId"]
         except Refuse as e:
             raise Refuse(f"{where} ({op['op']}): {e}")
         out.append(o)
@@ -807,6 +812,59 @@ class Engine:
         for n in changed:
             self.say(f"{n} now uses Nigel's showcase" + (f' "{titles[n]}".' if n in titles else "."))
         self.subjects.append("Nigel's showcase on " + ", ".join(changed))
+
+    # undo -> reverse one earlier edit: the commit it made (found by its "Request:
+    # <id>" line; only the mod page's and the upkeep's commits) is applied
+    # backwards. If a later edit changed the same lines the reverse patch doesn't
+    # apply and nothing changes: the newer edit has to be undone first. check()
+    # then proves the list is consistent, as after any edit. The patch is read
+    # from the real repo and applied to self.root, so a dry run works on its copy.
+    def undo(self, o):
+        rid = o["requestId"]
+        log = git("log", "-n", "500", "--format=%H%x1f%an%x1f%B%x1e").stdout
+        target, undone = None, False
+        for rec in log.split("\x1e"):
+            parts = rec.strip("\n").split("\x1f")
+            if len(parts) < 3:
+                continue
+            sha, author, body = parts[0].strip(), parts[1], parts[2]
+            if f"Undoes request {rid}" in body:
+                undone = True
+            if target is None and f"Request: {rid}" in body and author == "github-actions[bot]":
+                target = (sha, body.strip().splitlines()[0])
+        if undone:
+            raise Refuse("that edit has already been undone")
+        if not target:
+            raise Refuse("couldn't find what that edit changed - it may not have changed anything, or it's too old to undo here")
+        sha, subj = target
+        # git works out the undone files itself (a three-way merge of HEAD with the
+        # edit reversed, written to no working tree), so line endings and nearby
+        # changes don't matter; a real conflict (a newer edit changed the same
+        # lines) exits 1.
+        r = git("merge-tree", "--write-tree", "--no-messages", f"--merge-base={sha}", "HEAD", f"{sha}^", check=False)
+        if r.returncode == 1:
+            raise Refuse("a later edit changed the same part of the list, so this one can't be undone on its own - "
+                         "undo the newer edits first")
+        if r.returncode:
+            raise Refuse("couldn't work out how to undo that edit: " + (r.stderr or r.stdout).strip()[:200])
+        tree = r.stdout.split()[0]
+        paths = [x for x in git("diff", "--name-only", "-z", "HEAD", tree).stdout.split("\0") if x]
+        if not paths:
+            raise Refuse("that edit didn't change anything that's still there to undo")
+        for rel in paths:
+            dest = os.path.join(self.root, *rel.split("/"))
+            blob = subprocess.run(["git", "-C", REPO, "show", f"{tree}:{rel}"], capture_output=True)
+            if blob.returncode:  # the edit created this file: undoing it removes it
+                if os.path.exists(dest):
+                    os.remove(dest)
+                continue
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "wb") as f:
+                f.write(blob.stdout)
+        what = re.sub(r" \((?:by .+ via the mod page|scheduled upkeep)\)$", "", subj)
+        self.say(f"Undid: {what}.")
+        self.say(f"Undoes request {rid} ({sha[:7]}).")
+        self.subjects.append(f"Undo: {what}")
 
     def sync_goal_comments(self, listed_before):
         """A goal row's comment says "(on the list)" when its level is on the list;
