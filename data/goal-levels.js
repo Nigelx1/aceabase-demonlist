@@ -48,6 +48,76 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
+  "26681070": {
+    "name": "Sonic Wave",
+    "publisher": "lSunix",
+    "difficulty": "Extreme",
+    "rating": 29.84,
+    "levelId": 26681070,
+    "description": "Mythical Demon by Cyclic! Video on my YouTube.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=2ZtYignaojk",
+    "gd": {
+      "length": "XL",
+      "objects": 23157,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "574484",
+        "name": "F-777 - Sonic Blaster",
+        "artist": "F-777"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
+    "palette": {
+      "accent": "#1e9696",
+      "deep": "#0f3e3e",
+      "wash": "#f2fbfb",
+      "mist": "#e2f3f3",
+      "onAccent": "#ffffff",
+      "ink": "#1f4747"
+    },
+    "writeup": {
+      "text": "Cyclic's buffed Nine Circles remake, hack-verified back in 1.9 and left unbeaten until Sunix verified and published it in 2.0 on 25 November 2016, after a hacking scandal, drama and a race to finish it. It went straight to #1 and spent a record 2,508 days in the Top 150 - the level that splits the lower extremes from the upper ones.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
+    }
+  },
+  "58811846": {
+    "name": "Astral Divinity",
+    "publisher": "Knobbelboy",
+    "difficulty": "Extreme",
+    "rating": 27.16,
+    "levelId": 58811846,
+    "description": "A god does not fear death. Update: Level optimized by GD Endy. Objects reduced by ~50%",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=Wt76QZqF-os",
+    "gd": {
+      "length": "Long",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "732596",
+        "name": "lia;quo?Crystal Corruption??Nightcore Edit?",
+        "artist": "liaquo"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/Wt76QZqF-os/maxresdefault.jpg",
+    "palette": {
+      "accent": "#d46810",
+      "deep": "#3e240f",
+      "wash": "#fbf6f2",
+      "mist": "#f3eae2",
+      "onAccent": "#ffffff",
+      "ink": "#47311f"
+    },
+    "writeup": {
+      "text": "knobbelboy's long-awaited masterpiece, first teased as God Eater in 2017 with a preview so hyped it became one of the most reuploaded videos in Geometry Dash. He verified it in January 2019 after battling through a kidney stone, lost it to a copyright takedown that June, then replaced the art, renamed it and verified the whole thing again in December 2019. Gorgeous to look at - its gameplay and performance are another story.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Astral_Divinity"
+    }
+  },
   "59075347": {
     "name": "Tartarus",
     "publisher": "ItzDolphy",
@@ -76,6 +146,41 @@ window.GOAL_LEVELS = {
       "text": "A descent into the underworld. Riot's hellish 1.9-style megacollab, co-hosted by Aurorus, is wall-to-wall extremely tight orb spam, ship and swing-copter sections. Dolphy verified it in January 2020 after 61,742 attempts and it reigned at #1 for 527 days - though the verification drama means plenty of players credit Mullsy, its second victor, as the real one.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
+    }
+  },
+  "27690100": {
+    "name": "Slaughterhouse ",
+    "publisher": "IcEDCave",
+    "difficulty": "Extreme",
+    "rating": 37.91,
+    "levelId": 27690100,
+    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=mVg8LgrWaYQ",
+    "gd": {
+      "length": "Long",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "945695",
+        "name": "Tennobyte - Fly Away",
+        "artist": "Tennobyte"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f56",
+      "deep": "#3e0f1a",
+      "wash": "#fbf2f4",
+      "mist": "#f3e2e6",
+      "onAccent": "#ffffff",
+      "ink": "#471f29"
+    },
+    "writeup": {
+      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
     }
   },
   "68668045": {

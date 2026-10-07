@@ -1517,6 +1517,12 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
+      },
+      {
+        "player": "Joancio",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
       }
     ],
     "gd": {

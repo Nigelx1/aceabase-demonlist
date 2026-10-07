@@ -30,6 +30,14 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "Joancio also cleared Windy Landscape."
+      },
+      {
+        "kind": "note",
+        "text": "New member: Joancio, from the US."
+      },
+      {
+        "kind": "note",
         "text": "The list follows the AREDL now: extremes are ordered and scored by their AREDL placement, and everything else by its GD Demon Ladder rating on the same scale (a curve fit to the whole AREDL turns a placement into a rating). Points shift for everyone."
       },
       {

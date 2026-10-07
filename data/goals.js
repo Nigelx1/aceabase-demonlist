@@ -31,10 +31,14 @@
 
 window.GOALS = [
   { player: "ace", levelId: 42584142, best: null, segments: [[67, 85], [71, 92], [75, 93], [80, 96], [88, 100]], note: "75–93 twice." }, // Bloodlust
+  { player: "ace", levelId: 26681070, best: 38, segments: [[20, 45]] }, // Sonic Wave (on the list)
+  { player: "ace", levelId: 58811846, best: 16 }, // Astral Divinity
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
+  { player: "Dihmaster500", levelId: 27690100, best: 55, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
   { player: "Poatan", levelId: 68668045, best: 63, segments: [[42, 100]] }, // Congregation
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[40, 100]] }, // Artificial Ascent
   { player: "hesoaring", levelId: 10565740, best: 49, segments: [[33, 92], [70, 100]] }, // Bloodbath (on the list)
+  { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation
   { player: "Nigel", levelId: 92466083, best: 0, note: "Haven't started ✌️", video: "https://youtu.be/wxyYAuMYq5o" }, // Jupiter My Favourite
