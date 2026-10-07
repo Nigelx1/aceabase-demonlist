@@ -46,4 +46,5 @@ window.GOALS = [
   { player: "zinglebob238", levelId: 38235367, best: 58, segments: [[48, 100]] }, // Quantum Processing (on the list)
   { player: "zinglebob238", levelId: 23262780, best: 45, segments: [[32, 73], [80, 100]] }, // Sakupen Hell
   { player: "aura", levelId: 37259527, best: 0 }, // BuTiTi II (on the list)
+  { player: "aura", levelId: 59626284, best: 0 }, // Future Funk II
 ];

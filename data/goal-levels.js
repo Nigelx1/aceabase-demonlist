@@ -349,6 +349,36 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
     }
   },
+  "59626284": {
+    "name": "Future Funk II",
+    "publisher": "JonathanGD",
+    "difficulty": "Insane",
+    "rating": 17.85,
+    "levelId": 59626284,
+    "description": "Remember when Future Funk won the Best XL Demon in 2.1 Awards? Well, here it is again! A sequel of Future Funk that you're all waiting for!",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=r1I6cEwi4Us",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "787153",
+        "name": "Ouais Ouais (ft. SlyLeaf)",
+        "artist": "LemKuuja"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/r1I6cEwi4Us/maxresdefault.jpg",
+    "palette": {
+      "accent": "#8c30e8",
+      "deep": "#260f3e",
+      "wash": "#f6f2fb",
+      "mist": "#ebe2f3",
+      "onAccent": "#ffffff",
+      "ink": "#331f47"
+    }
+  },
   "68668045": {
     "name": "Congregation",
     "publisher": "Presta",
