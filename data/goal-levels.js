@@ -12,18 +12,18 @@
 // -----------------------------------------------------------------------------
 
 window.GOAL_LEVELS = {
-  "42584142": {
-    "name": "Bloodlust",
-    "publisher": "Knobbelboy",
+  "10565740": {
+    "name": "Bloodbath",
+    "publisher": "Riot",
     "difficulty": "Extreme",
-    "rating": 31.98,
-    "levelId": 42584142,
-    "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
+    "rating": 23.97,
+    "levelId": 10565740,
+    "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
+    "videoUrl": "https://www.youtube.com/watch?v=shOO9UfDvfs",
     "gd": {
-      "length": "XL",
-      "objects": 65535,
+      "length": "Long",
+      "objects": 24746,
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
@@ -33,7 +33,7 @@ window.GOAL_LEVELS = {
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
     "palette": {
       "accent": "#f91f1f",
       "deep": "#3e0f0f",
@@ -43,9 +43,9 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
+      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   },
   "26681070": {
@@ -81,6 +81,142 @@ window.GOAL_LEVELS = {
       "text": "Cyclic's buffed Nine Circles remake, hack-verified back in 1.9 and left unbeaten until Sunix verified and published it in 2.0 on 25 November 2016, after a hacking scandal, drama and a race to finish it. It went straight to #1 and spent a record 2,508 days in the Top 150 - the level that splits the lower extremes from the upper ones.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
+    }
+  },
+  "27122654": {
+    "name": "Artificial Ascent",
+    "publisher": "ViPriN",
+    "difficulty": "Extreme",
+    "rating": 27.97,
+    "levelId": 27122654,
+    "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=zmKI2rqyQyU",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "63082",
+        "name": "Surface",
+        "artist": "Dimrain47"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
+    "palette": {
+      "accent": "#b11ff9",
+      "deep": "#2e0f3e",
+      "wash": "#f8f2fb",
+      "mist": "#ede2f3",
+      "onAccent": "#ffffff",
+      "ink": "#3a1f47"
+    },
+    "writeup": {
+      "text": "The machine wakes up. Viprin's futuristic, robotic megacollab, co-hosted by LmAnubis, runs 16 creators' sections through shifting colour schemes to Dimrain47's \"Surface.\" Combined verified it in December 2016 and it debuted at #1, only to be dethroned within ten days - then it stayed on the Demonlist for 2,078 days, the first of the Technology Trilogy to finally fall off.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
+    }
+  },
+  "27690100": {
+    "name": "Slaughterhouse ",
+    "publisher": "IcEDCave",
+    "difficulty": "Extreme",
+    "rating": 37.91,
+    "levelId": 27690100,
+    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=mVg8LgrWaYQ",
+    "gd": {
+      "length": "Long",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "945695",
+        "name": "Tennobyte - Fly Away",
+        "artist": "Tennobyte"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f56",
+      "deep": "#3e0f1a",
+      "wash": "#fbf2f4",
+      "mist": "#f3e2e6",
+      "onAccent": "#ffffff",
+      "ink": "#471f29"
+    },
+    "writeup": {
+      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
+    }
+  },
+  "38235367": {
+    "name": "Quantum Processing",
+    "publisher": "Riot",
+    "difficulty": "Extreme",
+    "rating": 27.04,
+    "levelId": 38235367,
+    "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=7Kxm2eOPg5I",
+    "gd": {
+      "length": "Long",
+      "objects": 21269,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon"
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
+    "palette": {
+      "accent": "#04a904",
+      "deep": "#0f3e0f",
+      "wash": "#f2fbf2",
+      "mist": "#e2f3e2",
+      "onAccent": "#ffffff",
+      "ink": "#1f471f"
+    },
+    "writeup": {
+      "text": "Quantum Processing is a 1.9-2.1 Extreme Demon collaboration level by Riot, Hinds, Zobros, and Sil3nce, verified by Rampage on 12 October 2017. It is a super-buffed remake of the main level Blast Processing. Quantum Processing's difficulty derives from exceptionally tight spaces throughout the wave sections and intense straight-flying.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Quantum_Processing"
+    }
+  },
+  "42584142": {
+    "name": "Bloodlust",
+    "publisher": "Knobbelboy",
+    "difficulty": "Extreme",
+    "rating": 31.98,
+    "levelId": 42584142,
+    "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "467339",
+        "name": "At the Speed of Light",
+        "artist": "Dimrain47",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
   "58811846": {
@@ -148,46 +284,11 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
     }
   },
-  "27690100": {
-    "name": "Slaughterhouse ",
-    "publisher": "IcEDCave",
-    "difficulty": "Extreme",
-    "rating": 37.91,
-    "levelId": 27690100,
-    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=mVg8LgrWaYQ",
-    "gd": {
-      "length": "Long",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "945695",
-        "name": "Tennobyte - Fly Away",
-        "artist": "Tennobyte"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f56",
-      "deep": "#3e0f1a",
-      "wash": "#fbf2f4",
-      "mist": "#f3e2e6",
-      "onAccent": "#ffffff",
-      "ink": "#471f29"
-    },
-    "writeup": {
-      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
-    }
-  },
   "68668045": {
     "name": "Congregation",
     "publisher": "Presta",
     "difficulty": "Extreme",
-    "rating": 31.55,
+    "rating": 31.52,
     "levelId": 68668045,
     "description": "verified by floofle",
     "requirementPercent": 100,
@@ -217,77 +318,6 @@ window.GOAL_LEVELS = {
       "text": "A slow-burn descent into timing hell. Presta wraps you in barely-lit blues and near-invisible passages, lulls you with methodical cube and ball work — then the drop detonates into double- and quadruple-speed chaos in searing orange. No ship section the whole way through, an Epic rating earned under the old object cap, and the birthplace of the internet's favourite \"jumpscare\" edit. Peaked around #35 on the Demonlist before sliding to Legacy.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Congregation"
-    }
-  },
-  "27122654": {
-    "name": "Artificial Ascent",
-    "publisher": "ViPriN",
-    "difficulty": "Extreme",
-    "rating": 27.97,
-    "levelId": 27122654,
-    "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=zmKI2rqyQyU",
-    "gd": {
-      "length": "XL",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "63082",
-        "name": "Surface",
-        "artist": "Dimrain47"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
-    "palette": {
-      "accent": "#b11ff9",
-      "deep": "#2e0f3e",
-      "wash": "#f8f2fb",
-      "mist": "#ede2f3",
-      "onAccent": "#ffffff",
-      "ink": "#3a1f47"
-    },
-    "writeup": {
-      "text": "The machine wakes up. Viprin's futuristic, robotic megacollab, co-hosted by LmAnubis, runs 16 creators' sections through shifting colour schemes to Dimrain47's \"Surface.\" Combined verified it in December 2016 and it debuted at #1, only to be dethroned within ten days - then it stayed on the Demonlist for 2,078 days, the first of the Technology Trilogy to finally fall off.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
-    }
-  },
-  "10565740": {
-    "name": "Bloodbath",
-    "publisher": "Riot",
-    "difficulty": "Extreme",
-    "rating": 23.97,
-    "levelId": 10565740,
-    "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=shOO9UfDvfs",
-    "gd": {
-      "length": "Long",
-      "objects": 24746,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "467339",
-        "name": "At the Speed of Light",
-        "artist": "Dimrain47",
-        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f1f",
-      "deep": "#3e0f0f",
-      "wash": "#fbf2f2",
-      "mist": "#f3e2e2",
-      "onAccent": "#ffffff",
-      "ink": "#471f1f"
-    },
-    "writeup": {
-      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   },
   "92466083": {
