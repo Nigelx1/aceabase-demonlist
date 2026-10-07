@@ -75,11 +75,17 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "refresh_order": (set(), set()),
     "refresh_showcases": (set(), set()),  # the scheduled upkeep only; not on the page
     "undo": ({"requestId"}, set()),  # head mods: reverse one earlier edit
+    "rename_member": ({"name", "newName"}, set()),
+    "set_member_country": ({"name", "nationality"}, set()),
+    "remove_member": ({"name"}, set()),  # only someone with no records left
 }
 # What only head mods may do; functions/_lib/contract.js HEAD_ONLY is the same list.
 # A mod also can't bring in a new player through add_record (Engine.adds).
 HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "refresh_order": "re-sort the list",
-             "refresh_showcases": "check Nigel's channel for showcases", "undo": "undo edits"}
+             "refresh_showcases": "check Nigel's channel for showcases", "undo": "undo edits",
+             "rename_member": "rename members", "set_member_country": "change a member's country",
+             "remove_member": "remove members"}
+FLAG_SRC = "https://raw.githubusercontent.com/stadust/pointercrate/master/pointercrate-demonlist-pages/static/images/flags/"
 # Nigel's YouTube: tools/apply-showcases.py uses its "<level> by <creator>" uploads.
 CHANNEL = "@nigelx1"
 VIDEO_HOSTS = {"youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"}
@@ -200,6 +206,8 @@ def validate(p):
         try:
             if "name" in op:
                 o["name"] = check_name(op["name"], "name")
+            if "newName" in op:
+                o["newName"] = check_name(op["newName"], "new name")
             if "player" in op:
                 o["player"] = check_name(op["player"], "player")
             if "nationality" in op:
@@ -865,6 +873,111 @@ class Engine:
         self.say(f"Undid: {what}.")
         self.say(f"Undoes request {rid} ({sha[:7]}).")
         self.subjects.append(f"Undo: {what}")
+
+    # --- members: rename, country, remove (head mods) ----------------------------------
+    # A member's name and country live in the roster (config.js members) and on each
+    # of their records (demons.js: player, nationality, the first-clear verifier
+    # credit, hosted video files named after them); their Grind rows name them too
+    # (goals.js). The changelog is history and keeps what it said.
+    def roster_line(self, cfg, who):
+        m = re.search(r'\{\s*name:\s*"' + re.escape(who) + r'"[^}\n]*\}', cfg)
+        if not m:
+            raise Refuse(f"{who} isn't in the roster (data/config.js members)")
+        return m
+
+    def rename_member(self, o):
+        s = load_state(self.root)
+        who = self.member(s, o["name"])
+        new = o["newName"]
+        if new == who:
+            self.say(f"{who} already has that name - no change.")
+            return
+        clash = self.resolve(new, self.players(s))
+        if clash and clash != who:
+            raise Refuse(f"{clash} is already on the list")
+        cfg = read(self.root, "data/config.js")
+        m = self.roster_line(cfg, who)
+        line = m.group(0).replace(json.dumps(who, ensure_ascii=False), json.dumps(new, ensure_ascii=False), 1)
+        write(self.root, "data/config.js", cfg[:m.start()] + line + cfg[m.end():])
+        moved = 0
+        for d in s["DEMONS"]:
+            if d.get("verifier") == who:
+                d["verifier"] = new
+            for r in d.get("records", []):
+                if r["player"] != who:
+                    continue
+                r["player"] = new
+                moved += 1
+                for key in ("video", "videoPoster"):  # a hosted file is named after the player
+                    v = r.get(key)
+                    if isinstance(v, str) and v.startswith("videos/") and f"/{who}." in v:
+                        nv = v.replace(f"/{who}.", f"/{new}.", 1)
+                        src = os.path.join(self.root, *v.split("/"))
+                        if os.path.exists(src):
+                            os.replace(src, os.path.join(self.root, *nv.split("/")))
+                        r[key] = nv
+        if moved:
+            write_json_var(self.root, "data/demons.js", "DEMONS", s["DEMONS"])
+        goals, n = re.subn(r'(\{\s*player:\s*)"' + re.escape(who) + r'"',
+                           lambda mm: mm.group(1) + json.dumps(new, ensure_ascii=False), read(self.root, "data/goals.js"))
+        if n:
+            write(self.root, "data/goals.js", goals)
+            self.goals_touched = True
+        self.say(f"Renamed {who} to {new} ({moved} record{'s' if moved != 1 else ''}, {n} Grind row{'s' if n != 1 else ''}).")
+        self.subjects.append(f"Rename {who} to {new}")
+
+    def set_member_country(self, o):
+        s = load_state(self.root)
+        who = self.member(s, o["name"])
+        cc = o["nationality"]
+        cfg = read(self.root, "data/config.js")
+        m = self.roster_line(cfg, who)
+        recs = [r for d in s["DEMONS"] for r in d.get("records", []) if r["player"] == who]
+        if f'nationality: "{cc}"' in m.group(0) and "subdivision" not in m.group(0) \
+                and all(r.get("nationality") == cc and not r.get("subdivision") for r in recs):
+            self.say(f"{who} is already from {country_phrase(cc, s['COUNTRY_NAMES'])} - no change.")
+            return
+        line = re.sub(r'\s*,\s*subdivision:\s*"[^"]*"', "", m.group(0))
+        if re.search(r'nationality:\s*"[A-Z]{2}"', line):
+            line = re.sub(r'nationality:\s*"[A-Z]{2}"', f'nationality: "{cc}"', line, count=1)
+        else:
+            line = line[:-1].rstrip() + f', nationality: "{cc}" }}'
+        write(self.root, "data/config.js", cfg[:m.start()] + line + cfg[m.end():])
+        for r in recs:
+            r["nationality"], r["subdivision"] = cc, None
+        if recs:
+            write_json_var(self.root, "data/demons.js", "DEMONS", s["DEMONS"])
+        flag = os.path.join(self.root, "static", "images", "flags", f"{cc.lower()}.svg")
+        if not os.path.exists(flag):
+            got = subprocess.run(["curl", "-sS", "-f", "-o", flag, FLAG_SRC + f"{cc.lower()}.svg"], capture_output=True)
+            if got.returncode:
+                self.say(f"(No flag picture exists for {cc} - the name shows without one.)")
+        self.say(f"{who} is now from {country_phrase(cc, s['COUNTRY_NAMES'])} ({len(recs)} record{'s' if len(recs) != 1 else ''}).")
+        self.subjects.append(f"{who} is from {cc}")
+
+    def remove_member(self, o):
+        s = load_state(self.root)
+        who = self.member(s, o["name"])
+        held = [d["name"] for d in s["DEMONS"] for r in d.get("records", []) if r["player"] == who]
+        if held:
+            raise Refuse(f"{who} still has records ({', '.join(held[:5])}{' ...' if len(held) > 5 else ''}) - "
+                         "remove those clears first")
+        cfg = read(self.root, "data/config.js")
+        m = self.roster_line(cfg, who)
+        start = cfg.rfind("\n", 0, m.start()) + 1
+        end = cfg.find("\n", m.end())
+        end = len(cfg) if end < 0 else end + 1
+        if cfg[start:end].strip().rstrip(",").strip() != m.group(0):
+            raise Refuse("the roster in data/config.js isn't one member per line - remove them by hand")
+        write(self.root, "data/config.js", cfg[:start] + cfg[end:])
+        lines = read(self.root, "data/goals.js").split("\n")
+        keep = [ln for ln in lines if not goal_row_re(who).match(ln)]
+        dropped = len(lines) - len(keep)
+        if dropped:
+            write(self.root, "data/goals.js", "\n".join(keep))
+            self.goals_touched = True
+        self.say(f"Removed {who} from the list" + (f" and their {dropped} Grind row{'s' if dropped != 1 else ''}." if dropped else "."))
+        self.subjects.append(f"Remove member {who}")
 
     def sync_goal_comments(self, listed_before):
         """A goal row's comment says "(on the list)" when its level is on the list;

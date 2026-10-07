@@ -399,6 +399,20 @@ const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dis
   ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "undo", requestId: "XYZ" }] })));
   check("undo: a bad request id is refused", ru.status === 400);
 
+  // members: rename / country / remove are head mods' only
+  const memberOps = [{ op: "rename_member", name: "ace", newName: "acee" }, { op: "set_member_country", name: "ace", nationality: "CA" },
+    { op: "remove_member", name: "ace" }];
+  for (const op of memberOps) {
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const rh = await api.edit.onRequestPost(ctx(editReq({ ops: [op] })));
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const rm = await api.edit.onRequestPost(ctx(editReq({ ops: [op] }, { cookie: aceCookie })));
+    check(`members: ${op.op} - head mod yes, mod no`, rh.status === 200 && rm.status === 403);
+  }
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "rename_member", name: "ace", newName: "<x>" }] })));
+  check("members: a bad new name is refused", ru.status === 400);
+
   // apply-edit.py: the same rule, and a missing or unknown role counts as a mod / is refused
   const PYROLE = `
 import importlib.util, json, sys

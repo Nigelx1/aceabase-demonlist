@@ -26,6 +26,9 @@ export const OPS = {
   remove_record_video: [["player", "level"], []],
   refresh_order: [[], []],
   undo: [["requestId"], []], // head mods: reverse one earlier edit
+  rename_member: [["name", "newName"], []],
+  set_member_country: [["name", "nationality"], []],
+  remove_member: [["name"], []], // only someone with no records left
 };
 
 // ISO 3166-1 alpha-2, the officially assigned codes (the same 249 as apply-edit.py)
@@ -151,6 +154,7 @@ export function validateOps(ops) {
     const o = { op: op.op };
     try {
       if (Object.hasOwn(op, "name")) o.name = checkName(op.name, "name");
+      if (Object.hasOwn(op, "newName")) o.newName = checkName(op.newName, "new name");
       if (Object.hasOwn(op, "player")) o.player = checkName(op.player, "player");
       if (Object.hasOwn(op, "nationality")) o.nationality = checkCountry(op.nationality, "country");
       if (Object.hasOwn(op, "level")) o.level = checkLevel(op.level);
@@ -190,6 +194,9 @@ export const HEAD_ONLY = new Map([
   ["remove_record", "remove clears"],
   ["refresh_order", "re-sort the list"],
   ["undo", "undo edits"],
+  ["rename_member", "rename members"],
+  ["set_member_country", "change a member's country"],
+  ["remove_member", "remove members"],
 ]);
 
 // Throws Refuse when a mod (role "mod") sends a head-only edit.

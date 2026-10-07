@@ -671,11 +671,67 @@
       .forEach(function (name) {
         var clears = recordsOf(name).filter(function (x) { return x.record.progress >= 100; }).length;
         var cc = nationalityOf(name);
-        roster.appendChild(
-          el("li", null, flag(cc), " ", el("span", { className: "name" }, name),
-            el("span", { className: "muted" }, clears ? clears + (clears === 1 ? " clear" : " clears") : "no clears yet"))
-        );
+        var li = el("li", null, flag(cc), " ", el("span", { className: "name" }, name),
+          el("span", { className: "muted" }, clears ? clears + (clears === 1 ? " clear" : " clears") : "no clears yet"));
+        if (isHead()) {
+          var edit = el("button", { type: "button", className: "button white hover small" }, "Edit");
+          edit.addEventListener("click", function () { memberEditor(li, name, cc); });
+          li.appendChild(edit);
+        }
+        roster.appendChild(li);
       });
+  }
+
+  // A member's editor under their roster row (head mods): name, country, remove.
+  // Changing both sends the country first (under the old name), then the rename.
+  function memberEditor(li, name, cc) {
+    var open = li.querySelector(".member-edit");
+    if (open) {
+      open.remove();
+      return;
+    }
+    var input = el("input", { type: "text", value: name, autocomplete: "off", spellcheck: false });
+    var country = el("select", { className: "country-select" });
+    fillCountrySelect(country);
+    country.value = cc || "";
+    var save1 = el("button", { type: "button", className: "button blue hover small" }, "Save");
+    var remove = el("button", { type: "button", className: "button red hover small" }, "Remove from the list");
+    var box = el("div", { className: "msg" });
+    box.hidden = true;
+    var records = recordsOf(name).length;
+    var wrap = el("div", { className: "member-edit" },
+      el("label", { className: "field" }, el("span", null, "Name"), input),
+      el("label", { className: "field" }, el("span", null, "Country"), country),
+      save1, " ", remove,
+      records ? el("p", { className: "hint" }, "To remove " + name + ", remove their clears first (Clears & videos).") : null,
+      box);
+    if (records) remove.disabled = true;
+    save1.addEventListener("click", function () {
+      var ops = [];
+      try {
+        var newName = checkName(input.value, "name");
+        if (country.value !== (cc || "")) {
+          if (!COUNTRIES[country.value]) throw new Problem("Pick a country.");
+          ops.push({ op: "set_member_country", name: name, nationality: country.value });
+        }
+        if (newName !== name) {
+          var other = resolvePlayer(newName);
+          if (other && other !== name) throw new Problem(other + " is already on the list.");
+          ops.push({ op: "rename_member", name: name, newName: newName });
+        }
+        if (!ops.length) throw new Problem("Nothing changed.");
+      } catch (e) {
+        if (!(e instanceof Problem)) throw e;
+        say(box, "err", e.message);
+        return;
+      }
+      save(ops, "Edit member: " + name, save1, box);
+    });
+    remove.addEventListener("click", function () {
+      if (!window.confirm("Remove " + name + " from the list?")) return;
+      save([{ op: "remove_member", name: name }], "Remove member: " + name, remove, box);
+    });
+    li.appendChild(wrap);
   }
 
   // --- 4. Clears & videos -------------------------------------------------------
