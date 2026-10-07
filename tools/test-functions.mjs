@@ -38,6 +38,7 @@ const api = {
   edit: await fn("api/edit.js"),
   status: await fn("api/status.js"),
   level: await fn("api/level.js"),
+  mods: await fn("api/mods.js"),
 };
 
 let passed = 0, failed = 0;
@@ -102,6 +103,8 @@ EDITORS["444444444444444444"] = { name: "ace", role: "mod" };
 EDITORS["666666666666666666"] = { name: "Odd", role: "admin" };
 const aceCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRET, "444444444444444444", "ace")}`;
 const nigelCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRET, "111111111111111111", "Nigel")}`;
+// the real owner (contract.js OWNER_ID, in the real editors.json); "Nigel" above is a head mod who isn't
+const ownerCookie = `${session.SESSION_COOKIE}=${await session.makeSession(SECRET, contract.OWNER_ID, "Nigel")}`;
 
 // --- sessions -------------------------------------------------------------------
 
@@ -197,6 +200,14 @@ const CASES = [
   ["name double space", [{ op: "add_member", name: "a  b", nationality: "US" }], "extra spaces"],
   ["name number", [{ op: "add_member", name: 5, nationality: "US" }], "must be text"],
   ["shell in name", [{ op: "add_member", name: "$(rm -rf /)", nationality: "US" }], "can only use letters"],
+  ["mod team", [{ op: "set_mod", discordId: "166314559630475264", name: "ace", role: "head" }, { op: "remove_mod", discordId: "12345678901234567" }], "ok"],
+  ["mod: id as a number", [{ op: "set_mod", discordId: 166314559630475264, name: "ace", role: "mod" }], "must be the 17-20 digit number"],
+  ["mod: short id", [{ op: "set_mod", discordId: "1234", name: "ace", role: "mod" }], "must be the 17-20 digit number"],
+  ["mod: id with letters", [{ op: "remove_mod", discordId: "16631455963047abc" }], "must be the 17-20 digit number"],
+  ["mod: unknown rank", [{ op: "set_mod", discordId: "166314559630475264", name: "ace", role: "owner" }], 'must be "head" or "mod"'],
+  ["mod: bad name", [{ op: "set_mod", discordId: "166314559630475264", name: "<x>", role: "mod" }], "can only use letters"],
+  ["mod: no id", [{ op: "remove_mod" }], "missing discordId"],
+  ["role on another edit", [{ op: "refresh_order", role: "head" }], "unknown field"],
 ];
 
 {
@@ -227,7 +238,7 @@ m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
 out = []
 for ops in json.load(sys.stdin):
     try:
-        out.append({"ok": m.validate({"requestId": "0" * 16, "editor": "Nigel", "role": "head", "ops": ops})["ops"]})
+        out.append({"ok": m.validate({"requestId": "0" * 16, "editor": "Nigel", "role": "head", "owner": True, "ops": ops})["ops"]})
     except m.Refuse as e:
         out.append({"err": str(e)})
 print(json.dumps(out))
@@ -340,7 +351,7 @@ async function callback(query, { cookie = `${session.STATE_COOKIE}=${stateCookie
   let r = await api.me.onRequestGet(ctx(req("/api/me")));
   check("me: 401 without a session", r.status === 401 && (await r.json()).error === "not logged in");
   r = await api.me.onRequestGet(ctx(req("/api/me", { headers: { Cookie: `theme=dark; ${nigelCookie}` } })));
-  check("me: {id, name, role}", r.status === 200 && eq(await r.json(), { id: "111111111111111111", name: "Nigel", role: "head" }) && r.headers.get("Cache-Control") === "no-store");
+  check("me: {id, name, role, owner}", r.status === 200 && eq(await r.json(), { id: "111111111111111111", name: "Nigel", role: "head", owner: false }) && r.headers.get("Cache-Control") === "no-store");
   const mid = nigelCookie.length - 10, swap = nigelCookie[mid] === "A" ? "B" : "A";
   r = await api.me.onRequestGet(ctx(req("/api/me", { headers: { Cookie: nigelCookie.slice(0, mid) + swap + nigelCookie.slice(mid + 1) } })));
   check("me: tampered cookie", r.status === 401);
@@ -439,6 +450,67 @@ print(json.dumps(out))
   check("roles (py): mod refused, no role = mod, head ok, unknown role refused",
     got.length === 4 && /only head mods/.test(got[0]) && /only head mods/.test(got[1]) && got[2] === "ok" && /role must be/.test(got[3]),
     res.stdout + res.stderr);
+}
+// --- the mod team: Nigel's account only (contract.js OWNER_ID) ------------------------------
+{
+  const team = [{ op: "set_mod", discordId: "777777777777777777", name: "Newmod", role: "mod" }, { op: "remove_mod", discordId: "444444444444444444" }];
+  for (const op of team) {
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const rh = await api.edit.onRequestPost(ctx(editReq({ ops: [op] })));
+    const eh = (await rh.json()).error;
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const rm = await api.edit.onRequestPost(ctx(editReq({ ops: [op] }, { cookie: aceCookie })));
+    stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+    const ro = await api.edit.onRequestPost(ctx(editReq({ ops: [op] }, { cookie: ownerCookie })));
+    const so = calls[0] && JSON.parse(calls[0].init.body);
+    check(`mod team: ${op.op} - Nigel yes, other head mods and mods no`, rh.status === 403 && /only Nigel can/.test(eh) && rm.status === 403
+      && ro.status === 200 && so && so.client_payload.owner === true && so.client_payload.editor === "Nigel" && so.client_payload.role === "head", eh);
+  }
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  let r = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "set_mod", discordId: "7777", name: "Newmod", role: "mod" }] }, { cookie: ownerCookie })));
+  check("mod team: a bad Discord ID is refused", r.status === 400 && calls.length === 0);
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  r = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "set_mod", discordId: "777777777777777777", name: "Newmod", role: "owner" }] }, { cookie: ownerCookie })));
+  check("mod team: only the head and mod ranks", r.status === 400 && calls.length === 0);
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  r = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "refresh_order" }] }, { cookie: ownerCookie })));
+  const s2 = calls[0] && JSON.parse(calls[0].init.body);
+  check("mod team: Nigel's other edits go through as before", r.status === 200 && s2 && s2.client_payload.owner === true);
+
+  r = await api.me.onRequestGet(ctx(req("/api/me", { headers: { Cookie: ownerCookie } })));
+  check("me: owner is true for Nigel's account", r.status === 200 && eq(await r.json(), { id: contract.OWNER_ID, name: "Nigel", role: "head", owner: true }));
+  r = await api.mods.onRequestGet(ctx(req("/api/mods")));
+  check("mods: 401 without a session", r.status === 401);
+  r = await api.mods.onRequestGet(ctx(req("/api/mods", { headers: { Cookie: nigelCookie } })));
+  check("mods: 403 for a head mod who isn't Nigel", r.status === 403);
+  r = await api.mods.onRequestGet(ctx(req("/api/mods", { headers: { Cookie: ownerCookie } })));
+  const out = await r.json();
+  check("mods: Nigel gets the team, broken entries left out", r.status === 200 && r.headers.get("Cache-Control") === "no-store"
+    && out.mods.some((m) => eq(m, { id: contract.OWNER_ID, name: "Nigel", role: "head" }))
+    && out.mods.some((m) => eq(m, { id: "444444444444444444", name: "ace", role: "mod" }))
+    && !out.mods.some((m) => m.id === "333333333333333333" || m.id === "666666666666666666"), JSON.stringify(out).slice(0, 300));
+
+  // apply-edit.py: the same rule, and the same owner id
+  const PYOWNER = `
+import importlib.util, json, sys
+sys.dont_write_bytecode = True
+spec = importlib.util.spec_from_file_location("apply_edit", sys.argv[1])
+m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+out = []
+for extra in ({}, {"owner": False}, {"owner": True}, {"owner": 1}):
+    try:
+        m.validate(dict({"requestId": "0" * 16, "editor": "Nigel", "role": "head", "ops": [{"op": "remove_mod", "discordId": "444444444444444444"}]}, **extra))
+        out.append("ok")
+    except m.Refuse as e:
+        out.append(str(e))
+print(json.dumps(out + [m.OWNER_ID]))
+`;
+  const res = spawnSync("python", ["-c", PYOWNER, path.join(ROOT, "tools", "apply-edit.py")], { encoding: "utf8" });
+  let got = [];
+  try { got = JSON.parse(res.stdout); } catch { /* reported below */ }
+  check("mod team (py): head mods refused, Nigel ok, a non-boolean owner refused, same OWNER_ID as contract.js",
+    got.length === 5 && /only Nigel can/.test(got[0]) && /only Nigel can/.test(got[1]) && got[2] === "ok" && /owner must be/.test(got[3])
+    && got[4] === contract.OWNER_ID, res.stdout + res.stderr);
 }
 {
   const good = { ops: [{ op: "add_record", player: "ace", level: "https://gdladder.com/level/86084399", progress: 100 }, { op: "refresh_order" }] };

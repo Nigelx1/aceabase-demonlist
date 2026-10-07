@@ -30,6 +30,8 @@ export const OPS = {
   rename_member: [["name", "newName"], []],
   set_member_country: [["name", "nationality"], []],
   remove_member: [["name"], []], // only someone with no records left
+  set_mod: [["discordId", "name", "role"], []], // Nigel only: add a mod, or rename / re-rank one
+  remove_mod: [["discordId"], []], // Nigel only
 };
 
 // ISO 3166-1 alpha-2, the officially assigned codes (the same 249 as apply-edit.py)
@@ -84,6 +86,20 @@ export function checkCountry(v, what) {
   if (typeof v !== "string" || !/^[A-Z]{2}$/.test(v) || !ISO.has(v)) {
     throw new Refuse(`${what} ${show(v)} isn't a country code - use the two capital letters, e.g. US, CA, MX`);
   }
+  return v;
+}
+
+// A Discord user id ("snowflake"): 17-20 digits, as text (too big for a JS number).
+export function checkDiscordId(v) {
+  if (typeof v !== "string" || !/^[0-9]{17,20}$/.test(v)) {
+    throw new Refuse(`Discord ID ${show(v)} must be the 17-20 digit number from Copy User ID`);
+  }
+  return v;
+}
+
+// A mod's rank in functions/editors.json.
+export function checkModRole(v) {
+  if (v !== "head" && v !== "mod") throw new Refuse(`role ${show(v)} must be "head" or "mod"`);
   return v;
 }
 
@@ -170,6 +186,8 @@ export function validateOps(ops) {
         }
         o.requestId = op.requestId;
       }
+      if (Object.hasOwn(op, "discordId")) o.discordId = checkDiscordId(op.discordId);
+      if (Object.hasOwn(op, "role")) o.role = checkModRole(op.role);
     } catch (e) {
       if (e instanceof Refuse) throw new Refuse(`${where} (${op.op}): ${e.message}`);
       throw e;
@@ -201,10 +219,23 @@ export const HEAD_ONLY = new Map([
   ["remove_member", "remove members"],
 ]);
 
-// Throws Refuse when a mod (role "mod") sends a head-only edit.
-export function checkRole(ops, role) {
-  if (role === "head") return;
+// Nigel's Discord account: the only one that can change the mod team (Nigel,
+// 2026-10-07). It's fixed here rather than marked in editors.json, so no change
+// to that file can hand it to someone else; tools/apply-edit.py has the same id.
+export const OWNER_ID = "828708919492608050";
+
+// What only Nigel may do: change who the mods are (functions/editors.json, the
+// logins, and the List Mods panel in data/config.js, which is rebuilt from it).
+export const OWNER_ONLY = new Map([
+  ["set_mod", "change the mod team"],
+  ["remove_mod", "change the mod team"],
+]);
+
+// Throws Refuse when an edit is above the sender's rank: a head-only edit from a
+// mod (role "mod"), a Nigel-only one from anyone else (owner not true).
+export function checkRole(ops, role, owner = false) {
   ops.forEach((op, i) => {
-    if (HEAD_ONLY.has(op.op)) throw new Refuse(`edit ${i + 1} (${op.op}): only head mods can ${HEAD_ONLY.get(op.op)}`);
+    if (OWNER_ONLY.has(op.op) && owner !== true) throw new Refuse(`edit ${i + 1} (${op.op}): only Nigel can ${OWNER_ONLY.get(op.op)}`);
+    if (HEAD_ONLY.has(op.op) && role !== "head") throw new Refuse(`edit ${i + 1} (${op.op}): only head mods can ${HEAD_ONLY.get(op.op)}`);
   });
 }

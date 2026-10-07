@@ -12,7 +12,7 @@
 
 import EDITORS from "../editors.json";
 import { readCookie, setCookie, clearCookie } from "./http.js";
-import { checkName } from "./contract.js";
+import { checkName, OWNER_ID } from "./contract.js";
 
 export const SESSION_COOKIE = "__Host-gb_session";
 export const STATE_COOKIE = "__Host-gb_oauth";
@@ -126,13 +126,22 @@ export function editorFor(id) {
   }
 }
 
-// The logged-in editor for a request: {id, name} or null. The name comes from
-// editors.json as it is now, not from the cookie.
+// The logged-in editor for a request: {id, name, role, owner} or null. The name
+// and role come from editors.json as it is now, not from the cookie; owner is
+// true for Nigel's account only (contract.js OWNER_ID).
 export async function currentEditor(request, env) {
   const s = await readSession(env.SESSION_SECRET, readCookie(request, SESSION_COOKIE));
   if (!s) return null;
   const ed = editorFor(s.id);
-  return ed && ed.name ? { id: s.id, name: ed.name, role: ed.role } : null;
+  return ed && ed.name ? { id: s.id, name: ed.name, role: ed.role, owner: s.id === OWNER_ID } : null;
+}
+
+// The mod team as this deploy's editors.json has it: [{id, name, role}] in the
+// file's order, broken entries left out (they can't log in either).
+export function allEditors() {
+  return Object.keys(EDITORS)
+    .map((id) => ({ id, ...editorFor(id) }))
+    .filter((e) => e.name);
 }
 
 // --- the OAuth state ------------------------------------------------------------

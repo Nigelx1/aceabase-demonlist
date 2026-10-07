@@ -10,8 +10,11 @@ The mod page's Cloudflare Function sends a GitHub repository_dispatch (event
 "edit"); .github/workflows/apply-edit.yml writes its client_payload to a file
 and runs this. The payload:
 
-  {"requestId": "<16 lowercase hex>", "editor": "<list name>", "ops": [1-10 ops],
-   "dryRun": true}                                   (dryRun optional, testing only)
+  {"requestId": "<16 lowercase hex>", "editor": "<list name>", "role": "head"|"mod",
+   "owner": true, "ops": [1-10 ops], "upkeep": true, "dryRun": true}
+      role: from functions/editors.json (missing = mod); owner: Nigel's account only
+      (OWNER_ID); upkeep: the scheduled run; dryRun: testing only. Only requestId,
+      editor and ops are required.
 
   {"op":"add_member","name":S,"nationality":CC}
   {"op":"add_record","player":S,"level":L,"progress":P,"nationality":CC}  nationality: new players only
@@ -21,6 +24,13 @@ and runs this. The payload:
   {"op":"set_record_video","player":S,"level":L,"url":U}
   {"op":"remove_record_video","player":S,"level":L}
   {"op":"refresh_order"}
+  {"op":"refresh_showcases"}
+  {"op":"undo","requestId":R}
+  {"op":"rename_member","name":S,"newName":S}
+  {"op":"set_member_country","name":S,"nationality":CC}
+  {"op":"remove_member","name":S}
+  {"op":"set_mod","discordId":D,"name":S,"role":"head"|"mod"}   Nigel only
+  {"op":"remove_mod","discordId":D}                             Nigel only
 
   S  1-32 letters (any alphabet), digits, spaces and . _ -
   CC an ISO 3166-1 alpha-2 country code, capitals
@@ -28,6 +38,8 @@ and runs this. The payload:
   P  1-100   B 0-100 or null   segments: up to 20 [a, b] with 0 <= a < b <= 100
   T  up to 140 characters of plain text
   U  https on youtube.com, www.youtube.com, youtu.be or drive.google.com
+  R  an earlier edit's requestId (16 lowercase hex)
+  D  a Discord user id: 17-20 digits, as a string
 
 Every edit goes through the same tools Claude uses by hand (add-records.py,
 add-video.py, refresh-order.py, build-goal-levels.py), so ordering, the AREDL
@@ -78,6 +90,8 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "rename_member": ({"name", "newName"}, set()),
     "set_member_country": ({"name", "nationality"}, set()),
     "remove_member": ({"name"}, set()),  # only someone with no records left
+    "set_mod": ({"discordId", "name", "role"}, set()),  # Nigel only: add a mod, or rename / re-rank one
+    "remove_mod": ({"discordId"}, set()),  # Nigel only
 }
 # What only head mods may do; functions/_lib/contract.js HEAD_ONLY is the same list.
 # A mod also can't bring in a new player through add_record (Engine.adds).
@@ -85,6 +99,13 @@ HEAD_ONLY = {"add_member": "add members", "remove_record": "remove clears", "ref
              "refresh_showcases": "check Nigel's channel for showcases", "undo": "undo edits",
              "rename_member": "rename members", "set_member_country": "change a member's country",
              "remove_member": "remove members"}
+# Nigel's Discord account, the only one that can change the mod team (Nigel, 2026-10-07);
+# functions/_lib/contract.js OWNER_ID is the same, and the Function marks his edits
+# "owner": true. The mod team is functions/editors.json (the logins); the List Mods
+# panel (config.js editors) is rebuilt from it.
+OWNER_ID = "828708919492608050"
+OWNER_ONLY = {"set_mod": "change the mod team", "remove_mod": "change the mod team"}
+EDITORS_FILE = "functions/editors.json"
 FLAG_SRC = "https://raw.githubusercontent.com/stadust/pointercrate/master/pointercrate-demonlist-pages/static/images/flags/"
 # Nigel's YouTube: tools/apply-showcases.py uses its "<level> by <creator>" uploads.
 CHANNEL = "@nigelx1"
@@ -125,6 +146,18 @@ def check_name(v, what):
 def check_country(v, what):
     if not isinstance(v, str) or not re.fullmatch(r"[A-Z]{2}", v) or v not in ISO:
         raise Refuse(f"{what} {show(v)} isn't a country code - use the two capital letters, e.g. US, CA, MX")
+    return v
+
+
+def check_discord_id(v):
+    if not isinstance(v, str) or not re.fullmatch(r"[0-9]{17,20}", v):
+        raise Refuse(f"Discord ID {show(v)} must be the 17-20 digit number from Copy User ID")
+    return v
+
+
+def check_mod_role(v):
+    if not isinstance(v, str) or v not in ("head", "mod"):
+        raise Refuse(f"role {show(v)} must be \"head\" or \"mod\"")
     return v
 
 
@@ -171,7 +204,7 @@ def validate(p):
     """The payload, checked against the contract and normalised (level -> int id)."""
     if not isinstance(p, dict):
         raise Refuse("the payload isn't a JSON object")
-    extra = set(p) - {"requestId", "editor", "role", "ops", "dryRun", "upkeep"}
+    extra = set(p) - {"requestId", "editor", "role", "owner", "ops", "dryRun", "upkeep"}
     if extra:
         raise Refuse(f"unknown payload field(s): {', '.join(sorted(map(show, extra)))}")
     if not isinstance(p.get("requestId"), str) or not re.fullmatch(r"[0-9a-f]{16}", p["requestId"]):
@@ -182,6 +215,10 @@ def validate(p):
     role = p.get("role", "mod")
     if role not in ("head", "mod"):
         raise Refuse(f"role must be \"head\" or \"mod\", got {show(role)}")
+    # Nigel's account (OWNER_ID): the Function adds "owner": true to his edits only.
+    if "owner" in p and not isinstance(p["owner"], bool):
+        raise Refuse("owner must be true or false")
+    owner = p.get("owner") is True
     # The scheduled upkeep (.github/workflows/upkeep.yml): the AREDL or YouTube not
     # answering skips that part instead of failing the run.
     if "upkeep" in p and not isinstance(p["upkeep"], bool):
@@ -237,15 +274,20 @@ def validate(p):
                 if not isinstance(op["requestId"], str) or not re.fullmatch(r"[0-9a-f]{16}", op["requestId"]):
                     raise Refuse(f"requestId must be 16 lowercase hex characters, got {show(op['requestId'])}")
                 o["requestId"] = op["requestId"]
+            if "discordId" in op:
+                o["discordId"] = check_discord_id(op["discordId"])
+            if "role" in op:
+                o["role"] = check_mod_role(op["role"])
         except Refuse as e:
             raise Refuse(f"{where} ({op['op']}): {e}")
         out.append(o)
-    if role != "head":
-        for i, o in enumerate(out, 1):
-            if o["op"] in HEAD_ONLY:
-                raise Refuse(f"edit {i} ({o['op']}): only head mods can {HEAD_ONLY[o['op']]}")
-    return {"requestId": p["requestId"], "editor": editor, "role": role, "ops": out, "dryRun": bool(p.get("dryRun")),
-            "upkeep": bool(p.get("upkeep"))}
+    for i, o in enumerate(out, 1):
+        if o["op"] in OWNER_ONLY and not owner:
+            raise Refuse(f"edit {i} ({o['op']}): only Nigel can {OWNER_ONLY[o['op']]}")
+        if o["op"] in HEAD_ONLY and role != "head":
+            raise Refuse(f"edit {i} ({o['op']}): only head mods can {HEAD_ONLY[o['op']]}")
+    return {"requestId": p["requestId"], "editor": editor, "role": role, "owner": owner, "ops": out,
+            "dryRun": bool(p.get("dryRun")), "upkeep": bool(p.get("upkeep"))}
 
 
 # --- reading and writing the data files ---------------------------------------
@@ -447,10 +489,11 @@ def wiki_writeup(name, lid):
 # --- applying the edits -------------------------------------------------------
 
 class Engine:
-    def __init__(self, root, role="mod", upkeep=False):
+    def __init__(self, root, role="mod", upkeep=False, owner=False):
         self.root = root
         self.upkeep = upkeep     # the scheduled upkeep: network trouble skips, never fails
         self.role = role         # "head" or "mod"
+        self.owner = owner       # Nigel's account (OWNER_ID): the mod team is his alone
         self.lines = []          # plain-English summary, one line per change
         self.subjects = []       # short phrases for the commit subject
         self.goals_touched = False
@@ -845,6 +888,10 @@ class Engine:
         if not target:
             raise Refuse("couldn't find what that edit changed - it may not have changed anything, or it's too old to undo here")
         sha, subj = target
+        # The mod team (editors.json, and List Mods built from it) is Nigel's alone:
+        # undoing a change to it would be a way around that.
+        if not self.owner and self.mod_team_at(sha) != self.mod_team_at(f"{sha}^"):
+            raise Refuse("that edit changed the mod team - only Nigel can undo it")
         # git works out the undone files itself (a three-way merge of HEAD with the
         # edit reversed, written to no working tree), so line endings and nearby
         # changes don't matter; a real conflict (a newer edit changed the same
@@ -985,6 +1032,86 @@ class Engine:
             self.goals_touched = True
         self.say(f"Removed {who} from the list" + (f" and their {dropped} Grind row{'s' if dropped != 1 else ''}." if dropped else "."))
         self.subjects.append(f"Remove member {who}")
+
+    # --- the mod team (Nigel only) ------------------------------------------------------
+    # functions/editors.json says who can log in to the mod page and as what (Discord id
+    # -> {name, role}); the List Mods panel (config.js editors) is rebuilt from it on
+    # every change, head mods first, so the two can't disagree. Nigel's own entry is
+    # never changed here: removing or demoting it would lock him out.
+
+    def mod_team(self):
+        try:
+            eds = json.loads(read(self.root, EDITORS_FILE))
+        except ValueError as e:
+            raise Refuse(f"{EDITORS_FILE} doesn't load: {e}")
+        if not isinstance(eds, dict):
+            raise Refuse(f"{EDITORS_FILE} isn't a list of mods")
+        out = {}
+        for k, v in eds.items():
+            e = {"name": v, "role": "head"} if isinstance(v, str) else v  # a bare name is a head mod
+            if not isinstance(e, dict) or not isinstance(e.get("name"), str) or e.get("role") not in ("head", "mod"):
+                raise Refuse(f"{EDITORS_FILE}: the entry for {k} is broken - fix it by hand first")
+            out[k] = e
+        return out
+
+    def save_mod_team(self, eds):
+        write(self.root, EDITORS_FILE, json.dumps(eds, indent=2, ensure_ascii=False) + "\n")
+        cfg = read(self.root, "data/config.js")
+        a = re.search(r"\beditors:\s*\[", cfg)
+        if not a:
+            raise Refuse("data/config.js has no editors list (the List Mods panel)")
+        end = cfg.find("]", a.end())  # names hold no brackets
+        nl = "\r\n" if "\r\n" in cfg else "\n"
+        team = [e for e in eds.values() if e["role"] == "head"] + [e for e in eds.values() if e["role"] != "head"]
+        rows = "".join(f"    {{ name: {json.dumps(e['name'], ensure_ascii=False)}{', head: true' if e['role'] == 'head' else ''} }},{nl}"
+                       for e in team)
+        write(self.root, "data/config.js", cfg[:a.end()] + nl + rows + "  " + cfg[end:])
+
+    @staticmethod
+    def mod_team_at(rev):
+        """The mod team as of a commit: editors.json and the List Mods rows, as text."""
+        eds = git("show", f"{rev}:{EDITORS_FILE}", check=False).stdout
+        m = re.search(r"\beditors:\s*\[([^\]]*)\]", git("show", f"{rev}:data/config.js", check=False).stdout)
+        return eds, m.group(1) if m else None
+
+    def set_mod(self, o):
+        mid, name, role = o["discordId"], o["name"], o["role"]
+        if mid == OWNER_ID:
+            raise Refuse("that's your own account - it can't be changed from the mod page")
+        eds = self.mod_team()
+        for k, e in eds.items():
+            if k != mid and e["name"].casefold() == name.casefold():
+                raise Refuse(f"{e['name']} is already a mod (on a different Discord account)")
+        rank = "head mod" if role == "head" else "mod"
+        old = eds.get(mid)
+        if old is None:
+            eds[mid] = {"name": name, "role": role}
+            self.say(f"New {rank}: {name} (Discord ID {mid}).")
+            self.subjects.append(f"Add {rank} {name}")
+        elif old["name"] == name and old["role"] == role:
+            self.say(f"{name} is already a {rank} - no change.")
+            return
+        else:
+            if old["name"] != name:
+                self.say(f"Renamed mod {old['name']} to {name}.")
+                self.subjects.append(f"Rename mod {old['name']} to {name}")
+            if old["role"] != role:
+                self.say(f"{name} is now a {rank}.")
+                self.subjects.append(f"Make {name} a {rank}")
+            old["name"], old["role"] = name, role
+        self.save_mod_team(eds)
+
+    def remove_mod(self, o):
+        mid = o["discordId"]
+        if mid == OWNER_ID:
+            raise Refuse("that's your own account - removing it would lock you out")
+        eds = self.mod_team()
+        if mid not in eds:
+            raise Refuse(f"no mod has the Discord ID {mid}")
+        gone = eds.pop(mid)
+        self.save_mod_team(eds)
+        self.say(f"Removed {gone['name']} from the mod team; their mod page login stops working once this is live.")
+        self.subjects.append(f"Remove mod {gone['name']}")
 
     def sync_goal_comments(self, listed_before):
         """A goal row's comment says "(on the list)" when its level is on the list;
@@ -1150,7 +1277,7 @@ def main():
         root = os.path.join(tmp, "site")
         shutil.copytree(REPO, root, ignore=shutil.ignore_patterns(".git", "videos"))
         try:
-            e = Engine(root, p["role"], p["upkeep"])
+            e = Engine(root, p["role"], p["upkeep"], p["owner"])
             e.apply(p["ops"])
             check(root)
             for rel in changed_files(REPO, root):
@@ -1177,7 +1304,7 @@ def main():
             except Refuse as err:
                 report("Edit failed", [str(err)], False)
                 sys.exit(1)
-        e = Engine(REPO, p["role"], p["upkeep"])
+        e = Engine(REPO, p["role"], p["upkeep"], p["owner"])
         try:
             e.apply(p["ops"])
             check(REPO)

@@ -47,18 +47,20 @@ export async function onRequestPost({ request, env }) {
     if (e instanceof Refuse) return jsonError(400, e.message);
     throw e;
   }
-  // Head-only edits (contract.js HEAD_ONLY). The role comes from editors.json as
-  // it is now, so a change there counts at once.
+  // Head-only and Nigel-only edits (contract.js HEAD_ONLY, OWNER_ONLY). The role
+  // comes from editors.json as it is now, so a change there counts at once.
   try {
-    checkRole(ops, editor.role);
+    checkRole(ops, editor.role, editor.owner);
   } catch (e) {
     if (e instanceof Refuse) return jsonError(403, e.message);
     throw e;
   }
 
   const requestId = randomHex(8);
+  const payload = { requestId, editor: editor.name, role: editor.role, ops };
+  if (editor.owner) payload.owner = true; // the mod team edits (OWNER_ONLY); apply-edit.py checks it again
   try {
-    await dispatchEdit(env, { requestId, editor: editor.name, role: editor.role, ops });
+    await dispatchEdit(env, payload);
   } catch (e) {
     if (e instanceof GitHubError) return jsonError(502, e.message);
     throw e;

@@ -34,6 +34,7 @@
   var MAX_LEVEL_ID = 2147483647;
   var MAX_RUNS = 20;
   var MAX_NOTE = 140;
+  var DISCORD_ID = /^[0-9]{17,20}$/; // a Discord user id (contract.js checkDiscordId)
 
   // A mistake the editor can fix: shown in the panel, nothing is sent.
   function Problem(message) {
@@ -967,6 +968,78 @@
     });
   }
 
+  // --- 7. Mods (Nigel only) ---------------------------------------------------------
+
+  // Who can log in to this page and as what: functions/editors.json, read through
+  // GET /api/mods (Nigel only). A change counts once its edit is live and the site
+  // has redeployed, and the List Mods panel on the list follows it.
+  function setupMods() {
+    var msg = $("mod-msg");
+    var team = [];
+    function rank(role) {
+      return role === "head" ? "head mod" : "mod";
+    }
+
+    $("mod-save").addEventListener("click", function () {
+      var op;
+      try {
+        var id = $("mod-id").value.trim();
+        if (!DISCORD_ID.test(id)) throw new Problem("Paste their Discord ID: the 17-20 digit number from Copy User ID.");
+        if (id === me.id) throw new Problem("That's your own account - it can't be changed here.");
+        var name = checkName($("mod-name").value, "mod");
+        var clash = team.find(function (m) { return m.id !== id && m.name.toLowerCase() === name.toLowerCase(); });
+        if (clash) throw new Problem(clash.name + " is already a mod (on a different Discord account).");
+        var role = $("mod-role").value === "head" ? "head" : "mod";
+        var old = team.find(function (m) { return m.id === id; });
+        if (old && old.name === name && old.role === role) throw new Problem(name + " is already a " + rank(role) + ".");
+        op = { op: "set_mod", discordId: id, name: name, role: role };
+      } catch (e) {
+        if (!(e instanceof Problem)) throw e;
+        say(msg, "err", e.message);
+        return;
+      }
+      var known = team.some(function (m) { return m.id === op.discordId; });
+      save([op], (known ? "Change mod: " : "New " + rank(op.role) + ": ") + op.name, $("mod-save"), msg, function () {
+        $("mod-id").value = "";
+        $("mod-name").value = "";
+      });
+    });
+
+    function row(m) {
+      var you = m.id === me.id;
+      var li = el("li", null, el("span", { className: "name" }, m.role === "head" ? el("b", null, m.name) : m.name),
+        el("span", { className: "muted" }, rank(m.role) + (you ? " (you)" : "")));
+      if (you) return li;
+      var other = m.role === "head" ? "mod" : "head";
+      var flip = el("button", { type: "button", className: "button white hover small" }, "Make " + rank(other));
+      var drop = el("button", { type: "button", className: "button red hover small" }, "Remove");
+      var box = el("div", { className: "msg" });
+      box.hidden = true;
+      flip.addEventListener("click", function () {
+        save([{ op: "set_mod", discordId: m.id, name: m.name, role: other }], "Make " + m.name + " a " + rank(other), flip, box);
+      });
+      drop.addEventListener("click", function () {
+        if (!window.confirm("Take " + m.name + " off the mod team? They won't be able to log in here any more.")) return;
+        save([{ op: "remove_mod", discordId: m.id }], "Remove mod: " + m.name, drop, box);
+      });
+      li.appendChild(el("span", { className: "mod-buttons" }, flip, drop));
+      li.appendChild(box);
+      return li;
+    }
+
+    api("/api/mods").then(function (res) {
+      var list = clear($("mod-team"));
+      if (res.status !== 200 || !res.data || !Array.isArray(res.data.mods)) {
+        list.appendChild(el("li", { className: "hint" }, "Couldn't load the mod team: " + errorText(res)));
+        return;
+      }
+      team = res.data.mods;
+      team.filter(function (m) { return m.role === "head"; })
+        .concat(team.filter(function (m) { return m.role !== "head"; }))
+        .forEach(function (m) { list.appendChild(row(m)); });
+    });
+  }
+
   // --- logging in -----------------------------------------------------------------
 
   var me = null;
@@ -1030,6 +1103,12 @@
     return !!(me && me.role === "head");
   }
 
+  // Nigel's account (contract.js OWNER_ID): the only one that changes the mod team.
+  // Same deal: the server and the GitHub job check it again.
+  function isOwner() {
+    return !!(me && me.owner === true);
+  }
+
   function showTools() {
     var who = clear($("who"));
     who.appendChild(document.createTextNode("Logged in as "));
@@ -1056,6 +1135,11 @@
     setupMembers();
     setupVideos();
     setupOrder();
+    if (isOwner()) {
+      $("panel-mods").hidden = false;
+      document.querySelector('a[href="#panel-mods"]').hidden = false;
+      setupMods();
+    }
     $("edits-refresh").addEventListener("click", refreshEdits);
     $("tools").hidden = false;
     refreshEdits();

@@ -99,6 +99,7 @@
       <a href="#panel-videos">Clears &amp; videos</a>
       <a href="#panel-order">List order</a>
       <a href="#panel-edits">Recent edits</a>
+      <a href="#panel-mods" hidden>Mods</a>
     </nav>
 
     <datalist id="player-names"></datalist>
@@ -260,6 +261,35 @@
       <p class="hint">Every edit from this page, newest first. Reload the page once one is live to see it in the tools above.</p>
       <ul class="edits" id="edits"><li class="hint">Loading...</li></ul>
       <button type="button" class="button white hover small" id="edits-refresh">Refresh</button>
+    </section>
+
+    <!-- 7. Mods (Nigel only; the server refuses everyone else) -->
+    <section class="panel fade tool" id="panel-mods" hidden>
+      <h2 class="underlined pad">Mods</h2>
+      <p class="hint">Only you can see this. It sets who can log in here and the List Mods panel on the list. A change counts a minute or two after it's live, once the site has redeployed.</p>
+      <h3>Add a mod</h3>
+      <p class="hint">Their Discord ID: in Discord, turn on Developer Mode (Settings &gt; Advanced), then right-click their name and pick Copy User ID. Or have them try to log in here: the page shows them their ID with a Copy button. Saving an ID that's already a mod changes their name or rank.</p>
+      <div class="two">
+        <label class="field">
+          <span>Discord ID</span>
+          <input type="text" id="mod-id" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="17-20 digits">
+        </label>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" id="mod-name" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="As it shows in List Mods">
+        </label>
+      </div>
+      <label class="field">
+        <span>Rank</span>
+        <select id="mod-role">
+          <option value="mod">Mod</option>
+          <option value="head">Head mod</option>
+        </select>
+      </label>
+      <button type="button" class="button blue hover save" id="mod-save">Save mod</button>
+      <div class="msg" id="mod-msg" hidden></div>
+      <h3>The mod team</h3>
+      <ul class="mods" id="mod-team"><li class="hint">Loading...</li></ul>
     </section>
   </div>
 </div>

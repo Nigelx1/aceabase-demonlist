@@ -333,6 +333,34 @@
   margin-right: 2px;
 }
 
+/* --- mods (Nigel only) --- */
+
+#admin-page .mods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#admin-page .mods li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  overflow-wrap: anywhere;
+}
+
+#admin-page .mods .mod-buttons {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+#admin-page .mods .msg {
+  flex-basis: 100%;
+}
+
 /* --- clears & videos --- */
 
 #admin-page .current-video {
