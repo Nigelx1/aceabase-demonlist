@@ -320,9 +320,9 @@ window.GOAL_LEVELS = {
       "ink": "#241f47"
     },
     "writeup": {
-      "text": "Akunakunn's neon-blue-and-gold odyssey, run to jeffusan's \"Tokyo Nights.\" A dense 2.1 Extreme built on tight straight-fly, sharp waves and unforgiving transitions crammed into 1:41. Leslie put it down in 2023 and called it the hardest thing she'd ever verified — the in-game description still roasts a player named luigidb about it. Sits around #234 on the Demonlist.",
+      "text": "Akunakunn's blue-and-yellow solo extreme, set to jeffusan's \"Tokyo Nights\": a slow-paced memory level packed with doodle-like decoration and wacky gimmicks, the wave at 24% most of all. Leslie verified it in May 2023, and it sits around #237 on the Demonlist.",
       "source": "Pointercrate Demonlist",
-      "url": "https://pointercrate.com/demonlist/234/"
+      "url": "https://pointercrate.com/demonlist/237/"
     }
   },
   "38235367": {
@@ -420,7 +420,7 @@ window.GOAL_LEVELS = {
       "ink": "#331f47"
     },
     "writeup": {
-      "text": "Welcome to the beautiful future. JonathanGD's sequel comes loaded with vaporwave and, in its own words, the dankest memes, set to meganeko's \"Milkshake\" and verified by mbed. An Epic-rated XL Insane Demon downloaded over 9 million times.",
+      "text": "The middle of JonathanGD's BuTiTi trilogy. The first BuTiTi promised that the future will be beautiful; this one opens with \"Welcome to the beautiful future!\" and warns of vaporwave and the dankest memes. Verified by mbed and Epic-rated, it was followed by BuTiTi III, an Extreme Demon billed as the last of the series.",
       "source": "GDBrowser",
       "url": "https://gdbrowser.com/37259527"
     }
@@ -455,9 +455,9 @@ window.GOAL_LEVELS = {
       "ink": "#472c1f"
     },
     "writeup": {
-      "text": "The sequel to a winner. JonathanGD followed up Future Funk - Best XL Demon at the 2.1 Awards - with another full-length XL demon, this time on LemKuuja's \"Ouais Ouais\". An Epic-rated 2.2 Insane Demon with over 15 million downloads.",
-      "source": "GDBrowser",
-      "url": "https://gdbrowser.com/59626284"
+      "text": "The sequel to a classic. Future Funk - JonathanGD's 2018 Hard Demon, verified by mbed and credited with making long Hard Demons popular - got its follow-up in 2020, still in 2.1: another LemKuuja track, a jump up to Insane, and less of the original's Clutterfunk-and-High Life feel. Over 10 million downloads make it one of the most-played Insane Demons in the game.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Future_Funk"
     }
   }
 };
