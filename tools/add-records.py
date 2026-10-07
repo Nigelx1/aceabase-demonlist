@@ -355,6 +355,8 @@ def main():
             continue
         rec = next((r for r in d["records"] if r["player"] == player), None)
         if rec:
+            if lid in by_lid and rec["progress"] < 100 <= prog:  # an in-progress record became a clear
+                also.setdefault(player, []).append(d["name"])
             rec["progress"] = max(rec["progress"], prog)
             continue
         cc, sub = nat(player)
@@ -363,7 +365,7 @@ def main():
         d["records"].append({"player": player, "progress": prog, "nationality": cc, "subdivision": sub})
         got.append(player)
         added += 1
-        if lid in by_lid:
+        if lid in by_lid and prog >= 100:  # "also cleared" - not for a sub-100% record
             also.setdefault(player, []).append(d["name"])
     for d in fresh.values():
         clears = [r["player"] for r in d["records"] if r["progress"] >= 100]
