@@ -188,6 +188,36 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
     }
   },
+  "37259527": {
+    "name": "BuTiTi II",
+    "publisher": "JonathanGD",
+    "difficulty": "Insane",
+    "rating": 17.8,
+    "levelId": 37259527,
+    "description": "Welcome to the beautiful future! | WARNING! This level contains dankest memes and vaporwave. | Verified by mbed | Updated boss color",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=Fky82YxMrjo",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "684652",
+        "name": "Milkshake",
+        "artist": "meganeko"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/Fky82YxMrjo/maxresdefault.jpg",
+    "palette": {
+      "accent": "#8c1ff9",
+      "deep": "#260f3e",
+      "wash": "#f6f2fb",
+      "mist": "#ebe2f3",
+      "onAccent": "#ffffff",
+      "ink": "#331f47"
+    }
+  },
   "38235367": {
     "name": "Quantum Processing",
     "publisher": "Riot",
