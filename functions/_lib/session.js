@@ -94,6 +94,19 @@ export function clearSessionCookie() {
   return clearCookie(SESSION_COOKIE);
 }
 
+// The hint static/js/modnav.js reads to show a mod "Mod panel (<name>)" in the
+// menu: not HttpOnly (pages can't see the session), and it proves nothing -
+// /api/me still decides who's logged in.
+export const MOD_HINT_COOKIE = "gb_mod";
+
+export function modHintCookie() {
+  return `${MOD_HINT_COOKIE}=1; Path=/; Max-Age=${SESSION_SECONDS}; Secure; SameSite=Lax`;
+}
+
+export function clearModHintCookie() {
+  return `${MOD_HINT_COOKIE}=; Path=/; Max-Age=0; Secure; SameSite=Lax`;
+}
+
 // --- the editors list ---------------------------------------------------------
 
 // The list name editors.json gives a Discord id: {name} when it's there and a

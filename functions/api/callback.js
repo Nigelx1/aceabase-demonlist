@@ -15,7 +15,7 @@
 
 import { missingEnv, notSetUp, readCookie, redirect } from "../_lib/http.js";
 import {
-  STATE_COOKIE, readState, clearStateCookie, makeSession, sessionCookie, editorFor,
+  STATE_COOKIE, readState, clearStateCookie, makeSession, sessionCookie, modHintCookie, editorFor,
 } from "../_lib/session.js";
 
 export async function onRequestGet({ request, env }) {
@@ -74,5 +74,5 @@ export async function onRequestGet({ request, env }) {
     return fail("editor_name");
   }
   const session = await makeSession(env.SESSION_SECRET, user.id, ed.name);
-  return redirect(request, "/admin/", [...clear, sessionCookie(session)]);
+  return redirect(request, "/admin/", [...clear, sessionCookie(session), modHintCookie()]);
 }
