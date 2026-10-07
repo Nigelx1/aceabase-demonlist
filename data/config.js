@@ -41,7 +41,10 @@ window.SITE = {
     { name: "Nigel", head: true },
     { name: "Dihmaster500", head: true },
     { name: "Poatan", head: true },
+    { name: "aura", head: true },
     { name: "ace" },
+    { name: "hesoaring" },
+    { name: "Jaiden" },
   ],
   helpers: [],
 
@@ -57,12 +60,9 @@ window.SITE = {
     { name: "Dihmaster500", nationality: "US" },
     { name: "Poatan", nationality: "MX" },
     { name: "owen346", nationality: "US" },
-    { name: "Jaiden", nationality: "CA" },
-    { name: "hesoaring", nationality: "US" },
     { name: "dot", nationality: "CA" },
     { name: "Joancio", nationality: "US" },
     { name: "zinglebob238", nationality: "GB" },
-    { name: "aura", nationality: "US" },
   ],
 
   // Home page columns.
