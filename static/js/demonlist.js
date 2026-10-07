@@ -163,25 +163,28 @@
     var players = DL.aggregatePlayers();
     var html = "";
 
-    // --- List Mods / Helpers --- (pointercrate's List Editors panel: one centred,
-    // wrapping small-caps list, head mods first and in bold; #editors ul in
-    // demonlist.css). The sort is stable, so each tier keeps config.js's order.
-    var mods = (cfg.editors || []).slice().sort(function (a, b) {
-      return (b.head ? 1 : 0) - (a.head ? 1 : 0);
-    });
+    // --- List Mods / Helpers --- in the site's own font (not pointercrate's small
+    // caps): head mods in bold on the first line, the rest on the next, each in
+    // config.js's order.
+    var mods = cfg.editors || [];
+    // One centred, wrapping row per tier (#editors ul in demonlist.css, minus its
+    // small caps); separate items, so a wrap never leaves a dangling separator.
+    function modLine(list, bold) {
+      if (!list.length) return "";
+      return '<ul style="font-variant: normal; line-height: 1.9">' +
+        list.map(function (e) {
+          var name = DL.escapeHtml(e.name);
+          return '<li style="margin: 0 7px">' + (bold ? "<b>" + name + "</b>" : name) + "</li>";
+        }).join("") + "</ul>";
+    }
+    var heads = mods.filter(function (e) { return e.head; });
+    var rest = mods.filter(function (e) { return !e.head; });
     html += sidebarPanel(
       "editors",
       "List Mods",
       "<p>Contact any of these people to get your clears or grind progress added, or if something on the list looks wrong.</p>" +
         (mods.length
-          ? '<ul style="line-height: 30px">' +
-              mods
-                .map(function (e) {
-                  var name = DL.escapeHtml(e.name);
-                  return "<li>" + (e.head ? "<b>" + name + "</b>" : name) + "</li>";
-                })
-                .join("") +
-              "</ul>"
+          ? modLine(heads, true) + modLine(rest, false)
           : "<p><i>Not listed.</i></p>") +
         (cfg.helpers.length
           ? '<div class="underlined"><h2>List Helpers</h2></div>' +
