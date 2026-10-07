@@ -75,6 +75,10 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "refresh_order": (set(), set()),
 }
 VIDEO_HOSTS = {"youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"}
+# add-video.py's own patterns: a link has to point at ONE video (not a channel,
+# a playlist or a Drive folder), or add-video refuses it at run time.
+VIDEO_ID = (re.compile(r"(?:youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)[A-Za-z0-9_-]{11}"),
+            re.compile(r"drive\.google\.com/(?:file/d/|open\?(?:[^#]*&)?id=|uc\?(?:[^#]*&)?id=)[A-Za-z0-9_-]{10,}"))
 LEVEL_LINK = re.compile(r"^https?://(?:www\.)?(?:gdladder\.com/level/|gdbrowser\.com/(?:level/)?)(\d+)/?(?:[?#]\S*)?$", re.I)
 
 
@@ -134,8 +138,10 @@ def check_url(v):
     if not isinstance(v, str) or len(v) > 300 or re.search(r"\s", v):
         raise Refuse(f"video link {show(v)} isn't a link")
     u = urllib.parse.urlsplit(v)
-    if u.scheme != "https" or (u.hostname or "").lower() not in VIDEO_HOSTS or u.username or u.password or u.port:
+    if u.scheme != "https" or (u.hostname or "").lower() not in VIDEO_HOSTS or "@" in u.netloc or u.port:
         raise Refuse(f"video link {show(v)} must be an https link on youtube.com, youtu.be or drive.google.com")
+    if not any(p.search(v) for p in VIDEO_ID):
+        raise Refuse(f"video link {show(v)} isn't a link to one video - use the Share button's link")
     return v
 
 
@@ -522,6 +528,12 @@ class Engine:
 
         after = load_state(self.root)
         now = {d["levelId"]: d for d in after["DEMONS"]}
+        # gdladder rate-limits (and may refuse a runner's address): add-records
+        # then adds a new level with no rating, sorted as a typical demon of its
+        # tier. Better to save nothing and say so.
+        for lid, d in now.items():
+            if lid not in listed and not isinstance(d.get("rating"), (int, float)):
+                raise Refuse(f"GD Demon Ladder didn't answer for {d['name']} - nothing saved, try again in a few minutes")
         for o in plan:
             if o["op"] == "add_member":
                 self.say(f"New member: {o['name']} ({after['COUNTRY_NAMES'].get(o['nationality'], o['nationality'])}).")
@@ -543,7 +555,7 @@ class Engine:
             else:
                 self.say(f"{o['player']}: {rec['progress']}% on {d['name']} (#{d['position']}).")
             if rec["progress"] >= 100 and any(g["player"] == o["player"] and g["levelId"] == o["level"] for g in after["GOALS"]):
-                self.say(f"  ({o['player']} still has {d['name']} as a Grind goal - remove it if they're done with it.)")
+                self.drop_beaten_goal(o["player"], o["level"], d["name"])
         moves = [it for it in new_log_items(s["CHANGELOG"], after["CHANGELOG"]) if it.get("kind") == "move"]
         if moves:
             self.say(f"{len(moves)} demon{'s' if len(moves) != 1 else ''} re-sorted along the way (the AREDL shifted): "
@@ -658,6 +670,18 @@ class Engine:
         if dupes:
             self.say(f"  Left out {dupes} repeated run{'s' if dupes != 1 else ''} - repeats go in the note (e.g. \"75-93 twice.\").")
         self.subjects.append(f"Grind: {who} on {name}")
+
+    def drop_beaten_goal(self, who, lid, name):
+        """A clear ends that level's grind: its goal row goes in the same run."""
+        lines = read(self.root, "data/goals.js").split("\n")
+        hits = [n for n, ln in enumerate(lines) if goal_row_re(who, lid).match(ln)]
+        if not hits:
+            return
+        for n in reversed(hits):
+            del lines[n]
+        write(self.root, "data/goals.js", "\n".join(lines))
+        self.goals_touched = True
+        self.say(f"Grind: {who} beat {name}, so it's off their Grind.")
 
     def remove_grind(self, o):
         s = load_state(self.root)

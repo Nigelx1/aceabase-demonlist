@@ -38,6 +38,11 @@ RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF
 TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW`.split(/\s+/));
 
 export const VIDEO_HOSTS = new Set(["youtube.com", "www.youtube.com", "youtu.be", "drive.google.com"]);
+// add-video.py's own patterns: a link has to point at ONE video.
+export const VIDEO_ID = [
+  /(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)[A-Za-z0-9_-]{11}/,
+  /drive\.google\.com\/(?:file\/d\/|open\?(?:[^#]*&)?id=|uc\?(?:[^#]*&)?id=)[A-Za-z0-9_-]{10,}/,
+];
 const LEVEL_LINK = /^https?:\/\/(?:www\.)?(?:gdladder\.com\/level\/|gdbrowser\.com\/(?:level\/)?)([0-9]+)\/?(?:[?#]\S*)?$/i;
 const MAX_LEVEL_ID = 2 ** 31 - 1;
 
@@ -107,6 +112,7 @@ export function checkUrl(v) {
   if (!m || host.includes("@") || host.includes(":") || !VIDEO_HOSTS.has(host)) {
     throw new Refuse(`video link ${show(v)} must be an https link on youtube.com, youtu.be or drive.google.com`);
   }
+  if (!VIDEO_ID.some((re) => re.test(v))) throw new Refuse(`video link ${show(v)} isn't a link to one video - use the Share button's link`);
   return v;
 }
 

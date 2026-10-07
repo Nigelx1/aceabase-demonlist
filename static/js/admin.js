@@ -85,6 +85,11 @@
     if (len(v) > 300 || /\s/u.test(v) || !m || host.indexOf("@") >= 0 || host.indexOf(":") >= 0 || VIDEO_HOSTS.indexOf(host) < 0) {
       throw new Problem("The video link must be a YouTube or Google Drive link starting with https://");
     }
+    // the same patterns the site's video tool uses: one video, not a channel or folder
+    if (!/(?:youtu\.be\/|[?&]v=|\/shorts\/|\/embed\/|\/live\/)[A-Za-z0-9_-]{11}/.test(v) &&
+        !/drive\.google\.com\/(?:file\/d\/|open\?(?:[^#]*&)?id=|uc\?(?:[^#]*&)?id=)[A-Za-z0-9_-]{10,}/.test(v)) {
+      throw new Problem("That link doesn't point at one video. On YouTube use the Share button's link; on Google Drive, the file's share link.");
+    }
     return v;
   }
 
@@ -272,6 +277,27 @@
     return e.charAt(0).toUpperCase() + e.slice(1);
   }
 
+  // Follow one save in its own form's message box until GitHub has applied it
+  // or refused it. The form keeps what was typed until then, so a refused edit
+  // can be fixed and sent again instead of typed from scratch.
+  function watch(id, box, done, tries) {
+    setTimeout(function () {
+      api("/api/status?requestId=" + id).then(function (res) {
+        var run = res.status === 200 && res.data ? res.data.run : null;
+        if (!run || run.status !== "completed") {
+          if (tries < 75) watch(id, box, done, tries + 1); // about 10 minutes
+          return;
+        }
+        if (run.conclusion === "success") {
+          say(box, "ok", "Done - it'll show on the site in about a minute.");
+          if (done) done();
+        } else {
+          say(box, "err", "Not saved: " + (typeof run.reason === "string" && run.reason ? run.reason : "see Recent edits below for what happened."));
+        }
+      });
+    }, 8000);
+  }
+
   // Send one batch of ops. what = a short description for Recent edits.
   // done() runs after a good save (to reset the form).
   function save(ops, what, button, box, done) {
@@ -284,10 +310,10 @@
     }).then(function (res) {
       button.disabled = false;
       if (res.status === 200 && res.data && /^[0-9a-f]{16}$/.test(res.data.requestId || "")) {
-        say(box, "ok", "Saved - it'll be live in a minute or two. ");
+        say(box, "info", "Sent - checking it now (about a minute). ");
         box.appendChild(el("a", { href: "#panel-edits" }, "Follow it in Recent edits"));
         track(res.data.requestId, what);
-        if (done) done();
+        watch(res.data.requestId, box, done, 0);
         return;
       }
       if (res.status === 401) {
