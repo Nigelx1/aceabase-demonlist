@@ -30,6 +30,10 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "New member: Jesus, from the US."
+      },
+      {
+        "kind": "note",
         "text": "Joancio also cleared Windy Landscape."
       },
       {
