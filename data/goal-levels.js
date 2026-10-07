@@ -91,7 +91,7 @@ window.GOAL_LEVELS = {
     "levelId": 58811846,
     "description": "A god does not fear death. Update: Level optimized by GD Endy. Objects reduced by ~50%",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=Wt76QZqF-os",
+    "videoUrl": "https://www.youtube.com/watch?v=fBk2qoAL7dw",
     "gd": {
       "length": "Long",
       "objects": 65535,
@@ -103,14 +103,14 @@ window.GOAL_LEVELS = {
         "artist": "liaquo"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/Wt76QZqF-os/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/fBk2qoAL7dw/maxresdefault.jpg",
     "palette": {
-      "accent": "#d46810",
-      "deep": "#3e240f",
-      "wash": "#fbf6f2",
-      "mist": "#f3eae2",
+      "accent": "#b11ff9",
+      "deep": "#2e0f3e",
+      "wash": "#f8f2fb",
+      "mist": "#ede2f3",
       "onAccent": "#ffffff",
-      "ink": "#47311f"
+      "ink": "#3a1f47"
     },
     "writeup": {
       "text": "knobbelboy's long-awaited masterpiece, first teased as God Eater in 2017 with a preview so hyped it became one of the most reuploaded videos in Geometry Dash. He verified it in January 2019 after battling through a kidney stone, lost it to a copyright takedown that June, then replaced the art, renamed it and verified the whole thing again in December 2019. Gorgeous to look at - its gameplay and performance are another story.",
