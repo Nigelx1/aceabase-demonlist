@@ -412,6 +412,11 @@ const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dis
   stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
   ru = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "rename_member", name: "ace", newName: "<x>" }] })));
   check("members: a bad new name is refused", ru.status === 400);
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  const rs = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "refresh_showcases" }] })));
+  stubFetch([["POST", GH_DISPATCH, () => new Response(null, { status: 204 })]]);
+  const rsm = await api.edit.onRequestPost(ctx(editReq({ ops: [{ op: "refresh_showcases" }] }, { cookie: aceCookie })));
+  check("showcases: a head mod can check Nigel's channel, a mod can't", rs.status === 200 && rsm.status === 403);
 
   // apply-edit.py: the same rule, and a missing or unknown role counts as a mod / is refused
   const PYROLE = `

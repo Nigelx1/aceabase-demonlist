@@ -824,6 +824,9 @@
     $("order-save").addEventListener("click", function () {
       save([{ op: "refresh_order" }], "Refresh the list order", $("order-save"), $("order-msg"));
     });
+    $("showcase-save").addEventListener("click", function () {
+      save([{ op: "refresh_showcases" }], "Check Nigel's channel for showcases", $("showcase-save"), $("showcase-msg"));
+    });
   }
 
   // --- 6. Recent edits ----------------------------------------------------------

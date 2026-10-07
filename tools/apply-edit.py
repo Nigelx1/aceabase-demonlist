@@ -73,7 +73,7 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "set_record_video": ({"player", "level", "url"}, set()),
     "remove_record_video": ({"player", "level"}, set()),
     "refresh_order": (set(), set()),
-    "refresh_showcases": (set(), set()),  # the scheduled upkeep only; not on the page
+    "refresh_showcases": (set(), set()),  # Nigel's channel: the scheduled checks and a head-mod button
     "undo": ({"requestId"}, set()),  # head mods: reverse one earlier edit
     "rename_member": ({"name", "newName"}, set()),
     "set_member_country": ({"name", "nationality"}, set()),

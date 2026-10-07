@@ -25,6 +25,7 @@ export const OPS = {
   set_record_video: [["player", "level", "url"], []],
   remove_record_video: [["player", "level"], []],
   refresh_order: [[], []],
+  refresh_showcases: [[], []], // Nigel's channel -> his showcases on the site
   undo: [["requestId"], []], // head mods: reverse one earlier edit
   rename_member: [["name", "newName"], []],
   set_member_country: [["name", "nationality"], []],
@@ -193,6 +194,7 @@ export const HEAD_ONLY = new Map([
   ["add_member", "add members"],
   ["remove_record", "remove clears"],
   ["refresh_order", "re-sort the list"],
+  ["refresh_showcases", "check Nigel's channel for showcases"],
   ["undo", "undo edits"],
   ["rename_member", "rename members"],
   ["set_member_country", "change a member's country"],
