@@ -118,41 +118,6 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
     }
   },
-  "27122654": {
-    "name": "Artificial Ascent",
-    "publisher": "ViPriN",
-    "difficulty": "Extreme",
-    "rating": 27.97,
-    "levelId": 27122654,
-    "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=zmKI2rqyQyU",
-    "gd": {
-      "length": "XL",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "63082",
-        "name": "Surface",
-        "artist": "Dimrain47"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
-    "palette": {
-      "accent": "#b11ff9",
-      "deep": "#2e0f3e",
-      "wash": "#f8f2fb",
-      "mist": "#ede2f3",
-      "onAccent": "#ffffff",
-      "ink": "#3a1f47"
-    },
-    "writeup": {
-      "text": "The machine wakes up. Viprin's futuristic, robotic megacollab, co-hosted by LmAnubis, runs 16 creators' sections through shifting colour schemes to Dimrain47's \"Surface.\" Combined verified it in December 2016 and it debuted at #1, only to be dethroned within ten days - then it stayed on the Demonlist for 2,078 days, the first of the Technology Trilogy to finally fall off.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
-    }
-  },
   "27690100": {
     "name": "Slaughterhouse ",
     "publisher": "IcEDCave",
