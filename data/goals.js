@@ -35,6 +35,7 @@ window.GOALS = [
   { player: "ace", levelId: 58811846, best: 20 }, // Astral Divinity
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
   { player: "Dihmaster500", levelId: 27690100, best: 55, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
+  { player: "Dihmaster500", levelId: 86407629, best: 25 }, // Tidal Wave
   { player: "Poatan", levelId: 68668045, best: 63, segments: [[42, 100]] }, // Congregation
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)

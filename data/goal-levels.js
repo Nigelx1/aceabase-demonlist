@@ -12,18 +12,18 @@
 // -----------------------------------------------------------------------------
 
 window.GOAL_LEVELS = {
-  "10565740": {
-    "name": "Bloodbath",
-    "publisher": "Riot",
+  "42584142": {
+    "name": "Bloodlust",
+    "publisher": "Knobbelboy",
     "difficulty": "Extreme",
-    "rating": 23.97,
-    "levelId": 10565740,
-    "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
+    "rating": 31.98,
+    "levelId": 42584142,
+    "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
     "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=shOO9UfDvfs",
+    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
     "gd": {
-      "length": "Long",
-      "objects": 24746,
+      "length": "XL",
+      "objects": 65535,
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
@@ -33,7 +33,7 @@ window.GOAL_LEVELS = {
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
       }
     },
-    "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
     "palette": {
       "accent": "#f91f1f",
       "deep": "#3e0f0f",
@@ -43,44 +43,9 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
+      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
-    }
-  },
-  "23262780": {
-    "name": "Sakupen Hell",
-    "publisher": "TrusTa",
-    "difficulty": "Extreme",
-    "rating": 24.86,
-    "levelId": 23262780,
-    "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=sKKXlA3q9tI",
-    "gd": {
-      "length": "Medium",
-      "objects": 20250,
-      "gameVersion": "2.0",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "360804",
-        "name": "Iron God: Sakupen Hell Yes RMX",
-        "artist": "mr-jazzman"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/sKKXlA3q9tI/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f1f",
-      "deep": "#3e0f0f",
-      "wash": "#fbf2f2",
-      "mist": "#f3e2e2",
-      "onAccent": "#ffffff",
-      "ink": "#471f1f"
-    },
-    "writeup": {
-      "text": "The level built out of spite. Noobas made it to challenge Riot and Cyclic, the best players of the time, and openly hack-verified it - his protest at a hacked Cataclysm getting rated. TrusTa then verified it for real and published it in August 2016, and it went on to rival, then pass, Bloodbath as one of the hardest levels in the game.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Hell"
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
   "26681070": {
@@ -116,107 +81,6 @@ window.GOAL_LEVELS = {
       "text": "Cyclic's buffed Nine Circles remake, hack-verified back in 1.9 and left unbeaten until Sunix verified and published it in 2.0 on 25 November 2016, after a hacking scandal, drama and a race to finish it. It went straight to #1 and spent a record 2,508 days in the Top 150 - the level that splits the lower extremes from the upper ones.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
-    }
-  },
-  "27690100": {
-    "name": "Slaughterhouse ",
-    "publisher": "IcEDCave",
-    "difficulty": "Extreme",
-    "rating": 37.91,
-    "levelId": 27690100,
-    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=mVg8LgrWaYQ",
-    "gd": {
-      "length": "Long",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "945695",
-        "name": "Tennobyte - Fly Away",
-        "artist": "Tennobyte"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f56",
-      "deep": "#3e0f1a",
-      "wash": "#fbf2f4",
-      "mist": "#f3e2e6",
-      "onAccent": "#ffffff",
-      "ink": "#471f29"
-    },
-    "writeup": {
-      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
-    }
-  },
-  "38235367": {
-    "name": "Quantum Processing",
-    "publisher": "Riot",
-    "difficulty": "Extreme",
-    "rating": 27.04,
-    "levelId": 38235367,
-    "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=7Kxm2eOPg5I",
-    "gd": {
-      "length": "Long",
-      "objects": 21269,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon"
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
-    "palette": {
-      "accent": "#04a904",
-      "deep": "#0f3e0f",
-      "wash": "#f2fbf2",
-      "mist": "#e2f3e2",
-      "onAccent": "#ffffff",
-      "ink": "#1f471f"
-    },
-    "writeup": {
-      "text": "Blast Processing, pushed to the limit. Riot, Hinds, Zobros and Sil3nce's super-buffed remake of the RobTop classic, verified by Rampage in October 2017. The wave is what gets you - long, painfully tight corridors of cogwheels, then a dual with fake lining - with intense straight-flying ship and an orb maze you have to memorise along the way.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Quantum_Processing"
-    }
-  },
-  "42584142": {
-    "name": "Bloodlust",
-    "publisher": "Knobbelboy",
-    "difficulty": "Extreme",
-    "rating": 31.98,
-    "levelId": 42584142,
-    "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=xmchFBTzwds",
-    "gd": {
-      "length": "XL",
-      "objects": 65535,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "467339",
-        "name": "At the Speed of Light",
-        "artist": "Dimrain47",
-        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f1f",
-      "deep": "#3e0f0f",
-      "wash": "#fbf2f2",
-      "mist": "#f3e2e2",
-      "onAccent": "#ffffff",
-      "ink": "#471f1f"
-    },
-    "writeup": {
-      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
   "58811846": {
@@ -284,6 +148,77 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
     }
   },
+  "27690100": {
+    "name": "Slaughterhouse ",
+    "publisher": "IcEDCave",
+    "difficulty": "Extreme",
+    "rating": 37.91,
+    "levelId": 27690100,
+    "description": "THE GATES HAVE OPENED ONCE AGAIN.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=mVg8LgrWaYQ",
+    "gd": {
+      "length": "Long",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "945695",
+        "name": "Tennobyte - Fly Away",
+        "artist": "Tennobyte"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f56",
+      "deep": "#3e0f1a",
+      "wash": "#fbf2f4",
+      "mist": "#f3e2e6",
+      "onAccent": "#ffffff",
+      "ink": "#471f29"
+    },
+    "writeup": {
+      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
+    }
+  },
+  "86407629": {
+    "name": "Tidal Wave",
+    "publisher": "OniLinkGD",
+    "difficulty": "Extreme",
+    "rating": null,
+    "levelId": 86407629,
+    "description": "Drown them",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=W-fg7FTBKuU",
+    "gd": {
+      "length": "XL",
+      "objects": 220114,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "1266014",
+        "name": "Tidal Wave(Shiawase VIP rmx)",
+        "artist": "RunoNG"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/W-fg7FTBKuU/maxresdefault.jpg",
+    "palette": {
+      "accent": "#1f68f9",
+      "deep": "#0f1e3e",
+      "wash": "#f2f5fb",
+      "mist": "#e2e8f3",
+      "onAccent": "#ffffff",
+      "ink": "#1f2c47"
+    },
+    "writeup": {
+      "text": "Tidal Wave is a 2.1/2.2 Extreme Demon level by OniLink, published on 4 December 2022. Unlike most other difficult levels, this level takes a different approach, theming it around the ocean and the beach with a blue-and-yellow colour scheme and featuring predominantly difficult, fast-paced wave sequences similar to a Nine Circles level.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave",
+      "auto": true
+    }
+  },
   "68668045": {
     "name": "Congregation",
     "publisher": "Presta",
@@ -320,6 +255,42 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Congregation"
     }
   },
+  "10565740": {
+    "name": "Bloodbath",
+    "publisher": "Riot",
+    "difficulty": "Extreme",
+    "rating": 23.97,
+    "levelId": 10565740,
+    "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=shOO9UfDvfs",
+    "gd": {
+      "length": "Long",
+      "objects": 24746,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "467339",
+        "name": "At the Speed of Light",
+        "artist": "Dimrain47",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
+    }
+  },
   "92466083": {
     "name": "Jupiter My Favourite",
     "publisher": "Akunakunn",
@@ -353,6 +324,71 @@ window.GOAL_LEVELS = {
       "text": "Akunakunn's blue-and-yellow solo extreme, set to jeffusan's \"Tokyo Nights\": a slow-paced memory level packed with doodle-like decoration and wacky gimmicks, the wave at 24% most of all. Leslie verified it in May 2023, and it sits around #237 on the Demonlist.",
       "source": "Pointercrate Demonlist",
       "url": "https://pointercrate.com/demonlist/237/"
+    }
+  },
+  "38235367": {
+    "name": "Quantum Processing",
+    "publisher": "Riot",
+    "difficulty": "Extreme",
+    "rating": 27.04,
+    "levelId": 38235367,
+    "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=7Kxm2eOPg5I",
+    "gd": {
+      "length": "Long",
+      "objects": 21269,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon"
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
+    "palette": {
+      "accent": "#04a904",
+      "deep": "#0f3e0f",
+      "wash": "#f2fbf2",
+      "mist": "#e2f3e2",
+      "onAccent": "#ffffff",
+      "ink": "#1f471f"
+    },
+    "writeup": {
+      "text": "Blast Processing, pushed to the limit. Riot, Hinds, Zobros and Sil3nce's super-buffed remake of the RobTop classic, verified by Rampage in October 2017. The wave is what gets you - long, painfully tight corridors of cogwheels, then a dual with fake lining - with intense straight-flying ship and an orb maze you have to memorise along the way.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Quantum_Processing"
+    }
+  },
+  "23262780": {
+    "name": "Sakupen Hell",
+    "publisher": "TrusTa",
+    "difficulty": "Extreme",
+    "rating": 24.86,
+    "levelId": 23262780,
+    "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=sKKXlA3q9tI",
+    "gd": {
+      "length": "Medium",
+      "objects": 20250,
+      "gameVersion": "2.0",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "360804",
+        "name": "Iron God: Sakupen Hell Yes RMX",
+        "artist": "mr-jazzman"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/sKKXlA3q9tI/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "The level built out of spite. Noobas made it to challenge Riot and Cyclic, the best players of the time, and openly hack-verified it - his protest at a hacked Cataclysm getting rated. TrusTa then verified it for real and published it in August 2016, and it went on to rival, then pass, Bloodbath as one of the hardest levels in the game.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Hell"
     }
   }
 };
