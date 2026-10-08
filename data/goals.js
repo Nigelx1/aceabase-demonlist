@@ -32,7 +32,7 @@
 window.GOALS = [
   { player: "ace", levelId: 42584142, best: null, segments: [[67, 85], [71, 92], [75, 93], [80, 96], [88, 100]], note: "75–93 twice." }, // Bloodlust
   { player: "ace", levelId: 26681070, best: 38, segments: [[20, 45]] }, // Sonic Wave (on the list)
-  { player: "ace", levelId: 58811846, best: 16 }, // Astral Divinity
+  { player: "ace", levelId: 58811846, best: 20 }, // Astral Divinity
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
   { player: "Dihmaster500", levelId: 27690100, best: 55, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
   { player: "Poatan", levelId: 68668045, best: 63, segments: [[42, 100]] }, // Congregation
