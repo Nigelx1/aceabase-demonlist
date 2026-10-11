@@ -355,40 +355,5 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave",
       "auto": true
     }
-  },
-  "92466083": {
-    "name": "Jupiter My Favourite",
-    "publisher": "Akunakunn",
-    "difficulty": "Extreme",
-    "rating": 31.8,
-    "levelId": 92466083,
-    "description": "thank god",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=wxyYAuMYq5o",
-    "gd": {
-      "length": "Long",
-      "objects": 51608,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "song": {
-        "id": "363217",
-        "name": "Tokyo Nights",
-        "artist": "jeffusan"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/wxyYAuMYq5o/maxresdefault.jpg",
-    "palette": {
-      "accent": "#4d33e6",
-      "deep": "#150f3e",
-      "wash": "#f3f2fb",
-      "mist": "#e4e2f3",
-      "onAccent": "#ffffff",
-      "ink": "#241f47"
-    },
-    "writeup": {
-      "text": "Akunakunn's blue-and-yellow solo extreme, set to jeffusan's \"Tokyo Nights\": a slow-paced memory level packed with doodle-like decoration and wacky gimmicks, the wave at 24% most of all. Leslie verified it in May 2023, and it sits around #237 on the Demonlist.",
-      "source": "Pointercrate Demonlist",
-      "url": "https://pointercrate.com/demonlist/237/"
-    }
   }
 };
