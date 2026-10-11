@@ -690,6 +690,12 @@ window.DEMONS = [
         "nationality": "GB",
         "subdivision": null,
         "video": "https://www.youtube.com/watch?v=xTvd1mbo_Pg"
+      },
+      {
+        "player": "pixl",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
       }
     ],
     "gd": {
