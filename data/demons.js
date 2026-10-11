@@ -93,7 +93,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 187
+    "aredlPosition": 188
   },
   {
     "id": 55624478,
@@ -132,7 +132,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 231
+    "aredlPosition": 232
   },
   {
     "id": 42584142,
@@ -172,7 +172,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 256
+    "aredlPosition": 257
   },
   {
     "id": 79997992,
@@ -211,7 +211,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 259
+    "aredlPosition": 260
   },
   {
     "id": 68688849,
@@ -250,7 +250,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 381
+    "aredlPosition": 382
   },
   {
     "id": 26681070,
@@ -289,7 +289,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 382
+    "aredlPosition": 383
   },
   {
     "id": 28220417,
@@ -328,7 +328,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 391
+    "aredlPosition": 392
   },
   {
     "id": 27122654,
@@ -367,7 +367,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 525
+    "aredlPosition": 526
   },
   {
     "id": 72082021,
@@ -406,7 +406,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 552
+    "aredlPosition": 553
   },
   {
     "id": 38235367,
@@ -439,7 +439,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 560
+    "aredlPosition": 561
   },
   {
     "id": 27580467,
@@ -478,7 +478,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 623
+    "aredlPosition": 624
   },
   {
     "id": 33387622,
@@ -517,7 +517,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 653
+    "aredlPosition": 654
   },
   {
     "id": 26133601,
@@ -555,7 +555,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 695
+    "aredlPosition": 696
   },
   {
     "id": 35448603,
@@ -594,7 +594,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 751
+    "aredlPosition": 752
   },
   {
     "id": 59933468,
@@ -632,7 +632,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 795
+    "aredlPosition": 796
   },
   {
     "id": 10565740,
@@ -705,7 +705,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 845
+    "aredlPosition": 846
   },
   {
     "id": 48175126,
@@ -744,7 +744,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 851
+    "aredlPosition": 852
   },
   {
     "id": 89976481,
@@ -782,7 +782,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1122
+    "aredlPosition": 1123
   },
   {
     "id": 24301797,
@@ -820,7 +820,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1274
+    "aredlPosition": 1275
   },
   {
     "id": 30219145,
@@ -859,7 +859,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1380
+    "aredlPosition": 1381
   },
   {
     "id": 69010770,
@@ -898,7 +898,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1456
+    "aredlPosition": 1457
   },
   {
     "id": 3979721,
@@ -950,7 +950,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1496
+    "aredlPosition": 1497
   },
   {
     "id": 61079355,
@@ -995,7 +995,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1590
+    "aredlPosition": 1591
   },
   {
     "id": 114933189,
@@ -1039,7 +1039,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1592
+    "aredlPosition": 1593
   },
   {
     "id": 72211008,
