@@ -1144,7 +1144,11 @@ class Engine:
         after_state = load_state(self.root)
         after = after_state["GOAL_LEVELS"]
         # build-goal-levels.py writes whatever gdladder/gdbrowser said, even when they
-        # didn't answer - never commit a level that lost facts it had before
+        # didn't answer. A level already on the Grind pages keeps the facts it had
+        # instead: an edit shouldn't fail because gdbrowser hiccupped on some other
+        # level (Poatan's Congregation clear was refused over Bloodlust's publisher,
+        # 2026-10-11). Only a new level below has to get its facts now.
+        kept = []
         for lid, old in before.items():
             new = after.get(lid)
             if not new:
@@ -1153,9 +1157,14 @@ class Engine:
                     if old.get(k) and not new.get(k)]
             if new.get("name") == f"Level {lid}" and old.get("name") != new.get("name"):
                 lost.append("name")
+            lost = list(dict.fromkeys(lost))
+            for k in lost:
+                new[k] = old[k]
             if lost:
-                raise Refuse(f"gdladder/gdbrowser didn't answer properly while rebuilding the Grind pages "
-                             f"({old.get('name')} lost its {', '.join(dict.fromkeys(lost))}) - nothing saved, try again in a few minutes")
+                kept.append(f"{old.get('name')}'s {', '.join(lost)}")
+        if kept:
+            self.say("  gdladder/gdbrowser didn't answer properly for " + "; ".join(kept)
+                     + " - kept what the Grind pages already had.")
         for lid in self.new_goal_levels:
             e = after.get(str(lid))
             if not e:
