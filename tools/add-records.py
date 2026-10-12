@@ -213,7 +213,14 @@ def main():
     m = re.search(r"allowedDifficulties:\s*\[([^\]]*)\]", cfg)
     allowed = re.findall(r'"([A-Za-z]+)"', m.group(1)) if m else (
         ["Extreme"] if re.search(r"extremesOnly:\s*true", cfg) else [])
-    rank = {t: i for i, t in enumerate(allowed or ["Extreme", "Insane", "Hard", "Medium", "Easy"])}
+    # Tier order only where config.js sets allowedDifficulties (Aceabase: every
+    # Extreme above every Insane). Without it the whole list is one tier, ordered by
+    # value, as tools/refresh-order.py and VERIFY have it (Nigel's Demonlist; the
+    # old Extreme..Easy fallback re-sorted 32 of its demons and failed VERIFY).
+    rank = {t: i for i, t in enumerate(allowed)}
+
+    def tier(d):
+        return rank.get(d.get("difficulty"), 99) if allowed else 0
     demons = sorted(load_js("demons.js", "DEMONS"), key=lambda d: d["position"])
     log = load_js("changelog.js", "CHANGELOG")
     if initial and demons:
@@ -249,7 +256,7 @@ def main():
         return fit[0] + fit[1] * pos ** fit[2] if fit and pos else rating_of(d)
 
     def key(d):  # tier, then value (2 dp), then AREDL placement; sort is stable for full ties
-        return (rank.get(d.get("difficulty"), 99), -round(value(d), 2), aredl.get(d["levelId"], 10 ** 9))
+        return (tier(d), -round(value(d), 2), aredl.get(d["levelId"], 10 ** 9))
 
     # --refresh-ratings: re-pull every listed demon's gdladder rating, one request at a time
     old_rating, drifted = {}, []

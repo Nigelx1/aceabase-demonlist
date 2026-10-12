@@ -634,8 +634,14 @@ print(json.dumps(out + [m.OWNER_ID]))
   stubFetch([["GET", GL + "86084399", () => jsonResp(limboGl)], ["GET", GB + "86084399", () => jsonResp(limboGb)]]);
   let r = await api.level.onRequestGet(ctx(req("/api/level?level=" + encodeURIComponent("https://gdladder.com/level/86084399"), cookie)));
   let body = await r.json();
+  // where this list has LIMBO (the endpoint reads the site's own data/demons.js), so
+  // the test holds on every list that shares these files
+  const demonsSrc = readFileSync(path.join(ROOT, "data", "demons.js"), "utf8");
+  const limbo = JSON.parse(demonsSrc.slice(demonsSrc.indexOf("window.DEMONS =") + "window.DEMONS =".length).trim().replace(/;\s*$/, ""))
+    .find((d) => Number(d.levelId) === 86084399);
   check("level: LIMBO", r.status === 200 && eq(body, {
-    id: 86084399, name: "LIMBO", creator: "MindCap", difficulty: "Extreme Demon", tier: "Extreme", rating: 36.89, platformer: false, onList: true, position: 1,
+    id: 86084399, name: "LIMBO", creator: "MindCap", difficulty: "Extreme Demon", tier: "Extreme", rating: 36.89, platformer: false,
+    onList: !!limbo, position: limbo ? limbo.position : null,
   }), JSON.stringify(body));
   check("level: sends a User-Agent", calls.every((c) => c.init.headers["User-Agent"]));
   stubFetch([["GET", GL + "777", () => jsonResp({ ID: 777, Rating: 20, Meta: { Name: "Plat", Length: 6, Difficulty: "Insane" } })], ["GET", GB + "777", () => new Response("-1")]]);
