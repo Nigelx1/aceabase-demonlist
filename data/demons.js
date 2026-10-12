@@ -678,7 +678,7 @@ window.DEMONS = [
     "position": 18,
     "name": "Bloodbath",
     "difficulty": "Extreme",
-    "rating": 23.97,
+    "rating": 23.98,
     "publisher": "Riot",
     "creators": [
       "Riot"
@@ -1162,7 +1162,7 @@ window.DEMONS = [
     "position": 29,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.64,
+    "rating": 18.63,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1194,7 +1194,7 @@ window.DEMONS = [
     "position": 30,
     "name": "BuTiTi II",
     "difficulty": "Insane",
-    "rating": 17.8,
+    "rating": 17.79,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -1432,7 +1432,7 @@ window.DEMONS = [
     "position": 36,
     "name": "Dream Travel",
     "difficulty": "Insane",
-    "rating": 16.78,
+    "rating": 16.79,
     "publisher": "SuprianGD ",
     "creators": [
       "SuprianGD "
@@ -1642,7 +1642,7 @@ window.DEMONS = [
     "position": 41,
     "name": "CraZy II",
     "difficulty": "Insane",
-    "rating": 15.3,
+    "rating": 15.31,
     "publisher": "DavJT",
     "creators": [
       "DavJT"
@@ -1687,7 +1687,7 @@ window.DEMONS = [
     "position": 42,
     "name": "Stalemate",
     "difficulty": "Insane",
-    "rating": 15.2,
+    "rating": 15.21,
     "publisher": "Nox",
     "creators": [
       "Nox"
@@ -1732,7 +1732,7 @@ window.DEMONS = [
     "position": 43,
     "name": "Game Time",
     "difficulty": "Insane",
-    "rating": 15.06,
+    "rating": 15.08,
     "publisher": "SimilarAMZ",
     "creators": [
       "SimilarAMZ"

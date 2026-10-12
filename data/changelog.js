@@ -29,6 +29,10 @@ window.CHANGELOG = [
     "date": "2026-10-12",
     "items": [
       {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 7 levels drifted (Bloodbath 23.97 → 23.98, Invisible Deadlocked 18.64 → 18.63, BuTiTi II 17.8 → 17.79, Dream Travel 16.78 → 16.79, CraZy II 15.3 → 15.31, Stalemate 15.2 → 15.21, Game Time 15.06 → 15.08)."
+      },
+      {
         "kind": "add",
         "demon": "Congregation",
         "demonId": 68668045,
