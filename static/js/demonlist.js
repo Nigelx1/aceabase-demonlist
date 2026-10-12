@@ -99,9 +99,12 @@
       );
     }
 
+    // Each list says what its sections are in config.js (listBlurbs).
+    var blurbs = cfg.listBlurbs || {};
     root.innerHTML =
-      group("mainlist", "Main List", main, true, "Every Extreme Demon on the list.") +
-      group("extended", "Extended List", extended, true, "Every Insane Demon on the list. Only 100% completions count.") +
+      group("mainlist", "Main List", main, true, blurbs.main || "The main section of the Demonlist.") +
+      group("extended", "Extended List", extended, true,
+        blurbs.extended || "Official extensions of the Main List. Only 100% completions count.") +
       (legacy.length ? group("legacy", "Legacy List", legacy, false, "Demons that have fallen off the list.") : "");
   };
 

@@ -12,6 +12,11 @@ window.SITE = {
   // Difficulties allowed on the list, in rank order: every Extreme sits above
   // every Insane. tools/add-records.py refuses anything else.
   allowedDifficulties: ["Extreme", "Insane"],
+  // What the demonlist page says each section is (static/js/demonlist.js).
+  listBlurbs: {
+    main: "Every Extreme Demon on the list.",
+    extended: "Every Insane Demon on the list. Only 100% completions count.",
+  },
 
   // Day the list went live: the "Added to list" date in each demon's Position
   // History for the first batch (tools/add-records.py --initial sets it).
