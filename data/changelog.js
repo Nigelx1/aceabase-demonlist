@@ -26,6 +26,18 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-12",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "Congregation",
+        "demonId": 68668045,
+        "at": 6,
+        "text": "Poatan's clear"
+      }
+    ]
+  },
+  {
     "date": "2026-10-11",
     "items": [
       {

@@ -38,7 +38,7 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 86407629, best: 25 }, // Tidal Wave
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
-  { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation
+  { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation (on the list)
   { player: "zinglebob238", levelId: 38235367, best: 58, segments: [[48, 100]] }, // Quantum Processing (on the list)
   { player: "zinglebob238", levelId: 23262780, best: 82, segments: [[39, 88], [75, 100]] }, // Sakupen Hell
   { player: "pixl", levelId: 26681070, best: 32, segments: [[32, 47], [46, 100]] }, // Sonic Wave (on the list)
