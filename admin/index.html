@@ -115,6 +115,7 @@
       <div id="clear-new" class="new-player" hidden>
         <p class="hint" id="clear-new-text">New player - they'll be added to the list too. Pick their country:</p>
         <select id="clear-country" class="country-select"></select>
+        <select id="clear-subdivision" class="country-select" hidden></select>
       </div>
       <div class="field">
         <label for="clear-level">Level</label>
@@ -205,6 +206,10 @@
         <label class="field">
           <span>Country</span>
           <select id="member-country" class="country-select"></select>
+        </label>
+        <label class="field" id="member-subdivision-row" hidden>
+          <span>State / province</span>
+          <select id="member-subdivision" class="country-select"></select>
         </label>
       </div>
       <button type="button" class="button blue hover save" id="member-save">Add member</button>

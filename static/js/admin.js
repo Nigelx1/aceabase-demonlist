@@ -126,6 +126,41 @@
     return hits.length === 1 ? hits[0] : null;
   }
 
+  // A list that shows states and provinces (SITE.subdivisions, off on Aceabase):
+  // the ones the stats viewer's map knows for a country (DL.SUBDIVISION_NAMES, keyed
+  // "US-IL"), by name, with "none" first. row: what to hide when there are none.
+  function usesSubdivisions() {
+    return !(window.SITE && SITE.subdivisions === false);
+  }
+
+  function fillSubdivisionSelect(select, cc, current, row) {
+    clear(select);
+    var names = (window.DL && DL.SUBDIVISION_NAMES) || {};
+    var subs = Object.keys(names)
+      .filter(function (k) { return cc && k.indexOf(cc + "-") === 0; })
+      .map(function (k) { return [k.slice(cc.length + 1), names[k]]; })
+      .sort(function (a, b) { return a[1].localeCompare(b[1]); });
+    (row || select).hidden = !usesSubdivisions() || !subs.length;
+    select.appendChild(el("option", { value: "" }, "No state or province"));
+    subs.forEach(function (p) { select.appendChild(el("option", { value: p[0] }, p[1])); });
+    select.value = current && subs.some(function (p) { return p[0] === current; }) ? current : "";
+  }
+
+  // The picked state or province, or "" when the picker is hidden.
+  function pickedSubdivision(select, row) {
+    return (row || select).hidden ? "" : select.value;
+  }
+
+  function subdivisionOf(name) {
+    var m = (SITE.members || []).find(function (x) { return x.name === name; });
+    if (m) return m.subdivision || "";
+    for (var i = 0; i < DEMONS.length; i++) {
+      var r = (DEMONS[i].records || []).find(function (x) { return x.player === name && x.nationality; });
+      if (r) return r.subdivision || "";
+    }
+    return "";
+  }
+
   function nationalityOf(name) {
     var m = (SITE.members || []).find(function (x) { return x.name === name; });
     if (m && m.nationality) return m.nationality;
@@ -402,6 +437,8 @@
       var isNew = v.trim() !== "" && resolvePlayer(v) === null;
       $("clear-new").hidden = !isNew;
       $("clear-country").hidden = !isHead();
+      if (isHead()) fillSubdivisionSelect($("clear-subdivision"), $("clear-country").value, $("clear-subdivision").value);
+      else $("clear-subdivision").hidden = true;
       if (isNew) {
         $("clear-new-text").textContent = isHead()
           ? "New player - " + v + " will be added to the list too. Pick their country:"
@@ -409,6 +446,9 @@
       }
     }
     player.addEventListener("input", onPlayer);
+    $("clear-country").addEventListener("change", function () {
+      fillSubdivisionSelect($("clear-subdivision"), $("clear-country").value);
+    });
     level.addEventListener("input", function () { localLevelHint(level, info); });
     $("clear-check").addEventListener("click", function () {
       checkLevel(level, info, $("clear-check"), true);
@@ -427,6 +467,8 @@
           var cc = $("clear-country").value;
           if (!COUNTRIES[cc]) throw new Problem(name + " is new to the list - pick their country.");
           op.nationality = cc;
+          var csub = pickedSubdivision($("clear-subdivision"));
+          if (csub) op.subdivision = csub;
         }
         var d = demonByLevel(id);
         if (!d && progress < 100) {
@@ -447,6 +489,7 @@
         $("clear-progress").value = "100";
         $("clear-video").value = "";
         $("clear-country").value = "";
+        fillSubdivisionSelect($("clear-subdivision"), "");
         hush(info);
         onPlayer();
       });
@@ -646,6 +689,9 @@
 
   function setupMembers() {
     var msg = $("member-msg");
+    $("member-country").addEventListener("change", function () {
+      fillSubdivisionSelect($("member-subdivision"), $("member-country").value, "", $("member-subdivision-row"));
+    });
     $("member-save").addEventListener("click", function () {
       var op;
       try {
@@ -655,6 +701,8 @@
         var cc = $("member-country").value;
         if (!COUNTRIES[cc]) throw new Problem("Pick " + name + "'s country.");
         op = { op: "add_member", name: name, nationality: cc };
+        var msub = pickedSubdivision($("member-subdivision"), $("member-subdivision-row"));
+        if (msub) op.subdivision = msub;
       } catch (e) {
         if (!(e instanceof Problem)) throw e;
         say(msg, "err", e.message);
@@ -663,6 +711,7 @@
       save([op], "New member: " + op.name + " (" + COUNTRIES[op.nationality] + ")", $("member-save"), msg, function () {
         $("member-name").value = "";
         $("member-country").value = "";
+        fillSubdivisionSelect($("member-subdivision"), "", "", $("member-subdivision-row"));
       });
     });
 
@@ -695,6 +744,11 @@
     var country = el("select", { className: "country-select" });
     fillCountrySelect(country);
     country.value = cc || "";
+    var sub0 = subdivisionOf(name);
+    var subdivision = el("select", { className: "country-select" });
+    var subRow = el("label", { className: "field" }, el("span", null, "State / province"), subdivision);
+    fillSubdivisionSelect(subdivision, cc || "", sub0, subRow);
+    country.addEventListener("change", function () { fillSubdivisionSelect(subdivision, country.value, "", subRow); });
     var save1 = el("button", { type: "button", className: "button blue hover small" }, "Save");
     var remove = el("button", { type: "button", className: "button red hover small" }, "Remove from the list");
     var box = el("div", { className: "msg" });
@@ -703,6 +757,7 @@
     var wrap = el("div", { className: "member-edit" },
       el("label", { className: "field" }, el("span", null, "Name"), input),
       el("label", { className: "field" }, el("span", null, "Country"), country),
+      subRow,
       save1, " ", remove,
       records ? el("p", { className: "hint" }, "To remove " + name + ", remove their clears first (Clears & videos).") : null,
       box);
@@ -711,9 +766,12 @@
       var ops = [];
       try {
         var newName = checkName(input.value, "name");
-        if (country.value !== (cc || "")) {
+        var sub = pickedSubdivision(subdivision, subRow);
+        if (country.value !== (cc || "") || sub !== sub0) {
           if (!COUNTRIES[country.value]) throw new Problem("Pick a country.");
-          ops.push({ op: "set_member_country", name: name, nationality: country.value });
+          var cop = { op: "set_member_country", name: name, nationality: country.value };
+          if (sub) cop.subdivision = sub;
+          ops.push(cop);
         }
         if (newName !== name) {
           var other = resolvePlayer(newName);
@@ -835,7 +893,7 @@
   // What each edit sent from this browser was, by requestId: the server only
   // knows the id and who sent it. Kept in localStorage so a reload keeps the
   // descriptions; it's a convenience, so any storage failure is ignored.
-  var STORE = "aceabase-mod-edits";
+  var STORE = "mod-page-edits";
   var DAY = 24 * 3600 * 1000;
 
   function loadTracked() {

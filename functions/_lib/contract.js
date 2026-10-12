@@ -17,8 +17,8 @@ export class Refuse extends Error {}
 
 export const OPS = {
   // op -> [required fields, optional fields], besides "op"
-  add_member: [["name", "nationality"], []],
-  add_record: [["player", "level", "progress"], ["nationality"]],
+  add_member: [["name", "nationality"], ["subdivision"]],
+  add_record: [["player", "level", "progress"], ["nationality", "subdivision"]],
   remove_record: [["player", "level"], []],
   set_grind: [["player", "level", "best", "segments"], ["note"]],
   remove_grind: [["player", "level"], []],
@@ -28,7 +28,7 @@ export const OPS = {
   refresh_showcases: [[], []], // Nigel's channel -> his showcases on the site
   undo: [["requestId"], []], // head mods: reverse one earlier edit
   rename_member: [["name", "newName"], []],
-  set_member_country: [["name", "nationality"], []],
+  set_member_country: [["name", "nationality"], ["subdivision"]],
   remove_member: [["name"], []], // only someone with no records left
   set_mod: [["discordId", "name", "role"], []], // Nigel only: add a mod, or rename / re-rank one
   remove_mod: [["discordId"], []], // Nigel only
@@ -103,6 +103,16 @@ export function checkModRole(v) {
   return v;
 }
 
+// A state or province, as the list stores it: the part of its ISO 3166-2 code
+// after the country ("IL" for US-IL). Whether this list shows them, and whether
+// the country has that one, is checked by tools/apply-edit.py, which has the list.
+export function checkSubdivision(v) {
+  if (typeof v !== "string" || !/^[A-Z0-9]{1,3}$/.test(v)) {
+    throw new Refuse(`state/province ${show(v)} isn't a subdivision code - use its short code, e.g. IL, ON`);
+  }
+  return v;
+}
+
 export function checkInt(v, what, lo, hi) {
   if (!isInt(v) || v < lo || v > hi) throw new Refuse(`${what} must be a whole number from ${lo} to ${hi}, got ${show(v)}`);
   return v;
@@ -174,6 +184,7 @@ export function validateOps(ops) {
       if (Object.hasOwn(op, "newName")) o.newName = checkName(op.newName, "new name");
       if (Object.hasOwn(op, "player")) o.player = checkName(op.player, "player");
       if (Object.hasOwn(op, "nationality")) o.nationality = checkCountry(op.nationality, "country");
+      if (Object.hasOwn(op, "subdivision")) o.subdivision = checkSubdivision(op.subdivision);
       if (Object.hasOwn(op, "level")) o.level = checkLevel(op.level);
       if (Object.hasOwn(op, "progress")) o.progress = checkInt(op.progress, "progress", 1, 100);
       if (Object.hasOwn(op, "best")) o.best = op.best === null ? null : checkInt(op.best, "best", 0, 100);

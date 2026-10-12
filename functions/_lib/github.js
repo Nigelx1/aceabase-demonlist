@@ -4,7 +4,11 @@
 // env.GITHUB_TOKEN is a fine-grained token for this one repo: Contents
 // read/write (a dispatch needs write) and Actions read (the runs list).
 
-export const REPO = "Nigelx1/aceabase-demonlist";
+// This site's repo and name: functions/site.json (the only per-site bits of the
+// mod page besides editors.json, so these files are the same on every list).
+import SITE from "../site.json";
+
+export const REPO = SITE.repo;
 export const WORKFLOW = "apply-edit.yml";
 const API = "https://api.github.com";
 // the workflow's run-name is "Edit <requestId> by <editor>"
@@ -17,7 +21,7 @@ function headers(env, extra = {}) {
     Authorization: `Bearer ${env.GITHUB_TOKEN}`,
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-    "User-Agent": "AceabaseDemonlist-ModPage",
+    "User-Agent": `${SITE.name.replace(/[^A-Za-z0-9]/g, "")}-ModPage`,
     ...extra,
   };
 }

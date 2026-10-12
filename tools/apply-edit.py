@@ -60,7 +60,9 @@ BOT_NAME, BOT_EMAIL = "github-actions[bot]", "41898282+github-actions[bot]@users
 TRIES = 5
 WIKI = "https://geometrydash.wiki.gg/wiki/"
 # wiki.gg blocks browser-looking user agents that aren't browsers; a plain named one gets through
-UA = "AceabaseDemonlist/1.0 (+https://aceabasedemonlist.pages.dev)"
+# This site's name and address: functions/site.json, shared with the mod page's Functions.
+SITE_INFO = json.load(io.open(os.path.join(REPO, "functions", "site.json"), encoding="utf-8"))
+UA = f"{re.sub(r'[^A-Za-z0-9]', '', SITE_INFO['name'])}/1.0 (+{SITE_INFO['url']})"
 
 # ISO 3166-1 alpha-2, the officially assigned codes
 ISO = set("""AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO
@@ -77,8 +79,8 @@ WITH_THE = {"AE", "BS", "CF", "CK", "DO", "FK", "FO", "GM", "KM", "KY", "MH", "M
             "SB", "SC", "TC", "UM", "VG", "VI"}
 
 OPS = {  # op -> (required fields, optional fields), besides "op"
-    "add_member": ({"name", "nationality"}, set()),
-    "add_record": ({"player", "level", "progress"}, {"nationality"}),
+    "add_member": ({"name", "nationality"}, {"subdivision"}),
+    "add_record": ({"player", "level", "progress"}, {"nationality", "subdivision"}),  # both: new players only
     "remove_record": ({"player", "level"}, set()),
     "set_grind": ({"player", "level", "best", "segments"}, {"note"}),
     "remove_grind": ({"player", "level"}, set()),
@@ -88,7 +90,7 @@ OPS = {  # op -> (required fields, optional fields), besides "op"
     "refresh_showcases": (set(), set()),  # Nigel's channel: the scheduled checks and a head-mod button
     "undo": ({"requestId"}, set()),  # head mods: reverse one earlier edit
     "rename_member": ({"name", "newName"}, set()),
-    "set_member_country": ({"name", "nationality"}, set()),
+    "set_member_country": ({"name", "nationality"}, {"subdivision"}),
     "remove_member": ({"name"}, set()),  # only someone with no records left
     "set_mod": ({"discordId", "name", "role"}, set()),  # Nigel only: add a mod, or rename / re-rank one
     "remove_mod": ({"discordId"}, set()),  # Nigel only
@@ -146,6 +148,14 @@ def check_name(v, what):
 def check_country(v, what):
     if not isinstance(v, str) or not re.fullmatch(r"[A-Z]{2}", v) or v not in ISO:
         raise Refuse(f"{what} {show(v)} isn't a country code - use the two capital letters, e.g. US, CA, MX")
+    return v
+
+
+def check_subdivision(v):
+    # the list's form: the ISO 3166-2 code after the country ("IL" for US-IL);
+    # Engine.place checks the list shows them and the country has this one
+    if not isinstance(v, str) or not re.fullmatch(r"[A-Z0-9]{1,3}", v):
+        raise Refuse(f"state/province {show(v)} isn't a subdivision code - use its short code, e.g. IL, ON")
     return v
 
 
@@ -249,6 +259,8 @@ def validate(p):
                 o["player"] = check_name(op["player"], "player")
             if "nationality" in op:
                 o["nationality"] = check_country(op["nationality"], "country")
+            if "subdivision" in op:
+                o["subdivision"] = check_subdivision(op["subdivision"])
             if "level" in op:
                 o["level"] = check_level(op["level"])
             if "progress" in op:
@@ -306,6 +318,7 @@ for (const [file, v] of files) {
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'static/js/list-utils.js'), 'utf8'), ctx);
 out.COUNTRY_NAMES = ctx.window.DL.COUNTRY_NAMES;
+out.SUBDIVISION_NAMES = ctx.window.DL.SUBDIVISION_NAMES || {};
 process.stdout.write(JSON.stringify(out));
 """
 
@@ -574,8 +587,9 @@ class Engine:
                 if self.resolve(o["name"], names):
                     raise Refuse(f"{self.resolve(o['name'], names)} is already a member")
                 names.append(o["name"])
-                spec["players"][o["name"]] = {"nationality": o["nationality"]}
-                spec["notes"].append(f"New member: {o['name']}, from {country_phrase(o['nationality'], s['COUNTRY_NAMES'])}.")
+                where = self.place(s, o["nationality"], o.get("subdivision"))
+                spec["players"][o["name"]] = self.player_spec(o)
+                spec["notes"].append(f"New member: {o['name']}, from {where}.")
                 self.subjects.append(f"Add member {o['name']}")
                 plan.append(o)
                 continue
@@ -588,8 +602,9 @@ class Engine:
                     raise Refuse(f"{o['player']} isn't a member yet - give their country, or add them as a member first")
                 who, joined = o["player"], True
                 names.append(who)
-                spec["players"][who] = {"nationality": o["nationality"]}
-                spec["notes"].append(f"New member: {who}, from {country_phrase(o['nationality'], s['COUNTRY_NAMES'])}.")
+                where = self.place(s, o["nationality"], o.get("subdivision"))
+                spec["players"][who] = self.player_spec(o)
+                spec["notes"].append(f"New member: {who}, from {where}.")
             lid, d = o["level"], listed.get(o["level"])
             if o["progress"] < 100 and not d:
                 raise Refuse(f"level {lid} isn't on the list, and only a 100% can put a level on it "
@@ -926,6 +941,28 @@ class Engine:
     # of their records (demons.js: player, nationality, the first-clear verifier
     # credit, hosted video files named after them); their Grind rows name them too
     # (goals.js). The changelog is history and keeps what it said.
+    def place(self, s, cc, sub):
+        """Where someone is from, for a note ("Indiana in the US"). A state or province
+        only on a list that shows them (SITE.subdivisions is false on Aceabase), and
+        only one the stats viewer's map knows (list-utils.js SUBDIVISION_NAMES)."""
+        country = country_phrase(cc, s["COUNTRY_NAMES"])
+        if not sub:
+            return country
+        if s["SITE"].get("subdivisions") is False:
+            raise Refuse("this list doesn't show states or provinces - leave it out")
+        name = (s.get("SUBDIVISION_NAMES") or {}).get(f"{cc}-{sub}")
+        if not name:
+            raise Refuse(f"{sub} isn't a state or province of {country} that the list knows")
+        return f"{name} in {country}"
+
+    @staticmethod
+    def player_spec(o):
+        """A new player for add-records.py: their country, and state or province if given."""
+        spec = {"nationality": o["nationality"]}
+        if o.get("subdivision"):
+            spec["subdivision"] = o["subdivision"]
+        return spec
+
     def roster_line(self, cfg, who):
         # Only inside config.js's members array: the same name can also be in the
         # editors array (the List Mods sidebar), which isn't the roster. Searching the
@@ -983,22 +1020,26 @@ class Engine:
     def set_member_country(self, o):
         s = load_state(self.root)
         who = self.member(s, o["name"])
-        cc = o["nationality"]
+        cc, sub = o["nationality"], o.get("subdivision")
+        where = self.place(s, cc, sub)
         cfg = read(self.root, "data/config.js")
         m = self.roster_line(cfg, who)
         recs = [r for d in s["DEMONS"] for r in d.get("records", []) if r["player"] == who]
-        if f'nationality: "{cc}"' in m.group(0) and "subdivision" not in m.group(0) \
-                and all(r.get("nationality") == cc and not r.get("subdivision") for r in recs):
-            self.say(f"{who} is already from {country_phrase(cc, s['COUNTRY_NAMES'])} - no change.")
+        had = re.search(r'subdivision:\s*"([^"]*)"', m.group(0))
+        if f'nationality: "{cc}"' in m.group(0) and (had.group(1) if had else None) == sub \
+                and all(r.get("nationality") == cc and (r.get("subdivision") or None) == sub for r in recs):
+            self.say(f"{who} is already from {where} - no change.")
             return
         line = re.sub(r'\s*,\s*subdivision:\s*"[^"]*"', "", m.group(0))
         if re.search(r'nationality:\s*"[A-Z]{2}"', line):
             line = re.sub(r'nationality:\s*"[A-Z]{2}"', f'nationality: "{cc}"', line, count=1)
         else:
             line = line[:-1].rstrip() + f', nationality: "{cc}" }}'
+        if sub:
+            line = re.sub(r'(nationality:\s*"[A-Z]{2}")', rf'\1, subdivision: "{sub}"', line, count=1)
         write(self.root, "data/config.js", cfg[:m.start()] + line + cfg[m.end():])
         for r in recs:
-            r["nationality"], r["subdivision"] = cc, None
+            r["nationality"], r["subdivision"] = cc, sub
         if recs:
             write_json_var(self.root, "data/demons.js", "DEMONS", s["DEMONS"])
         flag = os.path.join(self.root, "static", "images", "flags", f"{cc.lower()}.svg")
@@ -1006,8 +1047,8 @@ class Engine:
             got = subprocess.run(["curl", "-sS", "-f", "-o", flag, FLAG_SRC + f"{cc.lower()}.svg"], capture_output=True)
             if got.returncode:
                 self.say(f"(No flag picture exists for {cc} - the name shows without one.)")
-        self.say(f"{who} is now from {country_phrase(cc, s['COUNTRY_NAMES'])} ({len(recs)} record{'s' if len(recs) != 1 else ''}).")
-        self.subjects.append(f"{who} is from {cc}")
+        self.say(f"{who} is now from {where} ({len(recs)} record{'s' if len(recs) != 1 else ''}).")
+        self.subjects.append(f"{who} is from {cc}" + (f"-{sub}" if sub else ""))
 
     def remove_member(self, o):
         s = load_state(self.root)

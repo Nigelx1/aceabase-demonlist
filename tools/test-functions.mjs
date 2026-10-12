@@ -53,7 +53,8 @@ const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // --- fakes ----------------------------------------------------------------------
 
-const ORIGIN = "https://aceabasedemonlist.pages.dev";
+const SITE = (await fn("site.json")).default;
+const ORIGIN = SITE.url;
 const SECRET = "x".repeat(40);
 const ENV = {
   DISCORD_CLIENT_ID: "1234567890",
@@ -200,6 +201,10 @@ const CASES = [
   ["name double space", [{ op: "add_member", name: "a  b", nationality: "US" }], "extra spaces"],
   ["name number", [{ op: "add_member", name: 5, nationality: "US" }], "must be text"],
   ["shell in name", [{ op: "add_member", name: "$(rm -rf /)", nationality: "US" }], "can only use letters"],
+  ["state", [{ op: "add_member", name: "Statey", nationality: "US", subdivision: "IL" }, { op: "set_member_country", name: "Statey", nationality: "CA", subdivision: "ON" }, { op: "add_record", player: "Statey2", level: 1, progress: 100, nationality: "US", subdivision: "TX" }], "ok"],
+  ["state: lower case", [{ op: "add_member", name: "Statey", nationality: "US", subdivision: "il" }], "isn't a subdivision code"],
+  ["state: full code", [{ op: "add_member", name: "Statey", nationality: "US", subdivision: "US-IL" }], "isn't a subdivision code"],
+  ["state: on a remove", [{ op: "remove_member", name: "Statey", subdivision: "IL" }], "unknown field"],
   ["mod team", [{ op: "set_mod", discordId: "166314559630475264", name: "ace", role: "head" }, { op: "remove_mod", discordId: "12345678901234567" }], "ok"],
   ["mod: id as a number", [{ op: "set_mod", discordId: 166314559630475264, name: "ace", role: "mod" }], "must be the 17-20 digit number"],
   ["mod: short id", [{ op: "set_mod", discordId: "1234", name: "ace", role: "mod" }], "must be the 17-20 digit number"],
@@ -380,7 +385,7 @@ function editReq(body, { cookie = nigelCookie, origin = ORIGIN, type = "applicat
   if (type !== null) headers["Content-Type"] = type;
   return req("/api/edit", { method: "POST", headers, body: typeof body === "string" ? body : JSON.stringify(body) });
 }
-const GH_DISPATCH = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/dispatches";
+const GH_DISPATCH = `https://api.github.com/repos/${SITE.repo}/dispatches`;
 
 // --- head mods and mods ---------------------------------------------------------------------
 {
@@ -567,10 +572,10 @@ print(json.dumps(out + [m.OWNER_ID]))
 // --- GET /api/status -------------------------------------------------------------------------
 
 {
-  const RUNS = "https://api.github.com/repos/Nigelx1/aceabase-demonlist/actions/workflows/apply-edit.yml/runs?per_page=";
+  const RUNS = `https://api.github.com/repos/${SITE.repo}/actions/workflows/apply-edit.yml/runs?per_page=`;
   const run = (id, rid, editor, status, conclusion) => ({
     id, display_title: rid ? `Edit ${rid} by ${editor}` : "Apply edit", status, conclusion,
-    created_at: "2026-10-06T12:00:00Z", html_url: `https://github.com/Nigelx1/aceabase-demonlist/actions/runs/${id}`,
+    created_at: "2026-10-06T12:00:00Z", html_url: `https://github.com/${SITE.repo}/actions/runs/${id}`,
   });
   const runs = {
     total_count: 3, workflow_runs: [
@@ -582,8 +587,8 @@ print(json.dumps(out + [m.OWNER_ID]))
   };
   const routes = [
     ["GET", RUNS, () => jsonResp(runs)],
-    ["GET", "https://api.github.com/repos/Nigelx1/aceabase-demonlist/actions/runs/2/jobs", () => jsonResp({ total_count: 1, jobs: [{ id: 77 }] })],
-    ["GET", "https://api.github.com/repos/Nigelx1/aceabase-demonlist/check-runs/77/annotations", () => jsonResp([
+    ["GET", `https://api.github.com/repos/${SITE.repo}/actions/runs/2/jobs`, () => jsonResp({ total_count: 1, jobs: [{ id: 77 }] })],
+    ["GET", `https://api.github.com/repos/${SITE.repo}/check-runs/77/annotations`, () => jsonResp([
       { annotation_level: "warning", title: "", message: "Node.js 20 is deprecated" },
       { annotation_level: "failure", title: "Edit refused", message: "edit 1 (remove_record): LIMBO has no record by ace" },
       { annotation_level: "failure", title: "", message: "Process completed with exit code 1." },
@@ -595,7 +600,7 @@ print(json.dumps(out + [m.OWNER_ID]))
   let body = await r.json();
   check("status: list", r.status === 200 && Array.isArray(body) && body.length === 3 && eq(body[0], {
     requestId: "cccccccccccccccc", editor: "Poatan", status: "in_progress", conclusion: null,
-    createdAt: "2026-10-06T12:00:00Z", url: "https://github.com/Nigelx1/aceabase-demonlist/actions/runs/3",
+    createdAt: "2026-10-06T12:00:00Z", url: `https://github.com/${SITE.repo}/actions/runs/3`,
   }) && body[2].requestId === "aaaaaaaaaaaaaaaa", JSON.stringify(body));
   check("status: asks GitHub for 15", calls[0].url === RUNS + "15" && calls[0].init.headers.Authorization === "Bearer github_pat_test");
   stubFetch(routes);

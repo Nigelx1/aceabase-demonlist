@@ -12,8 +12,9 @@
 import { json, jsonError, missingEnv, notSetUp } from "../_lib/http.js";
 import { currentEditor } from "../_lib/session.js";
 import { Refuse, checkLevel } from "../_lib/contract.js";
+import SITE from "../site.json";
 
-const UA = "AceabaseDemonlist/1.0 (+https://aceabasedemonlist.pages.dev)";
+const UA = `${SITE.name.replace(/[^A-Za-z0-9]/g, "")}/1.0 (+${SITE.url})`;
 
 // [answered, parsed JSON object or null]
 async function getJson(url) {
