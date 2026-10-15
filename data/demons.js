@@ -100,7 +100,7 @@ window.DEMONS = [
     "position": 3,
     "name": "Ragnarok",
     "difficulty": "Extreme",
-    "rating": 32.5,
+    "rating": 32.53,
     "publisher": "Knobbelboy",
     "creators": [
       "Knobbelboy"
@@ -218,7 +218,7 @@ window.DEMONS = [
     "position": 6,
     "name": "Congregation",
     "difficulty": "Extreme",
-    "rating": 31.54,
+    "rating": 31.52,
     "publisher": "Presta",
     "creators": [
       "Presta"
@@ -289,14 +289,14 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 383
+    "aredlPosition": 384
   },
   {
     "id": 26681070,
     "position": 8,
     "name": "Sonic Wave",
     "difficulty": "Extreme",
-    "rating": 29.84,
+    "rating": 29.83,
     "publisher": "lSunix",
     "creators": [
       "lSunix"
@@ -328,7 +328,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 384
+    "aredlPosition": 385
   },
   {
     "id": 28220417,
@@ -640,7 +640,7 @@ window.DEMONS = [
     "position": 17,
     "name": "Fusion Z",
     "difficulty": "Extreme",
-    "rating": 24.48,
+    "rating": 24.49,
     "publisher": "PlebKIngdom",
     "creators": [
       "PlebKIngdom"
@@ -911,7 +911,7 @@ window.DEMONS = [
     "position": 23,
     "name": "Dark Odyssey",
     "difficulty": "Extreme",
-    "rating": 21.01,
+    "rating": 21,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -1091,7 +1091,7 @@ window.DEMONS = [
     "position": 27,
     "name": "Dragonlocked",
     "difficulty": "Insane",
-    "rating": 20.08,
+    "rating": 20.12,
     "publisher": "FrostDragonGD",
     "creators": [
       "FrostDragonGD"
@@ -1162,7 +1162,7 @@ window.DEMONS = [
     "position": 29,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.63,
+    "rating": 18.64,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1642,7 +1642,7 @@ window.DEMONS = [
     "position": 41,
     "name": "CraZy II",
     "difficulty": "Insane",
-    "rating": 15.31,
+    "rating": 15.3,
     "publisher": "DavJT",
     "creators": [
       "DavJT"
