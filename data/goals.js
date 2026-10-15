@@ -34,7 +34,7 @@ window.GOALS = [
   { player: "ace", levelId: 26681070, best: 38, segments: [[20, 45]] }, // Sonic Wave (on the list)
   { player: "ace", levelId: 58811846, best: 29, segments: [[74, 100]] }, // Astral Divinity
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
-  { player: "Dihmaster500", levelId: 27690100, best: 55, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
+  { player: "Dihmaster500", levelId: 27690100, best: 61, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
   { player: "Dihmaster500", levelId: 86407629, best: 25 }, // Tidal Wave
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
