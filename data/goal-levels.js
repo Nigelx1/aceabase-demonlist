@@ -288,7 +288,7 @@ window.GOAL_LEVELS = {
     "name": "Congregation",
     "publisher": "Presta",
     "difficulty": "Extreme",
-    "rating": 31.52,
+    "rating": 31.54,
     "levelId": 68668045,
     "description": "verified by floofle",
     "requirementPercent": 100,
