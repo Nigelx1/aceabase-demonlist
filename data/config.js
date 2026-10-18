@@ -99,7 +99,7 @@ window.SITE = {
   // an AREDL placement over the whole AREDL: rating = a + b * position^exponent.
   // Extremes on the AREDL are ordered and scored by it (DL.demonRating), so the
   // list follows AREDL placement; everything else uses its own GDDL rating.
-  aredlFit: { a: 43.8735, b: -1.470918, exponent: 0.38, points: 1577, r2: 0.9724, fitted: "2026-10-15" },
+  aredlFit: { a: 43.9336, b: -1.474745, exponent: 0.38, points: 1577, r2: 0.9726, fitted: "2026-10-18" },
   // SCORING - a 100% is worth topScore * base ^ (rating - topRating), where
   // rating is DL.demonRating (an extreme's AREDL placement through aredlFit,
   // otherwise the gdladder difficulty rating) and topRating the highest

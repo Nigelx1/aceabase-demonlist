@@ -26,6 +26,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-18",
+    "items": [
+      {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 5 levels drifted (Congregation 31.52 → 31.54, Hatred 26.89 → 26.88, Falling Up 21.84 → 21.85, Poltergeist 15.94 → 15.95, Windy Landscape 15.77 → 15.78)."
+      }
+    ]
+  },
+  {
     "date": "2026-10-12",
     "items": [
       {
