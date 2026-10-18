@@ -320,6 +320,35 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Congregation"
     }
   },
+  "68908396": {
+    "name": "Frozen Cave",
+    "publisher": null,
+    "difficulty": "Extreme",
+    "rating": 31,
+    "levelId": 68908396,
+    "description": "welcome to icy hell x by more and others",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=kBv8wUrLjxE",
+    "gd": {
+      "length": "Long",
+      "objects": 135560,
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "845915",
+        "name": "cYsmix - Fright March",
+        "artist": "cysmix"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/kBv8wUrLjxE/maxresdefault.jpg",
+    "palette": {
+      "accent": "#1d91b8",
+      "deep": "#0f323e",
+      "wash": "#f2f8fb",
+      "mist": "#e2eff3",
+      "onAccent": "#ffffff",
+      "ink": "#1f3d47"
+    }
+  },
   "86407629": {
     "name": "Tidal Wave",
     "publisher": "OniLinkGD",
