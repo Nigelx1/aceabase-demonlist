@@ -26,6 +26,19 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-19",
+    "items": [
+      {
+        "kind": "note",
+        "text": "flowstate also cleared BuTiTi II."
+      },
+      {
+        "kind": "note",
+        "text": "New member: flowstate, from the US."
+      }
+    ]
+  },
+  {
     "date": "2026-10-18",
     "items": [
       {

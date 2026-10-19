@@ -1212,6 +1212,12 @@ window.DEMONS = [
         "nationality": "US",
         "subdivision": null,
         "video": "https://youtu.be/pKfilX2PyyY"
+      },
+      {
+        "player": "flowstate",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
       }
     ],
     "gd": {
