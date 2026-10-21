@@ -26,6 +26,18 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-21",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "Sweater Weather",
+        "demonId": 81148582,
+        "at": 25,
+        "text": "Dihmaster500's clear"
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "items": [
       {

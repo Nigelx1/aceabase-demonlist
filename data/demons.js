@@ -517,7 +517,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 627
+    "aredlPosition": 626
   },
   {
     "id": 33387622,
@@ -556,7 +556,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 657
+    "aredlPosition": 656
   },
   {
     "id": 26133601,
@@ -943,7 +943,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1462
+    "aredlPosition": 1453
   },
   {
     "id": 3979721,
@@ -998,8 +998,47 @@ window.DEMONS = [
     "aredlPosition": 1502
   },
   {
-    "id": 61079355,
+    "id": 81148582,
     "position": 25,
+    "name": "Sweater Weather",
+    "difficulty": "Extreme",
+    "rating": 20.39,
+    "publisher": "VelYT",
+    "creators": [
+      "VelYT"
+    ],
+    "verifier": "Dihmaster500",
+    "videoUrl": "https://www.youtube.com/watch?v=sVjC-qvuSTc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/sVjC-qvuSTc/maxresdefault.jpg",
+    "levelId": 81148582,
+    "description": "Verified by tundra77; song is in the description of the youtube video. thank you all!",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Dihmaster500",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null,
+        "video": "https://www.youtube.com/watch?v=sVjC-qvuSTc"
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 39561,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "1004589",
+        "name": "Sweater Weather (Dako Remix)",
+        "artist": "d3codeftw"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": 1595
+  },
+  {
+    "id": 61079355,
+    "position": 26,
     "name": "Acu",
     "difficulty": "Extreme",
     "rating": 20.25,
@@ -1044,7 +1083,7 @@ window.DEMONS = [
   },
   {
     "id": 114933189,
-    "position": 26,
+    "position": 27,
     "name": "Through The Decay",
     "difficulty": "Extreme",
     "rating": 20.09,
@@ -1088,7 +1127,7 @@ window.DEMONS = [
   },
   {
     "id": 72211008,
-    "position": 27,
+    "position": 28,
     "name": "Dragonlocked",
     "difficulty": "Insane",
     "rating": 20.12,
@@ -1120,7 +1159,7 @@ window.DEMONS = [
   },
   {
     "id": 73725400,
-    "position": 28,
+    "position": 29,
     "name": "CraZy III",
     "difficulty": "Insane",
     "rating": 19.09,
@@ -1159,7 +1198,7 @@ window.DEMONS = [
   },
   {
     "id": 14145098,
-    "position": 29,
+    "position": 30,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
     "rating": 18.64,
@@ -1191,7 +1230,7 @@ window.DEMONS = [
   },
   {
     "id": 37259527,
-    "position": 30,
+    "position": 31,
     "name": "BuTiTi II",
     "difficulty": "Insane",
     "rating": 17.79,
@@ -1236,7 +1275,7 @@ window.DEMONS = [
   },
   {
     "id": 5155022,
-    "position": 31,
+    "position": 32,
     "name": "Acropolis",
     "difficulty": "Insane",
     "rating": 17.2,
@@ -1275,7 +1314,7 @@ window.DEMONS = [
   },
   {
     "id": 82824219,
-    "position": 32,
+    "position": 33,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
     "rating": 17.11,
@@ -1313,7 +1352,7 @@ window.DEMONS = [
   },
   {
     "id": 32885972,
-    "position": 33,
+    "position": 34,
     "name": "Dark Travel",
     "difficulty": "Insane",
     "rating": 16.94,
@@ -1352,7 +1391,7 @@ window.DEMONS = [
   },
   {
     "id": 9145341,
-    "position": 34,
+    "position": 35,
     "name": "8o",
     "difficulty": "Insane",
     "rating": 16.9,
@@ -1390,7 +1429,7 @@ window.DEMONS = [
   },
   {
     "id": 4706930,
-    "position": 35,
+    "position": 36,
     "name": "Supersonic",
     "difficulty": "Insane",
     "rating": 16.88,
@@ -1435,7 +1474,7 @@ window.DEMONS = [
   },
   {
     "id": 59858021,
-    "position": 36,
+    "position": 37,
     "name": "Dream Travel",
     "difficulty": "Insane",
     "rating": 16.79,
@@ -1473,7 +1512,7 @@ window.DEMONS = [
   },
   {
     "id": 75078198,
-    "position": 37,
+    "position": 38,
     "name": "Heritage",
     "difficulty": "Insane",
     "rating": 16.67,
@@ -1511,7 +1550,7 @@ window.DEMONS = [
   },
   {
     "id": 7054561,
-    "position": 38,
+    "position": 39,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -1555,7 +1594,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 39,
+    "position": 40,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -1600,7 +1639,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 40,
+    "position": 41,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -1645,7 +1684,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 41,
+    "position": 42,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -1690,7 +1729,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 42,
+    "position": 43,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.2,
@@ -1735,7 +1774,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 43,
+    "position": 44,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.06,
