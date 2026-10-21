@@ -30,6 +30,13 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "add",
+        "demon": "in canon",
+        "demonId": 80575901,
+        "at": 29,
+        "text": "Dihmaster500's clear"
+      },
+      {
+        "kind": "add",
         "demon": "Sweater Weather",
         "demonId": 81148582,
         "at": 25,
