@@ -374,7 +374,7 @@ window.DEMONS = [
     "position": 10,
     "name": "Artificial Ascent",
     "difficulty": "Extreme",
-    "rating": 27.97,
+    "rating": 27.98,
     "publisher": "ViPriN",
     "creators": [
       "ViPriN"
@@ -594,7 +594,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 699
+    "aredlPosition": 700
   },
   {
     "id": 35448603,
@@ -827,7 +827,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1128
+    "aredlPosition": 1129
   },
   {
     "id": 24301797,
@@ -911,7 +911,7 @@ window.DEMONS = [
     "position": 23,
     "name": "Dark Odyssey",
     "difficulty": "Extreme",
-    "rating": 21,
+    "rating": 21.01,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -1034,7 +1034,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1595
+    "aredlPosition": 1596
   },
   {
     "id": 61079355,
@@ -1079,7 +1079,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1597
+    "aredlPosition": 1598
   },
   {
     "id": 114933189,
@@ -1123,7 +1123,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1599
+    "aredlPosition": 1600
   },
   {
     "id": 72211008,
@@ -1194,7 +1194,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1609
+    "aredlPosition": 1610
   },
   {
     "id": 73725400,
@@ -1816,7 +1816,7 @@ window.DEMONS = [
     "position": 45,
     "name": "Game Time",
     "difficulty": "Insane",
-    "rating": 15.06,
+    "rating": 15.08,
     "publisher": "SimilarAMZ",
     "creators": [
       "SimilarAMZ"
