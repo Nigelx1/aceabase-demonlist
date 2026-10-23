@@ -26,6 +26,22 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-23",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "Helios",
+        "demonId": 71728635,
+        "at": 23,
+        "text": "vapixel's clear"
+      },
+      {
+        "kind": "note",
+        "text": "New member: vapixel, from the US."
+      }
+    ]
+  },
+  {
     "date": "2026-10-21",
     "items": [
       {

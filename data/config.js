@@ -70,6 +70,7 @@ window.SITE = {
     { name: "zinglebob238", nationality: "GB" },
     { name: "pixl", nationality: "US" },
     { name: "flowstate", nationality: "US" },
+    { name: "vapixel", nationality: "US" },
   ],
 
   // Home page columns.
