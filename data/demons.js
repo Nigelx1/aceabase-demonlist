@@ -1505,8 +1505,46 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 32885972,
+    "id": 63593437,
     "position": 38,
+    "name": "alika",
+    "difficulty": "Insane",
+    "rating": 17.05,
+    "publisher": "2003devin",
+    "creators": [
+      "2003devin"
+    ],
+    "verifier": "vapixel",
+    "videoUrl": "https://www.youtube.com/watch?v=UpOfN5UrT4Y",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UpOfN5UrT4Y/maxresdefault.jpg",
+    "levelId": 63593437,
+    "description": "0:",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "vapixel",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
+      }
+    ],
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "1218829",
+        "name": "Troubles",
+        "artist": "metea11"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 32885972,
+    "position": 39,
     "name": "Dark Travel",
     "difficulty": "Insane",
     "rating": 16.94,
@@ -1545,7 +1583,7 @@ window.DEMONS = [
   },
   {
     "id": 9145341,
-    "position": 39,
+    "position": 40,
     "name": "8o",
     "difficulty": "Insane",
     "rating": 16.9,
@@ -1583,7 +1621,7 @@ window.DEMONS = [
   },
   {
     "id": 4706930,
-    "position": 40,
+    "position": 41,
     "name": "Supersonic",
     "difficulty": "Insane",
     "rating": 16.88,
@@ -1628,7 +1666,7 @@ window.DEMONS = [
   },
   {
     "id": 59858021,
-    "position": 41,
+    "position": 42,
     "name": "Dream Travel",
     "difficulty": "Insane",
     "rating": 16.79,
@@ -1666,7 +1704,7 @@ window.DEMONS = [
   },
   {
     "id": 75078198,
-    "position": 42,
+    "position": 43,
     "name": "Heritage",
     "difficulty": "Insane",
     "rating": 16.67,
@@ -1704,7 +1742,7 @@ window.DEMONS = [
   },
   {
     "id": 7054561,
-    "position": 43,
+    "position": 44,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -1748,7 +1786,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 44,
+    "position": 45,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -1793,7 +1831,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 45,
+    "position": 46,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -1838,7 +1876,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 46,
+    "position": 47,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -1883,7 +1921,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 47,
+    "position": 48,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.2,
@@ -1928,7 +1966,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 48,
+    "position": 49,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.08,
