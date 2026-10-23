@@ -1430,7 +1430,7 @@ window.DEMONS = [
     "creators": [
       "EnZore"
     ],
-    "verifier": "kry",
+    "verifier": "Kry",
     "videoUrl": "https://www.youtube.com/watch?v=wfvs8qZbFQw",
     "thumbnailUrl": "https://i.ytimg.com/vi/wfvs8qZbFQw/maxresdefault.jpg",
     "levelId": 61137742,
@@ -1438,7 +1438,7 @@ window.DEMONS = [
     "requirementPercent": 100,
     "records": [
       {
-        "player": "kry",
+        "player": "Kry",
         "progress": 100,
         "nationality": "GB",
         "subdivision": null
