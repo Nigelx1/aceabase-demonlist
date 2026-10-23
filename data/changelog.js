@@ -29,6 +29,13 @@ window.CHANGELOG = [
     "date": "2026-10-23",
     "items": [
       {
+        "kind": "add",
+        "demon": "Auroral Bloom",
+        "demonId": 81043147,
+        "at": 33,
+        "text": "Kry's clear"
+      },
+      {
         "kind": "note",
         "text": "Kry also cleared Acropolis."
       },

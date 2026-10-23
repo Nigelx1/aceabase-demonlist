@@ -1312,8 +1312,46 @@ window.DEMONS = [
     "aredlPosition": 1610
   },
   {
-    "id": 73725400,
+    "id": 81043147,
     "position": 33,
+    "name": "Auroral Bloom",
+    "difficulty": "Insane",
+    "rating": 19.11,
+    "publisher": "Loltad",
+    "creators": [
+      "Loltad"
+    ],
+    "verifier": "Kry",
+    "videoUrl": "https://www.youtube.com/watch?v=5ULYcv_O2Fo",
+    "thumbnailUrl": "https://i.ytimg.com/vi/5ULYcv_O2Fo/maxresdefault.jpg",
+    "levelId": 81043147,
+    "description": "Fixed again to be more authentic!",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Kry",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 32936,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "1002120",
+        "name": "Creo - Aurora",
+        "artist": "CreoMusic"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 73725400,
+    "position": 34,
     "name": "CraZy III",
     "difficulty": "Insane",
     "rating": 19.09,
@@ -1352,7 +1390,7 @@ window.DEMONS = [
   },
   {
     "id": 14145098,
-    "position": 34,
+    "position": 35,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
     "rating": 18.64,
@@ -1384,7 +1422,7 @@ window.DEMONS = [
   },
   {
     "id": 95383256,
-    "position": 35,
+    "position": 36,
     "name": "Gensouteki",
     "difficulty": "Insane",
     "rating": 18.29,
@@ -1422,7 +1460,7 @@ window.DEMONS = [
   },
   {
     "id": 61137742,
-    "position": 36,
+    "position": 37,
     "name": "Leyak",
     "difficulty": "Insane",
     "rating": 18.14,
@@ -1460,7 +1498,7 @@ window.DEMONS = [
   },
   {
     "id": 37259527,
-    "position": 37,
+    "position": 38,
     "name": "BuTiTi II",
     "difficulty": "Insane",
     "rating": 17.79,
@@ -1505,7 +1543,7 @@ window.DEMONS = [
   },
   {
     "id": 5155022,
-    "position": 38,
+    "position": 39,
     "name": "Acropolis",
     "difficulty": "Insane",
     "rating": 17.2,
@@ -1550,7 +1588,7 @@ window.DEMONS = [
   },
   {
     "id": 82824219,
-    "position": 39,
+    "position": 40,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
     "rating": 17.11,
@@ -1588,7 +1626,7 @@ window.DEMONS = [
   },
   {
     "id": 63593437,
-    "position": 40,
+    "position": 41,
     "name": "alika",
     "difficulty": "Insane",
     "rating": 17.05,
@@ -1626,7 +1664,7 @@ window.DEMONS = [
   },
   {
     "id": 32885972,
-    "position": 41,
+    "position": 42,
     "name": "Dark Travel",
     "difficulty": "Insane",
     "rating": 16.94,
@@ -1665,7 +1703,7 @@ window.DEMONS = [
   },
   {
     "id": 9145341,
-    "position": 42,
+    "position": 43,
     "name": "8o",
     "difficulty": "Insane",
     "rating": 16.9,
@@ -1703,7 +1741,7 @@ window.DEMONS = [
   },
   {
     "id": 4706930,
-    "position": 43,
+    "position": 44,
     "name": "Supersonic",
     "difficulty": "Insane",
     "rating": 16.88,
@@ -1748,7 +1786,7 @@ window.DEMONS = [
   },
   {
     "id": 59858021,
-    "position": 44,
+    "position": 45,
     "name": "Dream Travel",
     "difficulty": "Insane",
     "rating": 16.79,
@@ -1786,7 +1824,7 @@ window.DEMONS = [
   },
   {
     "id": 75078198,
-    "position": 45,
+    "position": 46,
     "name": "Heritage",
     "difficulty": "Insane",
     "rating": 16.67,
@@ -1824,7 +1862,7 @@ window.DEMONS = [
   },
   {
     "id": 7054561,
-    "position": 46,
+    "position": 47,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -1868,7 +1906,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 47,
+    "position": 48,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -1913,7 +1951,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 48,
+    "position": 49,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -1958,7 +1996,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 49,
+    "position": 50,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2003,7 +2041,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 50,
+    "position": 51,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.2,
@@ -2048,7 +2086,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 51,
+    "position": 52,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.08,
