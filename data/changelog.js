@@ -30,6 +30,10 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "Kry also cleared Poltergeist."
+      },
+      {
+        "kind": "note",
         "text": "Kry also cleared Magma Bound."
       },
       {
