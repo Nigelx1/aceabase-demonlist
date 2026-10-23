@@ -1383,8 +1383,46 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 37259527,
+    "id": 95383256,
     "position": 35,
+    "name": "Gensouteki",
+    "difficulty": "Insane",
+    "rating": 18.29,
+    "publisher": "Subpixel",
+    "creators": [
+      "Subpixel"
+    ],
+    "verifier": "vapixel",
+    "videoUrl": null,
+    "thumbnailUrl": null,
+    "levelId": 95383256,
+    "description": "After over 2 years, its finally done! Thank you to everybody who partipated or supported this project along the way :] Enjoy!!!!",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "vapixel",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
+      }
+    ],
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "995331",
+        "name": "World Box (feat. m? tm)",
+        "artist": "Miyolophone"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 37259527,
+    "position": 36,
     "name": "BuTiTi II",
     "difficulty": "Insane",
     "rating": 17.79,
@@ -1429,7 +1467,7 @@ window.DEMONS = [
   },
   {
     "id": 5155022,
-    "position": 36,
+    "position": 37,
     "name": "Acropolis",
     "difficulty": "Insane",
     "rating": 17.2,
@@ -1468,7 +1506,7 @@ window.DEMONS = [
   },
   {
     "id": 82824219,
-    "position": 37,
+    "position": 38,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
     "rating": 17.11,
@@ -1506,7 +1544,7 @@ window.DEMONS = [
   },
   {
     "id": 63593437,
-    "position": 38,
+    "position": 39,
     "name": "alika",
     "difficulty": "Insane",
     "rating": 17.05,
@@ -1544,7 +1582,7 @@ window.DEMONS = [
   },
   {
     "id": 32885972,
-    "position": 39,
+    "position": 40,
     "name": "Dark Travel",
     "difficulty": "Insane",
     "rating": 16.94,
@@ -1583,7 +1621,7 @@ window.DEMONS = [
   },
   {
     "id": 9145341,
-    "position": 40,
+    "position": 41,
     "name": "8o",
     "difficulty": "Insane",
     "rating": 16.9,
@@ -1621,7 +1659,7 @@ window.DEMONS = [
   },
   {
     "id": 4706930,
-    "position": 41,
+    "position": 42,
     "name": "Supersonic",
     "difficulty": "Insane",
     "rating": 16.88,
@@ -1666,7 +1704,7 @@ window.DEMONS = [
   },
   {
     "id": 59858021,
-    "position": 42,
+    "position": 43,
     "name": "Dream Travel",
     "difficulty": "Insane",
     "rating": 16.79,
@@ -1704,7 +1742,7 @@ window.DEMONS = [
   },
   {
     "id": 75078198,
-    "position": 43,
+    "position": 44,
     "name": "Heritage",
     "difficulty": "Insane",
     "rating": 16.67,
@@ -1742,7 +1780,7 @@ window.DEMONS = [
   },
   {
     "id": 7054561,
-    "position": 44,
+    "position": 45,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -1786,7 +1824,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 45,
+    "position": 46,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -1831,7 +1869,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 46,
+    "position": 47,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -1876,7 +1914,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 47,
+    "position": 48,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -1921,7 +1959,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 48,
+    "position": 49,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.2,
@@ -1966,7 +2004,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 49,
+    "position": 50,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.08,
