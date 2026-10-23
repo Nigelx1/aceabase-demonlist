@@ -1978,6 +1978,12 @@ window.DEMONS = [
         "nationality": "US",
         "subdivision": null,
         "video": "https://youtu.be/fU-bDInjAhM"
+      },
+      {
+        "player": "Kry",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
       }
     ],
     "gd": {

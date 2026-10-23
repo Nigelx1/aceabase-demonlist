@@ -29,6 +29,10 @@ window.CHANGELOG = [
     "date": "2026-10-23",
     "items": [
       {
+        "kind": "note",
+        "text": "Kry also cleared Magma Bound."
+      },
+      {
         "kind": "add",
         "demon": "Auroral Bloom",
         "demonId": 81043147,
