@@ -30,6 +30,13 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "add",
+        "demon": "Without U",
+        "demonId": 119259720,
+        "at": 26,
+        "text": "vapixel's clear"
+      },
+      {
+        "kind": "add",
         "demon": "Helios",
         "demonId": 71728635,
         "at": 23,
