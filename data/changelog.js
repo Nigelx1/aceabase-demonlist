@@ -29,6 +29,10 @@ window.CHANGELOG = [
     "date": "2026-10-23",
     "items": [
       {
+        "kind": "note",
+        "text": "Kry also cleared Acropolis."
+      },
+      {
         "kind": "add",
         "demon": "Leyak",
         "demonId": 61137742,
