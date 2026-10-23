@@ -71,6 +71,7 @@ window.SITE = {
     { name: "pixl", nationality: "US" },
     { name: "flowstate", nationality: "US" },
     { name: "vapixel", nationality: "US" },
+    { name: "kry", nationality: "GB" },
   ],
 
   // Home page columns.
