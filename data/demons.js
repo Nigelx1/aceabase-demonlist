@@ -132,7 +132,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 233
+    "aredlPosition": 234
   },
   {
     "id": 42584142,
@@ -172,7 +172,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 258
+    "aredlPosition": 259
   },
   {
     "id": 79997992,
@@ -211,7 +211,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 261
+    "aredlPosition": 262
   },
   {
     "id": 68668045,
@@ -250,7 +250,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 276
+    "aredlPosition": 277
   },
   {
     "id": 68688849,
@@ -289,7 +289,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 385
+    "aredlPosition": 387
   },
   {
     "id": 26681070,
@@ -328,7 +328,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 386
+    "aredlPosition": 388
   },
   {
     "id": 28220417,
@@ -367,7 +367,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 393
+    "aredlPosition": 395
   },
   {
     "id": 27122654,
@@ -406,7 +406,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 529
+    "aredlPosition": 531
   },
   {
     "id": 72082021,
@@ -445,7 +445,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 556
+    "aredlPosition": 559
   },
   {
     "id": 38235367,
@@ -478,7 +478,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 564
+    "aredlPosition": 567
   },
   {
     "id": 27580467,
@@ -517,7 +517,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 625
+    "aredlPosition": 629
   },
   {
     "id": 33387622,
@@ -556,7 +556,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 655
+    "aredlPosition": 659
   },
   {
     "id": 26133601,
@@ -594,7 +594,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 700
+    "aredlPosition": 705
   },
   {
     "id": 35448603,
@@ -633,7 +633,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 755
+    "aredlPosition": 760
   },
   {
     "id": 59933468,
@@ -671,7 +671,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 799
+    "aredlPosition": 804
   },
   {
     "id": 10565740,
@@ -750,7 +750,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 849
+    "aredlPosition": 854
   },
   {
     "id": 48175126,
@@ -789,7 +789,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 855
+    "aredlPosition": 860
   },
   {
     "id": 89976481,
@@ -827,7 +827,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1129
+    "aredlPosition": 1134
   },
   {
     "id": 24301797,
@@ -865,7 +865,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1280
+    "aredlPosition": 1285
   },
   {
     "id": 30219145,
@@ -904,7 +904,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1387
+    "aredlPosition": 1393
   },
   {
     "id": 71728635,
@@ -942,7 +942,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1433
+    "aredlPosition": 1439
   },
   {
     "id": 69010770,
@@ -981,7 +981,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1453
+    "aredlPosition": 1459
   },
   {
     "id": 81257586,
@@ -1020,7 +1020,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1480
+    "aredlPosition": 1486
   },
   {
     "id": 3979721,
@@ -1072,7 +1072,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1502
+    "aredlPosition": 1508
   },
   {
     "id": 119259720,
@@ -1110,7 +1110,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1563
+    "aredlPosition": 1569
   },
   {
     "id": 81148582,
@@ -1149,7 +1149,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1596
+    "aredlPosition": 1601
   },
   {
     "id": 61079355,
@@ -1194,7 +1194,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1598
+    "aredlPosition": 1603
   },
   {
     "id": 114933189,
@@ -1238,7 +1238,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1600
+    "aredlPosition": 1605
   },
   {
     "id": 72211008,
@@ -1309,7 +1309,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1610
+    "aredlPosition": 1616
   },
   {
     "id": 81043147,
@@ -1861,8 +1861,46 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 7054561,
+    "id": 60619762,
     "position": 47,
+    "name": "Denouement",
+    "difficulty": "Insane",
+    "rating": 16.62,
+    "publisher": "Synactive GD",
+    "creators": [
+      "Synactive GD"
+    ],
+    "verifier": "Dihmaster500",
+    "videoUrl": "https://www.youtube.com/watch?v=ziHvsAriE3s",
+    "thumbnailUrl": "https://i.ytimg.com/vi/ziHvsAriE3s/maxresdefault.jpg",
+    "levelId": 60619762,
+    "description": "awwww ya, collab with pocket, I made the start he made the end, whose part is better? shoutout to souly who stayed up 6 hrs to deco the wave",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Dihmaster500",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 15316,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "714579",
+        "name": "Glory",
+        "artist": "FyremanMusic"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 7054561,
+    "position": 48,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -1912,7 +1950,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 48,
+    "position": 49,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -1957,7 +1995,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 49,
+    "position": 50,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -2008,7 +2046,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 50,
+    "position": 51,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2053,7 +2091,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 51,
+    "position": 52,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.2,
@@ -2098,7 +2136,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 52,
+    "position": 53,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.08,
