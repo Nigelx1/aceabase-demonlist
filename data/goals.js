@@ -42,5 +42,5 @@ window.GOALS = [
   { player: "zinglebob238", levelId: 38235367, best: 58, segments: [[48, 100]] }, // Quantum Processing (on the list)
   { player: "zinglebob238", levelId: 23262780, best: 82, segments: [[39, 88], [75, 100]] }, // Sakupen Hell
   { player: "pixl", levelId: 26681070, best: 32, segments: [[32, 47], [46, 100]] }, // Sonic Wave (on the list)
-  { player: "Poatan", levelId: 68908396, best: 60, segments: [[54, 100]] }, // Frozen Cave
+  { player: "Poatan", levelId: 68908396, best: 80, segments: [[54, 100]] }, // Frozen Cave
 ];
