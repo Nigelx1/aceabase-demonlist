@@ -54,7 +54,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 78
+    "aredlPosition": 79
   },
   {
     "id": 58161496,
@@ -296,7 +296,7 @@ window.DEMONS = [
     "position": 8,
     "name": "Sonic Wave",
     "difficulty": "Extreme",
-    "rating": 29.83,
+    "rating": 29.84,
     "publisher": "lSunix",
     "creators": [
       "lSunix"
@@ -452,7 +452,7 @@ window.DEMONS = [
     "position": 12,
     "name": "Quantum Processing",
     "difficulty": "Extreme",
-    "rating": 27.04,
+    "rating": 27.05,
     "publisher": "Riot",
     "creators": [
       "Riot"
@@ -1079,7 +1079,7 @@ window.DEMONS = [
     "position": 27,
     "name": "Without U",
     "difficulty": "Extreme",
-    "rating": 20.16,
+    "rating": 20.15,
     "publisher": "NoobyPro27",
     "creators": [
       "NoobyPro27"
@@ -1393,7 +1393,7 @@ window.DEMONS = [
     "position": 35,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.64,
+    "rating": 18.65,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -2094,7 +2094,7 @@ window.DEMONS = [
     "position": 52,
     "name": "Stalemate",
     "difficulty": "Insane",
-    "rating": 15.2,
+    "rating": 15.21,
     "publisher": "Nox",
     "creators": [
       "Nox"
@@ -2139,7 +2139,7 @@ window.DEMONS = [
     "position": 53,
     "name": "Game Time",
     "difficulty": "Insane",
-    "rating": 15.08,
+    "rating": 15.06,
     "publisher": "SimilarAMZ",
     "creators": [
       "SimilarAMZ"
