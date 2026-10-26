@@ -350,6 +350,36 @@ window.GOAL_LEVELS = {
       "ink": "#1f3d47"
     }
   },
+  "81148582": {
+    "name": "Sweater Weather",
+    "publisher": "VelYT",
+    "difficulty": "Extreme",
+    "rating": 20.39,
+    "levelId": 81148582,
+    "description": "Verified by tundra77; song is in the description of the youtube video. thank you all!",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=sVjC-qvuSTc",
+    "gd": {
+      "length": "Long",
+      "objects": 39561,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "1004589",
+        "name": "Sweater Weather (Dako Remix)",
+        "artist": "d3codeftw"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/sVjC-qvuSTc/maxresdefault.jpg",
+    "palette": {
+      "accent": "#0590bf",
+      "deep": "#0f323e",
+      "wash": "#f2f8fb",
+      "mist": "#e2eff3",
+      "onAccent": "#ffffff",
+      "ink": "#1f3d47"
+    }
+  },
   "86407629": {
     "name": "Tidal Wave",
     "publisher": "OniLinkGD",
