@@ -152,10 +152,9 @@ window.GOAL_LEVELS = {
       "ink": "#3a1f47"
     },
     "writeup": {
-      "text": "Artificial Ascent (abbreviated as AA) is a 2.0 Extreme Demon mega-collaboration level hosted by Viprin (the co-host/former host being LmAnubis), verified by Combined on 11 December 2016. It was placed at #1 on the Demonlist soon after, surpassing Sakupen Hell, before itself being displaced a month later by Yatagarasu. It is the first instalment of the Technology Trilogy, succeeded by Digital Descent and Cybernetic Crescent.",
+      "text": "The Technology Trilogy starts here. What began as LmAnubis's solo Cataclysm remake became Viprin's 2.0 megacollab, with fast-paced, timing-heavy parts from 18 creators set to Dimrain47's Surface - and the shortest of them, Zobros's at 25%, is arguably the hardest. Combined verified it in December 2016, and it was the Pointercrate Demonlist's first-ever #1, reigning ten days until Sonic Wave and Yatagarasu dethroned it. It went on to stay on the list for 2,078 days, beating Bloodbath's 1,997-day record, before untitled unmastered pushed it to the Legacy List in 2022.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
     }
   },
   "27690100": {
@@ -395,6 +394,11 @@ window.GOAL_LEVELS = {
       "mist": "#e2eff3",
       "onAccent": "#ffffff",
       "ink": "#1f3d47"
+    },
+    "writeup": {
+      "text": "Welcome to icy hell, as the in-game description puts it. TrueParadoxTeam's collab - built by FlashWings576, Quicklen, Sleynt and others - has you escaping a cave collapsing high in the frozen mountains to cYsmix's Fright March. It's packed with gimmicks and structuring quirks: double clicks throughout, the final wave and the iconic toggle-orb ship at 64%. One of the hardest art-style extremes of its time, it was verified by khrizmass in May 2021 and debuted on Pointercrate at #20; today it sits at #310 on the AREDL.",
+      "source": "AREDL",
+      "url": "https://api.aredl.net/v2/api/aredl/levels/68908396"
     }
   },
   "81148582": {
@@ -426,6 +430,11 @@ window.GOAL_LEVELS = {
       "mist": "#e2eff3",
       "onAccent": "#ffffff",
       "ink": "#1f3d47"
+    },
+    "writeup": {
+      "text": "An unrated hard demon, remade into a rated extreme. VelYT's solo remake of Unfound Emotions keeps the base gameplay near-identical but adds tasteful color, especially in a drop that contrasts with the more grayscale predrop and ending. Expect clicksync, timings and chokepoints, with ship parts that are especially challenging for a level whose difficulty is often debated between extreme and insane demon. It sits at #1602 on the AREDL, which credits xfire with the June 2022 verification - though the level's own description names tundra77.",
+      "source": "AREDL",
+      "url": "https://api.aredl.net/v2/api/aredl/levels/81148582"
     }
   },
   "86407629": {
@@ -459,10 +468,9 @@ window.GOAL_LEVELS = {
       "ink": "#1f2c47"
     },
     "writeup": {
-      "text": "Tidal Wave is a 2.1/2.2 Extreme Demon level by OniLink, published on 4 December 2022. Unlike most other difficult levels, this level takes a different approach, theming it around the ocean and the beach with a blue-and-yellow colour scheme and featuring predominantly difficult, fast-paced wave sequences similar to a Nine Circles level.",
+      "text": "Top 1 goes to the beach. OniLink swapped the usual hellscape for a blue-and-yellow ocean theme and fast, Nine Circles-style wave sections, with 200 frame-perfects at 60 FPS - more than twice Avernus's old record. Zoink verified it in September 2023 after 49,534 attempts, but RobTop's silence on rating it sparked a #RateTidalWave campaign. Rated over five months later, it went straight to #1 and held the spot for 471 days - a longer unbroken reign than any level before it - until Amethyst took over.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave"
     }
   }
 };
