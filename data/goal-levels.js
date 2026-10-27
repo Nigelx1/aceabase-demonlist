@@ -118,6 +118,42 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
     }
   },
+  "27122654": {
+    "name": "Artificial Ascent",
+    "publisher": "ViPriN",
+    "difficulty": "Extreme",
+    "rating": 27.98,
+    "levelId": 27122654,
+    "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=zmKI2rqyQyU",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "song": {
+        "id": "63082",
+        "name": "Surface",
+        "artist": "Dimrain47"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
+    "palette": {
+      "accent": "#b11ff9",
+      "deep": "#2e0f3e",
+      "wash": "#f8f2fb",
+      "mist": "#ede2f3",
+      "onAccent": "#ffffff",
+      "ink": "#3a1f47"
+    },
+    "writeup": {
+      "text": "Artificial Ascent (abbreviated as AA) is a 2.0 Extreme Demon mega-collaboration level hosted by Viprin (the co-host/former host being LmAnubis), verified by Combined on 11 December 2016. It was placed at #1 on the Demonlist soon after, surpassing Sakupen Hell, before itself being displaced a month later by Yatagarasu. It is the first instalment of the Technology Trilogy, succeeded by Digital Descent and Cybernetic Crescent.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent",
+      "auto": true
+    }
+  },
   "27690100": {
     "name": "Slaughterhouse ",
     "publisher": "IcEDCave",

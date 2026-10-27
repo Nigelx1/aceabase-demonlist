@@ -44,4 +44,5 @@ window.GOALS = [
   { player: "pixl", levelId: 26681070, best: 32, segments: [[32, 47], [46, 100]] }, // Sonic Wave (on the list)
   { player: "Poatan", levelId: 68908396, best: 80, segments: [[54, 100]] }, // Frozen Cave
   { player: "Jesus", levelId: 81148582, best: 50 }, // Sweater Weather (on the list)
+  { player: "Jaiden", levelId: 27122654, best: 77, segments: [[35, 100]] }, // Artificial Ascent (on the list)
 ];
