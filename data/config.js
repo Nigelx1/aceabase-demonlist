@@ -36,6 +36,11 @@ window.SITE = {
   // null = off.
   grindInProgress: 50,
 
+  // Future List (Dihmaster500's idea): a tab + page (demonlist/future.html)
+  // showing the list with every In Progress level above added where it would
+  // go, and every level's points worked out again. Display only.
+  futureList: true,
+
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 
