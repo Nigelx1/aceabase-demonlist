@@ -73,6 +73,7 @@ window.SITE = {
     { name: "vapixel", nationality: "US" },
     { name: "Kry", nationality: "GB" },
     { name: "Jesus", nationality: "US" },
+    { name: "Jaiden", nationality: "CA" },
   ],
 
   // Home page columns.
