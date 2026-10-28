@@ -26,6 +26,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-28",
+    "items": [
+      {
+        "kind": "note",
+        "text": "zinglebob238 also cleared Sweater Weather."
+      }
+    ]
+  },
+  {
     "date": "2026-10-27",
     "items": [
       {
