@@ -296,7 +296,7 @@ window.DEMONS = [
     "position": 8,
     "name": "Sonic Wave",
     "difficulty": "Extreme",
-    "rating": 29.84,
+    "rating": 29.83,
     "publisher": "lSunix",
     "creators": [
       "lSunix"
@@ -374,7 +374,7 @@ window.DEMONS = [
     "position": 10,
     "name": "Artificial Ascent",
     "difficulty": "Extreme",
-    "rating": 27.98,
+    "rating": 27.99,
     "publisher": "ViPriN",
     "creators": [
       "ViPriN"
@@ -594,7 +594,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 706
+    "aredlPosition": 707
   },
   {
     "id": 35448603,
@@ -640,7 +640,7 @@ window.DEMONS = [
     "position": 17,
     "name": "Fusion Z",
     "difficulty": "Extreme",
-    "rating": 24.49,
+    "rating": 24.51,
     "publisher": "PlebKIngdom",
     "creators": [
       "PlebKIngdom"
@@ -949,7 +949,7 @@ window.DEMONS = [
     "position": 24,
     "name": "Dark Odyssey",
     "difficulty": "Extreme",
-    "rating": 21.01,
+    "rating": 21,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -1079,7 +1079,7 @@ window.DEMONS = [
     "position": 27,
     "name": "Without U",
     "difficulty": "Extreme",
-    "rating": 20.15,
+    "rating": 20.16,
     "publisher": "NoobyPro27",
     "creators": [
       "NoobyPro27"

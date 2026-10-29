@@ -89,7 +89,7 @@ window.GOAL_LEVELS = {
     "name": "Sonic Wave",
     "publisher": "lSunix",
     "difficulty": "Extreme",
-    "rating": 29.84,
+    "rating": 29.83,
     "aredlPosition": 388,
     "levelId": 26681070,
     "description": "Mythical Demon by Cyclic! Video on my YouTube.",
@@ -98,13 +98,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 23157,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "574484",
         "name": "F-777 - Sonic Blaster",
         "artist": "F-777"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
     "palette": {
@@ -125,7 +125,7 @@ window.GOAL_LEVELS = {
     "name": "Artificial Ascent",
     "publisher": "ViPriN",
     "difficulty": "Extreme",
-    "rating": 27.98,
+    "rating": 27.99,
     "aredlPosition": 531,
     "levelId": 27122654,
     "description": "Artificial intelligence is about to surpass human possibilities. Who can still keep up? Verified by Combined.",
@@ -170,13 +170,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "945695",
         "name": "Tennobyte - Fly Away",
         "artist": "Tennobyte"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
     "palette": {
