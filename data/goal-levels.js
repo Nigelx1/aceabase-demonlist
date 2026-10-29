@@ -25,14 +25,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 24746,
-      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "467339",
         "name": "At the Speed of Light",
         "artist": "Dimrain47",
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      }
+      },
+      "gameVersion": "2.1"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
     "palette": {
@@ -62,13 +62,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Medium",
       "objects": 20250,
-      "gameVersion": "2.0",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "360804",
         "name": "Iron God: Sakupen Hell Yes RMX",
         "artist": "mr-jazzman"
-      }
+      },
+      "gameVersion": "2.0"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/X-Okj4-o-do/maxresdefault.jpg",
     "palette": {
@@ -98,13 +98,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 23157,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "574484",
         "name": "F-777 - Sonic Blaster",
         "artist": "F-777"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
     "palette": {
@@ -134,13 +134,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 65535,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "63082",
         "name": "Surface",
         "artist": "Dimrain47"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
     "palette": {
@@ -170,13 +170,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "945695",
         "name": "Tennobyte - Fly Away",
         "artist": "Tennobyte"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
     "palette": {
@@ -206,8 +206,8 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 21269,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Extreme Demon"
+      "inGameDifficulty": "Extreme Demon",
+      "gameVersion": "2.1"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
     "palette": {
@@ -237,14 +237,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 65535,
-      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "467339",
         "name": "At the Speed of Light",
         "artist": "Dimrain47",
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      }
+      },
+      "gameVersion": "2.1"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
     "palette": {
@@ -274,13 +274,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "732596",
         "name": "lia;quo?Crystal Corruption??Nightcore Edit?",
         "artist": "liaquo"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/fBk2qoAL7dw/maxresdefault.jpg",
     "palette": {
@@ -310,8 +310,8 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 43364,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon"
+      "inGameDifficulty": "Extreme Demon",
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/8G-WZauz98M/maxresdefault.jpg",
     "palette": {
@@ -414,13 +414,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 39561,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "1004589",
         "name": "Sweater Weather (Dako Remix)",
         "artist": "d3codeftw"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/sVjC-qvuSTc/maxresdefault.jpg",
     "palette": {
@@ -450,13 +450,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 220114,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "1266014",
         "name": "Tidal Wave(Shiawase VIP rmx)",
         "artist": "RunoNG"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/W-fg7FTBKuU/maxresdefault.jpg",
     "palette": {
