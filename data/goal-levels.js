@@ -98,13 +98,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 23157,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "574484",
         "name": "F-777 - Sonic Blaster",
         "artist": "F-777"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
     "palette": {
@@ -170,13 +170,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "945695",
         "name": "Tennobyte - Fly Away",
         "artist": "Tennobyte"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
     "palette": {
@@ -341,14 +341,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 17568,
-      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "895761",
         "name": "Purgatori",
         "artist": "Koraii",
         "link": "https://geometrydashcontent.b-cdn.net/songs/895761.mp3"
-      }
+      },
+      "gameVersion": "2.1"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/Fuxe0O10s-E/maxresdefault.jpg",
     "palette": {
@@ -378,13 +378,13 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
-      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
       "song": {
         "id": "845915",
         "name": "cYsmix - Fright March",
         "artist": "cysmix"
-      }
+      },
+      "gameVersion": "2.2"
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/kBv8wUrLjxE/maxresdefault.jpg",
     "palette": {
