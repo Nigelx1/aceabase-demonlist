@@ -15,7 +15,7 @@ window.SITE = {
   // What the demonlist page says each section is (static/js/demonlist.js).
   listBlurbs: {
     main: "Every Extreme Demon on the list.",
-    extended: "Every Insane Demon on the list. Only 100% completions count.",
+    extended: "Every Insane Demon on the list. A 100% counts in full; a run over 50% counts for a quarter of its points times the run.",
   },
 
   // Day the list went live: the "Added to list" date in each demon's Position
