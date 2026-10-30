@@ -12,8 +12,13 @@
 <script src="../data/config.js"></script>
 <script src="../data/demons.js"></script>
 <script src="../data/changelog.js"></script>
+<script src="../data/goal-levels.js"></script>
+<script src="../data/goals.js"></script>
+<script src="../data/unrated.js"></script>
 <script src="../static/js/list-utils.js"></script>
 <script src="../static/js/demonlist.js"></script>
+<script src="../static/js/goals.js"></script>
+<script src="../static/js/views.js"></script>
 
 <link rel="stylesheet" href="../static/core/css/icon.css">
 <link rel="stylesheet" href="../static/core/css/nav.css">
@@ -41,8 +46,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -58,8 +61,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -76,6 +77,8 @@
 
 <script>
   // record.html?demon=<levelId>&player=<name> - one record's hosted video
+  DL.syncViewUrl();
+  var view = DL.currentListView();
   var params = new URLSearchParams(location.search);
   var demon = DL.demonById(params.get("demon"));
   var record = demon
@@ -88,14 +91,14 @@
       "<p>There's no video for that record.</p>" +
       '<a class="blue hover button" href="' + (demon ? DL.demonUrl(demon.id) : "index.html") + '">' +
       (demon ? "All " + DL.escapeHtml(demon.name) + " records" : "Back to the list") + "</a></section>";
-    DL.renderListNav(document.getElementById("lists"), demon || null);
+    DL.renderListNav(document.getElementById("lists"), demon || null, view);
   } else {
     document.title = record.player + " – " + demon.name + " · " + window.SITE.name;
-    DL.renderListNav(document.getElementById("lists"), demon);
-    DL.renderRecordPage(document.getElementById("record-detail"), demon, record);
+    DL.renderListNav(document.getElementById("lists"), demon, view);
+    DL.renderRecordPage(document.getElementById("record-detail"), demon, record, view);
   }
 
-  DL.renderSidebar(document.getElementById("sidebar"));
+  DL.renderSidebar(document.getElementById("sidebar"), view);
 </script>
 </div>
 
@@ -110,8 +113,6 @@
       <a class="link" href="../index.html">Home</a><br>
       <a class="link" href="index.html">Demonlist</a><br>
       <a class="link" href="statsviewer.html">Stats Viewer</a><br>
-      <a class="link" href="future.html">Future List</a><br>
-      <a class="link" href="future.html?plus">Future+</a><br>
     </nav>
   </div>
   <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>

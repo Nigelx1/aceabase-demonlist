@@ -13,7 +13,9 @@
 <script src="../data/demons.js"></script>
 <script src="../data/goal-levels.js"></script>
 <script src="../data/goals.js"></script>
+<script src="../data/unrated.js"></script>
 <script src="../static/js/list-utils.js"></script>
+<script src="../static/js/views.js"></script>
 
 <link rel="stylesheet" href="../static/core/css/icon.css">
 <link rel="stylesheet" href="../static/core/css/nav.css">
@@ -41,8 +43,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="../demonlist/statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="../demonlist/future.html">Future List</a></li>
-      <li><a class="white hover" href="../demonlist/future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -58,8 +58,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="../demonlist/statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="../demonlist/future.html">Future List</a></li>
-      <li><a class="white hover" href="../demonlist/future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -102,6 +100,7 @@
       <a href="#panel-members">Members</a>
       <a href="#panel-videos">Clears &amp; videos</a>
       <a href="#panel-order">List order</a>
+      <a href="#panel-unrated" hidden>Unrated levels</a>
       <a href="#panel-edits">Recent edits</a>
       <a href="#panel-mods" hidden>Mods</a>
     </nav>
@@ -262,6 +261,46 @@
       <p>Checks Nigel's YouTube channel and puts his showcase on every level that has one. It also runs by itself on Mondays and Thursdays.</p>
       <button type="button" class="button blue hover save" id="showcase-save">Check Nigel's channel</button>
       <div class="msg" id="showcase-msg" hidden></div>
+    </section>
+
+    <!-- 5b. Unrated levels (Rated+: head mods; static/js/admin.js setupUnrated shows it) -->
+    <section class="panel fade tool" id="panel-unrated" hidden>
+      <h2 class="underlined pad">Unrated levels</h2>
+      <p class="hint">Levels that aren't rated in game but count in the Rated+ view. Placed and scored by your GD Demon Ladder estimate. Clears on them go in through Add a clear.</p>
+      <div class="field">
+        <label for="unrated-level">Level</label>
+        <div class="level-row">
+          <input type="text" id="unrated-level" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Level ID or gdbrowser link">
+          <button type="button" class="button white hover" id="unrated-check">Check</button>
+        </div>
+        <div class="level-info" id="unrated-level-info" hidden></div>
+      </div>
+      <div class="two">
+        <label class="field">
+          <span>GDDL estimate</span>
+          <input type="number" id="unrated-rating" min="1" max="50" step="0.01" inputmode="decimal" placeholder="e.g. 31.25">
+        </label>
+        <label class="field">
+          <span>Counts as</span>
+          <select id="unrated-tier">
+            <option value="Extreme">Extreme</option>
+            <option value="Insane">Insane</option>
+          </select>
+        </label>
+      </div>
+      <label class="field">
+        <span>Showcase <i>(optional)</i></span>
+        <input type="url" id="unrated-showcase" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="A YouTube link">
+      </label>
+      <fieldset class="field" id="unrated-place-row">
+        <legend>Spot on the list</legend>
+        <p class="hint">Where the estimate puts it, or a spot close by when the AREDL order makes it a close call. Its points come from the estimate either way.</p>
+        <div id="unrated-place"></div>
+      </fieldset>
+      <button type="button" class="button blue hover save" id="unrated-save">Add unrated level</button>
+      <div class="msg" id="unrated-msg" hidden></div>
+      <h3>On Rated+ now</h3>
+      <ul class="goal-list" id="unrated-list"></ul>
     </section>
 
     <!-- 6. Recent edits -->

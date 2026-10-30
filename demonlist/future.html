@@ -5,109 +5,13 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Future List · Aceabase Demonlist</title>
-<meta name="description" content="The list with every level in someone's In Progress added: where each one would land, and what every level would be worth.">
-
-<script src="../static/core/js/vendor/jquery.min.js"></script>
-<script src="../static/core/js/vendor/jquery-ui.min.js"></script>
-<script src="../data/config.js"></script>
-<script src="../data/demons.js"></script>
-<script src="../data/goal-levels.js"></script>
-<script src="../data/goals.js"></script>
-<script src="../static/js/list-utils.js"></script>
-<script src="../static/js/demonlist.js"></script>
-<script src="../static/js/goals.js"></script>
-<script src="../static/js/future.js"></script>
-
-<link rel="stylesheet" href="../static/core/css/icon.css">
-<link rel="stylesheet" href="../static/core/css/nav.css">
-<link rel="stylesheet" href="../static/core/css/main.css">
-<link rel="stylesheet" href="../static/core/css/ui.css">
-<link rel="stylesheet" href="../static/core/css/core.css">
-<link rel="stylesheet" href="../static/core/css/fa.all.min.css">
-<link rel="stylesheet" href="../static/css/demonlist.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:light,bold">
+<meta name="robots" content="noindex">
+<!-- The Future List and Future+ are views of the list now (static/js/views.js):
+     future.html -> index.html?time=future, future.html?plus -> index.html?time=plus -->
+<script>location.replace("index.html?time=" + (/[?&]plus(?:[=&]|$)/.test(location.search) ? "plus" : "future") + location.hash);</script>
+<noscript><meta http-equiv="refresh" content="0; url=index.html?time=future"></noscript>
 </head>
 <body>
-<div id="bg" aria-hidden="true"></div>
-<div class="content">
-<header>
-<nav class="center collapse underlined see-through">
-  <div class="nav-icon nav-nohide" style="margin-right:auto">
-    <a href="../index.html" aria-label="Go to homepage" style="font-weight:800;letter-spacing:.02em;font-size:1.1rem">Aceabase Demonlist</a>
-  </div>
-  <div class="nav-group">
-    <a class="nav-item hover white" href="index.html">
-      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
-      <i class="fas fa-sort-down" style="height:50%; padding-left:5px"></i>
-    </a>
-    <ul class="nav-hover-dropdown">
-      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
-      <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
-      <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
-      <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
-    </ul>
-  </div>
-  <div class="nav-item collapse-button nav-nohide">
-    <div class="hamburger hover"><input type="checkbox"><span></span><span></span><span></span></div>
-  </div>
-  <div class="nav-drop-down">
-    <a class="nav-item hover white" href="../index.html">Home</a>
-    <a class="nav-item hover white" href="index.html">
-      <span class="flex col"><span style="font-size:50%">Geometry Dash</span><span>DEMONLIST</span></span>
-    </a>
-    <ul class="nav-hover-dropdown">
-      <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
-      <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
-      <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
-      <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
-    </ul>
-  </div>
-</nav>
-<div></div>
-</header>
-
-<nav class="flex wrap m-center fade" id="lists" style="text-align:center"></nav>
-
-<div class="flex m-center container">
-  <main class="left" id="future-panels"></main>
-  <aside class="right" id="sidebar"></aside>
-</div>
-
-<script>
-  // future.html?plus is Future+: every Grind level, not just the In Progress ones
-  var plus = !!window.SITE.futurePlus && /[?&]plus(?:[=&]|$)/.test(location.search);
-  if (plus) document.title = "Future+ · " + window.SITE.name;
-  DL.renderListNav(document.getElementById("lists"), null, plus ? "plus" : "future");
-  DL.renderFuturePage(document.getElementById("future-panels"), document.getElementById("sidebar"), plus);
-</script>
-</div>
-
-<footer class="center">
-  <span class="overline pad" style="text-align:center">
-    <span id="footer-name"></span><br>
-    A private Geometry Dash Demonlist. Not affiliated with RobTopGamesAB or pointercrate.
-  </span>
-  <div class="flex no-stretch">
-    <nav>
-      <h2>Aceabase Demonlist</h2>
-      <a class="link" href="../index.html">Home</a><br>
-      <a class="link" href="../guidelines/index.html">Guidelines</a><br>
-      <a class="link" href="../changelog/index.html">Changelog</a><br>
-      <a class="link" href="statsviewer.html">Stats Viewer</a><br>
-      <a class="link" href="future.html">Future List</a><br>
-      <a class="link" href="future.html?plus">Future+</a><br>
-    </nav>
-  </div>
-  <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>
-</footer>
-
-<script src="../static/core/js/ui.js"></script>
-<script src="../static/core/js/misc.js"></script>
-<script src="../static/core/js/nav.js"></script>
-<script src="../static/js/modnav.js"></script>
+<p><a href="index.html?time=future">The Future List is part of the Demonlist now.</a></p>
 </body>
 </html>

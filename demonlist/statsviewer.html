@@ -13,9 +13,11 @@
 <script src="../data/demons.js"></script>
 <script src="../data/goal-levels.js"></script>
 <script src="../data/goals.js"></script>
+<script src="../data/unrated.js"></script>
 <script src="../static/js/list-utils.js"></script>
 <script src="../static/js/demonlist.js"></script>
 <script src="../static/js/goals.js"></script>
+<script src="../static/js/views.js"></script>
 <script src="../static/js/worldmap.data.js"></script>
 <script src="../static/js/worldmap.js"></script>
 <script src="../static/js/statsviewer.js"></script>
@@ -48,8 +50,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -65,8 +65,6 @@
       <li><a class="white hover" href="../guidelines/index.html">Guidelines</a></li>
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
-      <li><a class="white hover" href="future.html">Future List</a></li>
-      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -79,6 +77,7 @@
     <div class="button white hover no-shadow active" data-mode="individual">Players</div>
     <div class="button white hover no-shadow" data-mode="nations">Nations</div>
   </nav>
+  <nav class="flex wrap m-center fade" id="view-options" aria-label="List view"></nav>
 
   <section class="panel fade" id="world-map-wrapper">
     <div id="world-map"></div>
@@ -175,12 +174,18 @@
 </div>
 
 <script>
+  // the list view to rank by: Current / Future / Future+ and Rated / Rated+ (static/js/views.js)
+  DL.syncViewUrl();
+  var view = DL.currentListView();
+  DL.renderViewOptions(document.getElementById("view-options"));
   var params = new URLSearchParams(location.search);
   DL.initStatsViewer(
     document.getElementById("statsviewer-page"),
     params.get("player"),
-    params.get("nation")
+    params.get("nation"),
+    view
   );
+  if (!view.isDefault) document.title = "Stats Viewer (" + view.title + ") · " + window.SITE.name;
 </script>
 </div>
 

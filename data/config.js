@@ -36,14 +36,28 @@ window.SITE = {
   // null = off.
   grindInProgress: 50,
 
-  // Future List (Dihmaster500's idea): a tab + page (demonlist/future.html)
-  // showing the list with every In Progress level above added where it would
-  // go, and every level's points worked out again. Display only.
+  // Future (Dihmaster500's idea): "Future" in the Time option on the list and
+  // the stats viewer (static/js/views.js): the list with every off-list level
+  // in someone's In Progress (above) added where it would go, and every level's
+  // points and everyone's score worked out again. Nothing in it counts until
+  // it's beaten. The old page, demonlist/future.html, only redirects here now.
   futureList: true,
 
-  // Future+ (Nigel and Dihmaster500, 2026-10-30): the same page with every
-  // level in anyone's Grind added, at any progress (future.html?plus).
+  // Future+ (Nigel and Dihmaster500, 2026-10-30): "Future+" in the Time option:
+  // the same with every off-list level in anyone's Grind, at any progress
+  // (the old future.html?plus redirects here).
   futurePlus: true,
+
+  // Rated+ (Nigel and Dihmaster500, 2026-10-30): the Rating option on the list and
+  // the stats viewer (Rated / Rated+). Rated+ adds the unrated levels the head mods
+  // put on it (data/unrated.js, mod page > Unrated levels). They are placed and
+  // scored by their GD Demon Ladder estimate like any other level. Off = no Rating
+  // option, and unrated levels show nowhere.
+  ratedPlus: true,
+  // How far a head mod can move an unrated level by hand among its neighbors, in
+  // rating points either side of its estimate (DL.unratedSlots; tools/apply-edit.py
+  // slot_ok). Its points always come from the estimate. Default 1.
+  unratedWindow: 1,
 
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
@@ -104,6 +118,7 @@ window.SITE = {
   // /guidelines/ page.
   guidelines: [
     "Only rated Extreme and Insane Demons are eligible - no platformers.",
+    "Unrated levels the head mods add count only in the Rated+ views.",
     "A record counts once it's a full 100% completion.",
     "Records come from your gdladder profile or a video of the full run.",
     "Mods/hacks that trivialize gameplay are not allowed unless explicitly permitted for that level.",
