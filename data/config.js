@@ -41,6 +41,10 @@ window.SITE = {
   // go, and every level's points worked out again. Display only.
   futureList: true,
 
+  // Future+ (Nigel and Dihmaster500, 2026-10-30): the same page with every
+  // level in anyone's Grind added, at any progress (future.html?plus).
+  futurePlus: true,
+
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 

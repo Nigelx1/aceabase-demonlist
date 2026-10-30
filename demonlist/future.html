@@ -45,6 +45,7 @@
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
       <li><a class="white hover" href="future.html">Future List</a></li>
+      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -61,6 +62,7 @@
       <li><a class="white hover" href="../changelog/index.html">Changelog</a></li>
       <li><a class="white hover" href="statsviewer.html">Stats Viewer</a></li>
       <li><a class="white hover" href="future.html">Future List</a></li>
+      <li><a class="white hover" href="future.html?plus">Future+</a></li>
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
@@ -76,8 +78,11 @@
 </div>
 
 <script>
-  DL.renderListNav(document.getElementById("lists"), null, true);
-  DL.renderFuturePage(document.getElementById("future-panels"), document.getElementById("sidebar"));
+  // future.html?plus is Future+: every Grind level, not just the In Progress ones
+  var plus = !!window.SITE.futurePlus && /[?&]plus(?:[=&]|$)/.test(location.search);
+  if (plus) document.title = "Future+ · " + window.SITE.name;
+  DL.renderListNav(document.getElementById("lists"), null, plus ? "plus" : "future");
+  DL.renderFuturePage(document.getElementById("future-panels"), document.getElementById("sidebar"), plus);
 </script>
 </div>
 
@@ -94,6 +99,7 @@
       <a class="link" href="../changelog/index.html">Changelog</a><br>
       <a class="link" href="statsviewer.html">Stats Viewer</a><br>
       <a class="link" href="future.html">Future List</a><br>
+      <a class="link" href="future.html?plus">Future+</a><br>
     </nav>
   </div>
   <script>document.getElementById("footer-name").textContent = "© " + window.SITE.name;</script>
