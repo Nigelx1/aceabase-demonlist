@@ -32,9 +32,21 @@ window.SITE = {
   // The Grind -> stats viewer "In Progress" (Poatan's compromise, since The
   // Grind allows tiny runs): a goal in data/goals.js where the player has a run
   // LONGER than this % - from 0, or a practice run like 42-100 - also shows in
-  // their In Progress row (and their nation's). Display only, no points.
-  // null = off.
+  // their In Progress row (and their nation's). It's also where in-progress
+  // points start (inProgressPoints, below). null = off.
   grindInProgress: 50,
+
+  // In-progress points (Nigel and Dihmaster500, 2026-10-30, like pointercrate's
+  // progress records): a level someone hasn't beaten, with a run on it longer
+  // than grindInProgress (from 0 or a practice run, in the Grind or a record
+  // under 100%), counts for this share of the level's points times their longest
+  // run. A 76% run on a 500-point level: 0.25 x 500 x 0.76 = 95. The level's
+  // points are capped at topScore, so a level harder than the #1 is worth no
+  // more than the #1. A level that isn't on the list still counts in the views
+  // that don't show it (Current), on that view's curve. A clear gives full
+  // points instead. Every view (static/js/views.js DL.inProgressScores).
+  // null = off.
+  inProgressPoints: 0.25,
 
   // Future (Dihmaster500's idea): "Future" in the Time option on the list and
   // the stats viewer (static/js/views.js): the list with every off-list level
@@ -107,7 +119,7 @@ window.SITE = {
     },
     {
       title: "Scoring",
-      text: "Each demon is worth points based on how hard it is - for an extreme, its AREDL placement, turned into a GD Demon Ladder-style rating by a curve fit to the whole AREDL; for an insane, its GD Demon Ladder rating - on a steep curve fit to the AREDL's extremes and carried straight down through the insanes. The hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed.",
+      text: "Each demon is worth points based on how hard it is - for an extreme, its AREDL placement, turned into a GD Demon Ladder-style rating by a curve fit to the whole AREDL; for an insane, its GD Demon Ladder rating - on a steep curve fit to the AREDL's extremes and carried straight down through the insanes. The hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed, plus a quarter of a demon's points times your run for any run longer than 50% on one you haven't beaten yet.",
     },
     {
       title: "The community",
@@ -119,7 +131,8 @@ window.SITE = {
   guidelines: [
     "Only rated Extreme and Insane Demons are eligible - no platformers.",
     "Unrated levels the head mods add count only in the Rated+ views.",
-    "A record counts once it's a full 100% completion.",
+    "A record counts in full once it's a 100% completion.",
+    "A run longer than 50% on a level you haven't beaten (from 0, or a practice run like 42-100) counts for a quarter of the level's points times the run. Only your longest run on it counts, and beating it replaces it with the full points.",
     "Records come from your gdladder profile or a video of the full run.",
     "Mods/hacks that trivialize gameplay are not allowed unless explicitly permitted for that level.",
   ],
