@@ -1609,20 +1609,20 @@ window.DEMONS = [
     "swapGroup": 5155022
   },
   {
-    "id": 82824219,
+    "id": 9145341,
     "position": 40,
-    "name": "MikuMikuMikuMiku",
+    "name": "8o",
     "difficulty": "Insane",
-    "rating": 17.11,
-    "publisher": "OddMod",
+    "rating": 16.9,
+    "publisher": "Zobros",
     "creators": [
-      "OddMod"
+      "Zobros"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=4i4qy6mizQY",
-    "thumbnailUrl": "https://i.ytimg.com/vi/4i4qy6mizQY/maxresdefault.jpg",
-    "levelId": 82824219,
-    "description": "Original NONG song: Atama no Taisou by hapi=>",
+    "videoUrl": "https://www.youtube.com/watch?v=UctAJzDWozs",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UctAJzDWozs/maxresdefault.jpg",
+    "levelId": 9145341,
+    "description": "Easy",
     "requirementPercent": 100,
     "records": [
       {
@@ -1633,18 +1633,19 @@ window.DEMONS = [
       }
     ],
     "gd": {
-      "length": "XL",
-      "objects": 65535,
+      "length": "Long",
+      "objects": 19210,
       "gameVersion": "2.2",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "832007",
-        "name": "FractureClutter x BouncyYak - Pandemonium",
-        "artist": "FractureClutter"
+        "id": "624882",
+        "name": "Jomekka - Eighto",
+        "artist": "jomekka"
       },
       "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 9145341
   },
   {
     "id": 63593437,
@@ -1724,20 +1725,20 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 9145341,
+    "id": 82824219,
     "position": 43,
-    "name": "8o",
+    "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
-    "rating": 16.9,
-    "publisher": "Zobros",
+    "rating": 17.11,
+    "publisher": "OddMod",
     "creators": [
-      "Zobros"
+      "OddMod"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=UctAJzDWozs",
-    "thumbnailUrl": "https://i.ytimg.com/vi/UctAJzDWozs/maxresdefault.jpg",
-    "levelId": 9145341,
-    "description": "Easy",
+    "videoUrl": "https://www.youtube.com/watch?v=4i4qy6mizQY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/4i4qy6mizQY/maxresdefault.jpg",
+    "levelId": 82824219,
+    "description": "Original NONG song: Atama no Taisou by hapi=>",
     "requirementPercent": 100,
     "records": [
       {
@@ -1748,18 +1749,19 @@ window.DEMONS = [
       }
     ],
     "gd": {
-      "length": "Long",
-      "objects": 19210,
+      "length": "XL",
+      "objects": 65535,
       "gameVersion": "2.2",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "624882",
-        "name": "Jomekka - Eighto",
-        "artist": "jomekka"
+        "id": "832007",
+        "name": "FractureClutter x BouncyYak - Pandemonium",
+        "artist": "FractureClutter"
       },
       "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 9145341
   },
   {
     "id": 75078198,

@@ -35,6 +35,16 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "swap",
+        "demon": "8o",
+        "demonId": 9145341,
+        "from": 43,
+        "to": 40,
+        "with": "MikuMikuMikuMiku",
+        "withId": 82824219,
+        "by": "Dihmaster500"
+      },
+      {
+        "kind": "swap",
         "demon": "Acropolis",
         "demonId": 5155022,
         "from": 39,
