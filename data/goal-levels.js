@@ -412,6 +412,38 @@ window.GOAL_LEVELS = {
       "url": "https://aredl.net/list/68908396"
     }
   },
+  "76962930": {
+    "name": "Sakupen Circles",
+    "publisher": "Diamond",
+    "difficulty": "Extreme",
+    "rating": 37.5,
+    "aredlPosition": 46,
+    "levelId": 76962930,
+    "description": "cap",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=NnT489Mh_q8",
+    "gd": {
+      "length": "Medium",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "360804",
+        "name": "Iron God: Sakupen Hell Yes RMX",
+        "artist": "mr-jazzman"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/NnT489Mh_q8/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    }
+  },
   "81148582": {
     "name": "Sweater Weather",
     "publisher": "VelYT",
