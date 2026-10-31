@@ -95,8 +95,10 @@
       '<a class="blue hover button" href="index.html">Back to the list</a></section>';
     DL.renderListNav(document.getElementById("lists"), null, view);
   } else {
+    // (an unrated level nobody has beaten yet may not be in the view at all)
     document.title =
-      (view.tier(level) !== "legacy" ? "#" + view.pos(level) + " " : "") + level.name + " · " + window.SITE.name;
+      (view.pos(level) !== null && view.tier(level) !== "legacy" ? "#" + view.pos(level) + " " : "") +
+      level.name + " · " + window.SITE.name;
 
     DL.renderListNav(document.getElementById("lists"), level, view);
     DL.renderDemonDetail(document.getElementById("demon-detail"), level, view);

@@ -15,7 +15,7 @@ window.SITE = {
   // What the demonlist page says each section is (static/js/demonlist.js).
   listBlurbs: {
     main: "Every Extreme Demon on the list.",
-    extended: "Every Insane Demon on the list. A 100% counts in full; a run over 50% counts for a quarter of its points times the run.",
+    extended: "Every Insane Demon on the list. A 100% counts in full; a run over 50% counts for a quarter of its points times the run (in full in the Future views).",
   },
 
   // Day the list went live: the "Added to list" date in each demon's Position
@@ -33,7 +33,8 @@ window.SITE = {
   // Grind allows tiny runs): a goal in data/goals.js where the player has a run
   // LONGER than this % - from 0, or a practice run like 42-100 - also shows in
   // their In Progress row (and their nation's). It's also where in-progress
-  // points start (inProgressPoints, below). null = off.
+  // points start (inProgressPoints, below), and what the Future view counts as
+  // beaten (futureList, below). null = off.
   grindInProgress: 50,
 
   // In-progress points (Nigel and Dihmaster500, 2026-10-30, like pointercrate's
@@ -44,27 +45,35 @@ window.SITE = {
   // points are capped at topScore, so a level harder than the #1 is worth no
   // more than the #1. A level that isn't on the list still counts in the views
   // that don't show it (Current), on that view's curve. A clear gives full
-  // points instead. Every view (static/js/views.js DL.inProgressScores).
+  // points instead. The Current views only (static/js/views.js
+  // DL.inProgressScores): the Future views count the run as a clear instead.
   // null = off.
   inProgressPoints: 0.25,
 
   // Future (Dihmaster500's idea): "Future" in the Time option on the list and
   // the stats viewer (static/js/views.js): the list with every off-list level
   // in someone's In Progress (above) added where it would go, and every level's
-  // points and everyone's score worked out again. Nothing in it counts until
-  // it's beaten. The old page, demonlist/future.html, only redirects here now.
+  // points and everyone's score worked out again. It's "what if everyone
+  // finishes" (Nigel, 2026-10-30): every level in someone's In Progress counts
+  // as beaten for them, with its full points - the stats viewer lists it in
+  // their Beaten row with the % they have now ("Slaughterhouse (76%)").
+  // The old page, demonlist/future.html, only redirects here now.
   futureList: true,
 
   // Future+ (Nigel and Dihmaster500, 2026-10-30): "Future+" in the Time option:
   // the same with every off-list level in anyone's Grind, at any progress
-  // (the old future.html?plus redirects here).
+  // (the old future.html?plus redirects here); every level in someone's Grind,
+  // and every record under 100%, counts as beaten for them.
   futurePlus: true,
 
   // Rated+ (Nigel and Dihmaster500, 2026-10-30): the Rating option on the list and
   // the stats viewer (Rated / Rated+). Rated+ adds the unrated levels the head mods
-  // put on it (data/unrated.js, mod page > Unrated levels). They are placed and
-  // scored by their GD Demon Ladder estimate like any other level. Off = no Rating
-  // option, and unrated levels show nowhere.
+  // put on it (data/unrated.js, mod page > Add a clear / Grind) once someone has
+  // beaten them. They are placed and scored by their GD Demon Ladder estimate like
+  // any other level. Until someone beats one, it's a Grind level of Rated+: it
+  // joins the Future views like one, and in Current + Rated+ a run on it over
+  // grindInProgress scores in-progress points. The Rated views have no unrated
+  // levels at all. Off = no Rating option, and unrated levels show nowhere.
   ratedPlus: true,
   // How far a head mod can move an unrated level by hand among its neighbors, in
   // rating points either side of its estimate (DL.unratedSlots; tools/apply-edit.py
