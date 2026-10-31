@@ -356,14 +356,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 37838,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "766165",
         "name": "XO (Eden Cover & Remake)",
         "artist": "aaronmusslewhite"
-      },
-      "gameVersion": "2.1",
-      "stars": 10
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/a-uqLbFkCaE/maxresdefault.jpg",
     "palette": {
@@ -385,7 +385,7 @@ window.GOAL_LEVELS = {
     "name": "Tartarus",
     "publisher": "ItzDolphy",
     "difficulty": "Extreme",
-    "rating": 35.04,
+    "rating": 35.07,
     "aredlPosition": 112,
     "levelId": 59075347,
     "description": "By Riot and more.",
@@ -458,20 +458,20 @@ window.GOAL_LEVELS = {
     "rating": 24.03,
     "aredlPosition": 848,
     "levelId": 68848817,
-    "description": "(No description provided)",
+    "description": "gravity is better wallahi",
     "requirementPercent": 100,
     "videoUrl": "https://www.youtube.com/watch?v=9hXnDPoLHyE",
     "gd": {
       "length": "Long",
       "objects": 31554,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "526067",
         "name": "Momentum",
         "artist": "Geoplex"
-      },
-      "gameVersion": "2.1",
-      "stars": 10
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/9hXnDPoLHyE/sddefault.jpg",
     "palette": {
@@ -594,7 +594,7 @@ window.GOAL_LEVELS = {
     "publisher": "vortrox",
     "difficulty": "Extreme",
     "rating": 27.53,
-    "aredlPosition": 538,
+    "aredlPosition": 537,
     "levelId": 85383554,
     "description": "Stereo Madness may not be so easy after all... >:)",
     "requirementPercent": 100,
@@ -665,13 +665,13 @@ window.GOAL_LEVELS = {
     "difficulty": "Insane",
     "rating": null,
     "levelId": 115157857,
-    "description": "For a level called \"ChillHome,\" the uploading process wasn't chill at all lol. Verified by HowlingBolt.",
+    "description": "For a level called ChillHome the uploading process wasnt chill lol, verified by HowlingBolt",
     "requirementPercent": 100,
     "videoUrl": "https://www.youtube.com/watch?v=7j1JSTXHbrY",
     "gd": {
-      "inGameDifficulty": "Insane",
       "length": "XL",
       "gameVersion": "2.2",
+      "inGameDifficulty": "Insane",
       "stars": 0,
       "song": {
         "id": "1233480",

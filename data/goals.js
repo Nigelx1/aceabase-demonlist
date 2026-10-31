@@ -53,4 +53,5 @@ window.GOALS = [
   { player: "Poatan", levelId: 68908396, best: 80, segments: [[54, 100]] }, // Frozen Cave
   { player: "Jesus", levelId: 81148582, best: 50 }, // Sweater Weather (on the list)
   { player: "Jaiden", levelId: 27122654, best: 77, segments: [[35, 100]] }, // Artificial Ascent (on the list)
+  { player: "danieloveity", levelId: 10565740, best: 0, segments: [[91, 100]] }, // Bloodbath (on the list)
 ];
