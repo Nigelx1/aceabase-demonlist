@@ -31,6 +31,19 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-31",
+    "items": [
+      {
+        "kind": "note",
+        "text": "danieloveity also cleared Acropolis."
+      },
+      {
+        "kind": "note",
+        "text": "New member: danieloveity, from the UK."
+      }
+    ]
+  },
+  {
     "date": "2026-10-30",
     "items": [
       {

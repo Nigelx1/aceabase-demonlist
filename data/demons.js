@@ -180,7 +180,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 259
+    "aredlPosition": 258
   },
   {
     "id": 79997992,
@@ -219,7 +219,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 262
+    "aredlPosition": 261
   },
   {
     "id": 68668045,
@@ -641,7 +641,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 761
+    "aredlPosition": 762
   },
   {
     "id": 59933468,
@@ -679,7 +679,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 805
+    "aredlPosition": 806
   },
   {
     "id": 10565740,
@@ -758,7 +758,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 855
+    "aredlPosition": 856
   },
   {
     "id": 48175126,
@@ -797,7 +797,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 861
+    "aredlPosition": 862
   },
   {
     "id": 89976481,
@@ -835,7 +835,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1135
+    "aredlPosition": 1136
   },
   {
     "id": 24301797,
@@ -873,7 +873,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1286
+    "aredlPosition": 1287
   },
   {
     "id": 30219145,
@@ -912,7 +912,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1394
+    "aredlPosition": 1395
   },
   {
     "id": 71728635,
@@ -950,7 +950,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1440
+    "aredlPosition": 1441
   },
   {
     "id": 69010770,
@@ -989,7 +989,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1460
+    "aredlPosition": 1461
   },
   {
     "id": 81257586,
@@ -1028,7 +1028,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1487
+    "aredlPosition": 1488
   },
   {
     "id": 3979721,
@@ -1080,7 +1080,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1509
+    "aredlPosition": 1510
   },
   {
     "id": 119259720,
@@ -1118,7 +1118,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1570
+    "aredlPosition": 1571
   },
   {
     "id": 81148582,
@@ -1163,7 +1163,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1602
+    "aredlPosition": 1603
   },
   {
     "id": 61079355,
@@ -1208,7 +1208,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1604
+    "aredlPosition": 1605
   },
   {
     "id": 114933189,
@@ -1252,7 +1252,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1606
+    "aredlPosition": 1607
   },
   {
     "id": 72211008,
@@ -1323,7 +1323,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1617
+    "aredlPosition": 1618
   },
   {
     "id": 81043147,
@@ -1580,6 +1580,12 @@ window.DEMONS = [
       },
       {
         "player": "Kry",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
+      },
+      {
+        "player": "danieloveity",
         "progress": 100,
         "nationality": "GB",
         "subdivision": null
