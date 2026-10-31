@@ -83,6 +83,14 @@ window.SITE = {
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 
+  // Night Cabin (Nigel, 2026-10-31): the list's own theme next to pointercrate's
+  // look - deep navy, cream text and honey lamplight (static/css/theme-cabin.css,
+  // linked in every page's <head>). Each viewer switches with the moon button in
+  // the top bar, and their browser remembers it (static/js/theme.js);
+  // pointercrate's look stays the default. null = pointercrate's look only, no
+  // button.
+  theme: "cabin",
+
   // Sidebar "List Mods" (pointercrate's List Editors panel): head: true = head mod,
   // shown first and in bold. Keep it in step with functions/editors.json, which
   // is what the mod page logs people in with (Discord id -> name + role).

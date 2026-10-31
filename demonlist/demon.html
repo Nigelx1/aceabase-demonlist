@@ -10,6 +10,7 @@
 <script src="../static/core/js/vendor/jquery.min.js"></script>
 <script src="../static/core/js/vendor/jquery-ui.min.js"></script>
 <script src="../data/config.js"></script>
+<script src="../static/js/theme.js"></script>
 <script src="../data/demons.js"></script>
 <script src="../data/changelog.js"></script>
 <script src="../data/goal-levels.js"></script>
@@ -28,6 +29,7 @@
 <link rel="stylesheet" href="../static/core/css/fa.all.min.css">
 <link rel="stylesheet" href="../static/css/demonlist.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:light,bold">
+<link rel="stylesheet" href="../static/css/theme-cabin.css">
 </head>
 <body>
 <div id="bg" aria-hidden="true"></div>
@@ -49,6 +51,9 @@
       <li class="mod-nav"><a class="white hover" href="/api/login">Mod login</a></li>
     </ul>
   </div>
+  <button type="button" class="nav-item hover white theme-switch" id="theme-switch" title="Theme" aria-label="Theme">
+    <i class="fas fa-moon" aria-hidden="true"></i><i class="fas fa-sun" aria-hidden="true"></i>
+  </button>
   <div class="nav-item collapse-button nav-nohide">
     <div class="hamburger hover"><input type="checkbox"><span></span><span></span><span></span></div>
   </div>
