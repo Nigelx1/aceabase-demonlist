@@ -1403,20 +1403,20 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 14145098,
+    "id": 5155022,
     "position": 35,
-    "name": "Invisible Deadlocked",
+    "name": "Acropolis",
     "difficulty": "Insane",
-    "rating": 18.65,
-    "publisher": "KrmaL",
+    "rating": 17.2,
+    "publisher": "Zobros",
     "creators": [
-      "KrmaL"
+      "Zobros"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=rjPllZX4FHI",
-    "thumbnailUrl": "https://i.ytimg.com/vi/rjPllZX4FHI/maxresdefault.jpg",
-    "levelId": 14145098,
-    "description": "Think you know Deadlocked? (Verified on stream) Good luck!",
+    "videoUrl": "https://www.youtube.com/watch?v=SSAfuCZ2cks",
+    "thumbnailUrl": "https://i.ytimg.com/vi/SSAfuCZ2cks/maxresdefault.jpg",
+    "levelId": 5155022,
+    "description": "Easy Coin Update",
     "requirementPercent": 100,
     "records": [
       {
@@ -1424,15 +1424,35 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
+      },
+      {
+        "player": "Kry",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
+      },
+      {
+        "player": "danieloveity",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 19496,
+      "objects": 11082,
       "gameVersion": "2.0",
-      "inGameDifficulty": "Insane Demon"
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "598349",
+        "name": "-Final Battle-",
+        "artist": "Waterflame",
+        "link": "http://audio.ngfiles.com/598000/598349_-Final-Battle-.mp3"
+      },
+      "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 5155022
   },
   {
     "id": 95383256,
@@ -1556,20 +1576,20 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 5155022,
+    "id": 14145098,
     "position": 39,
-    "name": "Acropolis",
+    "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 17.2,
-    "publisher": "Zobros",
+    "rating": 18.65,
+    "publisher": "KrmaL",
     "creators": [
-      "Zobros"
+      "KrmaL"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=SSAfuCZ2cks",
-    "thumbnailUrl": "https://i.ytimg.com/vi/SSAfuCZ2cks/maxresdefault.jpg",
-    "levelId": 5155022,
-    "description": "Easy Coin Update",
+    "videoUrl": "https://www.youtube.com/watch?v=rjPllZX4FHI",
+    "thumbnailUrl": "https://i.ytimg.com/vi/rjPllZX4FHI/maxresdefault.jpg",
+    "levelId": 14145098,
+    "description": "Think you know Deadlocked? (Verified on stream) Good luck!",
     "requirementPercent": 100,
     "records": [
       {
@@ -1577,34 +1597,16 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
-      },
-      {
-        "player": "Kry",
-        "progress": 100,
-        "nationality": "GB",
-        "subdivision": null
-      },
-      {
-        "player": "danieloveity",
-        "progress": 100,
-        "nationality": "GB",
-        "subdivision": null
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 11082,
+      "objects": 19496,
       "gameVersion": "2.0",
-      "inGameDifficulty": "Insane Demon",
-      "song": {
-        "id": "598349",
-        "name": "-Final Battle-",
-        "artist": "Waterflame",
-        "link": "http://audio.ngfiles.com/598000/598349_-Final-Battle-.mp3"
-      },
-      "songOfficial": false
+      "inGameDifficulty": "Insane Demon"
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 5155022
   },
   {
     "id": 82824219,
