@@ -495,10 +495,10 @@ window.GOAL_LEVELS = {
     "description": "Insane Demon version of Solar Flare",
     "requirementPercent": 100,
     "gd": {
+      "inGameDifficulty": "Insane",
       "length": "Long",
       "objects": 63250,
       "gameVersion": "2.2",
-      "inGameDifficulty": "Insane",
       "stars": 0,
       "song": {
         "id": "493898",
