@@ -516,7 +516,7 @@ window.GOAL_LEVELS = {
       "ink": "#1f3147"
     },
     "writeup": {
-      "text": "Chill in name only. ChillHome keeps changing its look - magenta hexagons, lightning-split clouds, red halls of sawblades, neon checkerboards, retro sunsets over neon grids, a night city - before a gold finish under a crescent moon, all to tangermusic's spamton drip. Horizon (unknownspaceGD) hosted the collab and gave the verification to Nigel, then going by kyribe, who hacked it and got caught. Horizon dropped the level and handed it to him, and about a year later Nigel paid HowlingBolt to balance it and verify it for real. It went up on G3Gelo, Nigel's alt - and everyone's cool now. The upload just wasn't chill.",
+      "text": "Chill in name only. ChillHome keeps changing its look - magenta hexagons, lightning-split clouds, red halls of sawblades, neon checkerboards, retro sunsets over neon grids, a night city - before a gold finish under a crescent moon, all to tangermusic's spamton drip. Horizon (unknownspaceGD) hosted the collab and gave the verification to Nigel, who hacked it and got caught. Horizon dropped the level and handed it to him, and about a year later Nigel paid HowlingBolt to balance it and verify it for real. It went up on G3Gelo, Nigel's alt - and everyone's cool now. The upload just wasn't chill.",
       "source": "Nigel's showcase",
       "url": "https://www.youtube.com/watch?v=7j1JSTXHbrY"
     }
