@@ -38,6 +38,7 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 86407629, best: 25 }, // Tidal Wave
   { player: "Dihmaster500", levelId: 120012581, best: 8, note: "83-100" }, // Defeated Circles
   { player: "Dihmaster500", levelId: 76962930, best: 39, segments: [[80, 100]] }, // Sakupen Circles
+  { player: "Dihmaster500", levelId: 52374843, best: 29, segments: [[75, 100]] }, // Zodiac
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation (on the list)

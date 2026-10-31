@@ -268,6 +268,44 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
   },
+  "52374843": {
+    "name": "Zodiac",
+    "publisher": "BIANOX",
+    "difficulty": "Extreme",
+    "rating": 33.95,
+    "aredlPosition": 169,
+    "levelId": 52374843,
+    "description": "Extreme Demon Megacollab made by 20 amazing creators! Hosted by Bianox. Verified by me in 61375 attempts.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=YrabjmG-xFc",
+    "gd": {
+      "length": "XL",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "739991",
+        "name": "Creo - Sphere",
+        "artist": "CreoMusic"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/YrabjmG-xFc/maxresdefault.jpg",
+    "palette": {
+      "accent": "#04a93b",
+      "deep": "#0f3e1e",
+      "wash": "#f2fbf5",
+      "mist": "#e2f3e8",
+      "onAccent": "#ffffff",
+      "ink": "#1f472c"
+    },
+    "writeup": {
+      "text": "Zodiac is a 2.1 Extreme Demon mega-collaboration level hosted by Bianox, hack-verified by xander on 28 January 2019. On 11 June 2019, xander admitted to hacking the level, including numerous other achievements. The ownership and the rights to decide the fate of this level have consequently been passed to Technical, who beat the level legitimately on 9 April 2019; therefore, he became the first legitimate victor of Zodiac.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Zodiac",
+      "auto": true
+    }
+  },
   "58811846": {
     "name": "Astral Divinity",
     "publisher": "Knobbelboy",
