@@ -45,7 +45,7 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "The original hell. Riot's red-and-black megacollab - ten creators, critical speed changes, tight spaces and precise timing - verified by Riot himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, became the most-downloaded level in the game, and set the bar for how hard the community scrutinises extreme verifications.",
+      "text": "Hell, part two. Riot's red-and-black megacollab - eleven creators, critical speed changes, tight spaces and precise timing - picks up right where Cataclysm left off, and he verified it himself in August 2015 after 25,000+ attempts. It held #1 on the Demonlist for over a year until Sakupen Hell took it, set the bar for how hard the community scrutinizes extreme verifications, and in April 2026 became the most-downloaded level in the game.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
@@ -82,7 +82,7 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "The level built out of spite. Noobas made it to challenge Riot and Cyclic, the best players of the time, and openly hack-verified it - his protest at a hacked Cataclysm getting rated. TrusTa then verified it for real and published it in August 2016, and it went on to rival, then pass, Bloodbath as one of the hardest levels in the game.",
+      "text": "The level built out of spite. Noobas made it to challenge Riot and Cyclic, then considered the best players in the game, and openly hack-verified it - his protest at a hacked Cataclysm getting rated. It's under a minute long and known for being unbalanced, with most of the difficulty packed into wave parts with critical timing and extremely tight spaces. TrusTa verified it for real and published it in August 2016, and it went on to rival, then pass, Bloodbath as one of the hardest levels in the game.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Hell"
     }
@@ -119,7 +119,7 @@ window.GOAL_LEVELS = {
       "ink": "#1f4747"
     },
     "writeup": {
-      "text": "Cyclic's buffed Nine Circles remake, hack-verified back in 1.9 and left unbeaten until Sunix verified and published it in 2.0 on 25 November 2016, after a hacking scandal, drama and a race to finish it. It went straight to #1 and spent a record 2,508 days in the Top 150 - the level that splits the lower extremes from the upper ones.",
+      "text": "The great divide. Cyclic's blue Nine Circles remake is built around three wave parts full of sawblades and incredibly tight spaces, plus a hard ball part in the predrop. He hack-verified it back in 1.9, and it stayed unbeaten until Sunix verified and published it in 2.0 on November 25, 2016, after a hacking scandal, drama and a race to finish it. It went straight to #1, spent a then-record 2,508 days in the Top 150, and is widely seen as the level that splits the lower extremes from the upper ones.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Sonic_Wave"
     }
@@ -156,7 +156,7 @@ window.GOAL_LEVELS = {
       "ink": "#3a1f47"
     },
     "writeup": {
-      "text": "The Technology Trilogy starts here. What began as LmAnubis's solo Cataclysm remake became Viprin's 2.0 megacollab, with fast-paced, timing-heavy parts from 18 creators set to Dimrain47's Surface - and the shortest of them, Zobros's at 25%, is arguably the hardest. Combined verified it in December 2016, and it was the Pointercrate Demonlist's first-ever #1, reigning ten days until Sonic Wave and Yatagarasu dethroned it. It went on to stay on the list for 2,078 days, beating Bloodbath's 1,997-day record, before untitled unmastered pushed it to the Legacy List in 2022.",
+      "text": "The Technology Trilogy starts here. What began as LmAnubis's solo Cataclysm remake became Viprin's 2.0 megacollab, with 18 fast-paced, timing-heavy parts set to Dimrain47's Surface - and the shortest of them, Zobros's at 25%, is arguably the hardest. Combined verified it in December 2016, and it was the Pointercrate Demonlist's first-ever #1, reigning ten days until Sonic Wave and Yatagarasu dethroned it. It went on to stay on the list for 2,078 days, beating Bloodbath's 1,997-day record, before untitled unmastered pushed it to the Legacy List in 2022.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Artificial_Ascent"
     }
@@ -193,7 +193,7 @@ window.GOAL_LEVELS = {
       "ink": "#471f29"
     },
     "writeup": {
-      "text": "icedcave's hell-themed, wave-heavy megacollab, built because he was tired of his 2015 impossible level of the same name being his only legacy. spaceuk 'won' the two-week verification race in October 2021 - with a hacked run - so the title went to Doggie, who beat it for real on 19 December 2021. It held #1 for most of 2022, blew up on TikTok, and its prequel is GRIEF.",
+      "text": "Welcome to the end of the world. icedcave's hell-themed megacollab was built because he was tired of his 2015 impossible level of the same name being his only legacy. A slow cube predrop of tight timings gives way to quadruple-speed waves, including river's notorious part. spaceuk took the October 2021 verification race with a run that turned out to be hacked, so after he was exposed in April 2023 the verifier title went to Doggie, who had beaten it for real on December 19, 2021. It held #1 on and off for 221 days, reached far beyond the game on TikTok, and its prequel is GRIEF.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Slaughterhouse"
     }
@@ -225,7 +225,7 @@ window.GOAL_LEVELS = {
       "ink": "#1f471f"
     },
     "writeup": {
-      "text": "Blast Processing, pushed to the limit. Riot, Hinds, Zobros and Sil3nce's super-buffed remake of the RobTop classic, verified by Rampage in October 2017. The wave is what gets you - long, painfully tight corridors of cogwheels, then a dual with fake lining - with intense straight-flying ship and an orb maze you have to memorise along the way.",
+      "text": "Blast Processing, pushed to the limit. Riot, Hinds, Zobros and Sil3nce's super-buffed remake of the RobTop classic was built back in 1.9 for Riot to verify, but delays and the Sonic Wave and Yatagarasu drama kept him from it, and Rampage finally verified it in October 2017. The wave is what gets you - long, painfully tight corridors of cogwheels, then a dual with fake lining - with intense straight-flying in the ship and an orb maze you have to memorize along the way.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Quantum_Processing"
     }
@@ -263,7 +263,7 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Knobbelboy verified it in February 2018 after 121,296 attempts - which is also its password - and it debuted at #1, reigning 383 days until Zodiac dethroned it.",
+      "text": "Bloodbath, buffed and extended. Manix648's megacollab drags the hell theme across almost three minutes of ship, wave and everything in between, on the same Dimrain47 track. Quasar was set to verify it until he quit in 2016, so knobbelboy took over and beat it in February 2018 after 121,296 attempts - the first verification to pass 100,000, and also the level's password. It debuted at #1 and held it for over a year, until Zodiac dethroned it in March 2019.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Bloodlust"
     }
@@ -300,7 +300,7 @@ window.GOAL_LEVELS = {
       "ink": "#3a1f47"
     },
     "writeup": {
-      "text": "knobbelboy's long-awaited masterpiece, first teased as God Eater in 2017 with a preview so hyped it became one of the most reuploaded videos in Geometry Dash. He verified it in January 2019 after battling through a kidney stone, lost it to a copyright takedown that June, then replaced the art, renamed it and verified the whole thing again in December 2019. Gorgeous to look at - its gameplay and performance are another story.",
+      "text": "Verified twice, under two names. knobbelboy's long-awaited solo level was first teased as God Eater in 2017, with a preview so hyped it became one of the most reuploaded videos in Geometry Dash. He verified it in January 2019 after a break to treat a kidney stone, lost it to a copyright takedown that June, then replaced the art, renamed it Astral Divinity and verified the whole thing again in December 2019. Gorgeous to look at - its gameplay and performance are another story, though GD Endy's 2023 update cut its object count roughly in half.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Astral_Divinity"
     }
@@ -332,7 +332,7 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "A descent into the underworld. Riot's hellish 1.9-style megacollab, co-hosted by Aurorus, is wall-to-wall extremely tight orb spam, ship and swing-copter sections. Dolphy verified it in January 2020 after 61,742 attempts and it reigned at #1 for 527 days - though the verification drama means plenty of players credit Mullsy, its second victor, as the real one.",
+      "text": "A descent into the underworld. Riot's hellish 1.9-style megacollab, co-hosted by Aurorus, is packed with extremely tight orb spam, ship and swing-copter sections. It began as the impossible level Silent Akbar, and in 2018 Riot openly hack-verified it to challenge the community. Dolphy verified it in January 2020 after more than 61,000 attempts, and it reigned at #1 for 527 days - though whether his run was clean was never settled, and most of the community now sees Mullsy, the second player to beat it, as the real verifier.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Tartarus"
     }
@@ -370,7 +370,7 @@ window.GOAL_LEVELS = {
       "ink": "#1f1f47"
     },
     "writeup": {
-      "text": "A slow-burn descent into timing hell. Presta wraps you in barely-lit blues and near-invisible passages, lulls you with methodical cube and ball work — then the drop detonates into double- and quadruple-speed chaos in searing orange. No ship section the whole way through, an Epic rating earned under the old object cap, and the birthplace of the internet's favourite \"jumpscare\" edit. Peaked around #35 on the Demonlist before sliding to Legacy.",
+      "text": "A slow-burn descent into timing hell. Presta wraps you in barely-lit blues and near-invisible passages, lulls you with methodical cube and ball work - then the drop at 42% detonates into double- and quadruple-speed chaos in searing orange. There's no ship section the whole way through, and it earned an Epic rating without breaking the base 40,000-object cap. Floofle verified it in April 2021, fluking it from 58%, and that drop went on to spawn the 'Congregation Jumpscare' meme, where clips of unrelated levels suddenly cut into it. It peaked at #35 on the Demonlist before falling to the Legacy List in January 2025.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Congregation"
     }
@@ -407,9 +407,9 @@ window.GOAL_LEVELS = {
       "ink": "#1f3d47"
     },
     "writeup": {
-      "text": "Welcome to icy hell, as the in-game description puts it. TrueParadoxTeam's collab - built by FlashWings576, Quicklen, Sleynt and others - has you escaping a cave collapsing high in the frozen mountains to cYsmix's Fright March. It's packed with gimmicks and structuring quirks: double clicks throughout, the final wave and the iconic toggle-orb ship at 64%. One of the hardest art-style extremes of its time, it was verified by khrizmass in May 2021 and debuted on Pointercrate at #20; today it sits at #310 on the AREDL.",
+      "text": "Welcome to icy hell, as the in-game description puts it. TrueParadoxTeam's collab - built by FlashWings576, Quicklen, Sleynt and others - has you escaping a cave collapsing high in the frozen mountains to cYsmix's Fright March. It's packed with gimmicks and structuring quirks: double clicks throughout, the final wave and the iconic toggle-orb ship at 64%. One of the hardest art-style extremes of its time, it was verified by khrizmass in May 2021 and debuted on Pointercrate at #20 that June.",
       "source": "AREDL",
-      "url": "https://api.aredl.net/v2/api/aredl/levels/68908396"
+      "url": "https://aredl.net/list/68908396"
     }
   },
   "81148582": {
@@ -444,9 +444,9 @@ window.GOAL_LEVELS = {
       "ink": "#1f3d47"
     },
     "writeup": {
-      "text": "An unrated hard demon, remade into a rated extreme. VelYT's solo remake of Unfound Emotions keeps the base gameplay near-identical but adds tasteful color, especially in a drop that contrasts with the more grayscale predrop and ending. Expect clicksync, timings and chokepoints, with ship parts that are especially challenging for a level whose difficulty is often debated between extreme and insane demon. It sits at #1602 on the AREDL, which credits xfire with the June 2022 verification - though the level's own description names tundra77.",
+      "text": "An unrated hard demon, remade into a rated extreme. VelYT's solo remake of Creoa's Unfound Emotions keeps the base gameplay near-identical but adds tasteful color, especially in a drop that contrasts with the more grayscale predrop and ending. Expect clicksync, timings and chokepoints, with ship parts that are especially challenging for a level whose difficulty is often debated between extreme and insane demon. VelYT's June 2022 release video and the AREDL both credit xfire with the verification - though the level's in-game description names tundra77.",
       "source": "AREDL",
-      "url": "https://api.aredl.net/v2/api/aredl/levels/81148582"
+      "url": "https://aredl.net/list/81148582"
     }
   },
   "86407629": {
@@ -514,6 +514,11 @@ window.GOAL_LEVELS = {
       "mist": "#e2eaf3",
       "onAccent": "#ffffff",
       "ink": "#1f3147"
+    },
+    "writeup": {
+      "text": "Chill in name only. ChillHome keeps changing its whole look - magenta hexagons, blue clouds split by lightning, red halls of sawblades, neon green with checkerboards, striped retro sunsets over neon grids, a night city of lit windows - then closes on a gold stretch under a crescent moon and a sky-blue credits screen. Cube, ship, wave and UFO all show up, set to tangermusic's spamton drip. G3Gelo uploaded it and HowlingBolt verified it, though Nigel's showcase names ZhorizonZ as its original creator. Per the level's own description, even the upload wasn't chill.",
+      "source": "Nigel's showcase",
+      "url": "https://www.youtube.com/watch?v=7j1JSTXHbrY"
     }
   },
   "151420421": {
@@ -535,6 +540,11 @@ window.GOAL_LEVELS = {
         "name": "[J] - Solar Wind",
         "artist": "Jumper"
       }
+    },
+    "writeup": {
+      "text": "Solar Flare, nerfed down to Insane. Nigel's Solar - the \"Insane Demon version of Solar Flare,\" as its description puts it - uses the same song, Jumper's Solar Wind. The original is Linear and Rynoxious's super-buffed remake of the 1.9 Nine Circles level Solar Circles, a sun-themed level in yellow and orange over dark gray with blue highlights. A mini-cube, straight-flying ship and a ball full of timings lead into a drop of tight waves, size and speed changes and a dual, watched over by Janet, a smiley-faced sun. swiborg verified it in April 2023 after about 20,000 attempts, and it entered the Demonlist at #21 that June.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Solar_Flare"
     }
   }
 };
