@@ -343,6 +343,44 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Astral_Divinity"
     }
   },
+  "58825144": {
+    "name": "xo",
+    "publisher": "KrmaL",
+    "difficulty": "Extreme",
+    "rating": 29.61,
+    "aredlPosition": 411,
+    "levelId": 58825144,
+    "description": "stream vertigo",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=a-uqLbFkCaE",
+    "gd": {
+      "length": "XL",
+      "objects": 37838,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "766165",
+        "name": "XO (Eden Cover & Remake)",
+        "artist": "aaronmusslewhite"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/a-uqLbFkCaE/maxresdefault.jpg",
+    "palette": {
+      "accent": "#0ea0a0",
+      "deep": "#0f3e3e",
+      "wash": "#f2fbfb",
+      "mist": "#e2f3f3",
+      "onAccent": "#ffffff",
+      "ink": "#1f4747"
+    },
+    "writeup": {
+      "text": "xo is a 2.1 Extreme Demon level by KrmaL, published on 23 December 2019. It is a 1.0-style level created in a monochromatic colour scheme almost exclusively using basic blocks and the pulse trigger, along with sync-based gameplay.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/xo",
+      "auto": true
+    }
+  },
   "59075347": {
     "name": "Tartarus",
     "publisher": "ItzDolphy",
@@ -420,20 +458,20 @@ window.GOAL_LEVELS = {
     "rating": 24.03,
     "aredlPosition": 848,
     "levelId": 68848817,
-    "description": "gravity is better wallahi",
+    "description": "(No description provided)",
     "requirementPercent": 100,
     "videoUrl": "https://www.youtube.com/watch?v=9hXnDPoLHyE",
     "gd": {
       "length": "Long",
       "objects": 31554,
-      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
-      "stars": 10,
       "song": {
         "id": "526067",
         "name": "Momentum",
         "artist": "Geoplex"
-      }
+      },
+      "gameVersion": "2.1",
+      "stars": 10
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/9hXnDPoLHyE/sddefault.jpg",
     "palette": {
