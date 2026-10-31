@@ -496,9 +496,9 @@ window.GOAL_LEVELS = {
     "requirementPercent": 100,
     "videoUrl": "https://www.youtube.com/watch?v=7j1JSTXHbrY",
     "gd": {
+      "inGameDifficulty": "Insane",
       "length": "XL",
       "gameVersion": "2.2",
-      "inGameDifficulty": "Insane",
       "stars": 0,
       "song": {
         "id": "1233480",
@@ -519,6 +519,36 @@ window.GOAL_LEVELS = {
       "text": "Chill in name only. ChillHome keeps changing its look - magenta hexagons, lightning-split clouds, red halls of sawblades, neon checkerboards, retro sunsets over neon grids, a night city - before a gold finish under a crescent moon, all to tangermusic's spamton drip. Horizon (unknownspaceGD) hosted the collab and gave the verification to Nigel, who hacked it and got caught. Horizon dropped the level and handed it to him, and about a year later Nigel paid HowlingBolt to balance it and verify it for real. It went up on G3Gelo, Nigel's alt - and everyone's cool now. The upload just wasn't chill.",
       "source": "Nigel's showcase",
       "url": "https://www.youtube.com/watch?v=7j1JSTXHbrY"
+    }
+  },
+  "120012581": {
+    "name": "Defeated Circles",
+    "publisher": "GXQ",
+    "difficulty": "Extreme",
+    "rating": 38,
+    "aredlPosition": 24,
+    "levelId": 120012581,
+    "description": "Defeated. (Verified by Zoink)",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=ZenSY8BjOyE",
+    "gd": {
+      "length": "Long",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "1234816",
+        "name": "It Passed You By",
+        "artist": "SlendStone"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/ZenSY8BjOyE/maxresdefault.jpg",
+    "writeup": {
+      "text": "Defeated Circles is a 2.1/2.2 Extreme Demon mega-collaboration level by Galaxium and others, published by GXQ, and verified by Zoink on 30 May 2025 after about 9,000 attempts over five to six days. A Nine Circles level, Defeated Circles is a redecorated and revised version of the old impossible level of the same name created by muriday.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Defeated_Circles",
+      "auto": true
     }
   },
   "151420421": {

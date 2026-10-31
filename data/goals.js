@@ -36,6 +36,7 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 59075347, best: 10, segments: [[3, 13], [5, 26], [13, 28], [63, 75], [79, 100]], note: "10% five times." }, // Tartarus
   { player: "Dihmaster500", levelId: 27690100, best: 76, segments: [[41, 93], [67, 100]] }, // Slaughterhouse
   { player: "Dihmaster500", levelId: 86407629, best: 25 }, // Tidal Wave
+  { player: "Dihmaster500", levelId: 120012581, best: 8, note: "83-100" }, // Defeated Circles
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation (on the list)
