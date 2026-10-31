@@ -356,14 +356,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 37838,
-      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
-      "stars": 10,
       "song": {
         "id": "766165",
         "name": "XO (Eden Cover & Remake)",
         "artist": "aaronmusslewhite"
-      }
+      },
+      "gameVersion": "2.1",
+      "stars": 10
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/a-uqLbFkCaE/maxresdefault.jpg",
     "palette": {
@@ -587,6 +587,39 @@ window.GOAL_LEVELS = {
       "text": "An unrated hard demon, remade into a rated extreme. VelYT's solo remake of Creoa's Unfound Emotions keeps the base gameplay near-identical but adds tasteful color, especially in a drop that contrasts with the more grayscale predrop and ending. Expect clicksync, timings and chokepoints, with ship parts that are especially challenging for a level whose difficulty is often debated between extreme and insane demon. VelYT's June 2022 release video and the AREDL both credit xfire with the verification - though the level's in-game description names tundra77.",
       "source": "AREDL",
       "url": "https://aredl.net/list/81148582"
+    }
+  },
+  "85383554": {
+    "name": "Stereo Extremeness",
+    "publisher": "vortrox",
+    "difficulty": "Extreme",
+    "rating": 27.53,
+    "aredlPosition": 538,
+    "levelId": 85383554,
+    "description": "Stereo Madness may not be so easy after all... >:)",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=4EEg4iXbay8",
+    "gd": {
+      "length": "Long",
+      "objects": 43986,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/4EEg4iXbay8/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "Stereo Extremeness is a 2.1 Extreme Demon collaboration level hosted, verified, and published by Vortrox. Though initially a simple buffed copy of Stereo Madness made for a YouTube video, it was later decorated by Gepsoni4, xVainaja, Voxicat, AudieoVisual, Tricipital, and Vortrox himself. The original, undecorated version was openly hack-verified and published on 7 November 2022, which Esoteric Hydra legitimately verified.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Stereo_Extremeness",
+      "auto": true
     }
   },
   "86407629": {
