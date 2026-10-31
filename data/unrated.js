@@ -27,6 +27,35 @@
 
 window.UNRATED = [
   {
+    "id": 115157857,
+    "name": "ChillHome",
+    "difficulty": "Extreme",
+    "rating": 21,
+    "publisher": "G3Gelo",
+    "creators": [
+      "G3Gelo"
+    ],
+    "verifier": null,
+    "videoUrl": "https://www.youtube.com/watch?v=7j1JSTXHbrY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/7j1JSTXHbrY/maxresdefault.jpg",
+    "levelId": 115157857,
+    "description": "For a level called \"ChillHome,\" the uploading process wasn't chill at all lol. Verified by HowlingBolt.",
+    "requirementPercent": 100,
+    "records": [],
+    "gd": {
+      "length": "XL",
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane",
+      "song": {
+        "id": "1233480",
+        "name": "spamton drip",
+        "artist": "tangermusic"
+      },
+      "songOfficial": false
+    },
+    "added": "2026-10-30"
+  },
+  {
     "id": 151420421,
     "name": "Solar",
     "difficulty": "Insane",

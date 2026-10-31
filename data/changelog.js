@@ -30,6 +30,10 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "note",
+        "text": "Rated+: ChillHome is on as an unrated Extreme, GDDL estimate 21.00."
+      },
+      {
+        "kind": "note",
         "text": "Rated+: Solar is on as an unrated Insane, GDDL estimate 19.00."
       }
     ]
