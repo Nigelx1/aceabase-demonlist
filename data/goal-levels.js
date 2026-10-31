@@ -16,8 +16,8 @@ window.GOAL_LEVELS = {
     "name": "Bloodbath",
     "publisher": "Riot",
     "difficulty": "Extreme",
-    "rating": 23.98,
-    "aredlPosition": 855,
+    "rating": 23.97,
+    "aredlPosition": 856,
     "levelId": 10565740,
     "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
     "requirementPercent": 100,
@@ -25,14 +25,15 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 24746,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "467339",
         "name": "At the Speed of Light",
         "artist": "Dimrain47",
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      },
-      "gameVersion": "2.1"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/shOO9UfDvfs/maxresdefault.jpg",
     "palette": {
@@ -54,7 +55,7 @@ window.GOAL_LEVELS = {
     "publisher": "TrusTa",
     "difficulty": "Extreme",
     "rating": 24.86,
-    "aredlPosition": 781,
+    "aredlPosition": 782,
     "levelId": 23262780,
     "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
     "requirementPercent": 100,
@@ -62,13 +63,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Medium",
       "objects": 20250,
+      "gameVersion": "2.0",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "360804",
         "name": "Iron God: Sakupen Hell Yes RMX",
         "artist": "mr-jazzman"
-      },
-      "gameVersion": "2.0"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/X-Okj4-o-do/maxresdefault.jpg",
     "palette": {
@@ -98,13 +100,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 23157,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "574484",
         "name": "F-777 - Sonic Blaster",
         "artist": "F-777"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/2ZtYignaojk/maxresdefault.jpg",
     "palette": {
@@ -134,13 +137,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 65535,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "63082",
         "name": "Surface",
         "artist": "Dimrain47"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/zmKI2rqyQyU/maxresdefault.jpg",
     "palette": {
@@ -170,13 +174,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "945695",
         "name": "Tennobyte - Fly Away",
         "artist": "Tennobyte"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/mVg8LgrWaYQ/maxresdefault.jpg",
     "palette": {
@@ -206,8 +211,9 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 21269,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
-      "gameVersion": "2.1"
+      "stars": 10
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/7Kxm2eOPg5I/maxresdefault.jpg",
     "palette": {
@@ -229,7 +235,7 @@ window.GOAL_LEVELS = {
     "publisher": "Knobbelboy",
     "difficulty": "Extreme",
     "rating": 31.98,
-    "aredlPosition": 259,
+    "aredlPosition": 258,
     "levelId": 42584142,
     "description": "Your thirst for blood continues? Very well, let the blood spill. Let the demons feed off your unfortunate soul...",
     "requirementPercent": 100,
@@ -237,14 +243,15 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 65535,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "467339",
         "name": "At the Speed of Light",
         "artist": "Dimrain47",
         "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
-      },
-      "gameVersion": "2.1"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/xmchFBTzwds/maxresdefault.jpg",
     "palette": {
@@ -274,13 +281,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "732596",
         "name": "lia;quo?Crystal Corruption??Nightcore Edit?",
         "artist": "liaquo"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/fBk2qoAL7dw/maxresdefault.jpg",
     "palette": {
@@ -310,8 +318,9 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 43364,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
-      "gameVersion": "2.2"
+      "stars": 10
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/8G-WZauz98M/maxresdefault.jpg",
     "palette": {
@@ -341,14 +350,15 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 17568,
+      "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "895761",
         "name": "Purgatori",
         "artist": "Koraii",
         "link": "https://geometrydashcontent.b-cdn.net/songs/895761.mp3"
-      },
-      "gameVersion": "2.1"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/Fuxe0O10s-E/maxresdefault.jpg",
     "palette": {
@@ -378,13 +388,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 65535,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "845915",
         "name": "cYsmix - Fright March",
         "artist": "cysmix"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/kBv8wUrLjxE/maxresdefault.jpg",
     "palette": {
@@ -406,7 +417,7 @@ window.GOAL_LEVELS = {
     "publisher": "VelYT",
     "difficulty": "Extreme",
     "rating": 20.39,
-    "aredlPosition": 1602,
+    "aredlPosition": 1603,
     "levelId": 81148582,
     "description": "Verified by tundra77; song is in the description of the youtube video. thank you all!",
     "requirementPercent": 100,
@@ -414,13 +425,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "Long",
       "objects": 39561,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "1004589",
         "name": "Sweater Weather (Dako Remix)",
         "artist": "d3codeftw"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/sVjC-qvuSTc/maxresdefault.jpg",
     "palette": {
@@ -450,13 +462,14 @@ window.GOAL_LEVELS = {
     "gd": {
       "length": "XL",
       "objects": 220114,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
       "song": {
         "id": "1266014",
         "name": "Tidal Wave(Shiawase VIP rmx)",
         "artist": "RunoNG"
-      },
-      "gameVersion": "2.2"
+      }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/W-fg7FTBKuU/maxresdefault.jpg",
     "palette": {
@@ -471,6 +484,27 @@ window.GOAL_LEVELS = {
       "text": "Top 1 goes to the beach. OniLink swapped the usual hellscape for a blue-and-yellow ocean theme and fast, Nine Circles-style wave sections, with 200 frame-perfects at 60 FPS - more than twice Avernus's old record. Zoink verified it in September 2023 after 49,534 attempts, but RobTop's silence on rating it sparked a #RateTidalWave campaign. Rated over five months later, it went straight to #1 and held the spot for 471 days - a longer unbroken reign than any level before it - until Amethyst took over.",
       "source": "Geometry Dash Wiki",
       "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave"
+    }
+  },
+  "151420421": {
+    "name": "Solar",
+    "publisher": "Nigelx1",
+    "difficulty": "Insane",
+    "rating": null,
+    "levelId": 151420421,
+    "description": "Insane Demon version of Solar Flare",
+    "requirementPercent": 100,
+    "gd": {
+      "length": "Long",
+      "objects": 63250,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane",
+      "stars": 0,
+      "song": {
+        "id": "493898",
+        "name": "[J] - Solar Wind",
+        "artist": "Jumper"
+      }
     }
   }
 };

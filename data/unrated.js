@@ -25,4 +25,35 @@
 // Don't hand-edit. tools/apply-edit.py checks and writes it.
 // -----------------------------------------------------------------------------
 
-window.UNRATED = [];
+window.UNRATED = [
+  {
+    "id": 151420421,
+    "name": "Solar",
+    "difficulty": "Insane",
+    "rating": 19,
+    "publisher": "Nigelx1",
+    "creators": [
+      "Nigelx1"
+    ],
+    "verifier": null,
+    "videoUrl": null,
+    "thumbnailUrl": null,
+    "levelId": 151420421,
+    "description": "Insane Demon version of Solar Flare",
+    "requirementPercent": 100,
+    "records": [],
+    "gd": {
+      "length": "Long",
+      "objects": 63250,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane",
+      "song": {
+        "id": "493898",
+        "name": "[J] - Solar Wind",
+        "artist": "Jumper"
+      },
+      "songOfficial": false
+    },
+    "added": "2026-10-30"
+  }
+];

@@ -26,6 +26,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-10-30",
+    "items": [
+      {
+        "kind": "note",
+        "text": "Rated+: Solar is on as an unrated Insane, GDDL estimate 19.00."
+      }
+    ]
+  },
+  {
     "date": "2026-10-28",
     "items": [
       {
