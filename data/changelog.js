@@ -34,6 +34,16 @@ window.CHANGELOG = [
     "date": "2026-10-31",
     "items": [
       {
+        "kind": "swap",
+        "demon": "Heritage",
+        "demonId": 75078198,
+        "from": 46,
+        "to": 44,
+        "with": "Supersonic",
+        "withId": 4706930,
+        "by": "Dihmaster500"
+      },
+      {
         "kind": "note",
         "text": "danieloveity also cleared Acropolis."
       },

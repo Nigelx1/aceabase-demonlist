@@ -1760,20 +1760,20 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 4706930,
+    "id": 75078198,
     "position": 44,
-    "name": "Supersonic",
+    "name": "Heritage",
     "difficulty": "Insane",
-    "rating": 16.88,
-    "publisher": "ZenthicAlpha",
+    "rating": 16.67,
+    "publisher": "Karma8",
     "creators": [
-      "ZenthicAlpha"
+      "Karma8"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=0G4CBc5Tq7c",
-    "thumbnailUrl": "https://i.ytimg.com/vi/0G4CBc5Tq7c/maxresdefault.jpg",
-    "levelId": 4706930,
-    "description": "Megacollab by Glitter, Jeyzor, Sumsar, xcy-7, Daddepro, Evasium, Gboy, Viprin and me! Updated to add coins.",
+    "videoUrl": "https://www.youtube.com/watch?v=6KbGMRI2t8o",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6KbGMRI2t8o/maxresdefault.jpg",
+    "levelId": 75078198,
+    "description": "Gameplay by me & AgarOther. Decoration by Vit12. Verified by AgarOther.",
     "requirementPercent": 100,
     "records": [
       {
@@ -1781,28 +1781,22 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
-      },
-      {
-        "player": "Nigel",
-        "progress": 100,
-        "nationality": "US",
-        "subdivision": null,
-        "video": "https://youtu.be/k3J1FgsJ6hg"
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 21371,
+      "objects": 65535,
       "gameVersion": "2.1",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "467267",
-        "name": "Ludicrous Speed - F-777",
-        "artist": "F-777"
+        "id": "715502",
+        "name": "-= Death From Above =-",
+        "artist": "TheBiocide"
       },
       "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 4706930
   },
   {
     "id": 59858021,
@@ -1843,20 +1837,20 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 75078198,
+    "id": 4706930,
     "position": 46,
-    "name": "Heritage",
+    "name": "Supersonic",
     "difficulty": "Insane",
-    "rating": 16.67,
-    "publisher": "Karma8",
+    "rating": 16.88,
+    "publisher": "ZenthicAlpha",
     "creators": [
-      "Karma8"
+      "ZenthicAlpha"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=6KbGMRI2t8o",
-    "thumbnailUrl": "https://i.ytimg.com/vi/6KbGMRI2t8o/maxresdefault.jpg",
-    "levelId": 75078198,
-    "description": "Gameplay by me & AgarOther. Decoration by Vit12. Verified by AgarOther.",
+    "videoUrl": "https://www.youtube.com/watch?v=0G4CBc5Tq7c",
+    "thumbnailUrl": "https://i.ytimg.com/vi/0G4CBc5Tq7c/maxresdefault.jpg",
+    "levelId": 4706930,
+    "description": "Megacollab by Glitter, Jeyzor, Sumsar, xcy-7, Daddepro, Evasium, Gboy, Viprin and me! Updated to add coins.",
     "requirementPercent": 100,
     "records": [
       {
@@ -1864,21 +1858,29 @@ window.DEMONS = [
         "progress": 100,
         "nationality": "US",
         "subdivision": null
+      },
+      {
+        "player": "Nigel",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null,
+        "video": "https://youtu.be/k3J1FgsJ6hg"
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 65535,
+      "objects": 21371,
       "gameVersion": "2.1",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "715502",
-        "name": "-= Death From Above =-",
-        "artist": "TheBiocide"
+        "id": "467267",
+        "name": "Ludicrous Speed - F-777",
+        "artist": "F-777"
       },
       "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 4706930
   },
   {
     "id": 60619762,
