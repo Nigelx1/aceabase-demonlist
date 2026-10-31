@@ -516,7 +516,7 @@ window.GOAL_LEVELS = {
       "ink": "#1f3147"
     },
     "writeup": {
-      "text": "Chill in name only. ChillHome keeps changing its whole look - magenta hexagons, blue clouds split by lightning, red halls of sawblades, neon green with checkerboards, striped retro sunsets over neon grids, a night city of lit windows - then closes on a gold stretch under a crescent moon and a sky-blue credits screen. Cube, ship, wave and UFO all show up, set to tangermusic's spamton drip. G3Gelo uploaded it and HowlingBolt verified it, though Nigel's showcase names ZhorizonZ as its original creator. Per the level's own description, even the upload wasn't chill.",
+      "text": "Chill in name only. ChillHome keeps changing its look - magenta hexagons, lightning-split clouds, red halls of sawblades, neon checkerboards, retro sunsets over neon grids, a night city - before a gold finish under a crescent moon, all to tangermusic's spamton drip. Horizon (unknownspaceGD) hosted the collab and gave the verification to Nigel, then going by kyribe, who hacked it and got caught. Horizon dropped the level and handed it to him, and about a year later Nigel paid HowlingBolt to balance it and verify it for real. It went up on G3Gelo, Nigel's alt - and everyone's cool now. The upload just wasn't chill.",
       "source": "Nigel's showcase",
       "url": "https://www.youtube.com/watch?v=7j1JSTXHbrY"
     }
