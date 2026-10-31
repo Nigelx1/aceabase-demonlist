@@ -413,6 +413,38 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Congregation"
     }
   },
+  "68848817": {
+    "name": "moment",
+    "publisher": "lexycat",
+    "difficulty": "Extreme",
+    "rating": 24.03,
+    "aredlPosition": 848,
+    "levelId": 68848817,
+    "description": "gravity is better wallahi",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=9hXnDPoLHyE",
+    "gd": {
+      "length": "Long",
+      "objects": 31554,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "526067",
+        "name": "Momentum",
+        "artist": "Geoplex"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/9hXnDPoLHyE/sddefault.jpg",
+    "palette": {
+      "accent": "#ce4bce",
+      "deep": "#3c103c",
+      "wash": "#fbf2fb",
+      "mist": "#f3e2f3",
+      "onAccent": "#ffffff",
+      "ink": "#471f47"
+    }
+  },
   "68908396": {
     "name": "Frozen Cave",
     "publisher": "TrueParadoxTeam",
