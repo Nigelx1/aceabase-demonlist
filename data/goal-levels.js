@@ -486,6 +486,36 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Tidal_Wave"
     }
   },
+  "115157857": {
+    "name": "ChillHome",
+    "publisher": "G3Gelo",
+    "difficulty": "Insane",
+    "rating": null,
+    "levelId": 115157857,
+    "description": "For a level called \"ChillHome,\" the uploading process wasn't chill at all lol. Verified by HowlingBolt.",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=7j1JSTXHbrY",
+    "gd": {
+      "length": "XL",
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane",
+      "stars": 0,
+      "song": {
+        "id": "1233480",
+        "name": "spamton drip",
+        "artist": "tangermusic"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/7j1JSTXHbrY/maxresdefault.jpg",
+    "palette": {
+      "accent": "#2783f1",
+      "deep": "#0f243e",
+      "wash": "#f2f6fb",
+      "mist": "#e2eaf3",
+      "onAccent": "#ffffff",
+      "ink": "#1f3147"
+    }
+  },
   "151420421": {
     "name": "Solar",
     "publisher": "Nigelx1",

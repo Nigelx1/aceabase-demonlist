@@ -40,6 +40,7 @@ window.GOALS = [
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation (on the list)
   { player: "Nigel", levelId: 151420421, best: 84, segments: [[59, 100]] }, // Solar
+  { player: "Nigel", levelId: 115157857, best: 20, segments: [[65, 100]] }, // ChillHome
   { player: "zinglebob238", levelId: 38235367, best: 58, segments: [[48, 100]] }, // Quantum Processing (on the list)
   { player: "zinglebob238", levelId: 23262780, best: 82, segments: [[39, 88], [75, 100]] }, // Sakupen Hell
   { player: "pixl", levelId: 26681070, best: 32, segments: [[32, 47], [46, 100]] }, // Sonic Wave (on the list)
