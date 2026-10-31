@@ -4,7 +4,7 @@
 // Dihmaster500, 2026-10-30). These levels aren't rated in game, but they count
 // in the Rated+ views of the list and the stats viewer (static/js/views.js):
 // one is on the Rated+ list once someone beats it, and until then it's a Grind
-// level of Rated+. A head mod puts one on with its first clear or Grind goal
+// level of Rated+. A head mod puts one on with a clear or Grind goal
 // (the mod page sends add_unrated in the same batch), and edits and removes
 // them in the mod page's Rated+ levels panel (tools/apply-edit.py add_unrated /
 // set_unrated / remove_unrated). Clears on them go in like any other clear
