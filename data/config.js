@@ -80,6 +80,20 @@ window.SITE = {
   // slot_ok). Its points always come from the estimate. Default 1.
   unratedWindow: 1,
 
+  // Insane swaps (Nigel and Dihmaster500, 2026-10-31: Dihmaster500 didn't agree
+  // with some of GD Demon Ladder's insane placements). A head mod with 100%
+  // clears on two Insane Demons on the list can swap them on the mod page (Swap
+  // insanes): each takes the other's place and points. Their own score stays
+  // the same; anyone who has beaten just one of them gains or loses the
+  // difference. The demons swapped together share a swapGroup in data/demons.js,
+  // and DL.demonRating (and the tools' re-sorts) hand their own values out in
+  // their stored order, so they keep the head mods' order through every upkeep,
+  // clear and rating change. Swapping the same two again undoes it. Every swap is
+  // a "Swapped" item in the changelog, and a swapped demon's page says so.
+  // Off = no Swap insanes panel and no note (the server refuses swaps); a swap
+  // already made still counts.
+  insaneSwaps: true,
+
   // Discord invite URL -> shows the Discord panel; null hides it.
   discordInvite: "https://discord.gg/aceabase",
 
@@ -132,11 +146,11 @@ window.SITE = {
   about: [
     {
       title: "The list",
-      text: "Extreme and Insane Demons beaten by ace or the active members of her server, ranked hardest-first: the extremes in AREDL order, the insanes by GD Demon Ladder's difficulty rating. The extremes are the Main List and the insanes are the Extended List.",
+      text: "Extreme and Insane Demons beaten by ace or the active members of her server, ranked hardest-first: the extremes in AREDL order, the insanes by GD Demon Ladder's difficulty rating. A head mod who has beaten two insanes can swap their places. The extremes are the Main List and the insanes are the Extended List.",
     },
     {
       title: "Scoring",
-      text: "Each demon is worth points based on how hard it is - for an extreme, its AREDL placement, turned into a GD Demon Ladder-style rating by a curve fit to the whole AREDL; for an insane, its GD Demon Ladder rating - on a steep curve fit to the AREDL's extremes and carried straight down through the insanes. The hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed, plus a quarter of a demon's points times your run for any run longer than 50% on one you haven't beaten yet.",
+      text: "Each demon is worth points based on how hard it is - for an extreme, its AREDL placement, turned into a GD Demon Ladder-style rating by a curve fit to the whole AREDL; for an insane, its GD Demon Ladder rating - on a steep curve fit to the AREDL's extremes and carried straight down through the insanes. Two insanes a head mod swapped trade points too. The hardest extremes are worth far more than the rest. Your score is the sum of every demon you've completed, plus a quarter of a demon's points times your run for any run longer than 50% on one you haven't beaten yet.",
     },
     {
       title: "The community",
@@ -148,6 +162,7 @@ window.SITE = {
   guidelines: [
     "Only rated Extreme and Insane Demons are eligible - no platformers.",
     "Unrated levels the head mods add count only in the Rated+ views.",
+    "A head mod who has beaten two Insane Demons can swap their places and points; every swap is in the changelog.",
     "A record counts in full once it's a 100% completion.",
     "A run longer than 50% on a level you haven't beaten (from 0, or a practice run like 42-100) counts for a quarter of the level's points times the run. Only your longest run on it counts, and beating it replaces it with the full points.",
     "Records come from your gdladder profile or a video of the full run.",
@@ -158,6 +173,7 @@ window.SITE = {
   // an AREDL placement over the whole AREDL: rating = a + b * position^exponent.
   // Extremes on the AREDL are ordered and scored by it (DL.demonRating), so the
   // list follows AREDL placement; everything else uses its own GDDL rating.
+  // Two insanes a head mod swapped (Insane swaps, above) trade those values.
   aredlFit: { a: 43.9258, b: -1.471249, exponent: 0.38, points: 1579, r2: 0.9728, fitted: "2026-10-29" },
   // SCORING - a 100% is worth topScore * base ^ (rating - topRating), where
   // rating is DL.demonRating (an extreme's AREDL placement through aredlFit,

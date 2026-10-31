@@ -105,6 +105,7 @@
       <a href="#panel-members">Members</a>
       <a href="#panel-videos">Clears &amp; videos</a>
       <a href="#panel-order">List order</a>
+      <a href="#panel-swaps" hidden>Swap insanes</a>
       <a href="#panel-unrated" hidden>Rated+ levels</a>
       <a href="#panel-edits">Recent edits</a>
       <a href="#panel-mods" hidden>Mods</a>
@@ -260,12 +261,36 @@
     <!-- 5. List order -->
     <section class="panel fade tool" id="panel-order">
       <h2 class="underlined pad">List order</h2>
-      <p>Re-checks every demon's placement on the AREDL and GD Demon Ladder and re-sorts the list to match. Takes a couple of minutes.</p>
+      <p>Re-checks every demon's placement on the AREDL and GD Demon Ladder and re-sorts the list to match (swapped insanes keep their order). Takes a couple of minutes.</p>
       <button type="button" class="button blue hover save" id="order-save">Refresh the order</button>
       <div class="msg" id="order-msg" hidden></div>
       <p>Checks Nigel's YouTube channel and puts his showcase on every level that has one. It also runs by itself on Mondays and Thursdays.</p>
       <button type="button" class="button blue hover save" id="showcase-save">Check Nigel's channel</button>
       <div class="msg" id="showcase-msg" hidden></div>
+    </section>
+
+    <!-- 5a. Swap insanes (head mods; static/js/admin.js setupSwaps shows it) -->
+    <section class="panel fade tool" id="panel-swaps" hidden>
+      <h2 class="underlined pad">Swap insanes</h2>
+      <p class="hint">Two Insane Demons you've beaten trade places and points. Everyone who has beaten just one of them gains or loses the difference - your own score stays the same. Swap them again to undo it.</p>
+      <div id="swap-form">
+        <div class="two">
+          <label class="field">
+            <span>Insane Demon</span>
+            <select id="swap-a"></select>
+          </label>
+          <label class="field">
+            <span>Swap it with</span>
+            <select id="swap-b"></select>
+          </label>
+        </div>
+        <div class="current swap-preview" id="swap-preview" hidden></div>
+        <button type="button" class="button blue hover save" id="swap-save" disabled>Swap them</button>
+        <div class="msg" id="swap-msg" hidden></div>
+      </div>
+      <p class="hint" id="swap-none" hidden></p>
+      <h3>Swapped right now</h3>
+      <ul class="goal-list" id="swap-groups"></ul>
     </section>
 
     <!-- 5b. Rated+ levels (head mods; static/js/admin.js setupUnrated shows it) -->

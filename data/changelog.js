@@ -2,26 +2,31 @@
 // -----------------------------------------------------------------------------
 // LIST CHANGELOG - newest entry first.
 //
-// Add an entry whenever the list changes: a demon added / moved / removed, a
-// scoring or tier tweak, anything worth a note. Rendered on /changelog/ and
-// teased in the demonlist sidebar.
+// Add an entry whenever the list changes: a demon added / moved / swapped /
+// removed, a scoring or tier tweak, anything worth a note. Rendered on
+// /changelog/ and teased in the demonlist sidebar.
 //
 //   { date: "YYYY-MM-DD", items: [ ...one or more of the below... ] }
 //
 //   { kind: "add",    demon: "Name", demonId: 12345, at: 4,   text?: "why" }
 //   { kind: "move",   demon: "Name", demonId: 12345, from: 6, to: 3 }
+//   { kind: "swap",   demon: "Name", demonId: 12345, from: 46, to: 40,
+//                     with: "Other", withId: 67890, by: "Head mod" }
 //   { kind: "remove", demon: "Name",                 from: 40, text?: "why" }
 //   { kind: "note",   text: "free-form note" }
 //
 // demonId is optional (links to the demon page when it's present and the demon
 // is still on the list). text is an optional extra clause on any kind.
+// A `swap` is a head mod's Insane swap (config.js insaneSwaps; written by
+// tools/apply-edit.py swap_insanes): `demon` went from #from up to #to and
+// `with` the other way, and nobody else moved.
 //
 // This file also drives each demon page's "Position History" table
 // (DL.positionHistoryFor): the initial order is reconstructed by undoing every
-// add/move/remove logged here, so ALWAYS log a position change as an `add`
-// (with `at`), `move` (with `from` + `to`) or `remove` (with `from`) - an
-// unlogged reorder would desync the history. `text` on a `move` becomes that
-// row's reason verbatim.
+// add/move/swap/remove logged here, so ALWAYS log a position change as an `add`
+// (with `at`), `move` (with `from` + `to`), `swap` (both ids, `from` + `to`)
+// or `remove` (with `from`) - an unlogged reorder would desync the history.
+// `text` on a `move` becomes that row's reason verbatim.
 // -----------------------------------------------------------------------------
 
 window.CHANGELOG = [

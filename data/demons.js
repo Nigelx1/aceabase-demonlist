@@ -6,7 +6,8 @@
 // Don't hand-edit positions: add clears with tools/add-records.py. It pulls
 // level facts from gdladder.com + gdbrowser.com, refuses anything that isn't an
 // Extreme or Insane Demon, re-sorts the whole array (extremes first, then by
-// gdladder `rating`, the AREDL breaking ties),
+// DL.demonRating's value - the AREDL fit for a demon with an aredlPosition,
+// else its gdladder `rating` - the AREDL breaking ties),
 // renumbers `position` (id == levelId) and logs it in data/changelog.js.
 //
 // verifier = who in the community cleared it first (not the real-life
@@ -14,6 +15,13 @@
 // records[] = { player, progress, nationality (ISO code), subdivision }.
 // thumbnailUrl = best available YouTube still of the showcase video.
 // gd = gdbrowser facts for the demon page (length, objects, version, song).
+// swapGroup = (optional, Insane Demons only) set by a head mod's swap on the
+//   mod page (config.js insaneSwaps; tools/apply-edit.py swap_insanes). The
+//   demons sharing one were swapped together: their own values (DL.baseRating)
+//   are handed out hardest-first in their stored order (DL.demonRating), so
+//   they keep the order the head mods picked through every re-sort and trade
+//   points. A swap back to the unswapped order removes it. Never hand-edit it:
+//   every swap is a `swap` item in data/changelog.js.
 // -----------------------------------------------------------------------------
 
 window.DEMONS = [
