@@ -300,10 +300,9 @@ window.GOAL_LEVELS = {
       "ink": "#1f472c"
     },
     "writeup": {
-      "text": "Zodiac is a 2.1 Extreme Demon mega-collaboration level hosted by Bianox, hack-verified by xander on 28 January 2019. On 11 June 2019, xander admitted to hacking the level, including numerous other achievements. The ownership and the rights to decide the fate of this level have consequently been passed to Technical, who beat the level legitimately on 9 April 2019; therefore, he became the first legitimate victor of Zodiac.",
+      "text": "Twenty creators, three minutes and a speedhack. Set to Creo's Sphere, Bianox's megacollab switches neon colors every few seconds. Players praised the look but called the gameplay unbalanced, especially the chokepoint-heavy second half with its frame-perfect orb at 79%. It took #1 from Bloodlust in March 2019 on xander's January verification, but that June he confessed to speedhacking it - even the 61,375 attempts still claimed in its in-game description were padded. The verifier title went to Technical, who had beaten it for real on stream that April. It reigned at #1 for 11 months, until Tartarus took over, and was finally pushed to the Legacy List in July 2026.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Zodiac",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/Zodiac"
     }
   },
   "58811846": {
@@ -375,10 +374,9 @@ window.GOAL_LEVELS = {
       "ink": "#1f4747"
     },
     "writeup": {
-      "text": "xo is a 2.1 Extreme Demon level by KrmaL, published on 23 December 2019. It is a 1.0-style level created in a monochromatic colour scheme almost exclusively using basic blocks and the pulse trigger, along with sync-based gameplay.",
+      "text": "Hugs and kisses, in grayscale. KrmaL's 1.0-style level is almost all basic blocks and pulse triggers - gray structures, black voids, and the X and O of its name, built into the layout and pulsing off the blue orbs. The gameplay syncs closely to Aaron Musslewhite's cover of EDEN's XO, and its dash orb at 3% is infamous. A full-time student, KrmaL couldn't really grind it until winter break, then verified it himself in December 2019, more than two years after he began building. Its bare decoration sparked arguments over whether it deserved a rating, yet it took second for Best Extreme Demon at the Geometry Dash 2020 Awards.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/xo",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/xo"
     }
   },
   "59075347": {
@@ -481,6 +479,11 @@ window.GOAL_LEVELS = {
       "mist": "#f3e2f3",
       "onAccent": "#ffffff",
       "ink": "#471f47"
+    },
+    "writeup": {
+      "text": "Love at first click. lexycat and icedcave's moment, set to Vierre Cloud's song of the same name (not on Newgrounds), opens on an immediate ship click among pale-blue line art in the dark, flashes the Japanese character for love in pink, then drops into pastel pink and lilac stripes and a black-and-white stretch of bare trees by Stormfly. It's flowy and well liked but very chokeable, especially in the waves. icedcave verified it in May 2021; that December Johnfree, with lexycat's blessing, rebalanced it with 13 other playtesters and beat it again, and AREDL lists his run as the verification. icedcave also verified its official sequel, gravity, in 2022.",
+      "source": "AREDL",
+      "url": "https://aredl.net/list/68848817"
     }
   },
   "68908396": {
@@ -550,6 +553,11 @@ window.GOAL_LEVELS = {
       "mist": "#f3e2e2",
       "onAccent": "#ffffff",
       "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "Sakupen Hell's song, Nine Circles' waves. DrCuber and GhostVandalf's megacollab remakes Nick24's 1.9 impossible level of the same name, nerfing its infamous triple-speed mini-wave spam, and burns red and orange for under a minute: orb timings, a 'Ready?' warning, then a drop of brutally tight waves that takes the most flak for its balancing. Cursed handed the verification to Diamond, who finished it in December 2021 after 220,000+ attempts and dedicated the run to him; Cursed beat it about a week later as its first victor. It debuted at #1 - the second Nine Circles level to get there, after Sonic Wave - and held it for about ten weeks.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Circles_(Diamond)"
     }
   },
   "81148582": {
@@ -616,10 +624,9 @@ window.GOAL_LEVELS = {
       "ink": "#471f1f"
     },
     "writeup": {
-      "text": "Stereo Extremeness is a 2.1 Extreme Demon collaboration level hosted, verified, and published by Vortrox. Though initially a simple buffed copy of Stereo Madness made for a YouTube video, it was later decorated by Gepsoni4, xVainaja, Voxicat, AudieoVisual, Tricipital, and Vortrox himself. The original, undecorated version was openly hack-verified and published on 7 November 2022, which Esoteric Hydra legitimately verified.",
+      "text": "Stereo Madness, super-buffed. Vortrox turned the game's first level into an extreme for a November 2022 YouTube video. It keeps most of the layout but adds precise timings, fake spikes, invisible platforms and a hard robot section in the second half. When the video blew up, he spent six months decorating it with Gepsoni4, xVainaja, Voxicat, AudieoVisual and Tricipital, in glowing purple and pink with monsters built out of blocks. Though he'd never beaten an extreme, he then spent four more months verifying it himself, finishing in October 2023 after 55,129 attempts. The decorated version replaced the openly hack-verified original, which Esoteric Hydra had already beaten for real.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Stereo_Extremeness",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/Stereo_Extremeness"
     }
   },
   "86407629": {
@@ -718,10 +725,9 @@ window.GOAL_LEVELS = {
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/ZenSY8BjOyE/maxresdefault.jpg",
     "writeup": {
-      "text": "Defeated Circles is a 2.1/2.2 Extreme Demon mega-collaboration level by Galaxium and others, published by GXQ, and verified by Zoink on 30 May 2025 after about 9,000 attempts over five to six days. A Nine Circles level, Defeated Circles is a redecorated and revised version of the old impossible level of the same name created by muriday.",
+      "text": "An impossible level, defeated. Galaxium and company spent about two years reworking muriday's old impossible level of the same name, itself based on the 'You So Defeated' challenges, into a steel-gray and lavender Nine Circles megacollab, published by GXQ. It's front-loaded - a memory cube, slope timings in the ship, frame-perfect double-spike jumps - but barely lets up, with a very fast dual wave and a mini-wave spam near the end. Zoink verified it in May 2025 after about 9,000 attempts and guessed it was around top 50; that October the Demonlist placed it at #17, passing Sakupen Circles as the hardest rated Nine Circles level until Subsuming Vortex arrived in December.",
       "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Defeated_Circles",
-      "auto": true
+      "url": "https://geometrydash.wiki.gg/wiki/Defeated_Circles"
     }
   },
   "151420421": {
