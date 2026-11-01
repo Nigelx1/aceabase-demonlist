@@ -140,7 +140,7 @@ window.WRITEUPS = {
     "url": "https://aredl.net/list/114933189"
   },
   "72211008": {
-    "text": "Deadlocked, with dragons. FrostDragonGD's remake of RobTop's level keeps F-777's song and dresses it in glowing purple, magenta and cyan - his first try at glow design, as its description says. The highlight is its two dragon boss fights: shadowy heads firing beams across a fiery orange arena, then a long dragon silhouette near the end. RyuDieDragon verified it, and it came out in August 2021. AeonAir opened his 2021 12 Demons of Christmas with it, calling it one of the hardest Insane Demons and arguing it should be Extreme.",
+    "text": "Deadlocked, with dragons. FrostDragonGD's remake of RobTop's level keeps F-777's song and dresses it in glowing purple, magenta and cyan - his first try at glow design, as its description says. The highlight is its two dragon boss fights: shadowy heads firing beams across a fiery orange arena, then a long dragon silhouette near the end. It came out in August 2021. AeonAir opened his 2021 12 Demons of Christmas with it, calling it one of the hardest Insane Demons and arguing it should be Extreme.",
     "source": "Nexus's showcase",
     "url": "https://www.youtube.com/watch?v=AP-M69JaTm0"
   },
@@ -210,7 +210,7 @@ window.WRITEUPS = {
     "url": "https://geometrydash.wiki.gg/wiki/Nine_Circles_Levels"
   },
   "59858021": {
-    "text": "Seven and a half minutes of somewhere else. SuprianGD's travel level, five months in the making by its description, drifts from an autumn forest to blue night hills, a sunset town with a clock tower, a neon city, rainbow pastels and stark black-and-white stretches, with a boss fight against a giant block face before a pink-sky finish, all to 1f1n1ty's By Day By Night. Its description credits ItsAdvyStyles with the verification, and Nexus's February 2020 completion video calls it one of the best travel levels.",
+    "text": "Seven and a half minutes of somewhere else. SuprianGD's travel level, five months in the making by its description, drifts from an autumn forest to blue night hills, a sunset town with a clock tower, a neon city, rainbow pastels and stark black-and-white stretches, with a boss fight against a giant block face before a pink-sky finish, all to 1f1n1ty's By Day By Night. Nexus's February 2020 completion video calls it one of the best travel levels.",
     "source": "Nigel's showcase",
     "url": "https://www.youtube.com/watch?v=-5YLPgXGr68"
   },
