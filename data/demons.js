@@ -101,7 +101,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 186
+    "aredlPosition": 187
   },
   {
     "id": 55624478,
@@ -1435,6 +1435,12 @@ window.DEMONS = [
         "player": "danieloveity",
         "progress": 100,
         "nationality": "SK",
+        "subdivision": null
+      },
+      {
+        "player": "zinglebob238",
+        "progress": 100,
+        "nationality": "GB",
         "subdivision": null
       }
     ],

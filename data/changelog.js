@@ -31,6 +31,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-11-01",
+    "items": [
+      {
+        "kind": "note",
+        "text": "zinglebob238 also cleared Acropolis."
+      }
+    ]
+  },
+  {
     "date": "2026-10-31",
     "items": [
       {
