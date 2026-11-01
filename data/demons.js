@@ -1434,7 +1434,7 @@ window.DEMONS = [
       {
         "player": "danieloveity",
         "progress": 100,
-        "nationality": "GB",
+        "nationality": "SK",
         "subdivision": null
       }
     ],
