@@ -140,7 +140,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 234
+    "aredlPosition": 235
   },
   {
     "id": 42584142,
@@ -453,7 +453,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 559
+    "aredlPosition": 558
   },
   {
     "id": 38235367,
@@ -486,7 +486,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 567
+    "aredlPosition": 566
   },
   {
     "id": 27580467,
@@ -686,7 +686,7 @@ window.DEMONS = [
     "position": 18,
     "name": "Bloodbath",
     "difficulty": "Extreme",
-    "rating": 23.98,
+    "rating": 23.97,
     "publisher": "Riot",
     "creators": [
       "Riot"
@@ -1087,7 +1087,7 @@ window.DEMONS = [
     "position": 27,
     "name": "Without U",
     "difficulty": "Extreme",
-    "rating": 20.16,
+    "rating": 20.17,
     "publisher": "NoobyPro27",
     "creators": [
       "NoobyPro27"
@@ -1586,7 +1586,7 @@ window.DEMONS = [
     "position": 39,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.65,
+    "rating": 18.63,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1658,7 +1658,7 @@ window.DEMONS = [
     "position": 41,
     "name": "alika",
     "difficulty": "Insane",
-    "rating": 17.05,
+    "rating": 17.06,
     "publisher": "2003devin",
     "creators": [
       "2003devin"
@@ -1735,7 +1735,7 @@ window.DEMONS = [
     "position": 43,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
-    "rating": 17.11,
+    "rating": 17.12,
     "publisher": "OddMod",
     "creators": [
       "OddMod"

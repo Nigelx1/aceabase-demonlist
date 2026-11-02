@@ -203,7 +203,7 @@ window.GOAL_LEVELS = {
     "publisher": "Riot",
     "difficulty": "Extreme",
     "rating": 27.05,
-    "aredlPosition": 567,
+    "aredlPosition": 566,
     "levelId": 38235367,
     "description": "Blast Processing turned into a hellish nightmare. Gameplay done by Hinds and myself. Deco by Hinds and Sil3nce. Verified by Rampage.",
     "requirementPercent": 100,
