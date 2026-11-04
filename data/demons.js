@@ -1432,12 +1432,6 @@ window.DEMONS = [
         "subdivision": null
       },
       {
-        "player": "danieloveity",
-        "progress": 100,
-        "nationality": "SK",
-        "subdivision": null
-      },
-      {
         "player": "zinglebob238",
         "progress": 100,
         "nationality": "GB",

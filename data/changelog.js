@@ -34,6 +34,10 @@ window.CHANGELOG = [
     "date": "2026-11-04",
     "items": [
       {
+        "kind": "note",
+        "text": "danieloveity's record on Acropolis was removed."
+      },
+      {
         "kind": "add",
         "demon": "Death Note",
         "demonId": 5232805,
