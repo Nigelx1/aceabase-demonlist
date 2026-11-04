@@ -54,7 +54,7 @@ window.GOAL_LEVELS = {
     "name": "Sakupen Hell",
     "publisher": "TrusTa",
     "difficulty": "Extreme",
-    "rating": 24.86,
+    "rating": 24.87,
     "aredlPosition": 782,
     "levelId": 23262780,
     "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
