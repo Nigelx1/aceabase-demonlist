@@ -1981,8 +1981,46 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 4957691,
+    "id": 5232805,
     "position": 49,
+    "name": "Death Note",
+    "difficulty": "Insane",
+    "rating": 15.91,
+    "publisher": "Ruf",
+    "creators": [
+      "Ruf"
+    ],
+    "verifier": "zinglebob238",
+    "videoUrl": "https://www.youtube.com/watch?v=6D6OLTNbKBk",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6D6OLTNbKBk/maxresdefault.jpg",
+    "levelId": 5232805,
+    "description": "Thank u really much for My first Demon! I decided to make it a bit Harder! hehe",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "zinglebob238",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 11243,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "513539",
+        "name": "Death Note Dubstep [SB]",
+        "artist": "ShadowBeatzInc"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 4957691,
+    "position": 50,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -2027,7 +2065,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 50,
+    "position": 51,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -2078,7 +2116,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 51,
+    "position": 52,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2123,7 +2161,7 @@ window.DEMONS = [
   },
   {
     "id": 89743050,
-    "position": 52,
+    "position": 53,
     "name": "Inane Demon",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2161,7 +2199,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 53,
+    "position": 54,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.21,
@@ -2206,7 +2244,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 54,
+    "position": 55,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.06,

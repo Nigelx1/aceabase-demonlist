@@ -35,6 +35,13 @@ window.CHANGELOG = [
     "items": [
       {
         "kind": "add",
+        "demon": "Death Note",
+        "demonId": 5232805,
+        "at": 49,
+        "text": "zinglebob238's clear"
+      },
+      {
+        "kind": "add",
         "demon": "Inane Demon",
         "demonId": 89743050,
         "at": 52,
