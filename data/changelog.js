@@ -34,6 +34,13 @@ window.CHANGELOG = [
     "date": "2026-11-04",
     "items": [
       {
+        "kind": "add",
+        "demon": "Frozen Cave",
+        "demonId": 68908396,
+        "at": 7,
+        "text": "Poatan's clear"
+      },
+      {
         "kind": "note",
         "text": "danieloveity's record on Acropolis was removed."
       },

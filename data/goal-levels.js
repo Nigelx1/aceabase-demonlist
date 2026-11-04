@@ -486,43 +486,6 @@ window.GOAL_LEVELS = {
       "url": "https://aredl.net/list/68848817"
     }
   },
-  "68908396": {
-    "name": "Frozen Cave",
-    "publisher": "TrueParadoxTeam",
-    "difficulty": "Extreme",
-    "rating": 31,
-    "aredlPosition": 310,
-    "levelId": 68908396,
-    "description": "welcome to icy hell x by more and others",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=kBv8wUrLjxE",
-    "gd": {
-      "length": "Long",
-      "objects": 65535,
-      "gameVersion": "2.2",
-      "inGameDifficulty": "Extreme Demon",
-      "stars": 10,
-      "song": {
-        "id": "845915",
-        "name": "cYsmix - Fright March",
-        "artist": "cysmix"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/kBv8wUrLjxE/maxresdefault.jpg",
-    "palette": {
-      "accent": "#1d91b8",
-      "deep": "#0f323e",
-      "wash": "#f2f8fb",
-      "mist": "#e2eff3",
-      "onAccent": "#ffffff",
-      "ink": "#1f3d47"
-    },
-    "writeup": {
-      "text": "Welcome to icy hell, as the in-game description puts it. TrueParadoxTeam's collab - built by FlashWings576, Quicklen, Sleynt and others - has you escaping a cave collapsing high in the frozen mountains to cYsmix's Fright March. It's packed with gimmicks and structuring quirks: double clicks throughout, the final wave and the iconic toggle-orb ship at 64%. One of the hardest art-style extremes of its time, it was verified by khrizmass in May 2021 and debuted on Pointercrate at #20 that June.",
-      "source": "AREDL",
-      "url": "https://aredl.net/list/68908396"
-    }
-  },
   "76962930": {
     "name": "Sakupen Circles",
     "publisher": "Diamond",
