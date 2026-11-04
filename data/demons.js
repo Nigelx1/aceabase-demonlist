@@ -525,7 +525,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 631
+    "aredlPosition": 630
   },
   {
     "id": 33387622,
@@ -564,7 +564,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 661
+    "aredlPosition": 660
   },
   {
     "id": 26133601,
@@ -873,7 +873,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1288
+    "aredlPosition": 1287
   },
   {
     "id": 30219145,
@@ -2122,46 +2122,8 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 89743050,
-    "position": 52,
-    "name": "Inane Demon",
-    "difficulty": "Insane",
-    "rating": 15.3,
-    "publisher": "KiwiPenguin",
-    "creators": [
-      "KiwiPenguin"
-    ],
-    "verifier": "ace",
-    "videoUrl": "https://www.youtube.com/watch?v=I5dkVwV5D9c",
-    "thumbnailUrl": "https://i.ytimg.com/vi/I5dkVwV5D9c/maxresdefault.jpg",
-    "levelId": 89743050,
-    "description": "will you be my april fool <3 #RateBurgerUniverse",
-    "requirementPercent": 100,
-    "records": [
-      {
-        "player": "ace",
-        "progress": 100,
-        "nationality": "US",
-        "subdivision": null
-      }
-    ],
-    "gd": {
-      "length": "Long",
-      "objects": 17448,
-      "gameVersion": "2.1",
-      "inGameDifficulty": "Insane Demon",
-      "song": {
-        "id": "929914",
-        "name": "Brainzap",
-        "artist": "Kingbastard"
-      },
-      "songOfficial": false
-    },
-    "aredlPosition": null
-  },
-  {
     "id": 4545425,
-    "position": 53,
+    "position": 52,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.21,
@@ -2206,7 +2168,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 54,
+    "position": 53,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.06,
