@@ -31,6 +31,18 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-11-04",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "Inane Demon",
+        "demonId": 89743050,
+        "at": 52,
+        "text": "ace's clear"
+      }
+    ]
+  },
+  {
     "date": "2026-11-01",
     "items": [
       {
