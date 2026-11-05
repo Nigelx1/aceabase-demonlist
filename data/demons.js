@@ -62,7 +62,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 79
+    "aredlPosition": 80
   },
   {
     "id": 58161496,
@@ -101,7 +101,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 187
+    "aredlPosition": 188
   },
   {
     "id": 55624478,
@@ -140,7 +140,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 235
+    "aredlPosition": 237
   },
   {
     "id": 42584142,
@@ -180,7 +180,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 258
+    "aredlPosition": 261
   },
   {
     "id": 79997992,
@@ -219,7 +219,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 261
+    "aredlPosition": 264
   },
   {
     "id": 68668045,
@@ -258,7 +258,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 277
+    "aredlPosition": 280
   },
   {
     "id": 68908396,
@@ -297,7 +297,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 310
+    "aredlPosition": 313
   },
   {
     "id": 68688849,
@@ -336,7 +336,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 387
+    "aredlPosition": 390
   },
   {
     "id": 26681070,
@@ -375,7 +375,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 388
+    "aredlPosition": 391
   },
   {
     "id": 28220417,
@@ -414,7 +414,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 395
+    "aredlPosition": 398
   },
   {
     "id": 27122654,
@@ -453,7 +453,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 531
+    "aredlPosition": 535
   },
   {
     "id": 72082021,
@@ -492,7 +492,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 558
+    "aredlPosition": 562
   },
   {
     "id": 38235367,
@@ -525,7 +525,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 566
+    "aredlPosition": 570
   },
   {
     "id": 27580467,
@@ -564,7 +564,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 631
+    "aredlPosition": 635
   },
   {
     "id": 33387622,
@@ -603,7 +603,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 661
+    "aredlPosition": 665
   },
   {
     "id": 26133601,
@@ -641,7 +641,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 707
+    "aredlPosition": 711
   },
   {
     "id": 35448603,
@@ -680,7 +680,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 762
+    "aredlPosition": 766
   },
   {
     "id": 59933468,
@@ -718,7 +718,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 806
+    "aredlPosition": 810
   },
   {
     "id": 10565740,
@@ -797,7 +797,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 856
+    "aredlPosition": 860
   },
   {
     "id": 48175126,
@@ -836,7 +836,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 862
+    "aredlPosition": 866
   },
   {
     "id": 89976481,
@@ -874,7 +874,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1136
+    "aredlPosition": 1140
   },
   {
     "id": 24301797,
@@ -912,7 +912,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1288
+    "aredlPosition": 1292
   },
   {
     "id": 30219145,
@@ -951,7 +951,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1395
+    "aredlPosition": 1399
   },
   {
     "id": 71728635,
@@ -989,7 +989,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1441
+    "aredlPosition": 1445
   },
   {
     "id": 69010770,
@@ -1028,7 +1028,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1461
+    "aredlPosition": 1465
   },
   {
     "id": 81257586,
@@ -1067,7 +1067,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1488
+    "aredlPosition": 1492
   },
   {
     "id": 3979721,
@@ -1119,7 +1119,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1510
+    "aredlPosition": 1514
   },
   {
     "id": 119259720,
@@ -1157,7 +1157,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1571
+    "aredlPosition": 1575
   },
   {
     "id": 81148582,
@@ -1202,7 +1202,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1603
+    "aredlPosition": 1607
   },
   {
     "id": 61079355,
@@ -1247,7 +1247,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1605
+    "aredlPosition": 1609
   },
   {
     "id": 114933189,
@@ -1291,7 +1291,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1607
+    "aredlPosition": 1611
   },
   {
     "id": 72211008,
@@ -1362,7 +1362,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1618
+    "aredlPosition": 1622
   },
   {
     "id": 81043147,
@@ -1407,7 +1407,7 @@ window.DEMONS = [
     "position": 35,
     "name": "CraZy III",
     "difficulty": "Insane",
-    "rating": 19.09,
+    "rating": 19.08,
     "publisher": "DavJT",
     "creators": [
       "DavJT"
@@ -1659,7 +1659,7 @@ window.DEMONS = [
     "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.64,
+    "rating": 18.65,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
