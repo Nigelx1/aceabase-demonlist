@@ -881,7 +881,7 @@ window.DEMONS = [
     "position": 22,
     "name": "Falling Up",
     "difficulty": "Extreme",
-    "rating": 21.85,
+    "rating": 21.84,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1369,7 +1369,7 @@ window.DEMONS = [
     "position": 34,
     "name": "Auroral Bloom",
     "difficulty": "Insane",
-    "rating": 19.11,
+    "rating": 19.1,
     "publisher": "Loltad",
     "creators": [
       "Loltad"
@@ -1658,7 +1658,7 @@ window.DEMONS = [
     "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.63,
+    "rating": 18.64,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"

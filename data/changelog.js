@@ -34,6 +34,10 @@ window.CHANGELOG = [
     "date": "2026-11-05",
     "items": [
       {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 3 levels drifted (Falling Up 21.85 → 21.84, Auroral Bloom 19.11 → 19.1, Invisible Deadlocked 18.63 → 18.64)."
+      },
+      {
         "kind": "add",
         "demon": "HelioPOSSIBLE",
         "demonId": 139861912,
