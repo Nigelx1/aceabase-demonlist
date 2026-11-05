@@ -1615,8 +1615,47 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 14145098,
+    "id": 139861912,
     "position": 40,
+    "name": "HelioPOSSIBLE",
+    "difficulty": "Insane",
+    "rating": 17.43,
+    "publisher": "KazaGD",
+    "creators": [
+      "KazaGD"
+    ],
+    "verifier": "Dihmaster500",
+    "videoUrl": "https://www.youtube.com/watch?v=zme2zQAgz1U",
+    "thumbnailUrl": "https://i.ytimg.com/vi/zme2zQAgz1U/maxresdefault.jpg",
+    "levelId": 139861912,
+    "description": "Heliopolis but POSSIBLE...Layout made by me, decorated by (in order): nexel, krynio, shyne, foody, me, airu, ryoui and elirpscalion. Verified by Abdieldevil. Mindcap -> /*v*\\",
+    "requirementPercent": 100,
+    "records": [
+      {
+        "player": "Dihmaster500",
+        "progress": 100,
+        "nationality": "US",
+        "subdivision": null,
+        "video": "https://drive.google.com/file/d/1TMrBwg2956WqJRPoqqbIE1sH5akTa5Qg/view?usp=sharing"
+      }
+    ],
+    "gd": {
+      "length": "Long",
+      "objects": 40610,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Insane Demon",
+      "song": {
+        "id": "1546698",
+        "name": "Apoplexy",
+        "artist": "beehunter"
+      },
+      "songOfficial": false
+    },
+    "aredlPosition": null
+  },
+  {
+    "id": 14145098,
+    "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
     "rating": 18.63,
@@ -1649,7 +1688,7 @@ window.DEMONS = [
   },
   {
     "id": 9145341,
-    "position": 41,
+    "position": 42,
     "name": "8o",
     "difficulty": "Insane",
     "rating": 16.9,
@@ -1688,7 +1727,7 @@ window.DEMONS = [
   },
   {
     "id": 63593437,
-    "position": 42,
+    "position": 43,
     "name": "alika",
     "difficulty": "Insane",
     "rating": 17.06,
@@ -1726,7 +1765,7 @@ window.DEMONS = [
   },
   {
     "id": 32885972,
-    "position": 43,
+    "position": 44,
     "name": "Dark Travel",
     "difficulty": "Insane",
     "rating": 16.94,
@@ -1765,7 +1804,7 @@ window.DEMONS = [
   },
   {
     "id": 82824219,
-    "position": 44,
+    "position": 45,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
     "rating": 17.12,
@@ -1804,7 +1843,7 @@ window.DEMONS = [
   },
   {
     "id": 75078198,
-    "position": 45,
+    "position": 46,
     "name": "Heritage",
     "difficulty": "Insane",
     "rating": 16.67,
@@ -1843,7 +1882,7 @@ window.DEMONS = [
   },
   {
     "id": 59858021,
-    "position": 46,
+    "position": 47,
     "name": "Dream Travel",
     "difficulty": "Insane",
     "rating": 16.79,
@@ -1881,7 +1920,7 @@ window.DEMONS = [
   },
   {
     "id": 4706930,
-    "position": 47,
+    "position": 48,
     "name": "Supersonic",
     "difficulty": "Insane",
     "rating": 16.88,
@@ -1927,7 +1966,7 @@ window.DEMONS = [
   },
   {
     "id": 60619762,
-    "position": 48,
+    "position": 49,
     "name": "Denouement",
     "difficulty": "Insane",
     "rating": 16.62,
@@ -1965,7 +2004,7 @@ window.DEMONS = [
   },
   {
     "id": 7054561,
-    "position": 49,
+    "position": 50,
     "name": "Poltergeist",
     "difficulty": "Insane",
     "rating": 15.95,
@@ -2015,7 +2054,7 @@ window.DEMONS = [
   },
   {
     "id": 5232805,
-    "position": 50,
+    "position": 51,
     "name": "Death Note",
     "difficulty": "Insane",
     "rating": 15.91,
@@ -2053,7 +2092,7 @@ window.DEMONS = [
   },
   {
     "id": 4957691,
-    "position": 51,
+    "position": 52,
     "name": "Windy Landscape",
     "difficulty": "Insane",
     "rating": 15.78,
@@ -2098,7 +2137,7 @@ window.DEMONS = [
   },
   {
     "id": 56568010,
-    "position": 52,
+    "position": 53,
     "name": "Magma Bound",
     "difficulty": "Insane",
     "rating": 15.77,
@@ -2149,7 +2188,7 @@ window.DEMONS = [
   },
   {
     "id": 47620786,
-    "position": 53,
+    "position": 54,
     "name": "CraZy II",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2194,7 +2233,7 @@ window.DEMONS = [
   },
   {
     "id": 89743050,
-    "position": 54,
+    "position": 55,
     "name": "Inane Demon",
     "difficulty": "Insane",
     "rating": 15.3,
@@ -2232,7 +2271,7 @@ window.DEMONS = [
   },
   {
     "id": 4545425,
-    "position": 55,
+    "position": 56,
     "name": "Stalemate",
     "difficulty": "Insane",
     "rating": 15.21,
@@ -2277,7 +2316,7 @@ window.DEMONS = [
   },
   {
     "id": 43945511,
-    "position": 56,
+    "position": 57,
     "name": "Game Time",
     "difficulty": "Insane",
     "rating": 15.06,

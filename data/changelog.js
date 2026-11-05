@@ -31,6 +31,18 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-11-05",
+    "items": [
+      {
+        "kind": "add",
+        "demon": "HelioPOSSIBLE",
+        "demonId": 139861912,
+        "at": 40,
+        "text": "Dihmaster500's clear"
+      }
+    ]
+  },
+  {
     "date": "2026-11-04",
     "items": [
       {
