@@ -1442,51 +1442,39 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 5155022,
+    "id": 139861912,
     "position": 36,
-    "name": "Acropolis",
+    "name": "HelioPOSSIBLE",
     "difficulty": "Insane",
-    "rating": 17.2,
-    "publisher": "Zobros",
+    "rating": 17.43,
+    "publisher": "KazaGD",
     "creators": [
-      "Zobros"
+      "KazaGD"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=SSAfuCZ2cks",
-    "thumbnailUrl": "https://i.ytimg.com/vi/SSAfuCZ2cks/maxresdefault.jpg",
-    "levelId": 5155022,
-    "description": "Easy Coin Update",
+    "videoUrl": "https://www.youtube.com/watch?v=zme2zQAgz1U",
+    "thumbnailUrl": "https://i.ytimg.com/vi/zme2zQAgz1U/maxresdefault.jpg",
+    "levelId": 139861912,
+    "description": "Heliopolis but POSSIBLE...Layout made by me, decorated by (in order): nexel, krynio, shyne, foody, me, airu, ryoui and elirpscalion. Verified by Abdieldevil. Mindcap -> /*v*\\",
     "requirementPercent": 100,
     "records": [
       {
         "player": "Dihmaster500",
         "progress": 100,
         "nationality": "US",
-        "subdivision": null
-      },
-      {
-        "player": "Kry",
-        "progress": 100,
-        "nationality": "GB",
-        "subdivision": null
-      },
-      {
-        "player": "zinglebob238",
-        "progress": 100,
-        "nationality": "GB",
-        "subdivision": null
+        "subdivision": null,
+        "video": "https://drive.google.com/file/d/1TMrBwg2956WqJRPoqqbIE1sH5akTa5Qg/view?usp=sharing"
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 11082,
-      "gameVersion": "2.0",
+      "objects": 40610,
+      "gameVersion": "2.2",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "598349",
-        "name": "-Final Battle-",
-        "artist": "Waterflame",
-        "link": "http://audio.ngfiles.com/598000/598349_-Final-Battle-.mp3"
+        "id": "1546698",
+        "name": "Apoplexy",
+        "artist": "beehunter"
       },
       "songOfficial": false
     },
@@ -1615,43 +1603,56 @@ window.DEMONS = [
     "aredlPosition": null
   },
   {
-    "id": 139861912,
+    "id": 5155022,
     "position": 40,
-    "name": "HelioPOSSIBLE",
+    "name": "Acropolis",
     "difficulty": "Insane",
-    "rating": 17.43,
-    "publisher": "KazaGD",
+    "rating": 17.2,
+    "publisher": "Zobros",
     "creators": [
-      "KazaGD"
+      "Zobros"
     ],
     "verifier": "Dihmaster500",
-    "videoUrl": "https://www.youtube.com/watch?v=zme2zQAgz1U",
-    "thumbnailUrl": "https://i.ytimg.com/vi/zme2zQAgz1U/maxresdefault.jpg",
-    "levelId": 139861912,
-    "description": "Heliopolis but POSSIBLE...Layout made by me, decorated by (in order): nexel, krynio, shyne, foody, me, airu, ryoui and elirpscalion. Verified by Abdieldevil. Mindcap -> /*v*\\",
+    "videoUrl": "https://www.youtube.com/watch?v=SSAfuCZ2cks",
+    "thumbnailUrl": "https://i.ytimg.com/vi/SSAfuCZ2cks/maxresdefault.jpg",
+    "levelId": 5155022,
+    "description": "Easy Coin Update",
     "requirementPercent": 100,
     "records": [
       {
         "player": "Dihmaster500",
         "progress": 100,
         "nationality": "US",
-        "subdivision": null,
-        "video": "https://drive.google.com/file/d/1TMrBwg2956WqJRPoqqbIE1sH5akTa5Qg/view?usp=sharing"
+        "subdivision": null
+      },
+      {
+        "player": "Kry",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
+      },
+      {
+        "player": "zinglebob238",
+        "progress": 100,
+        "nationality": "GB",
+        "subdivision": null
       }
     ],
     "gd": {
       "length": "Long",
-      "objects": 40610,
-      "gameVersion": "2.2",
+      "objects": 11082,
+      "gameVersion": "2.0",
       "inGameDifficulty": "Insane Demon",
       "song": {
-        "id": "1546698",
-        "name": "Apoplexy",
-        "artist": "beehunter"
+        "id": "598349",
+        "name": "-Final Battle-",
+        "artist": "Waterflame",
+        "link": "http://audio.ngfiles.com/598000/598349_-Final-Battle-.mp3"
       },
       "songOfficial": false
     },
-    "aredlPosition": null
+    "aredlPosition": null,
+    "swapGroup": 5155022
   },
   {
     "id": 14145098,
