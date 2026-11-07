@@ -31,6 +31,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-11-07",
+    "items": [
+      {
+        "kind": "note",
+        "text": "Rated+: Solar: GDDL estimate 19.00 → 17.50."
+      }
+    ]
+  },
+  {
     "date": "2026-11-05",
     "items": [
       {

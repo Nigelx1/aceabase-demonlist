@@ -59,7 +59,7 @@ window.UNRATED = [
     "id": 151420421,
     "name": "Solar",
     "difficulty": "Insane",
-    "rating": 19,
+    "rating": 17.5,
     "publisher": "Nigelx1",
     "creators": [
       "Nigelx1"
