@@ -147,7 +147,7 @@ window.DEMONS = [
     "position": 4,
     "name": "Bloodlust",
     "difficulty": "Extreme",
-    "rating": 31.98,
+    "rating": 31.97,
     "publisher": "Knobbelboy",
     "creators": [
       "Knobbelboy"
@@ -187,7 +187,7 @@ window.DEMONS = [
     "position": 5,
     "name": "Shardscapes",
     "difficulty": "Extreme",
-    "rating": 32.75,
+    "rating": 32.76,
     "publisher": "ItzKiba",
     "creators": [
       "ItzKiba"
@@ -382,7 +382,7 @@ window.DEMONS = [
     "position": 10,
     "name": "Yatagarasu ",
     "difficulty": "Extreme",
-    "rating": 29.94,
+    "rating": 29.95,
     "publisher": "TrusTa",
     "creators": [
       "TrusTa"
@@ -453,7 +453,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 535
+    "aredlPosition": 536
   },
   {
     "id": 72082021,
@@ -492,7 +492,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 562
+    "aredlPosition": 563
   },
   {
     "id": 38235367,
@@ -525,7 +525,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 570
+    "aredlPosition": 571
   },
   {
     "id": 27580467,
@@ -610,7 +610,7 @@ window.DEMONS = [
     "position": 16,
     "name": "Athanatos",
     "difficulty": "Extreme",
-    "rating": 25.87,
+    "rating": 25.86,
     "publisher": "IIExenityII",
     "creators": [
       "IIExenityII"
@@ -804,7 +804,7 @@ window.DEMONS = [
     "position": 20,
     "name": "Idols",
     "difficulty": "Extreme",
-    "rating": 23.78,
+    "rating": 23.77,
     "publisher": "Zafkiel7",
     "creators": [
       "Zafkiel7"
@@ -874,7 +874,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1140
+    "aredlPosition": 1141
   },
   {
     "id": 24301797,
@@ -912,7 +912,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1292
+    "aredlPosition": 1226
   },
   {
     "id": 30219145,
@@ -951,7 +951,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1399
+    "aredlPosition": 1401
   },
   {
     "id": 71728635,
@@ -989,7 +989,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1445
+    "aredlPosition": 1447
   },
   {
     "id": 69010770,
@@ -1028,7 +1028,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1465
+    "aredlPosition": 1467
   },
   {
     "id": 81257586,
@@ -1067,7 +1067,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1492
+    "aredlPosition": 1495
   },
   {
     "id": 3979721,
@@ -1119,14 +1119,14 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1514
+    "aredlPosition": 1518
   },
   {
     "id": 119259720,
     "position": 28,
     "name": "Without U",
     "difficulty": "Extreme",
-    "rating": 20.17,
+    "rating": 20.16,
     "publisher": "NoobyPro27",
     "creators": [
       "NoobyPro27"
@@ -1157,7 +1157,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1575
+    "aredlPosition": 1578
   },
   {
     "id": 81148582,
@@ -1202,7 +1202,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1607
+    "aredlPosition": 1610
   },
   {
     "id": 61079355,
@@ -1247,7 +1247,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1609
+    "aredlPosition": 1612
   },
   {
     "id": 114933189,
@@ -1291,7 +1291,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1611
+    "aredlPosition": 1614
   },
   {
     "id": 72211008,
@@ -1362,14 +1362,14 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1622
+    "aredlPosition": 1626
   },
   {
     "id": 81043147,
     "position": 34,
     "name": "Auroral Bloom",
     "difficulty": "Insane",
-    "rating": 19.1,
+    "rating": 19.11,
     "publisher": "Loltad",
     "creators": [
       "Loltad"
@@ -1407,7 +1407,7 @@ window.DEMONS = [
     "position": 35,
     "name": "CraZy III",
     "difficulty": "Insane",
-    "rating": 19.08,
+    "rating": 19.09,
     "publisher": "DavJT",
     "creators": [
       "DavJT"
@@ -1659,7 +1659,7 @@ window.DEMONS = [
     "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.65,
+    "rating": 18.64,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1692,7 +1692,7 @@ window.DEMONS = [
     "position": 42,
     "name": "8o",
     "difficulty": "Insane",
-    "rating": 16.9,
+    "rating": 16.91,
     "publisher": "Zobros",
     "creators": [
       "Zobros"
@@ -1808,7 +1808,7 @@ window.DEMONS = [
     "position": 45,
     "name": "MikuMikuMikuMiku",
     "difficulty": "Insane",
-    "rating": 17.12,
+    "rating": 17.11,
     "publisher": "OddMod",
     "creators": [
       "OddMod"
@@ -1924,7 +1924,7 @@ window.DEMONS = [
     "position": 48,
     "name": "Supersonic",
     "difficulty": "Insane",
-    "rating": 16.88,
+    "rating": 16.87,
     "publisher": "ZenthicAlpha",
     "creators": [
       "ZenthicAlpha"
@@ -1970,7 +1970,7 @@ window.DEMONS = [
     "position": 49,
     "name": "Denouement",
     "difficulty": "Insane",
-    "rating": 16.62,
+    "rating": 16.61,
     "publisher": "Synactive GD",
     "creators": [
       "Synactive GD"
@@ -2141,7 +2141,7 @@ window.DEMONS = [
     "position": 53,
     "name": "Magma Bound",
     "difficulty": "Insane",
-    "rating": 15.77,
+    "rating": 15.78,
     "publisher": "ScorchVx",
     "creators": [
       "ScorchVx"
@@ -2237,7 +2237,7 @@ window.DEMONS = [
     "position": 55,
     "name": "Inane Demon",
     "difficulty": "Insane",
-    "rating": 15.3,
+    "rating": 15.29,
     "publisher": "KiwiPenguin",
     "creators": [
       "KiwiPenguin"
