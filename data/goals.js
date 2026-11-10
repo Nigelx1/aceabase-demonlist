@@ -42,6 +42,7 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 68848817, best: 20, segments: [[61, 100]] }, // moment
   { player: "Dihmaster500", levelId: 58825144, best: 9 }, // xo
   { player: "Dihmaster500", levelId: 85383554, best: 9 }, // Stereo Extremeness
+  { player: "Dihmaster500", levelId: 82172844, best: 35, note: "24x3" }, // Cobwebs
   { player: "Joancio", levelId: 10565740, best: 44 }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
   { player: "Nigel", levelId: 68668045, best: 39, segments: [[11, 53], [42, 100]], video: "https://youtu.be/Fuxe0O10s-E" }, // Congregation (on the list)

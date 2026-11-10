@@ -560,6 +560,38 @@ window.GOAL_LEVELS = {
       "url": "https://aredl.net/list/81148582"
     }
   },
+  "82172844": {
+    "name": "Cobwebs",
+    "publisher": "NineDice",
+    "difficulty": "Extreme",
+    "rating": 32.98,
+    "aredlPosition": 222,
+    "levelId": 82172844,
+    "description": "Dedicated to xEl3cTr0",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=9L86d9x0ZG8",
+    "gd": {
+      "length": "Medium",
+      "objects": 65535,
+      "gameVersion": "2.2",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "1147187",
+        "name": "Cerebral Cobweb (okuu remix) (edited)",
+        "artist": "OkuU-o"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/9L86d9x0ZG8/maxresdefault.jpg",
+    "palette": {
+      "accent": "#eb5306",
+      "deep": "#3e1e0f",
+      "wash": "#fbf5f2",
+      "mist": "#f3e8e2",
+      "onAccent": "#ffffff",
+      "ink": "#472c1f"
+    }
+  },
   "85383554": {
     "name": "Stereo Extremeness",
     "publisher": "vortrox",
