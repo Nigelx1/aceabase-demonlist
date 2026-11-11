@@ -50,43 +50,6 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   },
-  "23262780": {
-    "name": "Sakupen Hell",
-    "publisher": "TrusTa",
-    "difficulty": "Extreme",
-    "rating": 24.87,
-    "aredlPosition": 787,
-    "levelId": 23262780,
-    "description": "Sakupen Hell by Noobas! Verified by me in 22 199 attempts! :D",
-    "requirementPercent": 100,
-    "videoUrl": "https://www.youtube.com/watch?v=X-Okj4-o-do",
-    "gd": {
-      "length": "Medium",
-      "objects": 20250,
-      "gameVersion": "2.0",
-      "inGameDifficulty": "Extreme Demon",
-      "stars": 10,
-      "song": {
-        "id": "360804",
-        "name": "Iron God: Sakupen Hell Yes RMX",
-        "artist": "mr-jazzman"
-      }
-    },
-    "thumbnailUrl": "https://i.ytimg.com/vi/X-Okj4-o-do/maxresdefault.jpg",
-    "palette": {
-      "accent": "#f91f1f",
-      "deep": "#3e0f0f",
-      "wash": "#fbf2f2",
-      "mist": "#f3e2e2",
-      "onAccent": "#ffffff",
-      "ink": "#471f1f"
-    },
-    "writeup": {
-      "text": "The level built out of spite. Noobas made it to challenge Riot and Cyclic, then considered the best players in the game, and openly hack-verified it - his protest at a hacked Cataclysm getting rated. It's under a minute long and known for being unbalanced, with most of the difficulty packed into wave parts with critical timing and extremely tight spaces. TrusTa verified it for real and published it in August 2016, and it went on to rival, then pass, Bloodbath as one of the hardest levels in the game.",
-      "source": "Geometry Dash Wiki",
-      "url": "https://geometrydash.wiki.gg/wiki/Sakupen_Hell"
-    }
-  },
   "26681070": {
     "name": "Sonic Wave",
     "publisher": "lSunix",
