@@ -50,6 +50,45 @@ window.GOAL_LEVELS = {
       "url": "https://geometrydash.wiki.gg/wiki/Bloodbath"
     }
   },
+  "25610878": {
+    "name": "aftermath",
+    "publisher": "IIExenityII",
+    "difficulty": "Extreme",
+    "rating": 23.05,
+    "aredlPosition": 1020,
+    "levelId": 25610878,
+    "description": "Who will survive the last part of the triology? Verified by DaMeister, originally verified by Gonchus",
+    "requirementPercent": 100,
+    "videoUrl": "https://www.youtube.com/watch?v=VnRtCK6C50A",
+    "gd": {
+      "length": "Long",
+      "objects": 16107,
+      "gameVersion": "2.1",
+      "inGameDifficulty": "Extreme Demon",
+      "stars": 10,
+      "song": {
+        "id": "467339",
+        "name": "At the Speed of Light",
+        "artist": "Dimrain47",
+        "link": "https://geometrydashcontent.b-cdn.net/songs/467339.mp3"
+      }
+    },
+    "thumbnailUrl": "https://i.ytimg.com/vi/VnRtCK6C50A/maxresdefault.jpg",
+    "palette": {
+      "accent": "#f91f1f",
+      "deep": "#3e0f0f",
+      "wash": "#fbf2f2",
+      "mist": "#f3e2e2",
+      "onAccent": "#ffffff",
+      "ink": "#471f1f"
+    },
+    "writeup": {
+      "text": "aftermath (also known as Afterclysm) is a 1.9/2.0 Extreme Demon mega-collaboration level by Exenity, initially verified by Satcho, with an update verified by DaMeister. It is the third and final instalment of the 'Apocalyptic Trilogy' of hell-themed Extreme Demon levels, after Cataclysm and Bloodbath, following the former levels in music, gameplay and design.",
+      "source": "Geometry Dash Wiki",
+      "url": "https://geometrydash.wiki.gg/wiki/aftermath",
+      "auto": true
+    }
+  },
   "26681070": {
     "name": "Sonic Wave",
     "publisher": "lSunix",
