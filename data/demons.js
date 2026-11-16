@@ -912,7 +912,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1227
+    "aredlPosition": 1228
   },
   {
     "id": 30219145,
@@ -1369,7 +1369,7 @@ window.DEMONS = [
     "position": 34,
     "name": "Auroral Bloom",
     "difficulty": "Insane",
-    "rating": 19.11,
+    "rating": 19.1,
     "publisher": "Loltad",
     "creators": [
       "Loltad"
@@ -1407,7 +1407,7 @@ window.DEMONS = [
     "position": 35,
     "name": "CraZy III",
     "difficulty": "Insane",
-    "rating": 19.09,
+    "rating": 19.08,
     "publisher": "DavJT",
     "creators": [
       "DavJT"
@@ -1446,7 +1446,7 @@ window.DEMONS = [
     "position": 36,
     "name": "HelioPOSSIBLE",
     "difficulty": "Insane",
-    "rating": 17.42,
+    "rating": 17.41,
     "publisher": "KazaGD",
     "creators": [
       "KazaGD"
@@ -1486,7 +1486,7 @@ window.DEMONS = [
     "position": 37,
     "name": "Gensouteki",
     "difficulty": "Insane",
-    "rating": 18.29,
+    "rating": 18.28,
     "publisher": "Subpixel",
     "creators": [
       "Subpixel"
@@ -1562,7 +1562,7 @@ window.DEMONS = [
     "position": 39,
     "name": "BuTiTi II",
     "difficulty": "Insane",
-    "rating": 17.79,
+    "rating": 17.78,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -1659,7 +1659,7 @@ window.DEMONS = [
     "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.64,
+    "rating": 18.65,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -2237,7 +2237,7 @@ window.DEMONS = [
     "position": 55,
     "name": "Inane Demon",
     "difficulty": "Insane",
-    "rating": 15.28,
+    "rating": 15.29,
     "publisher": "KiwiPenguin",
     "creators": [
       "KiwiPenguin"
@@ -2320,7 +2320,7 @@ window.DEMONS = [
     "position": 57,
     "name": "Game Time",
     "difficulty": "Insane",
-    "rating": 15.06,
+    "rating": 15.07,
     "publisher": "SimilarAMZ",
     "creators": [
       "SimilarAMZ"
