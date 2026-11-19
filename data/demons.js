@@ -187,7 +187,7 @@ window.DEMONS = [
     "position": 5,
     "name": "Shardscapes",
     "difficulty": "Extreme",
-    "rating": 32.76,
+    "rating": 32.75,
     "publisher": "ItzKiba",
     "creators": [
       "ItzKiba"
@@ -336,7 +336,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 391
+    "aredlPosition": 392
   },
   {
     "id": 26681070,
@@ -375,7 +375,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 392
+    "aredlPosition": 393
   },
   {
     "id": 28220417,
@@ -414,7 +414,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 399
+    "aredlPosition": 400
   },
   {
     "id": 27122654,
@@ -453,7 +453,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 537
+    "aredlPosition": 539
   },
   {
     "id": 72082021,
@@ -492,7 +492,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 564
+    "aredlPosition": 566
   },
   {
     "id": 38235367,
@@ -525,7 +525,7 @@ window.DEMONS = [
       "gameVersion": "2.1",
       "inGameDifficulty": "Extreme Demon"
     },
-    "aredlPosition": 572
+    "aredlPosition": 574
   },
   {
     "id": 27580467,
@@ -564,7 +564,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 636
+    "aredlPosition": 638
   },
   {
     "id": 33387622,
@@ -603,7 +603,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 666
+    "aredlPosition": 668
   },
   {
     "id": 26133601,
@@ -641,7 +641,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 712
+    "aredlPosition": 714
   },
   {
     "id": 35448603,
@@ -680,7 +680,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 767
+    "aredlPosition": 769
   },
   {
     "id": 59933468,
@@ -718,7 +718,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 812
+    "aredlPosition": 815
   },
   {
     "id": 10565740,
@@ -797,7 +797,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 861
+    "aredlPosition": 865
   },
   {
     "id": 48175126,
@@ -836,7 +836,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 867
+    "aredlPosition": 870
   },
   {
     "id": 89976481,
@@ -874,7 +874,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1142
+    "aredlPosition": 1145
   },
   {
     "id": 24301797,
@@ -912,7 +912,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1228
+    "aredlPosition": 1231
   },
   {
     "id": 30219145,
@@ -951,7 +951,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1402
+    "aredlPosition": 1406
   },
   {
     "id": 71728635,
@@ -989,7 +989,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1448
+    "aredlPosition": 1452
   },
   {
     "id": 69010770,
@@ -1028,7 +1028,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1468
+    "aredlPosition": 1472
   },
   {
     "id": 81257586,
@@ -1067,7 +1067,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1496
+    "aredlPosition": 1501
   },
   {
     "id": 3979721,
@@ -1119,7 +1119,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1519
+    "aredlPosition": 1525
   },
   {
     "id": 119259720,
@@ -1157,7 +1157,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1579
+    "aredlPosition": 1585
   },
   {
     "id": 81148582,
@@ -1202,7 +1202,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1611
+    "aredlPosition": 1618
   },
   {
     "id": 61079355,
@@ -1247,7 +1247,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1613
+    "aredlPosition": 1620
   },
   {
     "id": 114933189,
@@ -1291,7 +1291,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1615
+    "aredlPosition": 1622
   },
   {
     "id": 72211008,
@@ -1362,7 +1362,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1627
+    "aredlPosition": 1633
   },
   {
     "id": 81043147,
@@ -1562,7 +1562,7 @@ window.DEMONS = [
     "position": 39,
     "name": "BuTiTi II",
     "difficulty": "Insane",
-    "rating": 17.78,
+    "rating": 17.79,
     "publisher": "JonathanGD",
     "creators": [
       "JonathanGD"
@@ -2237,7 +2237,7 @@ window.DEMONS = [
     "position": 55,
     "name": "Inane Demon",
     "difficulty": "Insane",
-    "rating": 15.29,
+    "rating": 15.3,
     "publisher": "KiwiPenguin",
     "creators": [
       "KiwiPenguin"
