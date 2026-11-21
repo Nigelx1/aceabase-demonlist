@@ -31,6 +31,15 @@
 
 window.CHANGELOG = [
   {
+    "date": "2026-11-21",
+    "items": [
+      {
+        "kind": "note",
+        "text": "GD Demon Ladder ratings refreshed - 2 levels drifted (Through The Decay 20.09 → 20.1, Inane Demon 15.3 → 15.29)."
+      }
+    ]
+  },
+  {
     "date": "2026-11-07",
     "items": [
       {

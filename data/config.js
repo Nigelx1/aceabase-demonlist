@@ -174,7 +174,7 @@ window.SITE = {
   // Extremes on the AREDL are ordered and scored by it (DL.demonRating), so the
   // list follows AREDL placement; everything else uses its own GDDL rating.
   // Two insanes a head mod swapped (Insane swaps, above) trade those values.
-  aredlFit: { a: 44.3205, b: -1.602082, exponent: 0.37, points: 1580, r2: 0.9726, fitted: "2026-11-19" },
+  aredlFit: { a: 43.6087, b: -1.345724, exponent: 0.39, points: 1580, r2: 0.9725, fitted: "2026-11-21" },
   // SCORING - a 100% is worth topScore * base ^ (rating - topRating), where
   // rating is DL.demonRating (an extreme's AREDL placement through aredlFit,
   // otherwise the gdladder difficulty rating) and topRating the highest
