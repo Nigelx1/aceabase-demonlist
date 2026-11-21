@@ -669,7 +669,7 @@ window.GOAL_LEVELS = {
     "difficulty": "Insane",
     "rating": null,
     "levelId": 115157857,
-    "description": "For a level called \"ChillHome,\" the uploading process wasn't chill at all lol. Verified by HowlingBolt.",
+    "description": "For a level called ChillHome the uploading process wasnt chill lol, verified by HowlingBolt",
     "requirementPercent": 100,
     "videoUrl": "https://www.youtube.com/watch?v=7j1JSTXHbrY",
     "gd": {
@@ -736,10 +736,10 @@ window.GOAL_LEVELS = {
     "description": "Insane Demon version of Solar Flare",
     "requirementPercent": 100,
     "gd": {
+      "inGameDifficulty": "Insane",
       "length": "Long",
       "objects": 63250,
       "gameVersion": "2.2",
-      "inGameDifficulty": "Insane",
       "stars": 0,
       "song": {
         "id": "493898",
