@@ -42,7 +42,7 @@ window.GOALS = [
   { player: "Dihmaster500", levelId: 68848817, best: 20, segments: [[61, 100]] }, // moment
   { player: "Dihmaster500", levelId: 58825144, best: 9 }, // xo
   { player: "Dihmaster500", levelId: 85383554, best: 9 }, // Stereo Extremeness
-  { player: "Dihmaster500", levelId: 82172844, best: 35, note: "24x3" }, // Cobwebs
+  { player: "Dihmaster500", levelId: 82172844, best: 44, segments: [[80, 100]] }, // Cobwebs
   { player: "Dihmaster500", levelId: 23262780, best: 81, segments: [[28, 100]], note: "only 900 att so far" }, // Sakupen Hell
   { player: "Joancio", levelId: 10565740, best: 49, segments: [[41, 94]] }, // Bloodbath (on the list)
   // Nigel's, ported from his own list (his own recordings as the showcases)
