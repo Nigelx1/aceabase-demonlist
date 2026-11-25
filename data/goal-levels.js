@@ -132,7 +132,7 @@ window.GOAL_LEVELS = {
     "publisher": "lSunix",
     "difficulty": "Extreme",
     "rating": 29.83,
-    "aredlPosition": 396,
+    "aredlPosition": 397,
     "levelId": 26681070,
     "description": "Mythical Demon by Cyclic! Video on my YouTube.",
     "requirementPercent": 100,
@@ -387,7 +387,7 @@ window.GOAL_LEVELS = {
     "publisher": "KrmaL",
     "difficulty": "Extreme",
     "rating": 29.62,
-    "aredlPosition": 419,
+    "aredlPosition": 420,
     "levelId": 58825144,
     "description": "stream vertigo",
     "requirementPercent": 100,
@@ -619,7 +619,8 @@ window.GOAL_LEVELS = {
       "song": {
         "id": "1147187",
         "name": "Cerebral Cobweb (okuu remix) (edited)",
-        "artist": "OkuU-o"
+        "artist": "OkuU-o",
+        "link": "https://audio.ngfiles.com/1147000/1147187_Cerebral-Cobweb-okuu-remix.mp3?f1658794056"
       }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/9L86d9x0ZG8/maxresdefault.jpg",
