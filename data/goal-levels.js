@@ -16,7 +16,7 @@ window.GOAL_LEVELS = {
     "name": "Bloodbath",
     "publisher": "Riot",
     "difficulty": "Extreme",
-    "rating": 23.97,
+    "rating": 23.98,
     "aredlPosition": 873,
     "levelId": 10565740,
     "description": "Whose blood will be spilt in the Bloodbath? Who will the victors be? How many will survive? Good luck...",
@@ -619,8 +619,7 @@ window.GOAL_LEVELS = {
       "song": {
         "id": "1147187",
         "name": "Cerebral Cobweb (okuu remix) (edited)",
-        "artist": "OkuU-o",
-        "link": "https://audio.ngfiles.com/1147000/1147187_Cerebral-Cobweb-okuu-remix.mp3?f1658794056"
+        "artist": "OkuU-o"
       }
     },
     "thumbnailUrl": "https://i.ytimg.com/vi/9L86d9x0ZG8/maxresdefault.jpg",

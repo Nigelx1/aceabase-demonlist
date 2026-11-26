@@ -336,7 +336,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 395
+    "aredlPosition": 396
   },
   {
     "id": 26681070,
@@ -375,7 +375,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 396
+    "aredlPosition": 397
   },
   {
     "id": 28220417,
@@ -414,7 +414,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 403
+    "aredlPosition": 404
   },
   {
     "id": 27122654,
@@ -725,7 +725,7 @@ window.DEMONS = [
     "position": 19,
     "name": "Bloodbath",
     "difficulty": "Extreme",
-    "rating": 23.97,
+    "rating": 23.98,
     "publisher": "Riot",
     "creators": [
       "Riot"
@@ -912,14 +912,14 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1243
+    "aredlPosition": 1244
   },
   {
     "id": 30219145,
     "position": 23,
     "name": "HyperSonic",
     "difficulty": "Extreme",
-    "rating": 21,
+    "rating": 21.01,
     "publisher": "ViPriN",
     "creators": [
       "ViPriN"
@@ -1157,7 +1157,7 @@ window.DEMONS = [
       },
       "songOfficial": false
     },
-    "aredlPosition": 1597
+    "aredlPosition": 1598
   },
   {
     "id": 81148582,
@@ -1299,7 +1299,7 @@ window.DEMONS = [
     "position": 32,
     "name": "Dragonlocked",
     "difficulty": "Insane",
-    "rating": 20.12,
+    "rating": 20.09,
     "publisher": "FrostDragonGD",
     "creators": [
       "FrostDragonGD"
@@ -1447,7 +1447,7 @@ window.DEMONS = [
     "position": 36,
     "name": "HelioPOSSIBLE",
     "difficulty": "Insane",
-    "rating": 17.42,
+    "rating": 17.41,
     "publisher": "KazaGD",
     "creators": [
       "KazaGD"
@@ -1661,7 +1661,7 @@ window.DEMONS = [
     "position": 41,
     "name": "Invisible Deadlocked",
     "difficulty": "Insane",
-    "rating": 18.65,
+    "rating": 18.64,
     "publisher": "KrmaL",
     "creators": [
       "KrmaL"
@@ -1926,7 +1926,7 @@ window.DEMONS = [
     "position": 48,
     "name": "Supersonic",
     "difficulty": "Insane",
-    "rating": 16.88,
+    "rating": 16.87,
     "publisher": "ZenthicAlpha",
     "creators": [
       "ZenthicAlpha"
